@@ -25,7 +25,7 @@ body, html {
   width: 100vw;
   background-color: #222;
 }
-.black {
+.hp {
   background-color:#222;
 }
 .themeColor1 {
@@ -135,6 +135,7 @@ nav img {
   bottom: 13px; 
   height: 25px;
   right: 2px;
+  cursor: pointer;
 }
 nav {
   position:fixed;
@@ -225,13 +226,13 @@ nav {
   z-index: -1;
 }
 .bgimg-1 {
-  background-image: url("https://4.bp.blogspot.com/-4PNYULr8wq8/WH2ycy51LbI/AAAAAAAAKj4/pVHlkaGa6YwRmpc2WuHIflbx5py0tC0lgCK4B/s1600/IMG_5832.JPG");
+  background-image: url("https://static.pexels.com/photos/7063/man-notebook-notes-macbook.jpg");
 }
 .bgimg-2 {
-  background-image: url("https://4.bp.blogspot.com/-5Z8g68wkdz4/WH2yfEd0LOI/AAAAAAAAKkA/MnKADyzLKZIzQxm0BLZZCQP2t9xDrqpyQCK4B/s1600/FullSizeRender%2B4.jpg");
+  background-image: url("https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");
 }
 .bgimg-3 {
-  background-image: url("https://4.bp.blogspot.com/-s7iBlsxbjDs/WH2yE3edAWI/AAAAAAAAKjU/VvtSvXJXDrk-GrAQwoLxRXUv7CJrrHPBwCK4B/s1600/IMG_5830.JPG");
+  background-image: url("https://static.pexels.com/photos/29765/pexels-photo.jpg");
 }
 /* end slide bg img css */
 /* themeDiv css */
@@ -299,7 +300,7 @@ nav {
   top:200%;
   width: 100%;
   height:100%;
-  animation: sea2 0.4s ease;
+  animation: sea2 1.5s ease-in-out;
   z-index: 12;
 }
   
@@ -415,7 +416,7 @@ nav {
   </nav>
   <!-- slides -->
   <div id="Slides">
-    <div id="hp" class="mySlides black">
+    <div id="hp" class="mySlides hp">
       <div id="sea" class="sea themeColor1">
         <svg class="ocean" style="position: absolute; width: 100%; bottom:98%; left: 0%;" version="1.1" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -427,9 +428,15 @@ nav {
         </svg>
       </div><!-- close sea -->
     </div>
-    <div id="slide1" class="mySlides bgimg-1"></div>
-    <div id="slide2" class="mySlides bgimg-2"></div>
-    <div id="slide3" class="mySlides bgimg-3"></div>
+    <div id="slide1" class="mySlides">
+      <div class="bgimg-1"></div>
+    </div>
+    <div id="slide2" class="mySlides">
+      <div class="bgimg-2"></div>
+    </div>
+    <div id="slide3" class="mySlides">
+      <div class="bgimg-3"></div>
+    </div>
   </div>
   
   <!-- themeDiv slides -->
@@ -499,7 +506,7 @@ nav {
       <h2 class="pageTitle hide-on-large-only hide-on-small-only">Design &amp; <br/>Develop</h2>
       <h1 class="pageTitle hide-on-med-and-down">Design &amp; <br/>Develop</h1>
       <div class="pageTitleBorder"></div>
-      <div class="pageContent flow-text">We make custom, functional, clean, and memorable websites and front-end products using HTML, CSS, and JavaScript.</div>
+      <div class="pageContent flow-text">We make custom, functional, and memorable websites as well as front-end products using HTML, CSS, and JavaScript.</div>
     </div>
     
     <div class="content">
@@ -508,6 +515,7 @@ nav {
       <h1 class="pageTitle hide-on-med-and-down">Demos</h1>
       <div class="pageTitleBorder"></div>
       <div class="button letter-space flow-text waves-effect" href="#">VIEW</div>
+      <div class="pageContent flow-text"><br/><br/>Full size templates &amp; individual components.</div>
     </div>
     
     <div class="content">
@@ -519,7 +527,7 @@ nav {
        <!-- <i class="fa fa-facebook tiny" aria-hidden="true">&nbsp;&nbsp;</i>
         <i class="fa fa-twitter tiny" aria-hidden="true">&nbsp;&nbsp;</i>
         <i class="fa fa-github tiny" aria-hidden="true"></i>-->
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoC0nCZfiP5ZeQV87f3CIC2taW6s1l_WIT8SuE2P2FlD-d2A/viewform" target="_blank"><btn class="btn themeColor2 hoverable letter-space waves-effect">Let's Work</btn></a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoC0nCZfiP5ZeQV87f3CIC2taW6s1l_WIT8SuE2P2FlD-d2A/viewform" target="_blank"><btn class="btn themeColor2 hoverable waves-effect">Let's Work</btn></a>
         <br/><br/>
         <a href="mailto:stu.coston@gmail.com" class="white-text" style="text-decoration: underline">stu.coston@gmail.com</a>
       </div>
@@ -573,12 +581,22 @@ showPageNums(numsIndex);
 showContent(contentIndex);
 showPagination(paginationIndex);
 function plusDivs(n) {
-  transTheme(themeIndex);
-  setTimeout(function(){ showDivs(slideIndex += n); }, 230);
-  setTimeout(function(){ showPagination(paginationIndex += n); }, 230);
-  setTimeout(function(){ showTheme(themeIndex += n); }, 1000);
-  setTimeout(function(){ showPageNums(numsIndex += n); }, 1000);
-  setTimeout(function(){ showContent(contentIndex += n); }, 1200);
+  if(slideIndex == 1){
+    transTheme(themeIndex);
+    setTimeout(function(){ showDivs(slideIndex += n); }, 1230);
+    setTimeout(function(){ showPagination(paginationIndex += n); }, 1230);
+    setTimeout(function(){ showTheme(themeIndex += n); }, 2000);
+    setTimeout(function(){ showPageNums(numsIndex += n); }, 2000);
+    setTimeout(function(){ showContent(contentIndex += n); }, 2200);
+  } 
+  else {
+    transTheme(themeIndex);
+    setTimeout(function(){ showDivs(slideIndex += n); }, 230);
+    setTimeout(function(){ showPagination(paginationIndex += n); }, 230);
+    setTimeout(function(){ showTheme(themeIndex += n); }, 1000);
+    setTimeout(function(){ showPageNums(numsIndex += n); }, 1000);
+    setTimeout(function(){ showContent(contentIndex += n); }, 1200);
+  }
 }
 function currentDiv(n){
   transTheme(themeIndex);
@@ -593,11 +611,21 @@ function transTheme(n) {
   var pn = document.getElementsByClassName("pageNums");
   var td = document.getElementsByClassName("themeDiv");
   var c = document.getElementsByClassName("content");
-  sea.className = sea.className.replace('sea themeColor1', 'sea2 themeColor1');
-  pn[themeIndex-1].style.display = "none";
-  td[themeIndex-1].style.transition = "1s";
-  td[themeIndex-1].style.left = "100%";
-  c[themeIndex-1].style.display = "none";
+  if(slideIndex == 1){
+    sea.className = sea.className.replace('sea themeColor1', 'sea2 themeColor1');
+    setTimeout(function(){ 
+      pn[themeIndex-1].style.display = "none";
+      td[themeIndex-1].style.transition = "1s";
+      td[themeIndex-1].style.left = "100%";
+      c[themeIndex-1].style.display = "none";}, 
+    1000);
+  }
+  else {
+    pn[themeIndex-1].style.display = "none";
+    td[themeIndex-1].style.transition = "1s";
+    td[themeIndex-1].style.left = "100%";
+    c[themeIndex-1].style.display = "none";
+  }
 }
 function showDivs(n) {
   var sea = document.getElementById("sea");
