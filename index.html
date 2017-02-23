@@ -20,6 +20,9 @@ body, html {
   color: white;
   line-height: 1.8;
 }
+.btn {
+  box-shadow: none;
+}
 .btn:hover {
   background-color:#4aaaa5;
   border: 1px solid #4aaaa5;
@@ -117,7 +120,7 @@ li a {
   padding: 5px 25px;
 }
 .button:hover, .contact:hover {
-  box-shadow: 2px 2px 3px #555;
+  /*box-shadow: 2px 2px 3px #555;*/
   background-color: #e45f56; 
   border:1px solid #e45f56;
 }
@@ -415,7 +418,10 @@ nav {
       <img onclick="currentDiv(4)" src="http://3.bp.blogspot.com/-hKGc-j0q0z8/WH2xNB0nZFI/AAAAAAAAKjA/QQ08QrQu1Xoj88V9l5UO-qjOeBw3UeKyACK4B/s1600/voltage-contact-us-icon.png">
     </div>
     <div class="hide-on-small-and-down bottomright">
-      <div class="medium" style="line-height: 50px;"><span class="padding-right letter-space projects">WORK</span><span class="contact letter-space" onclick="currentDiv(4)">CONTACT</span></div>
+      <div class="medium" style="line-height: 50px;">
+        <span class="padding-right letter-space projects">WORK</span>
+        <span class="contact letter-space hoverable waves-effect" onclick="currentDiv(4)">CONTACT</span>
+      </div>
     </div>
   </nav>
   
@@ -519,7 +525,7 @@ nav {
       <h2 class="pageTitle hide-on-large-only hide-on-small-only">Work</h2>
       <h1 class="pageTitle hide-on-med-and-down">Work</h1>
       <div class="pageTitleBorder"></div>
-      <div class="button letter-space flow-text waves-effect" href="#">VIEW</div>
+      <div class="button letter-space flow-text hoverable waves-effect" href="#">VIEW</div>
       <div class="pageContent flow-text"><br/><br/>Full size templates &amp; individual components.</div>
     </div>
     
