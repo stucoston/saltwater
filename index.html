@@ -307,6 +307,7 @@ nav {
 }
   
 /* animations */
+  /** Safari 4.0 - 8.0 **/
 @-webkit-keyframes transinpn {
   0%   {opacity:0;}
   10%  {opacity:1}
@@ -341,6 +342,50 @@ nav {
   100% {top: 0%;}
 }
 @-webkit-keyframes buttonHover {
+  0%   {background-color:white;opacity:0;}
+  10%  {opacity:1}
+  40%  {opacity:0}
+  55%  {opacity:1;}
+  70%  {opacity:0;}
+  75%  {opacity:1;}
+  90%  {opacity:0}
+  100% {opacity:1;}
+}
+  /** Standard syntax **/
+@keyframes transinpn {
+  0%   {opacity:0;}
+  10%  {opacity:1}
+  40%  {opacity:0}
+  55%  {opacity:1;}
+  70%  {opacity:0;}
+  75%  {opacity:1;}
+  90%  {opacity:0}
+  100% {opacity:1;}
+}
+@keyframes transinpt {
+  0%   {left: -100%;}
+  100% {left: 20px;}
+}
+@keyframes transintb {
+  0%   {left: -100%;width:0px}
+  35% {left:0%;width:0px;}
+  40%   {left: 0%;width:20px}
+  70%  {left: 0%;width:60px}
+  100% {left: 20px;width:40px}
+}
+@keyframes transincontent {
+  0%   {top: 100%;}
+  100% {top: 60%;}
+}
+@keyframes sea {
+  0%   {top: 100%;}
+  100% {top: 85%;}
+}
+@keyframes sea2 {
+  0%   {top: 85%;}
+  100% {top: 0%;}
+}
+@keyframes buttonHover {
   0%   {background-color:white;opacity:0;}
   10%  {opacity:1}
   40%  {opacity:0}
@@ -413,9 +458,9 @@ nav {
       <img onclick="currentDiv(4)" src="http://3.bp.blogspot.com/-hKGc-j0q0z8/WH2xNB0nZFI/AAAAAAAAKjA/QQ08QrQu1Xoj88V9l5UO-qjOeBw3UeKyACK4B/s1600/voltage-contact-us-icon.png">
     </div>
     <div class="hide-on-small-and-down bottomright">
-      <div class="medium" style="line-height: 50px;">
+      <div style="line-height: 50px;">
         <span class="padding-right letter-space projects">WORK</span>
-        <span class="contact border letter-space hoverable waves-effect" style="line-height: auto;" onclick="currentDiv(4)">CONTACT</span>
+        <span class="contact btn border letter-space hoverable waves-effect" onclick="currentDiv(4)">CONTACT</span>
       </div>
     </div>
   </nav>
