@@ -1,0 +1,591 @@
+<html>
+<title>SALTWATER // WORK</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://rawgit.com/stucoston/css/master/saltwater.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Libre+Franklin" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
+
+<style>
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+  height: 100%;
+  width: 100%;
+  color: white;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+}
+
+.swblack {
+  background-color: #222;
+  color: white;
+}
+
+.themeColor1 {
+  background-color: #7accc8;
+  /*light ocean blue*/
+  color: white;
+}
+
+.themeColor1-text {
+  color: #7accc8;
+  /*light ocean blue*/
+}
+
+.themeColor2 {
+  background-color: #4aaaa5;
+  /*dark ocean blue*/
+  color: white;
+}
+
+.themeColor2-text {
+  color: #4aaaa5;
+  /*dark ocean blue*/
+}
+
+.themeColor3 {
+  background-color: #a3d39c;
+  /*seaweed green*/
+  color: white;
+}
+
+.themeColor3-text {
+  color: #a3d39c;
+  /*seaweed green*/
+}
+
+.themeColor4 {
+  background-color: #e45f56;
+  /*coral red*/
+  color: white;
+}
+
+.themeColor4-text {
+  color: #e45f56;
+  /*coral red*/
+}
+
+.brand-logo {
+  font-size: 25px;
+  font-weight: 600;
+  margin-left: 7%;
+}
+
+.carousel {
+  width: 85%;
+  height: 50%;
+}
+
+.swiper-container {
+  width: 80%;
+  height: 50%;
+  margin-top: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  border-radius: 2px;
+  box-shadow: 0px 1px 1px #555;
+}
+
+.titleBorder {
+  position: absolute;
+  width: 40px;
+  border-bottom: 1px solid black;
+  left: -100%;
+  animation: transintb 0.7s ease forwards;
+  animation-delay: 0.4s;
+  -ms-transform: translate(0%, -50%);
+  -webkit-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+}
+
+.ultrathin {
+  font-weight: 100;
+}
+
+@keyframes transintb {
+  0% {
+    left: -100%;
+    width: 0px
+  }
+  35% {
+    left: 0%;
+    width: 0px;
+  }
+  70% {
+    left: 0%;
+    width: 10%
+  }
+  100% {
+    left: 7%;
+    width: 40px
+  }
+}
+
+@-webkit-keyframes transintb {
+  0% {
+    left: -100%;
+    width: 0px
+  }
+  35% {
+    left: 0%;
+    width: 0px;
+  }
+  70% {
+    left: 0%;
+    width: 10%
+  }
+  100% {
+    left: 7%;
+    width: 40px
+  }
+}
+
+@keyframes transinblb {
+  0% {
+    opacity: 0
+  }
+  10% {
+    opacity: 1
+  }
+  40% {
+    opacity: 0
+  }
+  55% {
+    opacity: 1
+  }
+  70% {
+    opacity: 0
+  }
+  75% {
+    opacity: 1
+  }
+  90% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes transinblb {
+  0% {
+    opacity: 0
+  }
+  10% {
+    opacity: 1
+  }
+  40% {
+    opacity: 0
+  }
+  55% {
+    opacity: 1
+  }
+  70% {
+    opacity: 0
+  }
+  75% {
+    opacity: 1
+  }
+  90% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .hide-on-small-only,
+  .hide-on-small-and-down {
+    display: none !important
+  }
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 70%;
+    max-width: 70%;
+    max-height: 100%;
+  }
+  .swiper-container {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: white;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .hide-on-med-and-down {
+    display: none !important
+  }
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 50%;
+    max-width: 50%;
+    max-height: 100%;
+  }
+}
+
+
+/* Sidenav */
+
+.saltwater {
+  position: absolute;
+  top: 36%;
+  font-size: 2em;
+  font-weight: 500;
+}
+
+.tagline {
+  position: absolute;
+  top: 48%;
+  font-size: 1.05em;
+  font-weight: 100;
+  letter-spacing: 5px;
+}
+
+.email {
+  margin-top: 90px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.social i {
+  font-size: 1.3rem;
+}
+
+.social {
+  position: absolute;
+  top: 195px;
+}
+
+.userView {
+  height: 250px;
+}
+
+
+/* end Sidenav */
+
+
+/* Open and Close menu animation */
+
+.menu-container {
+  position: fixed;
+  top: 0.7%;
+  right: 7%;
+  z-index: 10000;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  padding: 15px 10px
+}
+
+.menu-container .bars {
+  width: 30px;
+  height: 18px;
+  position: relative;
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
+}
+
+.menu-container .bars span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  margin-top: 7px;
+}
+
+.menu-container .bars span:first-child {
+  margin-top: 0;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.menu-container .bars span:nth-child(3) {
+  width: 65%;
+  -webkit-transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.menu-container .bars .other-bar {
+  width: 2px;
+  height: 0px;
+  position: absolute;
+  background-color: white;
+  top: -4px;
+  left: 50%;
+  margin-left: -1px;
+  -webkit-transition: height 0.4s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: height 0.4s cubic-bezier(0.694, 0.048, 0.335, 1);
+  z-index: 10;
+}
+
+.menu-container.is-menu-open {
+  right: 20px;
+  top: 20px;
+  transition-duration: 0.3s;
+  box-shadow: 0px 1px 2px #555;
+}
+
+.menu-container.is-menu-open:hover {
+  box-shadow: inset 0px 0px 10px #222;
+}
+
+.menu-container.is-menu-open .bars {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.menu-container.is-menu-open .bars span:first-child {
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+}
+
+.menu-container.is-menu-open .bars span:nth-child(3) {
+  width: 0;
+  -webkit-transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+}
+
+.menu-container.is-menu-open .bars .other-bar {
+  height: 30px;
+  -webkit-transition: height 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: height 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+
+/* end Open and close menu animation */
+</style>
+
+<body class="grey lighten-3">
+  <header>
+    <div class="navbar-fixed">
+      <nav class="swblack">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo left">SALTWATER <span class="ultrathin hide-on-small-only">// WORK</span></a>
+        </div>
+        <!--close nav-wrapper-->
+      </nav>
+    </div>
+    <div class="menu-container button-collapse" data-activates="slide-out" id='menu-container' onclick='openNav()'>
+      <div class="bars"><span></span><span></span><span></span>
+        <div class="other-bar"></div>
+      </div>
+    </div>
+    <!--close menu-container-->
+    <ul id="slide-out" class="side-nav">
+      <li>
+        <div class="userView white-text">
+          <div class="background themeColor2"></div>
+          <img class="circle" src="https://github.com/stucoston/saltwater/blob/master/FullSizeRender%2012.jpg?raw=true" style="filter:invert(0)">
+          <!--<img class="circle" src="https://github.com/stucoston/saltwater/blob/master/FullSizeRender%204.jpg?raw=true">-->
+          <div class="white-text saltwater">SALTWATER</div>
+          <div class="white-text tagline">digital studios</div>
+          <a onclick="openNav()" href="mailto:stu.coston@gmail.com"><span class="white-text email">stu.coston@gmail.com</span></a>
+          <div class="social">
+            <a onclick="openNav()" href="https://twitter.com/stucoston" target="_blank" style="display:inline-block;" class="hoverable waves-effect"><i class="white-text fa fa-twitter"></i></a>
+            <a onclick="openNav()" href="https://www.facebook.com/stu.coston" target="_blank" style="display:inline-block;" class="hoverable"><i class="white-text fa fa-facebook"></i></a>
+            <a onclick="openNav()" href="https://github.com/stucoston" target="_blank" style="display:inline-block;" class="hoverable"><i class="white-text fa fa-github"></i></a>
+          </div>
+          <!--close userView-->
+      </li>
+      <ul class="collapsible" data-collapsible="accordion">
+        <li>
+          <div class="collapsible-header black-text">+&nbsp;&nbsp;&nbsp;Components</div>
+          <ul class="collapsible-body grey-text">
+            <li><a onclick="openNav()" href="#">Loaders</a></li>
+            <li><a onclick="openNav()" href="#">Banners</a></li>
+            <li><a onclick="openNav()" href="#">Cards</a></li>
+            <li><a onclick="openNav()" href="#">Menus</a></li>
+            <li><a onclick="openNav()" href="#">Animations</a></li>
+            <li><a onclick="openNav()" href="#">Sliders</a></li>
+          </ul>
+          <!--close components collapsible-->
+        </li>
+        <li>
+          <div class="collapsible-header black-text">+&nbsp;&nbsp;&nbsp;Templates</div>
+          <ul class="collapsible-body">
+            <li><a onclick="openNav()" href="#">Band</a></li>
+            <li><a onclick="openNav()" href="#">Portfolio</a></li>
+            <li><a onclick="openNav()" href="#">Wedding</a></li>
+            <li><a onclick="openNav()" href="#">"Coming Soon" Page</a></li>
+            <li><a onclick="openNav()" href="#">Online Newsletter</a></li>
+            <li><a onclick="openNav()" href="#">Animated Slideshow</a></li>
+            <li><a onclick="openNav()" href="#">Hotel</a></li>
+            <li><a onclick="openNav()" href="#">Travel</a></li>
+            <li><a onclick="openNav()" href="#">Construction</a></li>
+            <li><a onclick="openNav()" href="#">Online Store</a></li>
+            <li><a onclick="openNav()" href="#">Restaurant</a></li>
+            <li><a onclick="openNav()" href="#">50/50</a></li>
+          </ul>
+          <!--close template collapsible-->
+        </li>
+      </ul>
+      <!--close accordian collapsible-->
+    </ul>
+    <!--close slide-out sidenav-->
+  </header>
+  <div class="brand-logo thin black-text section">
+    COMPONENTS
+    <div class="titleBorder"></div>
+  </div>
+  <!-- Slider main container -->
+  <div class="swiper-container themeColor1">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide black-text themeColor2">
+        <div class="middle">Banners</div>
+      </div>
+      <div class="swiper-slide black-text themeColor3">
+        <div class="middle">Menus</div>
+      </div>
+      <div class="swiper-slide black-text themeColor4">
+        <div class="middle">Loaders</div>
+      </div>
+      <div class="swiper-slide black-text themeColor2">
+        <div class="middle">Cards</div>
+      </div>
+      <div class="swiper-slide black-text themeColor3">
+        <div class="middle">Animations</div>
+      </div>
+      <div class="swiper-slide black-text themeColor4">
+        <div class="middle">Sliders</div>
+      </div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev swiper-button-black hide-on-small-only"></div>
+    <div class="swiper-button-next swiper-button-black hide-on-small-only"></div>
+  </div>
+  <!--close swiper-container-->
+  <div class="divider"></div>
+  <div class="brand-logo thin black-text section">
+    TEMPLATES
+    <div class="titleBorder"></div>
+  </div>
+  <!-- Slider main container -->
+  <div class="swiper-container themeColor1">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide black-text themeColor2">
+        <div class="middle">Band</div>
+      </div>
+      <div class="swiper-slide black-text themeColor3">
+        <div class="middle">Portfolio</div>
+      </div>
+      <div class="swiper-slide black-text themeColor4">
+        <div class="middle">Wedding</div>
+      </div>
+      <div class="swiper-slide black-text themeColor2">
+        <div class="middle">"Coming Soon" Page</div>
+      </div>
+      <div class="swiper-slide black-text themeColor3">
+        <div class="middle">Animated Slideshow</div>
+      </div>
+      <div class="swiper-slide black-text themeColor4">
+        <div class="middle">Online Newsletter/Book</div>
+      </div>
+      <div class="swiper-slide black-text themeColor2">
+        <div class="middle">Hotel</div>
+      </div>
+      <div class="swiper-slide black-text themeColor3">
+        <div class="middle">Travel</div>
+      </div>
+      <div class="swiper-slide black-text themeColor4">
+        <div class="middle">Construction</div>
+      </div>
+      <div class="swiper-slide black-text themeColor2">
+        <div class="middle">Online Store</div>
+      </div>
+      <div class="swiper-slide black-text themeColor3">
+        <div class="middle">Restaraunt</div>
+      </div>
+      <div class="swiper-slide black-text themeColor4">
+        <div class="middle">50/50</div>
+      </div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev swiper-button-black hide-on-small-only"></div>
+    <div class="swiper-button-next swiper-button-black hide-on-small-only"></div>
+  </div>
+  <!--close swiper-container-->
+  <div class="full-width themeColor4">
+    <div class="container thin">
+      © 2017 Stu Coston
+      <a class="grey-text text-lighten-4 right" href="https://twitter.com/stucoston" target="_blank">Made by Stu</a>
+    </div>
+  </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  <script>
+function openNav() {
+  var x = document.getElementById('menu-container');
+  if (x.className.indexOf('is-menu-open') == -1) {
+    x.className += ' is-menu-open circle themeColor4';
+  } else {
+    x.className = x.className.replace(' is-menu-open circle themeColor4', '');
+  }
+}
+
+$('.button-collapse').sideNav({
+  menuWidth: 300, // Default is 300
+  edge: 'right', // Choose the horizontal origin
+  closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+  draggable: true // Choose whether you can drag to open on touch screens
+});
+
+$(document).ready(function() {
+  $('.carousel').carousel();
+});
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
+  <script>
+    var mySwiper = new Swiper ('.swiper-container', {
+          // Optional parameters
+          centeredSlides: true,
+          slidesPerView: 'auto',
+          effect: 'coverflow',
+          loop:'true',
+          mousewheelControl: 'true',
+          keyboardControl: 'true',
+          coverflow: {
+            rotate: 50,
+            stretch: 20,
+            depth: 200,
+            modifier: 1,
+            slideShadows : true
+          }
+        });
+  </script>
+</body>
+</html>
