@@ -450,13 +450,23 @@ nav {
 }
     
 @keyframes fill-up {
-  0%   {height: 0; y: 130px;}
-  100% {height: 150px; y: -20px;}
+  0%   {height: 20; y: 130px;}
+  100% {height: 150px; y: 5px;}
 }
 @-webkit-keyframes fill-up {
-  0%   {height: 0; y: 130px;}
-  100% {height: 150px; y: -20px;}
+  0%   {height: 20; y: 130px;}
+  100% {height: 150px; y: 5px;}
 }
+  
+@keyframes fill-up2 {
+  0%   {height: 0; y: 100px;}
+  100% {height: 150px; y: -50px;}
+}
+@-webkit-keyframes fill-up2 {
+  0%   {height: 0; y: 100px;}
+  100% {height: 150px; y: -50px;}
+}
+	
 
 </style>
 <body id="body" onload="myLoader()">
@@ -601,7 +611,7 @@ nav {
           </mask>
         </defs>
   
-        <rect class="water-fill" mask="url(#text_mask)" fill="url(#water1)" width="3000"/>
+        <rect class="water-fill2" mask="url(#text_mask)" fill="url(#water1)" width="3000"/>
   
       </svg>
       
