@@ -434,6 +434,21 @@ nav {
   font-size:1.1rem;
   line-height: 1.5rem;
 }
+  
+.water-fill {
+  animation: wave 0.9s infinite linear, fill-up 10s infinite ease-out alternate
+}
+	
+@keyframes wave {
+  0%   {x: -750px}
+  100% {x: 0}
+}
+    
+@keyframes fill-up {
+  0%   {height: 20; y: 130px;}
+  100% {height: 150px; y: 5px;}
+}
+
 </style>
 <body id="body" onload="myLoader()">
 	
@@ -554,10 +569,10 @@ nav {
       <svg class="ocean pageContent flow-text" style="position: absolute; width: 100%; bottom:98%; left: 0%;" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <text id="text-before" fill="#fff" font-family="'Montserrat'">
           <tspan x=20 dy="0">We design and develop</tspan>
-          <tspan x=20 dy="5%">custom, functional, and</tspan>
-          <tspan x=20 dy="5%">memorable websites as well </tspan>
-          <tspan x=20 dy="5%">as front-end products using</tspan>
-          <tspan x=20 dy="5%">HTML, CSS, and JavaScript.</tspan>
+          <tspan x=20 dy="10%">custom, functional, and</tspan>
+          <tspan x=20 dy="10%">memorable websites as well </tspan>
+          <tspan x=20 dy="10%">as front-end products using</tspan>
+          <tspan x=20 dy="10%">HTML, CSS, and JavaScript.</tspan>
         </text>
         <defs>
           <pattern id="water1" width=".25" height="1.1" patternContentUnits="objectBoundingBox">
@@ -566,10 +581,10 @@ nav {
     
           <text id="text"  font-family="'Montserrat'">
             <tspan x=20 dy="0">We design and develop</tspan>
-            <tspan x=20 dy="5%">custom, functional, and</tspan>
-            <tspan x=20 dy="5%">memorable websites as well </tspan>
-            <tspan x=20 dy="5%">as front-end products using</tspan>
-            <tspan x=20 dy="5%">HTML, CSS, and JavaScript.</tspan>
+            <tspan x=20 dy="10%">custom, functional, and</tspan>
+            <tspan x=20 dy="10%">memorable websites as well </tspan>
+            <tspan x=20 dy="10%">as front-end products using</tspan>
+            <tspan x=20 dy="10%">HTML, CSS, and JavaScript.</tspan>
           </text>
     
           <mask id="text_mask">
@@ -833,7 +848,7 @@ window.addEventListener('load', function(){
 	
 	
 </script>
-<script src='//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js'></script>
+<!--<script src='//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js'></script>
 <script>
 document.addEventListener("DOMContentLoaded",function(){
   var fill=document.querySelector(".water-fill");
@@ -849,7 +864,8 @@ document.addEventListener("DOMContentLoaded",function(){
   });
   
 });
-</script>
+</script>-->
+	
  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script>
   function openNav() {
