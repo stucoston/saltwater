@@ -20,13 +20,6 @@ body, html {
   color: white;
   line-height: 1.8;
 }
-.btn {
-  box-shadow: none;
-}
-.btn:hover {
-  background-color:#4aaaa5;
-  border: 1px solid #4aaaa5;
-}
 #waterLoader {
   height: 100vh;
   width: 100vw;
@@ -105,20 +98,8 @@ li a {
   animation: transinocean 0.7s ease forwards;
   animation-delay: 0.9s;
 }
-.button {
-  position: fixed;
-  top: 100%;
-  left: 20px;
-  animation: transincontent 0.7s ease forwards;
-  animation-delay: 0.9s;
-  border:1px solid white;
-  background-color: transparent;
-  padding: 5px 25px;
-}
-.button:hover, .contact:hover {
-  /*box-shadow: 2px 2px 3px #555;*/
-  background-color: #e45f56; 
-  border:1px solid #e45f56;
+.hoverableBlue:hover {
+  background-color: #4aaaa5;
 }
 /* end sitewide css */
 /* Nav and Menu css */
@@ -625,7 +606,7 @@ nav {
       <h1 class="pageTitle hide-on-med-and-down">Projects</h1>
       <div class="pageTitleBorder"></div>
       <div class="pageContent flow-text">
-        <a class="btn-hollow letter-space hoverable waves-effect white-text" href="#">View</a>
+        <a class="btn-hollow letter-space hoverable hoverableBlue waves-effect white-text" href="#">View</a>
         <div class="hide-on-small-only padding-top">We keep the details of all of our completed projects so you can see how we created them.</div>
       </div>
     </div><!--close project content-->
