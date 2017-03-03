@@ -13,8 +13,8 @@ img {
   max-width: 100%;
   height: auto;
 }
-html, body {font-family: "Montserrat", sans-serif;}
 body, html {
+  font-family: "Montserrat", sans-serif;
   height: 100%;
   width: 100%;
   color: white;
@@ -35,7 +35,6 @@ body, html {
 .hp {
   background-color:#222;
 }
-
 .pageNums svg {
   font-family: "montserrat", sans-serif;
   height: 100%;
@@ -49,6 +48,11 @@ body, html {
 }
 li a {
   text-decoration: none;
+}
+.center-offset {
+  -ms-transform: translate(-50%,-50%); /* IE 9 */
+  -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
+  transform: translate(-50%,-50%);
 }
 .letter-space {
   letter-spacing: 2px;
@@ -93,6 +97,14 @@ li a {
   animation: transincontent 0.7s ease forwards;
   animation-delay: 0.9s;
 }
+.oceanContent {
+  position: fixed;
+  width: 60%;
+  top: 100%;
+  left: 20px;
+  animation: transinocean 0.7s ease forwards;
+  animation-delay: 0.9s;
+}
 .button {
   position: fixed;
   top: 100%;
@@ -103,26 +115,18 @@ li a {
   background-color: transparent;
   padding: 5px 25px;
 }
-.button:hover {
+.button:hover, .contact:hover {
   /*box-shadow: 2px 2px 3px #555;*/
   background-color: #e45f56; 
   border:1px solid #e45f56;
 }
 /* end sitewide css */
 /* Nav and Menu css */
-nav img {
-  /*position: absolute; 
-  right: 2px;*/
-  dislay:inline-block;
-  bottom: 13px; 
-  height: 25px;
-  -webkit-filter: invert(1);
-  filter: invert(1);
-  cursor: pointer;
-}
 nav {
-  z-index:1;
+  z-index: 1;
   box-shadow: none;
+  margin:0;
+  top:0;
 }
 .site-title {
   display:inline-block;
@@ -130,9 +134,6 @@ nav {
   font-family: 'montserrat',san-serif; 
   font-weight: 700; 
   cursor: pointer;
-}
-.padding-right {
-  padding-right: 15px;
 }
 .menu-container {
   right: 60px;
@@ -178,17 +179,6 @@ nav {
           transition-delay: 0.4s;
 }
 /* end nav and menu css */
-/* footer css */
-.footer-text {
-  line-height: 25px;
-  vertical-align: middle;
-}
-#footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-/* end footer css */
 /* slide bg image css */
 .mySlides {
   position: fixed;
@@ -210,7 +200,7 @@ nav {
   background-image: url("IMG_6212.JPG");
 }
 .bgimg-2 {
-  background-image: url("IMG_6211.JPG");
+  background-image: url("https://github.com/stucoston/saltwater/blob/master/IMG_6211.JPG?raw=true");
 }
 .bgimg-3 {
   background-image: url("IMG_6214.JPG");
@@ -269,16 +259,16 @@ nav {
 }
 .sea {
   position:fixed;
-  top:200%;
+  top:100%;
   width: 100%;
   height:100%;
-  animation: sea 10s ease;
+  /*animation: sea 10s ease-in-out;
   animation-direction: alternate;
-  animation-iteration-count: infinite
+  animation-iteration-count: infinite*/
 }
 .sea2 {
   position:fixed;
-  top:200%;
+  top:100%;
   width: 100%;
   height:100%;
   animation: sea2 1.5s ease-in-out;
@@ -312,12 +302,12 @@ nav {
   0%   {top: 100%;}
   100% {top: 60%;}
 }
-@-webkit-keyframes sea {
+@-webkit-keyframes transinocean {
   0%   {top: 100%;}
-  100% {top: 85%;}
+  100% {top: 40%;}
 }
 @-webkit-keyframes sea2 {
-  0%   {top: 85%;}
+  0%   {top: 100%;}
   100% {top: 0%;}
 }
 @-webkit-keyframes buttonHover {
@@ -356,12 +346,12 @@ nav {
   0%   {top: 100%;}
   100% {top: 60%;}
 }
-@keyframes sea {
+@keyframes transinocean {
   0%   {top: 100%;}
-  100% {top: 85%;}
+  100% {top: 60%;}
 }
 @keyframes sea2 {
-  0%   {top: 85%;}
+  0%   {top: 100%;}
   100% {top: 0%;}
 }
 @keyframes buttonHover {
@@ -377,47 +367,47 @@ nav {
 /* end animations */
 @media only screen and (min-width: 360px) {
   .flow-text {
-  font-size:1.1rem;
-  line-height: 1.5rem;
-}
+    font-size:1.1rem;
+    line-height: 1.5rem;
+  }
 }
 @media only screen and (min-width: 390px) {
   .flow-text {
-  font-size:1.12rem;
-}
+    font-size:1.12rem;
+  }
 }
 @media only screen and (min-width: 420px) {
   .flow-text {
   font-size:1.15rem;
-  line-height: 1.7rem;
-}
+    line-height: 1.7rem;
+  }
 }
 @media only screen and (min-width: 450px) {
   .flow-text {
-  font-size:1.2rem;
-}
+    font-size:1.2rem;
+  }
 }
 @media only screen and (min-width: 480px) {
   .flow-text {
-  font-size:1.24rem
-}
+    font-size:1.24rem
+  }
 }
 @media only screen and (min-width: 510px) {
   .flow-text {
-  font-size:1.3rem;
-  line-height: 2rem;
-}
+    font-size:1.3rem;
+    line-height: 2rem;
+  }
 }
 @media only screen and (max-width: 360px) {
   .flow-text {
-  font-size:1.1rem;
-  line-height: 1.5rem;
+    font-size:1.1rem;
+    line-height: 1.5rem;
+  }
 }
   
 .water-fill {
   animation: wave 0.9s infinite linear, fill-up 10s infinite ease-in-out alternate
 }
-  
 .water-fill2 {
   animation: wave 0.9s infinite linear, fill-up2 10s infinite ease-in-out alternate
 }
@@ -432,22 +422,23 @@ nav {
 }
     
 @keyframes fill-up {
-  0%   {height: 0; y: 150px;}
-  100% {height: 150px; y: 0px;}
+  0%   {height: 0; y: 100%;}
+  100% {height: 100%; y: 0%;}
 }
 @-webkit-keyframes fill-up {
-  0%   {height: 0; y: 150px;}
-  100% {height: 150px; y: 0px;}
+  0%   {height: 0; y: 100%;}
+  100% {height: 100%; y: 0%;}
 }
   
 @keyframes fill-up2 {
-  0%   {height: 0; y: 170px;}
-  100% {height: 145px; y: 25px;}
+  0%   {height: 0; y: 100%;}
+  100% {height: 100%; y: 0%;}
 }
 @-webkit-keyframes fill-up2 {
-  0%   {height: 0; y: 170px;}
-  100% {height: 145px; y: 25px;}
+  0%   {height: 0; y: 100%;}
+  100% {height: 100%; y: 0%;}
 }
+	
 </style>
 <body id="body" onload="myLoader()">
 	
@@ -456,27 +447,25 @@ nav {
 </div>
 <!-- site container -->
 <div id="site" class="w3-animate-bottom" style="display:none;">
-  <!-- Navbar (sit on top) -->
+ <!-- Navbar (sit on top) -->
   <nav class="pinned" id="myNavbar">
-    <!-- navbar logo -->
-    <div class="hide-on-med-and-up">
-      <div class="site-title middle" style="left:25%;" onclick="currentDiv(1)">SALTWATER</div>
-      <div class="middle" style="left:75%;">
-        <div class="menu-container right" style="margin-top:10px;" id='menu-container' onclick='openNav()'>
-          <div id="menubars" class="bars">
-            <span></span><span></span><span></span>
-            <div class="other-bar"></div>
-          </div>
-        </div><!--close menu container-->
-        <img class="right padding-right24" style="margin-top:10px;" onclick="currentDiv(4)" src="http://3.bp.blogspot.com/-hKGc-j0q0z8/WH2xNB0nZFI/AAAAAAAAKjA/QQ08QrQu1Xoj88V9l5UO-qjOeBw3UeKyACK4B/s1600/voltage-contact-us-icon.png">
-      </div>
-    </div><!--close hide-on-med-and-up-->
-    <div class="hide-on-small-and-down">
-      <div class="site-title margin-left" onclick="currentDiv(1)">SALTWATER</div>
-      <div class="right" style="">
-        <span class="btn letter-space waves-effect" onclick="currentDiv(4)">CONTACT</span>
-        <span class="btn letter-space waves-effect margin-right">WORK</span>
-      </div>
+    <div class="site-title middle hide-on-med-and-up" style="left:25%;" onclick="currentDiv(1)">SALTWATER</div>
+    <div class="site-title left margin-left hide-on-small-only" onclick="currentDiv(1)">SALTWATER</div>
+    <div id="hamburger" class="hide-on-large-only">
+      <div class="menu-container right padding-right48" style="margin-top:16px;" id='menu-container' onclick='openNav()'>
+        <div id="menubars" class="bars">
+          <span></span><span></span><span></span>
+          <div class="other-bar"></div>
+        </div>
+      </div><!--close menu container-->
+    </div><!--close hide-on-large-only-->
+    <div class="hide-on-med-and-down">
+      <ul class="right">
+        <li><a class="letter-space waves-effect">COMPONENTS</a></li>
+        <li><a class="letter-space waves-effect">TEMPLATES</a></li>
+        <li><a class="letter-space waves-effect">PROJECTS</a></li>
+        <li><a class="letter-space waves-effect margin-right" onclick="currentDiv(4)">CONTACT</a></li>
+      </ul>
     </div>
   </nav>
   
@@ -484,13 +473,13 @@ nav {
   <div id="Slides">
     <div id="hp" class="mySlides hp">
       <div id="sea" class="sea saltwaterColor1">
-        <svg class="ocean" style="position: absolute; width: 100%; bottom:98%; left: 0%;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <svg class="ocean" style="position: absolute; width: 100%; height:41%;bottom:99%; left: 0%;" version="1.1" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="water" width=".25" height="2" patternContentUnits="objectBoundingBox">
               <path fill="#7accc8" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,0.5z"/>
             </pattern>
           </defs>  
-          <rect class="water-fill" fill="url(#water)" width="3000"/> 
+          <rect id="waves" class="water-fill" fill="url(#water)" width="3000"/> 
         </svg>
       </div><!-- close sea -->
     </div>
@@ -565,26 +554,26 @@ nav {
     <div class="content">
       <h2 class="pageTitle" style="font-weight: 600; line-height: 25px; animation-delay: 0s;">SALTWATER<br/><span class="flow-text" style="margin-left: 4px; font-weight: 300; letter-spacing: 12px;">digital studios</span></h2>
       <div class="pageTitleBorder" style="animation-delay: 0.1s;"></div>
-      <div id="sea" class="sea transparent">
-      <svg class="ocean pageContent flow-text border" style="width:60%; height:40%;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+ 
+      <svg id="land" class="oceanContent flow-text" style="width:60%; height:40%;" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <text id="text-before" x="0" y="0" fill="#fff" font-family="'Montserrat'">
-          <tspan x=0 dy="10%">We design and develop</tspan>
-          <tspan x=0 dy="10%">custom, functional, and</tspan>
-          <tspan x=0 dy="10%">memorable websites as well </tspan>
-          <tspan x=0 dy="10%">as front-end products using</tspan>
-          <tspan x=0 dy="10%">HTML, CSS, and JavaScript.</tspan>
+          <tspan x=0 dy="12%">We design and develop</tspan>
+          <tspan x=0 dy="12%">custom, functional, and</tspan>
+          <tspan x=0 dy="12%">memorable websites as well </tspan>
+          <tspan x=0 dy="12%">as front-end products using</tspan>
+          <tspan x=0 dy="12%">HTML, CSS, and JavaScript.</tspan>
         </text>
         <defs>
           <pattern id="water1" width=".25" height="2" patternContentUnits="objectBoundingBox">
-            <path fill="#444" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,0.5z"/>
+            <path id="water2" fill="#222" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,0.5z"/>
           </pattern>
 		    
-          <text id="text" x="0" y="0" font-family="'Montserrat'">
-            <tspan x=0 dy="10%">We design and develop</tspan>
-            <tspan x=0 dy="10%">custom, functional, and</tspan>
-            <tspan x=0 dy="10%">memorable websites as well </tspan>
-            <tspan x=0 dy="10%">as front-end products using</tspan>
-            <tspan x=0 dy="10%">HTML, CSS, and JavaScript.</tspan>
+          <text id="text" x="0" y="0" font-family="'Montserrat'" >
+            <tspan x=0 dy="12%">We design and develop</tspan>
+            <tspan x=0 dy="12%">custom, functional, and</tspan>
+            <tspan x=0 dy="12%">memorable websites as well </tspan>
+            <tspan x=0 dy="12%">as front-end products using</tspan>
+            <tspan x=0 dy="12%">HTML, CSS, and JavaScript.</tspan>
           </text>
     
           <mask id="text_mask">
@@ -592,11 +581,10 @@ nav {
           </mask>
         </defs>
   
-        <rect class="water-fill" mask="url(#text_mask)" fill="url(#water1)" width="3000"/>
+        <rect class="water-fill2" mask="url(#text_mask)" fill="url(#water1)" width="3000"/>
   
       </svg>
-      </div>
-    </div>
+    </div><!--clos content hp-->
     
     <div class="content">
       <h4 class="pageTitle hide-on-med-and-up">Design &amp; <br/>Develop</h4>
@@ -634,8 +622,8 @@ nav {
   </div><!-- close pageContent slides -->
   
   <!-- page navigation -->
-  <a class="pageup waves-effect waves-circle" onclick="plusDivs(-1)"><img src="https://1.bp.blogspot.com/-gamBV_F5r3E/WJ8jk7DJpdI/AAAAAAAALhE/CqUJVA-rnXgX9iWZgwRL45DfXvMRztG4ACLcB/s320/thin-arrow-pointing-upward_318-38587.png" style="height: 30px;"></a>
-  <a class="pagedown waves-effect waves-circle" onclick="plusDivs(1)"><img src="https://2.bp.blogspot.com/-5AwL50UuLiU/WJ8jlIdR1fI/AAAAAAAALhI/DiQBSkMYo0gEzjkq26SiT8UBRYMxGbQJACLcB/s320/thin-arrow-pointing-upward_318-38587%2Bcopy.png" style="height: 30px;"></a>
+  <a class="hide-on-small-only pageup waves-effect waves-circle" onclick="plusDivs(-1)"><img src="https://1.bp.blogspot.com/-gamBV_F5r3E/WJ8jk7DJpdI/AAAAAAAALhE/CqUJVA-rnXgX9iWZgwRL45DfXvMRztG4ACLcB/s320/thin-arrow-pointing-upward_318-38587.png" style="height: 30px;"></a>
+  <a class="hide-on-small-only pagedown waves-effect waves-circle" onclick="plusDivs(1)"><img src="https://2.bp.blogspot.com/-5AwL50UuLiU/WJ8jlIdR1fI/AAAAAAAALhI/DiQBSkMYo0gEzjkq26SiT8UBRYMxGbQJACLcB/s320/thin-arrow-pointing-upward_318-38587%2Bcopy.png" style="height: 30px;"></a>
   <div id="paginationSlides">
     <div class="pagination" style="opacity:0"></div>
     <div class="pagination">
@@ -707,11 +695,15 @@ function currentDiv(n){
 }
 function transTheme(n) {
   var sea = document.getElementById("sea");
+  var water2 = document.getElementById("water2");
+  var waves = document.getElementById("waves");
   var pn = document.getElementsByClassName("pageNums");
   var td = document.getElementsByClassName("themeDiv");
   var c = document.getElementsByClassName("content");
   if(slideIndex == 1){
     sea.className = sea.className.replace('sea saltwaterColor1', 'sea2 saltwaterColor1');
+    waves.style.animationDelay = "0.9s";
+    water2.style.fill = "#fff";
     setTimeout(function(){ 
       pn[themeIndex-1].style.display = "none";
       td[themeIndex-1].style.transition = "1s";
@@ -720,6 +712,7 @@ function transTheme(n) {
     1000);
   }
   else {
+    water2.style.fill = "#222";
     pn[themeIndex-1].style.display = "none";
     td[themeIndex-1].style.transition = "1s";
     td[themeIndex-1].style.left = "100%";
@@ -844,26 +837,8 @@ window.addEventListener('load', function(){
 		$(e.target).trigger('click');
 	});
 }//end window onload
-	
-	
 </script>
-<!--<script src='//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js'></script>
-<script>
-document.addEventListener("DOMContentLoaded",function(){
-  var fill=document.querySelector(".water-fill");
-  TweenMax.fromTo(fill,0.9,{attr:{x:-750}},{attr:{x:0,},
-    repeat:-1,
-    ease:Linear.easeNone
-  });
-  
-  TweenMax.fromTo(fill,10,{attr:{y:130,height:20},},{attr:{y:5,height:150},
-    repeat:-1,
-    yoyo:true,
-    ease:Linear.easeNone
-  });
-  
-});
-</script>-->
+	
  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script>
   function openNav() {
