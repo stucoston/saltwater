@@ -461,13 +461,24 @@ nav {
     </div><!--close hide-on-large-only-->
     <div class="hide-on-med-and-down">
       <ul class="right">
-        <li><a class="letter-space waves-effect">COMPONENTS</a></li>
-        <li><a class="letter-space waves-effect">TEMPLATES</a></li>
-        <li><a class="letter-space waves-effect">PROJECTS</a></li>
-        <li><a class="letter-space waves-effect margin-right" onclick="currentDiv(4)">CONTACT</a></li>
+        <li><a onclick="currentDiv(2)" class="letter-space waves-effect">COMPONENTS</a></li>
+        <li><a onclick="currentDiv(3)"class="letter-space waves-effect">TEMPLATES</a></li>
+        <li><a onclick="currentDiv(4)"class="letter-space waves-effect">PROJECTS</a></li>
+        <li><a class="letter-space waves-effect margin-right" onclick="#contactModal">CONTACT</a></li>
       </ul>
     </div>
   </nav>
+
+  <div id="contactModal" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4 class="site-title">SALTWATER</h4>
+      <a href="mailto:stu.coston@gmail.com" style="text-decoration: underline">stu.coston@gmail.com</a>
+    </div>
+    <div class="modal-footer">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoC0nCZfiP5ZeQV87f3CIC2taW6s1l_WIT8SuE2P2FlD-d2A/viewform" class="modal-action modal-close waves-effect waves-blue btn-flat" target="_blank">GET STARTED</a>
+      <a href="mailto:stu.coston@gmail.com" class="modal-action modal-close waves-effect waves-blue btn-flat" >MESSAGE</a>
+    </div>
+  </div>
   
   <!-- slides -->
   <div id="Slides">
@@ -584,41 +595,34 @@ nav {
         <rect class="water-fill2" mask="url(#text_mask)" fill="url(#water1)" width="3000"/>
   
       </svg>
-    </div><!--clos content hp-->
+    </div><!--close content hp-->
     
     <div class="content">
-      <h4 class="pageTitle hide-on-med-and-up">Design &amp; <br/>Develop</h4>
-      <h2 class="pageTitle hide-on-large-only hide-on-small-only">Design &amp; <br/>Develop</h2>
-      <h1 class="pageTitle hide-on-med-and-down">Design &amp; <br/>Develop</h1>
+      <h4 class="pageTitle hide-on-med-and-up">Components</h4>
+      <h2 class="pageTitle hide-on-large-only hide-on-small-only">Components</h2>
+      <h1 class="pageTitle hide-on-med-and-down">Components</h1>
       <div class="pageTitleBorder"></div>
-      <div class="pageContent flow-text">We make custom, functional, and memorable websites as well as front-end products using HTML, CSS, and JavaScript.</div>
-    </div>
+      <a class="btn-hollow flow-text hoverable waves-effect letter-space" href="#">View</a>
+      <div class="pageContent flow-text hide-on-small-only">Add a little extra "umph" to your site with some of our individual components.</div>
+    </div><!--close component content-->
     
     <div class="content">
-      <h3 class="pageTitle hide-on-med-and-up">Work</h3>
-      <h2 class="pageTitle hide-on-large-only hide-on-small-only">Work</h2>
-      <h1 class="pageTitle hide-on-med-and-down">Work</h1>
+      <h3 class="pageTitle hide-on-med-and-up">Templates</h3>
+      <h2 class="pageTitle hide-on-large-only hide-on-small-only">Templates</h2>
+      <h1 class="pageTitle hide-on-med-and-down">Templates</h1>
       <div class="pageTitleBorder"></div>
-      <div class="hide-on-med-and-down button letter-space flow-text hoverable waves-effect" href="#">VIEW MY WORK</div>
-      <div class="hide-on-large-only button letter-space flow-text hoverable waves-effect" href="#">VIEW</div>
-      <div class="pageContent flow-text"><br/><br/>Full size templates &amp; individual components.</div>
-    </div>
+      <a class="btn-hollow letter-space flow-text hoverable waves-effect" href="#">VIEW</a>
+      <div class="pageContent flow-text hide-on-small-only">Check out our templates to get an idea of what we can create for you.</div>
+    </div><!--close template content-->
     
     <div class="content">
-      <h3 class="pageTitle hide-on-med-and-up">Contact</h3>
-      <h2 class="pageTitle hide-on-large-only hide-on-small-only">Contact</h2>
-      <h1 class="pageTitle hide-on-med-and-down">Contact</h1>
+      <h3 class="pageTitle hide-on-med-and-up">Projects</h3>
+      <h2 class="pageTitle hide-on-large-only hide-on-small-only">Projects</h2>
+      <h1 class="pageTitle hide-on-med-and-down">Projects</h1>
       <div class="pageTitleBorder"></div>
-      <div class="pageContent flow-text">
-       <!-- <i class="fa fa-facebook tiny" aria-hidden="true">&nbsp;&nbsp;</i>
-        <i class="fa fa-twitter tiny" aria-hidden="true">&nbsp;&nbsp;</i>
-        <i class="fa fa-github tiny" aria-hidden="true"></i>-->
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoC0nCZfiP5ZeQV87f3CIC2taW6s1l_WIT8SuE2P2FlD-d2A/viewform" target="_blank"><btn class="hide-on-med-and-up btn border hoverable waves-effect" style="letter-spacing:0.8;">Let's Work</btn></a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoC0nCZfiP5ZeQV87f3CIC2taW6s1l_WIT8SuE2P2FlD-d2A/viewform" target="_blank"><btn class="hide-on-small-and-down btn border hoverable waves-effect">Work With Me</btn></a>
-        <br/><br/>
-        <a href="mailto:stu.coston@gmail.com" class="white-text" style="text-decoration: underline">stu.coston@gmail.com</a>
-      </div>
-    </div>
+      <a class="btn-hollow letter-space flow-text hoverable waves-effect" href="#">VIEW</a>
+      <div class="pageContent flow-text hide-on-small-only">We keep the details of all of our completed projects so you can see how we created them.</div>
+    </div><!--close project content-->
   </div><!-- close pageContent slides -->
   
   <!-- page navigation -->
