@@ -2,488 +2,16 @@
 <html>
 <title>SALTWATER</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--<link rel="stylesheet" href="https://rawgit.com/stucoston/css/master/w3/w3.css">-->
 <link rel="stylesheet" href="https://rawgit.com/stucoston/css/master/stu.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Libre+Franklin" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<style>
-  /* sitewide css */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  body, html {
-    font-family: "Montserrat", sans-serif;
-    height: 100%;
-    width: 100%;
-    color: white;
-    line-height: 1.8;
-    overflow:hidden;
-  }
-  #waterLoader {
-    height: 100vh;
-    width: 100vw;
-    background-color: #222;
-  }
-  .hp {
-    background-color:#222;
-  }
-  .pageNums svg {
-    font-family: "montserrat", sans-serif;
-    height: 100%;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    -ms-transform: translate(-50%,-50%); 
-    -webkit-transform: translate(-50%,-50%); 
-    transform: translate(-50%,-50%);
-  }
-  li a {
-    text-decoration: none;
-  }
-  .center-offset {
-    -ms-transform: translate(-50%,-50%); /* IE 9 */
-    -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
-    transform: translate(-50%,-50%);
-  }
-  .letter-space {
-    letter-spacing: 2px;
-  }
-  .pageNums {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    -webkit-animation: transinpn 0.5s ease forwards;
-    -webkit-animation-delay: 0.6s;
-    opacity:0;
-    animation: transinpn 0.5s ease forwards;
-    animation-delay: 0.6s;
-  }
-  .pageTitle {
-    font-weight: 100;
-    position: fixed;
-    line-height: 1em;
-    bottom: 47%;
-    color: white;
-    left: -100%;
-    animation: transinpt 0.5s ease forwards;
-    animation-delay: 0.8s;
-  }
-  .pageTitleBorder {
-    position: fixed;
-    width: 40px;
-    border-bottom: 1px solid white;
-    bottom: 45%;
-    left: -100%;
-    animation: transintb 0.7s ease forwards;
-    animation-delay: 0.4s;
-    -ms-transform: translate(0%,-50%); 
-    -webkit-transform: translate(0%,-50%); 
-    transform: translate(0%,-50%);
-  }
-  .pageContent {
-    position: fixed;
-    width: 40%;
-    top: 100%;
-    left: 20px;
-    animation: transincontent 0.7s ease forwards;
-    animation-delay: 0.9s;
-  }
-  .oceanContent {
-    position: fixed;
-    width: 60%;
-    top: 100%;
-    left: 20px;
-    animation: transinocean 0.7s ease forwards;
-    animation-delay: 0.9s;
-  }
-  .hoverableBlue:hover {
-    background-color: #4aaaa5;
-  }
-  .tagline {
-    margin-top: -20px;
-    font-size: 1.05em;
-    font-weight: 100;
-    letter-spacing: 4.5px;
-  }
-  /* end sitewide css */
-  /* Nav and Menu css */
-  nav {
-    z-index: 1;
-    box-shadow: none;
-    margin:0;
-    top:0;
-  }
-  .site-title {
-    display:inline-block;
-    font-size:26px;
-    font-family: 'montserrat',san-serif; 
-    font-weight: 700; 
-    cursor: pointer;
-    padding-top:10px;
-  }
-  .menu-container {
-    position:absolute;
-    right: 40px;
-    top: 15px;
-    height:40px;
-    width:40px;
-    padding:10px 0 10px 4px;
-    z-index: 10000000;
-    cursor: pointer;
-  }
-  .menu-container:hover .menu-container .bars span, .menu-container:hover .menu-container.is-menu-open .bars span {
-    background-color: #e9d66b;
-  }
-  .menu-container .bars {
-    width: 30px;
-    height: 25px;
-    position: relative;
-    -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
-    transition: -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
-    transition: transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
-    transition: transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
-  }
-  .menu-container .bars span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    margin-top: 7px;
-  }
-  .menu-container .bars span:first-child {
-    margin-top: 0;
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-    -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-    transition: -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-    transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-    transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-    -webkit-transition-delay: 0.4s;
-            transition-delay: 0.4s;
-  }
-  .menu-container .bars span:nth-child(3) {
-    width: 65%;
-    -webkit-transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-    transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-    -webkit-transition-delay: 0.4s;
-            transition-delay: 0.4s;
-  }
-  .menu-container .bars .other-bar {
-    width: 2px;
-    height: 0px;
-    position: absolute;
-    background-color: white;
-    top: -4px;
-    left: 50%;
-    margin-left: -1px;
-    -webkit-transition: height 0.4s cubic-bezier(0.694, 0.048, 0.335, 1);
-    transition: height 0.4s cubic-bezier(0.694, 0.048, 0.335, 1);
-    z-index: 10;
-  }
-  .menu-container.is-menu-open {
-    right: 20px;
-    top: 20px;
-    transition-duration: 0.3s;
-    box-shadow: 0px 1px 2px #555;
-  }
+ <style>
+   body, html {
+     overflow:hidden;
+   }
+  </style>
   
-  .menu-container.is-menu-open:hover {
-    box-shadow: 2px 2px 10px #222;
-  }
-  
-  .menu-container.is-menu-open .bars {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    -webkit-transition-delay: 0.4s;
-    transition-delay: 0.4s;
-  }
-  
-  .menu-container.is-menu-open .bars span:first-child {
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-    transition: -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-    transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-    transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-  }
-  
-  .menu-container.is-menu-open .bars span:nth-child(3) {
-    width: 0;
-    -webkit-transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-    transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-  }
-  
-  .menu-container.is-menu-open .bars .other-bar {
-    height: 30px;
-    -webkit-transition: height 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-    transition: height 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-    -webkit-transition-delay: 0.3s;
-    transition-delay: 0.3s;
-  }
-  /* end nav and menu css */
-  /* slide bg image css */
-  .mySlides {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height:100%;
-    width: 100%;
-  }
-  .bgimg-hp, .bgimg-1, .bgimg-2, .bgimg-3{
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-  }
-  .bgimg-1 {
-    background-image: url("https://github.com/stucoston/saltwater/blob/master/IMG_6212.JPG?raw=true");
-  }
-  .bgimg-2 {
-    background-image: url("https://github.com/stucoston/saltwater/blob/master/IMG_6211.JPG?raw=true");
-  }
-  .bgimg-3 {
-    background-image: url("https://github.com/stucoston/saltwater/blob/master/IMG_6214.JPG?raw=true");
-  }
-  /* end slide bg img css */
-  /* themeDiv css */
-  .themeDiv {
-    overflow: hidden;
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    top: 0;
-  }
-  /* end themeDiv css */
-  /* page up and down */
-  .pageup {
-    cursor: pointer;
-    color: white;
-    font-size: 30px;
-    position: fixed;
-    z-index: 1;
-    bottom: 10px;
-    right: 80px;
-  }
-  .pagedown {
-    cursor: pointer;
-    color: white;
-    font-size: 30px;
-    position: fixed;
-    z-index: 1;
-    bottom: 10px;
-    right: 30px;
-  }
-  .pagination{
-    position: fixed;
-    right: -25px;
-    top: 50%;
-    width: 50px;
-    -ms-transform: translate(-50%,-50%); 
-    -webkit-transform: translate(-50%,-50%); 
-    transform: translate(-50%,-50%);
-  }  
-  .activePage,.inactivePage:hover {
-    font-size: 20px;
-    margin-bottom: 5px;
-    color: white;
-    cursor: pointer;
-    border-bottom: 1px solid white;
-  }
-  .inactivePage {
-    font-size: 20px;
-    margin-bottom: 5px;
-    color: #555;
-    opacity: 0.9;
-    cursor:pointer;
-  }
-  .sea {
-    position:fixed;
-    top:100%;
-    width: 100%;
-    height:100%;
-    /*animation: sea 10s ease-in-out;
-    animation-direction: alternate;
-    animation-iteration-count: infinite*/
-  }
-  .sea2 {
-    position:fixed;
-    top:100%;
-    width: 100%;
-    height:100%;
-    animation: sea2 1.5s ease-in-out;
-    z-index: 12;
-  }
-    
-  /* animations */
-    /** Safari 4.0 - 8.0 **/
-  @-webkit-keyframes transinpn {
-    0%   {opacity:0;}
-    10%  {opacity:1}
-    40%  {opacity:0}
-    55%  {opacity:1;}
-    70%  {opacity:0;}
-    75%  {opacity:1;}
-    90%  {opacity:0}
-    100% {opacity:1;}
-  }
-  @-webkit-keyframes transinpt {
-    0%   {left: -100%;}
-    100% {left: 20px;}
-  }
-  @-webkit-keyframes transintb {
-    0%   {left: -100%;width:0px}
-    35% {left:0%;width:0px;}
-    40%   {left: 0%;width:20px}
-    70%  {left: 0%;width:60px}
-    100% {left: 20px;width:40px}
-  }
-  @-webkit-keyframes transincontent {
-    0%   {top: 100%;}
-    100% {top: 60%;}
-  }
-  @-webkit-keyframes transinocean {
-    0%   {top: 100%;}
-    100% {top: 40%;}
-  }
-  @-webkit-keyframes sea2 {
-    0%   {top: 100%;}
-    100% {top: 0%;}
-  }
-  @-webkit-keyframes buttonHover {
-    0%   {background-color:white;opacity:0;}
-    10%  {opacity:1}
-    40%  {opacity:0}
-    55%  {opacity:1;}
-    70%  {opacity:0;}
-    75%  {opacity:1;}
-    90%  {opacity:0}
-    100% {opacity:1;}
-  }
-    /** Standard syntax **/
-  @keyframes transinpn {
-    0%   {opacity:0;}
-    10%  {opacity:1}
-    40%  {opacity:0}
-    55%  {opacity:1;}
-    70%  {opacity:0;}
-    75%  {opacity:1;}
-    90%  {opacity:0}
-    100% {opacity:1;}
-  }
-  @keyframes transinpt {
-    0%   {left: -100%;}
-    100% {left: 20px;}
-  }
-  @keyframes transintb {
-    0%   {left: -100%;width:0px}
-    35% {left:0%;width:0px;}
-    40%   {left: 0%;width:20px}
-    70%  {left: 0%;width:60px}
-    100% {left: 20px;width:40px}
-  }
-  @keyframes transincontent {
-    0%   {top: 100%;}
-    100% {top: 60%;}
-  }
-  @keyframes transinocean {
-    0%   {top: 100%;}
-    100% {top: 60%;}
-  }
-  @keyframes sea2 {
-    0%   {top: 100%;}
-    100% {top: 0%;}
-  }
-  @keyframes buttonHover {
-    0%   {background-color:white;opacity:0;}
-    10%  {opacity:1}
-    40%  {opacity:0}
-    55%  {opacity:1;}
-    70%  {opacity:0;}
-    75%  {opacity:1;}
-    90%  {opacity:0}
-    100% {opacity:1;}
-  }
-  /* end animations */
-  @media only screen and (min-width: 360px) {
-    .flow-text {
-      font-size:1.1rem;
-      line-height: 1.5rem;
-    }
-  }
-  @media only screen and (min-width: 390px) {
-    .flow-text {
-      font-size:1.12rem;
-    }
-  }
-  @media only screen and (min-width: 420px) {
-    .flow-text {
-    font-size:1.15rem;
-      line-height: 1.7rem;
-    }
-  }
-  @media only screen and (min-width: 450px) {
-    .flow-text {
-      font-size:1.2rem;
-    }
-  }
-  @media only screen and (min-width: 480px) {
-    .flow-text {
-      font-size:1.24rem
-    }
-  }
-  @media only screen and (min-width: 510px) {
-    .flow-text {
-      font-size:1.3rem;
-      line-height: 2rem;
-    }
-  }
-  @media only screen and (max-width: 360px) {
-    .flow-text {
-      font-size:1.1rem;
-      line-height: 1.5rem;
-    }
-  }
-    
-  .water-fill {
-    animation: wave 0.9s infinite linear, fill-up 10s infinite ease-in-out alternate
-  }
-  .water-fill2 {
-    animation: wave 0.9s infinite linear, fill-up2 10s infinite ease-in-out alternate
-  }
-  	
-  @keyframes wave {
-    0%   {x: -750px}
-    100% {x: 0}
-  }
-  @-webkit-keyframes wave {
-    0%   {x: -750px}
-    100% {x: 0}
-  }
-      
-  @keyframes fill-up {
-    0%   {height: 0; y: 100%;}
-    100% {height: 100%; y: 0%;}
-  }
-  @-webkit-keyframes fill-up {
-    0%   {height: 0; y: 100%;}
-    100% {height: 100%; y: 0%;}
-  }
-    
-  @keyframes fill-up2 {
-    0%   {height: 0; y: 100%;}
-    100% {height: 100%; y: 0%;}
-  }
-  @-webkit-keyframes fill-up2 {
-    0%   {height: 0; y: 100%;}
-    100% {height: 100%; y: 0%;}
-  }
-</style>
-
 <body id="body" onload="myLoader()">
 
   <!-- loading screen -->
@@ -495,7 +23,7 @@
     <header>
       <div class="navbar-fixed">
         <nav id="myNavbar">
-          <div class="site-title middle hide-on-med-and-up" style="left:25%;" onclick="currentDiv(1)">SALTWATER</div>
+          <div class="site-title middle hide-on-med-and-up" style="left:25%; padding-left:0;" onclick="currentDiv(1)">SALTWATER</div>
           <div class="site-title left margin-left hide-on-small-only" onclick="currentDiv(1)">SALTWATER</div>
           <div class="hide-on-med-and-down">
             <ul class="right">
@@ -521,33 +49,40 @@
             <div class="userView white-text">
               <div class="background saltwaterColor2"></div>
               <img class="circle" src="https://github.com/stucoston/saltwater/blob/master/FullSizeRender%2012.jpg?raw=true" style="filter:invert(0)">
-              <a class="white-text saltwater site-title" href="http://rawgit.com/stucoston/saltwater/master/work.html">SALTWATER</a>
+              <div class="white-text saltwater site-title">SALTWATER</div>
               <div class="white-text tagline">digital studios</div>
               <a onclick="openNav()" href="mailto:stu.coston@gmail.com"><span class="white-text email">stu.coston@gmail.com</span></a>
               <div class="social">
                 <a onclick="openNav()" href="https://twitter.com/stucoston" target="_blank" style="display:inline-block;" class="hoverable waves-effect"><i class="white-text fa fa-twitter"></i></a>
-                <a onclick="openNav()" href="https://www.facebook.com/stu.coston" target="_blank" style="display:inline-block;" class="hoverable"><i class="white-text fa fa-facebook"></i></a>
-                <a onclick="openNav()" href="https://github.com/stucoston" target="_blank" style="display:inline-block;" class="hoverable"><i class="white-text fa fa-github"></i></a>
+                <a onclick="openNav()" href="https://www.facebook.com/stu.coston" target="_blank" style="display:inline-block;" class="hoverable waves-effect"><i class="white-text fa fa-facebook"></i></a>
+                <a onclick="openNav()" href="https://github.com/stucoston" target="_blank" style="display:inline-block;" class="hoverable waves-effect"><i class="white-text fa fa-github"></i></a>
               </div>
               <!--close userView-->
-	    </div>
+            </div>
           </li>
-          <li><a class="collapsible-header black-text letter-space" onclick="currentDiv(2), openNav()">COMPONENTS</a></li>
+          <li><a class="collapsible-header black-text letter-space" onclick="currentDiv(2), openNav(), $('.menu-container').sideNav('hide');">COMPONENTS</a></li>
 
-          <li><a class="collapsible-header black-text letter-space" onclick="currentDiv(3), openNav()">TEMPLATES</a>
+          <li><a class="collapsible-header black-text letter-space" onclick="currentDiv(3), openNav(), $('.menu-container').sideNav('hide');">TEMPLATES</a>
           </li>
-          <li><a class="collapsible-header black-text letter-space" onclick="currentDiv(4), openNav()">PROJECTS</a></li>
+          <li><a class="collapsible-header black-text letter-space" onclick="currentDiv(4), openNav(), $('.menu-container').sideNav('hide');">PROJECTS</a></li>
+          <li><a class="collapsible-header black-text letter-space" href="#contactModal">CONTACT</a></li>
 
           <!--close accordian collapsible-->
         </ul>
-        <!--close slide-out sidenav-->
-	    </div><!--close hamburger-->
+        <!--close slideNav sidenav-->
+      </div>
+      <!--close hamburger-->
     </header>
+    
+    <div id="slideNav-overlay" class="overlay slideNav-overlay"></div>
 
     <div id="contactModal" class="modal modal-fixed-footer">
       <div class="modal-content">
-        <h4 class="site-title">SALTWATER</h4>
-        <a href="mailto:stu.coston@gmail.com" style="text-decoration: underline">stu.coston@gmail.com</a>
+        <i class="right black-text text-xlarge fa fa-window-close-o clickable" aria-hidden="true" onclick="$('#contactModal').modal('close');"></i>
+        <div class="black-text saltwater site-title">SALTWATER</div>
+        <div class="black-text tagline">digital studios</div>
+        <p class="grey-text text-darken-2">We would love to discuss your upcoming project anytime. If you're ready to get started today go ahead and click the "Get Started" button below and fill out the form that comes up. If you aren't quite ready to jump into a project yet and just want to talk about what we could do for you, you can click the "Message" button below and just shoot us an email.</p> 
+        <p class="grey-text text-darken-1">email: <a href="mailto:stu.coston@gmail.com" style="text-decoration: underline; margin-top:-30px;" class="grey-text"> stu.coston@gmail.com</a></p>
       </div>
       <div class="modal-footer">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoC0nCZfiP5ZeQV87f3CIC2taW6s1l_WIT8SuE2P2FlD-d2A/viewform" class="modal-action modal-close waves-effect waves-blue btn-flat" target="_blank">GET STARTED</a>
@@ -957,17 +492,35 @@
     </script>
 
     <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script>
-      function openNav() {
-        var x = document.getElementById('menu-container');
-        var y = document.getElementById('menu');
-      
-        if (x.className.indexOf('is-menu-open') == -1) {
-          x.className += ' is-menu-open circle saltwaterColor4';
-      } else {
-        x.className = x.className.replace(' is-menu-open circle saltwaterColor4', '');
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+<script>
+  $('.menu-container').sideNav({
+    menuWidth: 300, // Default is 300
+    edge: 'right', // Choose the horizontal origin
+    closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    draggable: false // Choose whether you can drag to open on touch screens
+  }); 
+  
+        
+  $('.modal').modal({
+        dismissible: true, // Modal can be dismissed by clicking outside of the modal
+        opacity: .5, // Opacity of modal background
+        inDuration: 300, // Transition in duration
+        outDuration: 200, // Transition out duration
       }
-    }
+    );
+        
+      function openNav() {
+          var x = document.getElementById('menu-container');
+        
+          if (x.className.indexOf('is-menu-open') == -1) {
+            x.className += ' is-menu-open circle saltwaterColor4';
+              
+        } else {
+          x.className = x.className.replace(' is-menu-open circle saltwaterColor4', '');
+          
+        }
+      }
       
       //scroll mousewheel to change slides
       $('#site').on( 'DOMMouseScroll mousewheel', function ( event ) {
@@ -981,15 +534,6 @@
       //prevent page fom scrolling
       return false;
     });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-    <script>
-      $('.menu-container').sideNav({
-    menuWidth: 300, // Default is 300
-    edge: 'right', // Choose the horizontal origin
-    closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-    draggable: true // Choose whether you can drag to open on touch screens
-  });
     </script>
 </body>
 
