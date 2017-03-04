@@ -8,464 +8,558 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
-/* sitewide css */
-img {
-  max-width: 100%;
-  height: auto;
-}
-body, html {
-  font-family: "Montserrat", sans-serif;
-  height: 100%;
-  width: 100%;
-  color: white;
-  line-height: 1.8;
-}
-#waterLoader {
-  height: 100vh;
-  width: 100vw;
-  background-color: #222;
-}
-.hp {
-  background-color:#222;
-}
-.pageNums svg {
-  font-family: "montserrat", sans-serif;
-  height: 100%;
-  width: 70%;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  -ms-transform: translate(-50%,-50%); 
-  -webkit-transform: translate(-50%,-50%); 
-  transform: translate(-50%,-50%);
-}
-li a {
-  text-decoration: none;
-}
-.center-offset {
-  -ms-transform: translate(-50%,-50%); /* IE 9 */
-  -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
-  transform: translate(-50%,-50%);
-}
-.letter-space {
-  letter-spacing: 2px;
-}
-.pageNums {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  -webkit-animation: transinpn 0.5s ease forwards;
-  -webkit-animation-delay: 0.6s;
-  opacity:0;
-  animation: transinpn 0.5s ease forwards;
-  animation-delay: 0.6s;
-}
-.pageTitle {
-  font-weight: 100;
-  position: fixed;
-  line-height: 1em;
-  bottom: 47%;
-  color: white;
-  left: -100%;
-  animation: transinpt 0.5s ease forwards;
-  animation-delay: 0.8s;
-}
-.pageTitleBorder {
-  position: fixed;
-  width: 40px;
-  border-bottom: 1px solid white;
-  bottom: 45%;
-  left: -100%;
-  animation: transintb 0.7s ease forwards;
-  animation-delay: 0.4s;
-  -ms-transform: translate(0%,-50%); 
-  -webkit-transform: translate(0%,-50%); 
-  transform: translate(0%,-50%);
-}
-.pageContent {
-  position: fixed;
-  width: 40%;
-  top: 100%;
-  left: 20px;
-  animation: transincontent 0.7s ease forwards;
-  animation-delay: 0.9s;
-}
-.oceanContent {
-  position: fixed;
-  width: 60%;
-  top: 100%;
-  left: 20px;
-  animation: transinocean 0.7s ease forwards;
-  animation-delay: 0.9s;
-}
-.hoverableBlue:hover {
-  background-color: #4aaaa5;
-}
-/* end sitewide css */
-/* Nav and Menu css */
-nav {
-  z-index: 1;
-  box-shadow: none;
-  margin:0;
-  top:0;
-}
-.site-title {
-  display:inline-block;
-  font-size:26px;
-  font-family: 'montserrat',san-serif; 
-  font-weight: 700; 
-  cursor: pointer;
-}
-.menu-container {
-  right: 60px;
-  bottom: 6px;
-  z-index: 10;
-  cursor: pointer;
-}
-.menu-container:hover .menu-container .bars span, .menu-container:hover .menu-container.is-menu-open .bars span {
-  background-color: #e9d66b;
-}
-.menu-container .bars {
-  width: 25px;
-  height: 25px;
-  position: relative;
-  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
-  transition: -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
-  transition: transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
-  transition: transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
-}
-.menu-container .bars span {
-  display: block;
-  width: 100%;
-  height: 1px;
-  background-color: white;
-  margin-top: 7px;
-}
-.menu-container .bars span:first-child {
-  margin-top: 0;
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-  transition: -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-  transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-  transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-  -webkit-transition-delay: 0.4s;
-          transition-delay: 0.4s;
-}
-.menu-container .bars span:nth-child(3) {
-  width: 65%;
-  -webkit-transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-  transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
-  -webkit-transition-delay: 0.4s;
-          transition-delay: 0.4s;
-}
-/* end nav and menu css */
-/* slide bg image css */
-.mySlides {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height:100%;
-  width: 100%;
-}
-.bgimg-hp, .bgimg-1, .bgimg-2, .bgimg-3{
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-}
-.bgimg-1 {
-  background-image: url("IMG_6212.JPG");
-}
-.bgimg-2 {
-  background-image: url("https://github.com/stucoston/saltwater/blob/master/IMG_6211.JPG?raw=true");
-}
-.bgimg-3 {
-  background-image: url("IMG_6214.JPG");
-}
-/* end slide bg img css */
-/* themeDiv css */
-.themeDiv {
-  overflow: hidden;
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-}
-/* end themeDiv css */
-/* page up and down */
-.pageup {
-  cursor: pointer;
-  color: white;
-  font-size: 30px;
-  position: fixed;
-  z-index: 1;
-  bottom: 10px;
-  right: 80px;
-}
-.pagedown {
-  cursor: pointer;
-  color: white;
-  font-size: 30px;
-  position: fixed;
-  z-index: 1;
-  bottom: 10px;
-  right: 30px;
-}
-.pagination{
-  position: fixed;
-  right: -25px;
-  top: 50%;
-  width: 50px;
-  -ms-transform: translate(-50%,-50%); 
-  -webkit-transform: translate(-50%,-50%); 
-  transform: translate(-50%,-50%);
-}  
-.activePage,.inactivePage:hover {
-  font-size: 20px;
-  margin-bottom: 5px;
-  color: white;
-  cursor: pointer;
-  border-bottom: 1px solid white;
-}
-.inactivePage {
-  font-size: 20px;
-  margin-bottom: 5px;
-  color: #555;
-  opacity: 0.9;
-  cursor:pointer;
-}
-.sea {
-  position:fixed;
-  top:100%;
-  width: 100%;
-  height:100%;
-  /*animation: sea 10s ease-in-out;
-  animation-direction: alternate;
-  animation-iteration-count: infinite*/
-}
-.sea2 {
-  position:fixed;
-  top:100%;
-  width: 100%;
-  height:100%;
-  animation: sea2 1.5s ease-in-out;
-  z-index: 12;
-}
+  /* sitewide css */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  body, html {
+    font-family: "Montserrat", sans-serif;
+    height: 100%;
+    width: 100%;
+    color: white;
+    line-height: 1.8;
+    overflow:hidden;
+  }
+  #waterLoader {
+    height: 100vh;
+    width: 100vw;
+    background-color: #222;
+  }
+  .hp {
+    background-color:#222;
+  }
+  .pageNums svg {
+    font-family: "montserrat", sans-serif;
+    height: 100%;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translate(-50%,-50%); 
+    -webkit-transform: translate(-50%,-50%); 
+    transform: translate(-50%,-50%);
+  }
+  li a {
+    text-decoration: none;
+  }
+  .center-offset {
+    -ms-transform: translate(-50%,-50%); /* IE 9 */
+    -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
+    transform: translate(-50%,-50%);
+  }
+  .letter-space {
+    letter-spacing: 2px;
+  }
+  .pageNums {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    -webkit-animation: transinpn 0.5s ease forwards;
+    -webkit-animation-delay: 0.6s;
+    opacity:0;
+    animation: transinpn 0.5s ease forwards;
+    animation-delay: 0.6s;
+  }
+  .pageTitle {
+    font-weight: 100;
+    position: fixed;
+    line-height: 1em;
+    bottom: 47%;
+    color: white;
+    left: -100%;
+    animation: transinpt 0.5s ease forwards;
+    animation-delay: 0.8s;
+  }
+  .pageTitleBorder {
+    position: fixed;
+    width: 40px;
+    border-bottom: 1px solid white;
+    bottom: 45%;
+    left: -100%;
+    animation: transintb 0.7s ease forwards;
+    animation-delay: 0.4s;
+    -ms-transform: translate(0%,-50%); 
+    -webkit-transform: translate(0%,-50%); 
+    transform: translate(0%,-50%);
+  }
+  .pageContent {
+    position: fixed;
+    width: 40%;
+    top: 100%;
+    left: 20px;
+    animation: transincontent 0.7s ease forwards;
+    animation-delay: 0.9s;
+  }
+  .oceanContent {
+    position: fixed;
+    width: 60%;
+    top: 100%;
+    left: 20px;
+    animation: transinocean 0.7s ease forwards;
+    animation-delay: 0.9s;
+  }
+  .hoverableBlue:hover {
+    background-color: #4aaaa5;
+  }
+  .tagline {
+    margin-top: -20px;
+    font-size: 1.05em;
+    font-weight: 100;
+    letter-spacing: 4.5px;
+  }
+  /* end sitewide css */
+  /* Nav and Menu css */
+  nav {
+    z-index: 1;
+    box-shadow: none;
+    margin:0;
+    top:0;
+  }
+  .site-title {
+    display:inline-block;
+    font-size:26px;
+    font-family: 'montserrat',san-serif; 
+    font-weight: 700; 
+    cursor: pointer;
+    padding-top:10px;
+  }
+  .menu-container {
+    position:absolute;
+    right: 40px;
+    top: 15px;
+    height:40px;
+    width:40px;
+    padding:10px 0 10px 4px;
+    z-index: 10000000;
+    cursor: pointer;
+  }
+  .menu-container:hover .menu-container .bars span, .menu-container:hover .menu-container.is-menu-open .bars span {
+    background-color: #e9d66b;
+  }
+  .menu-container .bars {
+    width: 30px;
+    height: 25px;
+    position: relative;
+    -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
+    transition: -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
+    transition: transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
+    transition: transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
+  }
+  .menu-container .bars span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    margin-top: 7px;
+  }
+  .menu-container .bars span:first-child {
+    margin-top: 0;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+    transition: -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+    transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+    transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+    -webkit-transition-delay: 0.4s;
+            transition-delay: 0.4s;
+  }
+  .menu-container .bars span:nth-child(3) {
+    width: 65%;
+    -webkit-transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+    transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+    -webkit-transition-delay: 0.4s;
+            transition-delay: 0.4s;
+  }
+  .menu-container .bars .other-bar {
+    width: 2px;
+    height: 0px;
+    position: absolute;
+    background-color: white;
+    top: -4px;
+    left: 50%;
+    margin-left: -1px;
+    -webkit-transition: height 0.4s cubic-bezier(0.694, 0.048, 0.335, 1);
+    transition: height 0.4s cubic-bezier(0.694, 0.048, 0.335, 1);
+    z-index: 10;
+  }
+  .menu-container.is-menu-open {
+    right: 20px;
+    top: 20px;
+    transition-duration: 0.3s;
+    box-shadow: 0px 1px 2px #555;
+  }
   
-/* animations */
-  /** Safari 4.0 - 8.0 **/
-@-webkit-keyframes transinpn {
-  0%   {opacity:0;}
-  10%  {opacity:1}
-  40%  {opacity:0}
-  55%  {opacity:1;}
-  70%  {opacity:0;}
-  75%  {opacity:1;}
-  90%  {opacity:0}
-  100% {opacity:1;}
-}
-@-webkit-keyframes transinpt {
-  0%   {left: -100%;}
-  100% {left: 20px;}
-}
-@-webkit-keyframes transintb {
-  0%   {left: -100%;width:0px}
-  35% {left:0%;width:0px;}
-  40%   {left: 0%;width:20px}
-  70%  {left: 0%;width:60px}
-  100% {left: 20px;width:40px}
-}
-@-webkit-keyframes transincontent {
-  0%   {top: 100%;}
-  100% {top: 60%;}
-}
-@-webkit-keyframes transinocean {
-  0%   {top: 100%;}
-  100% {top: 40%;}
-}
-@-webkit-keyframes sea2 {
-  0%   {top: 100%;}
-  100% {top: 0%;}
-}
-@-webkit-keyframes buttonHover {
-  0%   {background-color:white;opacity:0;}
-  10%  {opacity:1}
-  40%  {opacity:0}
-  55%  {opacity:1;}
-  70%  {opacity:0;}
-  75%  {opacity:1;}
-  90%  {opacity:0}
-  100% {opacity:1;}
-}
-  /** Standard syntax **/
-@keyframes transinpn {
-  0%   {opacity:0;}
-  10%  {opacity:1}
-  40%  {opacity:0}
-  55%  {opacity:1;}
-  70%  {opacity:0;}
-  75%  {opacity:1;}
-  90%  {opacity:0}
-  100% {opacity:1;}
-}
-@keyframes transinpt {
-  0%   {left: -100%;}
-  100% {left: 20px;}
-}
-@keyframes transintb {
-  0%   {left: -100%;width:0px}
-  35% {left:0%;width:0px;}
-  40%   {left: 0%;width:20px}
-  70%  {left: 0%;width:60px}
-  100% {left: 20px;width:40px}
-}
-@keyframes transincontent {
-  0%   {top: 100%;}
-  100% {top: 60%;}
-}
-@keyframes transinocean {
-  0%   {top: 100%;}
-  100% {top: 60%;}
-}
-@keyframes sea2 {
-  0%   {top: 100%;}
-  100% {top: 0%;}
-}
-@keyframes buttonHover {
-  0%   {background-color:white;opacity:0;}
-  10%  {opacity:1}
-  40%  {opacity:0}
-  55%  {opacity:1;}
-  70%  {opacity:0;}
-  75%  {opacity:1;}
-  90%  {opacity:0}
-  100% {opacity:1;}
-}
-/* end animations */
-@media only screen and (min-width: 360px) {
-  .flow-text {
-    font-size:1.1rem;
-    line-height: 1.5rem;
+  .menu-container.is-menu-open:hover {
+    box-shadow: 2px 2px 10px #222;
   }
-}
-@media only screen and (min-width: 390px) {
-  .flow-text {
-    font-size:1.12rem;
-  }
-}
-@media only screen and (min-width: 420px) {
-  .flow-text {
-  font-size:1.15rem;
-    line-height: 1.7rem;
-  }
-}
-@media only screen and (min-width: 450px) {
-  .flow-text {
-    font-size:1.2rem;
-  }
-}
-@media only screen and (min-width: 480px) {
-  .flow-text {
-    font-size:1.24rem
-  }
-}
-@media only screen and (min-width: 510px) {
-  .flow-text {
-    font-size:1.3rem;
-    line-height: 2rem;
-  }
-}
-@media only screen and (max-width: 360px) {
-  .flow-text {
-    font-size:1.1rem;
-    line-height: 1.5rem;
-  }
-}
   
-.water-fill {
-  animation: wave 0.9s infinite linear, fill-up 10s infinite ease-in-out alternate
-}
-.water-fill2 {
-  animation: wave 0.9s infinite linear, fill-up2 10s infinite ease-in-out alternate
-}
-	
-@keyframes wave {
-  0%   {x: -750px}
-  100% {x: 0}
-}
-@-webkit-keyframes wave {
-  0%   {x: -750px}
-  100% {x: 0}
-}
+  .menu-container.is-menu-open .bars {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition-delay: 0.4s;
+    transition-delay: 0.4s;
+  }
+  
+  .menu-container.is-menu-open .bars span:first-child {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+    transition: -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+    transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+    transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  }
+  
+  .menu-container.is-menu-open .bars span:nth-child(3) {
+    width: 0;
+    -webkit-transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+    transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  }
+  
+  .menu-container.is-menu-open .bars .other-bar {
+    height: 30px;
+    -webkit-transition: height 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+    transition: height 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+  }
+  /* end nav and menu css */
+  /* slide bg image css */
+  .mySlides {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height:100%;
+    width: 100%;
+  }
+  .bgimg-hp, .bgimg-1, .bgimg-2, .bgimg-3{
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+  .bgimg-1 {
+    background-image: url("https://github.com/stucoston/saltwater/blob/master/IMG_6212.JPG?raw=true");
+  }
+  .bgimg-2 {
+    background-image: url("https://github.com/stucoston/saltwater/blob/master/IMG_6211.JPG?raw=true");
+  }
+  .bgimg-3 {
+    background-image: url("https://github.com/stucoston/saltwater/blob/master/IMG_6214.JPG?raw=true");
+  }
+  /* end slide bg img css */
+  /* themeDiv css */
+  .themeDiv {
+    overflow: hidden;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+  }
+  /* end themeDiv css */
+  /* page up and down */
+  .pageup {
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
+    position: fixed;
+    z-index: 1;
+    bottom: 10px;
+    right: 80px;
+  }
+  .pagedown {
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
+    position: fixed;
+    z-index: 1;
+    bottom: 10px;
+    right: 30px;
+  }
+  .pagination{
+    position: fixed;
+    right: -25px;
+    top: 50%;
+    width: 50px;
+    -ms-transform: translate(-50%,-50%); 
+    -webkit-transform: translate(-50%,-50%); 
+    transform: translate(-50%,-50%);
+  }  
+  .activePage,.inactivePage:hover {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: white;
+    cursor: pointer;
+    border-bottom: 1px solid white;
+  }
+  .inactivePage {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #555;
+    opacity: 0.9;
+    cursor:pointer;
+  }
+  .sea {
+    position:fixed;
+    top:100%;
+    width: 100%;
+    height:100%;
+    /*animation: sea 10s ease-in-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite*/
+  }
+  .sea2 {
+    position:fixed;
+    top:100%;
+    width: 100%;
+    height:100%;
+    animation: sea2 1.5s ease-in-out;
+    z-index: 12;
+  }
     
-@keyframes fill-up {
-  0%   {height: 0; y: 100%;}
-  100% {height: 100%; y: 0%;}
-}
-@-webkit-keyframes fill-up {
-  0%   {height: 0; y: 100%;}
-  100% {height: 100%; y: 0%;}
-}
-  
-@keyframes fill-up2 {
-  0%   {height: 0; y: 100%;}
-  100% {height: 100%; y: 0%;}
-}
-@-webkit-keyframes fill-up2 {
-  0%   {height: 0; y: 100%;}
-  100% {height: 100%; y: 0%;}
-}
-	
+  /* animations */
+    /** Safari 4.0 - 8.0 **/
+  @-webkit-keyframes transinpn {
+    0%   {opacity:0;}
+    10%  {opacity:1}
+    40%  {opacity:0}
+    55%  {opacity:1;}
+    70%  {opacity:0;}
+    75%  {opacity:1;}
+    90%  {opacity:0}
+    100% {opacity:1;}
+  }
+  @-webkit-keyframes transinpt {
+    0%   {left: -100%;}
+    100% {left: 20px;}
+  }
+  @-webkit-keyframes transintb {
+    0%   {left: -100%;width:0px}
+    35% {left:0%;width:0px;}
+    40%   {left: 0%;width:20px}
+    70%  {left: 0%;width:60px}
+    100% {left: 20px;width:40px}
+  }
+  @-webkit-keyframes transincontent {
+    0%   {top: 100%;}
+    100% {top: 60%;}
+  }
+  @-webkit-keyframes transinocean {
+    0%   {top: 100%;}
+    100% {top: 40%;}
+  }
+  @-webkit-keyframes sea2 {
+    0%   {top: 100%;}
+    100% {top: 0%;}
+  }
+  @-webkit-keyframes buttonHover {
+    0%   {background-color:white;opacity:0;}
+    10%  {opacity:1}
+    40%  {opacity:0}
+    55%  {opacity:1;}
+    70%  {opacity:0;}
+    75%  {opacity:1;}
+    90%  {opacity:0}
+    100% {opacity:1;}
+  }
+    /** Standard syntax **/
+  @keyframes transinpn {
+    0%   {opacity:0;}
+    10%  {opacity:1}
+    40%  {opacity:0}
+    55%  {opacity:1;}
+    70%  {opacity:0;}
+    75%  {opacity:1;}
+    90%  {opacity:0}
+    100% {opacity:1;}
+  }
+  @keyframes transinpt {
+    0%   {left: -100%;}
+    100% {left: 20px;}
+  }
+  @keyframes transintb {
+    0%   {left: -100%;width:0px}
+    35% {left:0%;width:0px;}
+    40%   {left: 0%;width:20px}
+    70%  {left: 0%;width:60px}
+    100% {left: 20px;width:40px}
+  }
+  @keyframes transincontent {
+    0%   {top: 100%;}
+    100% {top: 60%;}
+  }
+  @keyframes transinocean {
+    0%   {top: 100%;}
+    100% {top: 60%;}
+  }
+  @keyframes sea2 {
+    0%   {top: 100%;}
+    100% {top: 0%;}
+  }
+  @keyframes buttonHover {
+    0%   {background-color:white;opacity:0;}
+    10%  {opacity:1}
+    40%  {opacity:0}
+    55%  {opacity:1;}
+    70%  {opacity:0;}
+    75%  {opacity:1;}
+    90%  {opacity:0}
+    100% {opacity:1;}
+  }
+  /* end animations */
+  @media only screen and (min-width: 360px) {
+    .flow-text {
+      font-size:1.1rem;
+      line-height: 1.5rem;
+    }
+  }
+  @media only screen and (min-width: 390px) {
+    .flow-text {
+      font-size:1.12rem;
+    }
+  }
+  @media only screen and (min-width: 420px) {
+    .flow-text {
+    font-size:1.15rem;
+      line-height: 1.7rem;
+    }
+  }
+  @media only screen and (min-width: 450px) {
+    .flow-text {
+      font-size:1.2rem;
+    }
+  }
+  @media only screen and (min-width: 480px) {
+    .flow-text {
+      font-size:1.24rem
+    }
+  }
+  @media only screen and (min-width: 510px) {
+    .flow-text {
+      font-size:1.3rem;
+      line-height: 2rem;
+    }
+  }
+  @media only screen and (max-width: 360px) {
+    .flow-text {
+      font-size:1.1rem;
+      line-height: 1.5rem;
+    }
+  }
+    
+  .water-fill {
+    animation: wave 0.9s infinite linear, fill-up 10s infinite ease-in-out alternate
+  }
+  .water-fill2 {
+    animation: wave 0.9s infinite linear, fill-up2 10s infinite ease-in-out alternate
+  }
+  	
+  @keyframes wave {
+    0%   {x: -750px}
+    100% {x: 0}
+  }
+  @-webkit-keyframes wave {
+    0%   {x: -750px}
+    100% {x: 0}
+  }
+      
+  @keyframes fill-up {
+    0%   {height: 0; y: 100%;}
+    100% {height: 100%; y: 0%;}
+  }
+  @-webkit-keyframes fill-up {
+    0%   {height: 0; y: 100%;}
+    100% {height: 100%; y: 0%;}
+  }
+    
+  @keyframes fill-up2 {
+    0%   {height: 0; y: 100%;}
+    100% {height: 100%; y: 0%;}
+  }
+  @-webkit-keyframes fill-up2 {
+    0%   {height: 0; y: 100%;}
+    100% {height: 100%; y: 0%;}
+  }
 </style>
-<body id="body" onload="myLoader()">
-	
-<!-- loading screen -->
-<div id="waterLoader">
-</div>
-<!-- site container -->
-<div id="site" class="w3-animate-bottom" style="display:none;">
- <!-- Navbar (sit on top) -->
-  <nav class="pinned" id="myNavbar">
-    <div class="site-title middle hide-on-med-and-up" style="left:25%;" onclick="currentDiv(1)">SALTWATER</div>
-    <div class="site-title left margin-left hide-on-small-only" onclick="currentDiv(1)">SALTWATER</div>
-    <div id="hamburger" class="hide-on-large-only">
-      <div class="menu-container right padding-right48" style="margin-top:16px;" id='menu-container' onclick='openNav()'>
-        <div id="menubars" class="bars">
-          <span></span><span></span><span></span>
-          <div class="other-bar"></div>
-        </div>
-      </div><!--close menu container-->
-    </div><!--close hide-on-large-only-->
-    <div class="hide-on-med-and-down">
-      <ul class="right">
-        <li><a onclick="currentDiv(2)" class="letter-space waves-effect">COMPONENTS</a></li>
-        <li><a onclick="currentDiv(3)"class="letter-space waves-effect">TEMPLATES</a></li>
-        <li><a onclick="currentDiv(4)"class="letter-space waves-effect">PROJECTS</a></li>
-        <li><a class="letter-space waves-effect margin-right" href="#contactModal">CONTACT</a></li>
-      </ul>
-    </div>
-  </nav>
 
-  <div id="contactModal" class="modal modal-fixed-footer">
-    <div class="modal-content">
-      <h4 class="site-title">SALTWATER</h4>
-      <a href="mailto:stu.coston@gmail.com" style="text-decoration: underline">stu.coston@gmail.com</a>
-    </div>
-    <div class="modal-footer">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoC0nCZfiP5ZeQV87f3CIC2taW6s1l_WIT8SuE2P2FlD-d2A/viewform" class="modal-action modal-close waves-effect waves-blue btn-flat" target="_blank">GET STARTED</a>
-      <a href="mailto:stu.coston@gmail.com" class="modal-action modal-close waves-effect waves-blue btn-flat" >MESSAGE</a>
-    </div>
+<body id="body" onload="myLoader()">
+
+  <!-- loading screen -->
+  <div id="waterLoader">
   </div>
-  
-  <!-- slides -->
-  <div id="Slides">
-    <div id="hp" class="mySlides hp">
-      <div id="sea" class="sea saltwaterColor1">
-        <svg class="ocean" style="position: absolute; width: 100%; height:41%;bottom:99%; left: 0%;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <!-- site container -->
+  <div id="site" class="w3-animate-bottom" style="display:none;">
+    <!-- Navbar (sit on top) -->
+    <header>
+      <div class="navbar-fixed">
+        <nav id="myNavbar">
+          <div class="site-title middle hide-on-med-and-up" style="left:25%;" onclick="currentDiv(1)">SALTWATER</div>
+          <div class="site-title left margin-left hide-on-small-only" onclick="currentDiv(1)">SALTWATER</div>
+          <div class="hide-on-med-and-down">
+            <ul class="right">
+              <li><a onclick="currentDiv(2)" class="letter-space waves-effect">COMPONENTS</a></li>
+              <li><a onclick="currentDiv(3)" class="letter-space waves-effect">TEMPLATES</a></li>
+              <li><a onclick="currentDiv(4)" class="letter-space waves-effect">PROJECTS</a></li>
+              <li><a class="letter-space waves-effect margin-right" href="#contactModal">CONTACT</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <!--close navbar-fixed-->
+      <div id="hamburger" class="hide-on-large-only">
+        <div class="menu-container" data-activates="slide-out" id='menu-container' onclick='openNav()'>
+          <div id="menubars" class="bars">
+            <span></span><span></span><span></span>
+            <div class="other-bar"></div>
+          </div>
+        </div>
+        <!--close menu-container-->
+        <ul id="slide-out" class="side-nav">
+          <li>
+            <div class="userView white-text">
+              <div class="background saltwaterColor2"></div>
+              <img class="circle" src="https://github.com/stucoston/saltwater/blob/master/FullSizeRender%2012.jpg?raw=true" style="filter:invert(0)">
+              <div class="white-text saltwater site-title">SALTWATER</div>
+              <div class="white-text tagline">digital studios</div>
+              <a onclick="openNav()" href="mailto:stu.coston@gmail.com"><span class="white-text email">stu.coston@gmail.com</span></a>
+              <div class="social">
+                <a onclick="openNav()" href="https://twitter.com/stucoston" target="_blank" style="display:inline-block;" class="hoverable waves-effect"><i class="white-text fa fa-twitter"></i></a>
+                <a onclick="openNav()" href="https://www.facebook.com/stu.coston" target="_blank" style="display:inline-block;" class="hoverable"><i class="white-text fa fa-facebook"></i></a>
+                <a onclick="openNav()" href="https://github.com/stucoston" target="_blank" style="display:inline-block;" class="hoverable"><i class="white-text fa fa-github"></i></a>
+              </div>
+              <!--close userView-->
+		  </div>
+          </li>
+          <li><a class="collapsible-header black-text letter-space" onclick="currentDiv(2), openNav()">COMPONENTS</a></li>
+
+          <li><a class="collapsible-header black-text letter-space" onclick="currentDiv(3), openNav()">TEMPLATES</a>
+          </li>
+          <li><a class="collapsible-header black-text letter-space" onclick="currentDiv(4), openNav()">PROJECTS</a></li>
+
+          <!--close accordian collapsible-->
+        </ul>
+        <!--close slide-out sidenav-->
+	    </div><!--close hamburger-->
+    </header>
+
+    <div id="contactModal" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <h4 class="site-title">SALTWATER</h4>
+        <a href="mailto:stu.coston@gmail.com" style="text-decoration: underline">stu.coston@gmail.com</a>
+      </div>
+      <div class="modal-footer">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoC0nCZfiP5ZeQV87f3CIC2taW6s1l_WIT8SuE2P2FlD-d2A/viewform" class="modal-action modal-close waves-effect waves-blue btn-flat" target="_blank">GET STARTED</a>
+        <a href="mailto:stu.coston@gmail.com" class="modal-action modal-close waves-effect waves-blue btn-flat">MESSAGE</a>
+      </div>
+    </div>
+
+    <!-- slides -->
+    <div id="Slides">
+      <div id="hp" class="mySlides hp">
+        <div id="sea" class="sea saltwaterColor1">
+          <svg class="ocean" style="position: absolute; width: 100%; height:41%;bottom:99%; left: 0%;" version="1.1" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="water" width=".25" height="2" patternContentUnits="objectBoundingBox">
               <path fill="#7accc8" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,0.5z"/>
@@ -473,46 +567,47 @@ nav {
           </defs>  
           <rect id="waves" class="water-fill" fill="url(#water)" width="3000"/> 
         </svg>
-      </div><!-- close sea -->
+        </div>
+        <!-- close sea -->
+      </div>
+      <div id="slide1" class="mySlides">
+        <div class="bgimg-1"></div>
+      </div>
+      <div id="slide2" class="mySlides">
+        <div class="bgimg-2"></div>
+      </div>
+      <div id="slide3" class="mySlides">
+        <div class="bgimg-3"></div>
+      </div>
     </div>
-    <div id="slide1" class="mySlides">
-      <div class="bgimg-1"></div>
+
+    <!-- themeDiv slides -->
+    <div id="themeSlides">
+      <div class="themeDiv" style="background-color: transparent; animation-delay: 0s;"></div>
+      <div class="themeDiv saltwaterColor3"></div>
+      <div class="themeDiv saltwaterColor2"></div>
+      <div class="themeDiv saltwaterColor4"></div>
     </div>
-    <div id="slide2" class="mySlides">
-      <div class="bgimg-2"></div>
-    </div>
-    <div id="slide3" class="mySlides">
-      <div class="bgimg-3"></div>
-    </div>
-  </div>
-  
-  <!-- themeDiv slides -->
-  <div id="themeSlides">
-    <div class="themeDiv" style="background-color: transparent; animation-delay: 0s;"></div>
-    <div class="themeDiv saltwaterColor3"></div>
-    <div class="themeDiv saltwaterColor2"></div>
-    <div class="themeDiv saltwaterColor4"></div>
-  </div>
-  
-  <!-- pageNum slides -->
-  <div id="numSlides">
-    <div class="pageNums"></div>
-    <div class="pageNums">
-      <svg>
+
+    <!-- pageNum slides -->
+    <div id="numSlides">
+      <div class="pageNums"></div>
+      <div class="pageNums">
+        <svg>
         <mask x="0" y="0" id="half">
-          <rect y="0" x="50%" fill="white" width="50%" height="100%" />
+          <rect y="0" x="50%" fill="white" width="100%" height="100%" />
         </mask>
         <defs>
           <pattern id="pathPattern" x="0" y="0" width="20" height="10" patternUnits="userSpaceOnUse">
             <path d="M 0 5 Q 5 10 10 5 T 20 5" stroke="#555" fill="none" />
           </pattern>
         </defs>
-        <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="300" font-weight="600" height="200" fill="url(#pathPattern)">1</text>
-        <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="300" font-weight="600" height="200" mask="url(#half)" fill="#fff">1</text>
+        <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="65vh" font-weight="600" fill="url(#pathPattern)">1</text>
+        <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="65vh" font-weight="600" mask="url(#half)" fill="#fff">1</text>
        </svg>
-    </div>
-    <div class="pageNums">
-      <svg>
+      </div>
+      <div class="pageNums">
+        <svg>
         <mask x="0" y="0" id="half">
           <rect y="0" x="50%" fill="white" width="50%" height="100%" />
         </mask>
@@ -521,12 +616,12 @@ nav {
             <path d="M 0 5 Q 5 10 10 5 T 20 5" stroke="#555" fill="none" />
           </pattern>
         </defs>
-        <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="300" font-weight="600" height="200" fill="url(#pathPattern)">2</text>
-        <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="300" font-weight="600" height="200" mask="url(#half)" fill="#fff">2</text>
+        <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="65vh" font-weight="600" fill="url(#pathPattern)">2</text>
+        <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="65vh" font-weight="600" mask="url(#half)" fill="#fff">2</text>
       </svg>
-    </div>
-    <div class="pageNums">
-      <svg>
+      </div>
+      <div class="pageNums">
+        <svg>
         <mask x="0" y="0" id="half">
           <rect y="0" x="50%" fill="white" width="50%" height="100%" />
         </mask>
@@ -535,19 +630,43 @@ nav {
             <path d="M 0 5 Q 5 10 10 5 T 20 5" stroke="#555" fill="none" />
           </pattern>
         </defs>
-        <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="300" font-weight="600" height="200" fill="url(#pathPattern)">3</text>
-        <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="300" font-weight="600" height="200" mask="url(#half)" fill="#fff">3</text>
+        <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="65vh" font-weight="600" fill="url(#pathPattern)">3</text>
+        <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="65vh" font-weight="600" mask="url(#half)" fill="#fff">3</text>
       </svg>
+      </div>
     </div>
-  </div><!-- close pageNum slides -->
-  
-  <!-- pageTitle and pageContent slides -->
-  <div id="contentSlides">
-    <div class="content">
-      <h2 class="pageTitle" style="font-weight: 600; line-height: 25px; animation-delay: 0s;">SALTWATER<br/><span class="flow-text" style="margin-left: 4px; font-weight: 300; letter-spacing: 12px;">digital studios</span></h2>
-      <div class="pageTitleBorder" style="animation-delay: 0.1s;"></div>
- 
-      <svg id="land" class="oceanContent flow-text" style="width:60%; height:41%;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <!-- close pageNum slides -->
+
+    <!-- pageTitle and pageContent slides -->
+    <div id="contentSlides">
+      <div class="content">
+        <div class="pageTitle hide-on-small-only hide-on-large-only" style="font-size: 7vw;font-weight: 600; line-height: 25px; animation-delay: 0s;">
+          SALTWATER
+          <br/>
+          <div style="padding: 2.5vw 0 2vw 0; font-size: 2.8vw; margin-left: 4px; font-weight: 300; letter-spacing: 1.7vw;">
+            digital studios
+          </div>
+        </div>
+        <!--close hid-on-small-only logo-->
+        <div class="pageTitle hide-on-med-and-up" style="font-size: 40px;font-weight: 600; line-height: 25px; animation-delay: 0s;">
+          SALTWATER
+          <br/>
+          <div style="padding: 2.5vw 0 2vw 0; font-size: 16px; margin-left: 4px; font-weight: 300; letter-spacing: 9.5px;">
+            digital studios
+          </div>
+        </div>
+        <!--close hid-on-med-and-up logo-->
+        <div class="pageTitle hide-on-med-and-down" style="font-size: 70px;font-weight: 600; line-height: 25px; animation-delay: 0s;">
+          SALTWATER
+          <br/>
+          <div style="padding: 2.5vw 0 2vw 0; font-size: 30px; margin-left: 4px; font-weight: 300; letter-spacing: 16.5px;">
+            digital studios
+          </div>
+        </div>
+        <!--close hid-on-med-and-down logo-->
+        <div class="pageTitleBorder" style="animation-delay: 0.1s;"></div>
+
+        <svg id="land" class="oceanContent flow-text" style="width:60%; height:41%;" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <text id="text-before" x="0" y="0" fill="#fff" font-family="'Montserrat'">
           <tspan x=0 dy="12%">We design and develop</tspan>
           <tspan x=0 dy="12%">custom, functional, and</tspan>
@@ -576,289 +695,302 @@ nav {
         <rect class="water-fill2" mask="url(#text_mask)" fill="url(#water1)" width="3000"/>
   
       </svg>
-    </div><!--close content hp-->
-    
-    <div class="content">
-      <h4 class="pageTitle hide-on-med-and-up">Components</h4>
-      <h2 class="pageTitle hide-on-large-only hide-on-small-only">Components</h2>
-      <h1 class="pageTitle hide-on-med-and-down">Components</h1>
-      <div class="pageTitleBorder"></div>
-      <div class="pageContent flow-text">
-        <a class="btn-hollow hoverable waves-effect letter-space white-text" href="#">View</a>
-        <div class="hide-on-small-only padding-top">Add a little extra "umph" to your site with some of our individual components.</div>
       </div>
-    </div><!--close component content-->
-    
-    <div class="content">
-      <h3 class="pageTitle hide-on-med-and-up">Templates</h3>
-      <h2 class="pageTitle hide-on-large-only hide-on-small-only">Templates</h2>
-      <h1 class="pageTitle hide-on-med-and-down">Templates</h1>
-      <div class="pageTitleBorder"></div>
-      <div class="pageContent flow-text">
-        <a class="btn-hollow letter-space hoverable waves-effect white-text" href="#">View</a>
-        <div class="hide-on-small-only padding-top">Check out our templates to get an idea of what we can create for you.</div>
+      <!--close content hp-->
+
+      <div class="content">
+        <div class="pageTitle hide-on-med-and-up text-xlarge padding-24">Components</div>
+        <h3 class="pageTitle hide-on-large-only hide-on-small-only">Components</h3>
+        <h1 class="pageTitle hide-on-med-and-down">Components</h1>
+        <div class="pageTitleBorder"></div>
+        <div class="pageContent flow-text">
+          <a class="btn-hollow hoverable waves-effect letter-space white-text" href="#">View</a>
+          <div class="hide-on-small-only padding-top">Add a little extra "umph" to your site with some of our individual components.</div>
+        </div>
       </div>
-    </div><!--close template content-->
-    
-    <div class="content">
-      <h3 class="pageTitle hide-on-med-and-up">Projects</h3>
-      <h2 class="pageTitle hide-on-large-only hide-on-small-only">Projects</h2>
-      <h1 class="pageTitle hide-on-med-and-down">Projects</h1>
-      <div class="pageTitleBorder"></div>
-      <div class="pageContent flow-text">
-        <a class="btn-hollow letter-space hoverable hoverableBlue waves-effect white-text" href="#">View</a>
-        <div class="hide-on-small-only padding-top">We keep the details of all of our completed projects so you can see how we created them.</div>
+      <!--close component content-->
+
+      <div class="content">
+        <div class="pageTitle hide-on-med-and-up text-xlarge padding-24">Templates</div>
+        <h2 class="pageTitle hide-on-large-only hide-on-small-only">Templates</h2>
+        <h1 class="pageTitle hide-on-med-and-down">Templates</h1>
+        <div class="pageTitleBorder"></div>
+        <div class="pageContent flow-text">
+          <a class="btn-hollow letter-space hoverable waves-effect white-text" href="#">View</a>
+          <div class="hide-on-small-only padding-top">Check out our templates to get an idea of what we can create for you.</div>
+        </div>
       </div>
-    </div><!--close project content-->
-  </div><!-- close pageContent slides -->
-  
-  <!-- page navigation -->
-  <a class="hide-on-small-only pageup waves-effect waves-circle" onclick="plusDivs(-1)"><img src="https://1.bp.blogspot.com/-gamBV_F5r3E/WJ8jk7DJpdI/AAAAAAAALhE/CqUJVA-rnXgX9iWZgwRL45DfXvMRztG4ACLcB/s320/thin-arrow-pointing-upward_318-38587.png" style="height: 30px;"></a>
-  <a class="hide-on-small-only pagedown waves-effect waves-circle" onclick="plusDivs(1)"><img src="https://2.bp.blogspot.com/-5AwL50UuLiU/WJ8jlIdR1fI/AAAAAAAALhI/DiQBSkMYo0gEzjkq26SiT8UBRYMxGbQJACLcB/s320/thin-arrow-pointing-upward_318-38587%2Bcopy.png" style="height: 30px;"></a>
-  <div id="paginationSlides">
-    <div class="pagination" style="opacity:0"></div>
-    <div class="pagination">
-      <div class="activePage" onclick="currentDiv(2)">1</div>
-      <div class="inactivePage" onclick="currentDiv(3)">2</div>
-      <div class="inactivePage" onclick="currentDiv(4)">3</div>
+      <!--close template content-->
+
+      <div class="content">
+        <div class="pageTitle hide-on-med-and-up text-xlarge padding-24">Projects</div>
+        <h2 class="pageTitle hide-on-large-only hide-on-small-only">Projects</h2>
+        <h1 class="pageTitle hide-on-med-and-down">Projects</h1>
+        <div class="pageTitleBorder"></div>
+        <div class="pageContent flow-text">
+          <a class="btn-hollow letter-space hoverable hoverableBlue waves-effect white-text" href="#">View</a>
+          <div class="hide-on-small-only padding-top">We keep the details of all of our completed projects so you can see how we created them.</div>
+        </div>
+      </div>
+      <!--close project content-->
     </div>
-    <div class="pagination">
-      <div class="inactivePage" onclick="currentDiv(2)">1</div>
-      <div class="activePage" onclick="currentDiv(3)">2</div>
-      <div class="inactivePage" onclick="currentDiv(4)">3</div>
+    <!-- close pageContent slides -->
+
+    <!-- page navigation -->
+    <a class="hide-on-small-only pageup waves-effect waves-circle" onclick="plusDivs(-1)"><img src="https://1.bp.blogspot.com/-gamBV_F5r3E/WJ8jk7DJpdI/AAAAAAAALhE/CqUJVA-rnXgX9iWZgwRL45DfXvMRztG4ACLcB/s320/thin-arrow-pointing-upward_318-38587.png" style="height: 30px;"></a>
+    <a class="hide-on-small-only pagedown waves-effect waves-circle" onclick="plusDivs(1)"><img src="https://2.bp.blogspot.com/-5AwL50UuLiU/WJ8jlIdR1fI/AAAAAAAALhI/DiQBSkMYo0gEzjkq26SiT8UBRYMxGbQJACLcB/s320/thin-arrow-pointing-upward_318-38587%2Bcopy.png" style="height: 30px;"></a>
+    <div id="paginationSlides">
+      <div class="pagination" style="opacity:0"></div>
+      <div class="pagination">
+        <div class="activePage" onclick="currentDiv(2)">1</div>
+        <div class="inactivePage" onclick="currentDiv(3)">2</div>
+        <div class="inactivePage" onclick="currentDiv(4)">3</div>
+      </div>
+      <div class="pagination">
+        <div class="inactivePage" onclick="currentDiv(2)">1</div>
+        <div class="activePage" onclick="currentDiv(3)">2</div>
+        <div class="inactivePage" onclick="currentDiv(4)">3</div>
+      </div>
+      <div class="pagination">
+        <div class="inactivePage" onclick="currentDiv(2)">1</div>
+        <div class="inactivePage" onclick="currentDiv(3)">2</div>
+        <div class="activePage" onclick="currentDiv(4)">3</div>
+      </div>
     </div>
-    <div class="pagination">
-      <div class="inactivePage" onclick="currentDiv(2)">1</div>
-      <div class="inactivePage" onclick="currentDiv(3)">2</div>
-      <div class="activePage" onclick="currentDiv(4)">3</div>
+
+    <!-- close site div -->
     </div>
-  </div>
-  
-<!-- close site div -->
-</div>
-<script>
-var myVar;
-function myLoader() {
-    myVar = setTimeout(showPage, 0);
-}
-function showPage() {
-  document.getElementById("waterLoader").style.display = "none";
-  document.getElementById("site").style.display = "block";
-}
-</script>
-<script>
-// change slides script
-var paginationIndex = 1;
-var contentIndex = 1;
-var numsIndex = 1;
-var themeIndex = 1;
-var slideIndex = 1;
-showDivs(slideIndex);
-showTheme(themeIndex);
-showPageNums(numsIndex);
-showContent(contentIndex);
-showPagination(paginationIndex);
-function plusDivs(n) {
-  if(slideIndex == 1){
-    transTheme(themeIndex);
-    setTimeout(function(){ showDivs(slideIndex += n); }, 1230);
-    setTimeout(function(){ showPagination(paginationIndex += n); }, 1230);
-    setTimeout(function(){ showTheme(themeIndex += n); }, 2000);
-    setTimeout(function(){ showPageNums(numsIndex += n); }, 2000);
-    setTimeout(function(){ showContent(contentIndex += n); }, 2200);
-  } 
-  else {
-    transTheme(themeIndex);
-    setTimeout(function(){ showDivs(slideIndex += n); }, 230);
-    setTimeout(function(){ showPagination(paginationIndex += n); }, 230);
-    setTimeout(function(){ showTheme(themeIndex += n); }, 1000);
-    setTimeout(function(){ showPageNums(numsIndex += n); }, 1000);
-    setTimeout(function(){ showContent(contentIndex += n); }, 1200);
-  }
-}
-function currentDiv(n){
-  transTheme(themeIndex);
-  setTimeout(function(){ showDivs(slideIndex = n); }, 230);
-  setTimeout(function(){ showPagination(paginationIndex = n);}, 230);
-  setTimeout(function(){ showTheme(themeIndex = n); }, 1000);
-  setTimeout(function(){ showPageNums(numsIndex = n); }, 1000);
-  setTimeout(function(){ showContent(contentIndex = n); }, 1200);
-}
-function transTheme(n) {
-  var sea = document.getElementById("sea");
-  var water2 = document.getElementById("water2");
-  var waves = document.getElementById("waves");
-  var pn = document.getElementsByClassName("pageNums");
-  var td = document.getElementsByClassName("themeDiv");
-  var c = document.getElementsByClassName("content");
-  if(slideIndex == 1){
-    sea.className = sea.className.replace('sea saltwaterColor1', 'sea2 saltwaterColor1');
-    waves.style.animationDelay = "0.95s";
-    water2.style.fill = "#fff";
-    setTimeout(function(){ 
-      pn[themeIndex-1].style.display = "none";
-      td[themeIndex-1].style.transition = "1s";
-      td[themeIndex-1].style.left = "100%";
-      c[themeIndex-1].style.display = "none";}, 
-    1000);
-  }
-  else {
-    water2.style.fill = "#222";
-    pn[themeIndex-1].style.display = "none";
-    td[themeIndex-1].style.transition = "1s";
-    td[themeIndex-1].style.left = "100%";
-    c[themeIndex-1].style.display = "none";
-  }
-}
-function showDivs(n) {
-  var sea = document.getElementById("sea");
-  var id;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (id = 0; id < x.length; id++) {
-     x[id].style.display = "none";
-  }
-  x[slideIndex-1].style.display = "block";
-  sea.className = sea.className.replace('sea2 saltwaterColor1', 'sea saltwaterColor1');
-}
-function showTheme(n) {
-  var it;
-  var td = document.getElementsByClassName("themeDiv");
-  if (n > td.length) {themeIndex = 1}    
-  if (n < 1) {themeIndex = td.length}
-  for (it = 0; it < td.length; it++) {
-     td[it].style.display = "none";
-  }
-  td[themeIndex-1].style.transition = "0.5s";
-  td[themeIndex-1].style.display = "block";
-  td[themeIndex-1].style.left = "-100%";
-  setTimeout(function(){ td[themeIndex-1].style.left = "-50%"; }, 50);
-}
-function showPageNums(n) {
-  var inum;
-  var pn = document.getElementsByClassName("pageNums");
-  if (n > pn.length) {numsIndex = 1}    
-  if (n < 1) {numsIndex = pn.length}
-  for (inum = 0; inum < pn.length; inum++) {
-     pn[inum].style.display = "none";
-  }
-  pn[numsIndex-1].style.display = "block";
-}
-function showContent(n) {
-  var ic;
-  var c = document.getElementsByClassName("content");
-  if (n > c.length) {contentIndex = 1}    
-  if (n < 1) {contentIndex = c.length}
-  for (ic = 0; ic < c.length; ic++) {
-     c[ic].style.display = "none";
-  }
-  c[contentIndex-1].style.display = "block";
-}
-function showPagination(n) {
-  var ip;
-  var p = document.getElementsByClassName("pagination");
-  if (n > p.length) {paginationIndex = 1}    
-  if (n < 1) {paginationIndex = p.length}
-  for (ip = 0; ip < p.length; ip++) {
-     p[ip].style.display = "none";
-  }
-  p[paginationIndex-1].style.display = "block";
-}
-	
-//enable touch events to change slides
-window.addEventListener('load', function(){
-    var el = document.getElementById('body')
-    var hidetimer = null
-    swipedetect(el, function(swipedir){
-        if (swipedir != 'none'){
-            clearTimeout(hidetimer)
-            plusDivs(swipedir)
+
+
+    <script>
+      var myVar;
+      function myLoader() {
+          myVar = setTimeout(showPage, 0);
+      }
+      function showPage() {
+        document.getElementById("waterLoader").style.display = "none";
+        document.getElementById("site").style.display = "block";
+      }
+    </script>
+    <script>
+      // change slides script
+      var paginationIndex = 1;
+      var contentIndex = 1;
+      var numsIndex = 1;
+      var themeIndex = 1;
+      var slideIndex = 1;
+      showDivs(slideIndex);
+      showTheme(themeIndex);
+      showPageNums(numsIndex);
+      showContent(contentIndex);
+      showPagination(paginationIndex);
+      function plusDivs(n) {
+        if(slideIndex == 1){
+          transTheme(themeIndex);
+          setTimeout(function(){ showDivs(slideIndex += n); }, 1230);
+          setTimeout(function(){ showPagination(paginationIndex += n); }, 1230);
+          setTimeout(function(){ showTheme(themeIndex += n); }, 2000);
+          setTimeout(function(){ showPageNums(numsIndex += n); }, 2000);
+          setTimeout(function(){ showContent(contentIndex += n); }, 2200);
+        } 
+        else {
+          transTheme(themeIndex);
+          setTimeout(function(){ showDivs(slideIndex += n); }, 230);
+          setTimeout(function(){ showPagination(paginationIndex += n); }, 230);
+          setTimeout(function(){ showTheme(themeIndex += n); }, 1000);
+          setTimeout(function(){ showPageNums(numsIndex += n); }, 1000);
+          setTimeout(function(){ showContent(contentIndex += n); }, 1200);
         }
-    })
-}, false)
-                        
-    function swipedetect(el, callback){
-  
-    var touchsurface = el,
-    swipedir,
-    startX,
-    startY,
-    distX,
-    distY,
-    threshold = 60, //required min distance traveled to be considered swipe
-    restraint = 30, // maximum distance allowed at the same time in perpendicular direction
-    allowedTime = 700, // maximum time allowed to travel that distance
-    elapsedTime,
-    startTime,
-    handleswipe = callback || function(swipedir){}
-  
-    touchsurface.addEventListener('touchstart', function(e){
-        var touchobj = e.changedTouches[0]
-        swipedir = 'none'
-        dist = 0
-        startX = touchobj.pageX
-        startY = touchobj.pageY
-        startTime = new Date().getTime() // record time when finger first makes contact with surface
-        e.preventDefault()
-    }, false)
-  
-    touchsurface.addEventListener('touchmove', function(e){
-        e.preventDefault() // prevent scrolling when inside DIV
-    }, false)
-  
-    touchsurface.addEventListener('touchend', function(e){
-        var touchobj = e.changedTouches[0]
-        distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
-        distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
-        elapsedTime = new Date().getTime() - startTime // get time elapsed
-        if (elapsedTime <= allowedTime){ // first condition for awipe met
-            if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
-                swipedir = (distX < 0)? 1 : -1 // if dist traveled is negative, it indicates left swipe
-            }
-            else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
-                swipedir = (distY < 0)? 1 : -1 // if dist traveled is negative, it indicates up swipe
-            }
+      }
+      function currentDiv(n){
+        transTheme(themeIndex);
+        setTimeout(function(){ showDivs(slideIndex = n); }, 230);
+        setTimeout(function(){ showPagination(paginationIndex = n);}, 230);
+        setTimeout(function(){ showTheme(themeIndex = n); }, 1000);
+        setTimeout(function(){ showPageNums(numsIndex = n); }, 1000);
+        setTimeout(function(){ showContent(contentIndex = n); }, 1200);
+      }
+      function transTheme(n) {
+        var sea = document.getElementById("sea");
+        var water2 = document.getElementById("water2");
+        var waves = document.getElementById("waves");
+        var pn = document.getElementsByClassName("pageNums");
+        var td = document.getElementsByClassName("themeDiv");
+        var c = document.getElementsByClassName("content");
+        if(slideIndex == 1){
+          sea.className = sea.className.replace('sea saltwaterColor1', 'sea2 saltwaterColor1');
+          waves.style.animationDelay = "0.95s";
+          water2.style.fill = "#fff";
+          setTimeout(function(){ 
+            pn[themeIndex-1].style.display = "none";
+            td[themeIndex-1].style.transition = "1s";
+            td[themeIndex-1].style.left = "100%";
+            c[themeIndex-1].style.display = "none";}, 
+          1000);
         }
-        handleswipe(swipedir)
-        e.preventDefault()
-    }, false)
-	//continue to trigger click event from the target of any touch event at the document level
-	$(window).on('touchend', function(e){
-		$(e.target).trigger('click');
-	});
-}//end window onload
-</script>
-	
- <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script>
-  function openNav() {
-    var x = document.getElementById('menu-container');
-    var y = document.getElementById('menu');
-  
-    if (x.className.indexOf('is-menu-open') == -1) {
-      x.className += ' is-menu-open';
-      y.className = y.className.replace(' nav-closed', ' nav-open');
-    } else { 
-      x.className = x.className.replace(' is-menu-open', '');
-      y.className = y.className.replace(' nav-open', ' nav-closed');
+        else {
+          water2.style.fill = "#222";
+          pn[themeIndex-1].style.display = "none";
+          td[themeIndex-1].style.transition = "1s";
+          td[themeIndex-1].style.left = "100%";
+          c[themeIndex-1].style.display = "none";
+        }
+      }
+      function showDivs(n) {
+        var sea = document.getElementById("sea");
+        var id;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = x.length}
+        for (id = 0; id < x.length; id++) {
+           x[id].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+        sea.className = sea.className.replace('sea2 saltwaterColor1', 'sea saltwaterColor1');
+      }
+      function showTheme(n) {
+        var it;
+        var td = document.getElementsByClassName("themeDiv");
+        if (n > td.length) {themeIndex = 1}    
+        if (n < 1) {themeIndex = td.length}
+        for (it = 0; it < td.length; it++) {
+           td[it].style.display = "none";
+        }
+        td[themeIndex-1].style.transition = "0.5s";
+        td[themeIndex-1].style.display = "block";
+        td[themeIndex-1].style.left = "-100%";
+        setTimeout(function(){ td[themeIndex-1].style.left = "-50%"; }, 50);
+      }
+      function showPageNums(n) {
+        var inum;
+        var pn = document.getElementsByClassName("pageNums");
+        if (n > pn.length) {numsIndex = 1}    
+        if (n < 1) {numsIndex = pn.length}
+        for (inum = 0; inum < pn.length; inum++) {
+           pn[inum].style.display = "none";
+        }
+        pn[numsIndex-1].style.display = "block";
+      }
+      function showContent(n) {
+        var ic;
+        var c = document.getElementsByClassName("content");
+        if (n > c.length) {contentIndex = 1}    
+        if (n < 1) {contentIndex = c.length}
+        for (ic = 0; ic < c.length; ic++) {
+           c[ic].style.display = "none";
+        }
+        c[contentIndex-1].style.display = "block";
+      }
+      function showPagination(n) {
+        var ip;
+        var p = document.getElementsByClassName("pagination");
+        if (n > p.length) {paginationIndex = 1}    
+        if (n < 1) {paginationIndex = p.length}
+        for (ip = 0; ip < p.length; ip++) {
+           p[ip].style.display = "none";
+        }
+        p[paginationIndex-1].style.display = "block";
+      }
+      	
+      //enable touch events to change slides
+      window.addEventListener('load', function(){
+          var el = document.getElementById('body')
+          var hidetimer = null
+          swipedetect(el, function(swipedir){
+              if (swipedir != 'none'){
+                  clearTimeout(hidetimer)
+                  plusDivs(swipedir)
+              }
+          })
+      }, false)
+                              
+          function swipedetect(el, callback){
+        
+          var touchsurface = el,
+          swipedir,
+          startX,
+          startY,
+          distX,
+          distY,
+          threshold = 60, //required min distance traveled to be considered swipe
+          restraint = 30, // maximum distance allowed at the same time in perpendicular direction
+          allowedTime = 700, // maximum time allowed to travel that distance
+          elapsedTime,
+          startTime,
+          handleswipe = callback || function(swipedir){}
+        
+          touchsurface.addEventListener('touchstart', function(e){
+              var touchobj = e.changedTouches[0]
+              swipedir = 'none'
+              dist = 0
+              startX = touchobj.pageX
+              startY = touchobj.pageY
+              startTime = new Date().getTime() // record time when finger first makes contact with surface
+              e.preventDefault()
+          }, false)
+        
+          touchsurface.addEventListener('touchmove', function(e){
+              e.preventDefault() // prevent scrolling when inside DIV
+          }, false)
+        
+          touchsurface.addEventListener('touchend', function(e){
+              var touchobj = e.changedTouches[0]
+              distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
+              distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
+              elapsedTime = new Date().getTime() - startTime // get time elapsed
+              if (elapsedTime <= allowedTime){ // first condition for awipe met
+                  if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
+                      swipedir = (distX < 0)? 1 : -1 // if dist traveled is negative, it indicates left swipe
+                  }
+                  else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
+                      swipedir = (distY < 0)? 1 : -1 // if dist traveled is negative, it indicates up swipe
+                  }
+              }
+              handleswipe(swipedir)
+              e.preventDefault()
+          }, false)
+      	//continue to trigger click event from the target of any touch event at the document level
+      	$(window).on('touchend', function(e){
+      		$(e.target).trigger('click');
+      	});
+      }//end window onload
+    </script>
+
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script>
+      function openNav() {
+        var x = document.getElementById('menu-container');
+        var y = document.getElementById('menu');
+      
+        if (x.className.indexOf('is-menu-open') == -1) {
+          x.className += ' is-menu-open circle saltwaterColor4';
+      } else {
+        x.className = x.className.replace(' is-menu-open circle saltwaterColor4', '');
+      }
     }
-  }
-  
-  //scroll mousewheel to change slides
-  $('#site').on( 'DOMMouseScroll mousewheel', function ( event ) {
-  if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) { //alternative options for wheelData: wheelDeltaX & wheelDeltaY
-    //scroll down
-    plusDivs(-1);
-  } else {
-    //scroll up
-    plusDivs(1);
-  }
-  //prevent page fom scrolling
-  return false;
-});
-  </script> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-          
+      
+      //scroll mousewheel to change slides
+      $('#site').on( 'DOMMouseScroll mousewheel', function ( event ) {
+      if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) { //alternative options for wheelData: wheelDeltaX & wheelDeltaY
+        //scroll down
+        plusDivs(-1);
+      } else {
+        //scroll up
+        plusDivs(1);
+      }
+      //prevent page fom scrolling
+      return false;
+    });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    <script>
+      $('.menu-container').sideNav({
+    menuWidth: 300, // Default is 300
+    edge: 'right', // Choose the horizontal origin
+    closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    draggable: true // Choose whether you can drag to open on touch screens
+  });
+    </script>
 </body>
+
 </html>
