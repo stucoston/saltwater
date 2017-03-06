@@ -44,6 +44,12 @@
    .sw-sideNav ul li a:hover {
      color: #e45f56;
    }
+   .menu-box {
+     right:0px;
+     top:0px;
+     width:80px;
+     height:60px;
+   }
   </style>
   
 <body id="body" onload="myLoader()">
@@ -70,13 +76,15 @@
         
       <!--close navbar-fixed-->
           </nav>
-      </div>
-      <div class="menu-container right pinned hide-on-large-only" style="z-index:11002;"  id='menu-container' onclick="openNav()">
-        <div class="bars"><span></span><span></span><span></span>
-          <div class="other-bar"></div>
-        </div>
-      </div>
-      <!--close menu-container-->
+      </div><!--close fixed nav wrapper-->
+      
+	    <div class="menu-box right pinned hide-on-large-only">
+        <div class="menu-container middle" style="z-index:11002;"  id='menu-container' onclick="openNav()">
+          <div class="bars"><span></span><span></span><span></span>
+            <div class="other-bar"></div>
+          </div>
+        </div><!--close menu-container-->
+      </div><!--close menu-box-->
      
       <div id="sw-sideNav-overlay" class="black overlay full-size pinned hide" onclick="openNav()"></div>
       <div id="sw-sideNav" class="sw-sideNav grey lighten-3" onclick="openNav()">
@@ -551,6 +559,8 @@
 	$(".modal-footer a").on("touchend", function(event) {
   window.location.href = $(this).attr("href");
 });
+	
+	$(".menu-container").on("touchend", openNav());
         
       function openNav() {
         var x = document.getElementById('menu-container');
