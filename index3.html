@@ -544,15 +544,15 @@
       }
     );
   
-  $(".sw-sideNav ul li a").on("touch", function(event) {
+  $(".sw-sideNav ul li a").on("touchend", function(event) {
   window.location.href = $(this).attr("href");
 });
 	
-	$(".modal-footer a").on("touch", function(event) {
+	$(".modal-footer a").on("touchend", function(event) {
   window.location.href = $(this).attr("href");
 });
 	
-	$(".menu-container").on("touch", openNav());
+	$(".menu-container").on("touchend", openNav());
         
       function openNav() {
         var x = document.getElementById('menu-container');
