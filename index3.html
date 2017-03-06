@@ -535,12 +535,12 @@
           if (x.className.indexOf('is-menu-open') == -1) {
             x.className += ' is-menu-open circle saltwaterColor4';
             y.className = y.className.replace(' hide', ' show-on-med-and-down');
-            z.style.right('60px');
+            z.style.right = '60px';
               
         } else {
           x.className = x.className.replace(' is-menu-open circle saltwaterColor4', '');
           y.className = y.className.replace(' show-on-med-and-down', ' hide');
-          z.style.right('-250px');
+          z.style.right = '-250px';
           
         }
       }
