@@ -21,7 +21,7 @@
 	 
    .sw-sideNav {
      position: fixed;
-     right:-250;
+     right:-250px;
      top:30px;
      z-index:11001;
    }
@@ -60,7 +60,7 @@
       <!--close menu-container-->
      
       <div id="sw-sideNav-overlay" class="black overlay full-size pinned hide" onclick="openNav()"></div>
-      <div id="sw-sideNav" class="sw-sideNav grey lighten-3">
+      <div id="sw-sideNav" class="sw-sideNav grey lighten-3" onclick="openNav()">
         <ul>
           <li><a class="grey-text text-darken-3 letter-space" href="https://rawgit.com/stucoston/saltwater/master/components.html">COMPONENTS</a></li>
           <li class="divider"></li>
@@ -535,12 +535,12 @@
           if (x.className.indexOf('is-menu-open') == -1) {
             x.className += ' is-menu-open circle saltwaterColor4';
             y.className = y.className.replace(' hide', ' show-on-med-and-down');
-            z.style.right(60);
+            z.style.right('60px');
               
         } else {
           x.className = x.className.replace(' is-menu-open circle saltwaterColor4', '');
           y.className = y.className.replace(' show-on-med-and-down', ' hide');
-          z.style.right(-250);
+          z.style.right('-250px');
           
         }
       }
