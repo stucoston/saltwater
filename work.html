@@ -1,5 +1,6 @@
+<!DOCTYPE html>
 <html>
-<title>SALTWATER // WORK</title>
+<title>SALTWATER // COMPONENTS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://rawgit.com/stucoston/css/master/stu.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Libre+Franklin" rel="stylesheet">
@@ -11,22 +12,29 @@
     padding-top:0px;
   }
   
-  body, html {
-    overflow:visible;
-    margin:0;
-    padding:0;
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
   }
   
-  .hpTitle {
-    text-align:center;
-    padding:0;
-    margin-top:40px;
-    font-size: 7vw;
+  body, html {
+    overflow:visible;
+  }
+  
+  .pageName {
+    font-family: droid, georgia, times;
+    margin: 32px 0 32px 5%;
+    font-size: 5vw;
     font-weight: 600;
     line-height: 25px;
   }
   
-  .hpTagline {
+  .pageTagline {
     padding: 2.5vw 0 2vw 0;
     font-size: 2.8vw;
     font-weight: 300;
@@ -34,163 +42,202 @@
     margin-bottom: 20px;
   }
   
+  .pageTitleBorder {
+    position:relative;
+  }
+  
+  .sc-img, .sc-desc {
+    position:relative;
+    display: inline-block;
+    height:70vh;
+    margin:15px 0;
+  }
+  
+  .sc-img {
+    width:60%;
+  }
+  
+  .sc-desc {
+    width:40%;
+  }
+  
+  .sc-img a, .sc-img p {
+    margin-top:30px;
+    margin-left: 4%;
+    color:white;
+  }
+  
+  .sc-title {
+    font-family:droid, georgia, times;
+    margin-top: 0px;
+    margin-left: 4%;
+    font-size: 40px;
+  }
+  
+  .sc-content {
+    position:relative;
+    width: 80%;
+  }
+  
   @media only screen and (max-width: 600px) {
-    .hpTitle {
-      font-size: 40px;
+    .pageName {
+      font-size: 30px;
     }
-    .hpTagline {
+    .pageTagline {
       padding: 2.5vw 0 2vw 0;
       font-size: 16px;
       letter-spacing: 9.5px;
     }
-  }
-  @media only screen and (min-width: 993px) {
-    .hpTitle {
-      font-size: 70px;
+    .sc-img {
+      position:relative;
+      width:100%;
+      height: 60vh;
     }
-    .hpTagline {
+  }
+  
+  @media only screen and (min-width: 993px) {
+    .pageName {
+      font-size: 50px;
+    }
+    .pageTagline {
       padding: 2.5vw 0 2vw 0;
       font-size: 30px;
       letter-spacing: 16.5px;
     }
   }
+  
+  .menu-container .bars span {
+    background-color: #222;
+  }
+  
+  .menu-container.is-menu-open .bars span {
+    background-color:white;
+  }
+  
 </style>
 
-<body class="grey lighten-3">
+<body class="white">
+
   <header>
-    <div class="navbar-fixed">
-      <nav class="grey darken-4">
-        <div class="nav-wrapper">
-          <a href="#" class="site-title padding-left32">SALTWATER <span class="thin hide-on-small-only">// WORK</span></a>
-        </div>
-        <!--close nav-wrapper-->
-      </nav>
-    </div>
-    <div class="menu-container right pinned" data-activates="slide-out" id='menu-container' onclick='openNav()'>
+      <div class="navbar-fixed">
+        <nav id="myNavbar">
+          <div class="site-title left margin-left padding-top grey-text text-darken-4" onclick="currentDiv(1)">SALTWATER</div>
+          <div class="hide-on-med-and-down">
+            <ul class="right">
+              <li><a onclick="currentDiv(2)" class="letter-space waves-effect">COMPONENTS</a></li>
+              <li><a onclick="currentDiv(3)" class="letter-space waves-effect">TEMPLATES</a></li>
+              <li><a onclick="currentDiv(4)" class="letter-space waves-effect">PROJECTS</a></li>
+              <li><a class="letter-space waves-effect margin-right" href="#contactModal">CONTACT</a></li>
+            </ul>
+          </div>
+        
+      <!--close navbar-fixed-->
+          </nav>
+      </div>
+      <div class="menu-container right pinned hide-on-large-only" style="z-index:1000;"  id='menu-container' onclick="openNav()" data-activates="dropdownNav">
       <div class="bars"><span></span><span></span><span></span>
         <div class="other-bar"></div>
       </div>
     </div>
     <!--close menu-container-->
-    <ul id="slide-out" class="side-nav">
-      <li>
-        <div class="userView white-text">
-          <div class="background saltwaterColor2"></div>
-          <img class="circle" src="https://github.com/stucoston/saltwater/blob/master/FullSizeRender%2012.jpg?raw=true" style="filter:invert(0)">
-          <!--<img class="circle" src="https://github.com/stucoston/saltwater/blob/master/FullSizeRender%204.jpg?raw=true">-->
-          <a class="white-text site-title" href="#">SALTWATER</a>
-          <div class="white-text tagline">digital studios</div>
-          <a onclick="openNav()" href="mailto:stu.coston@gmail.com"><span class="white-text email">stu.coston@gmail.com</span></a>
-          <div class="social">
-            <a onclick="openNav()" href="https://twitter.com/stucoston" target="_blank" style="display:inline-block;" class="hoverable waves-effect"><i class="white-text fa fa-twitter"></i></a>
-            <a onclick="openNav()" href="https://www.facebook.com/stu.coston" target="_blank" style="display:inline-block;" class="hoverable"><i class="white-text fa fa-facebook"></i></a>
-            <a onclick="openNav()" href="https://github.com/stucoston" target="_blank" style="display:inline-block;" class="hoverable"><i class="white-text fa fa-github"></i></a>
-          </div>
-          <!--close userView-->
-        </div>
-      </li>
-      <ul class="collapsible" data-collapsible="accordion">
-        <li>
-          <div class="collapsible-header black-text">Components<i class="fa fa-caret-down"></i></div>
-          <ul class="collapsible-body grey-text">
-            <li><a onclick="openNav()" href="#">Loaders</a></li>
-            <li><a onclick="openNav()" href="#">Banners</a></li>
-            <li><a onclick="openNav()" href="#">Cards</a></li>
-            <li><a onclick="openNav()" href="#">Menus</a></li>
-            <li><a onclick="openNav()" href="#">Animations</a></li>
-            <li><a onclick="openNav()" href="#">Sliders</a></li>
-          </ul>
-          <!--close components collapsible-->
-        </li>
-        <li>
-          <div class="collapsible-header black-text">Templates<i class="fa fa-caret-down"></i></div>
-          <ul class="collapsible-body">
-            <li><a onclick="openNav()" href="#">Band</a></li>
-            <li><a onclick="openNav()" href="#">Portfolio</a></li>
-            <li><a onclick="openNav()" href="#">Wedding</a></li>
-            <li><a onclick="openNav()" href="#">"Coming Soon" Page</a></li>
-            <li><a onclick="openNav()" href="#">Online Newsletter</a></li>
-            <li><a onclick="openNav()" href="#">Animated Slideshow</a></li>
-            <li><a onclick="openNav()" href="#">Hotel</a></li>
-            <li><a onclick="openNav()" href="#">Travel</a></li>
-            <li><a onclick="openNav()" href="#">Construction</a></li>
-            <li><a onclick="openNav()" href="#">Online Store</a></li>
-            <li><a onclick="openNav()" href="#">Restaurant</a></li>
-            <li><a onclick="openNav()" href="#">50/50</a></li>
-          </ul>
-          <!--close template collapsible-->
-        </li>
-        <li>
-          <div class="collapsible-header black-text">Projects<i class="fa fa-caret-down"></i></div>
-          <ul class="collapsible-body">
-            <li><a onclick="openNav()" href="#">CostonMission Blog</a></li>
-            <li><a onclick="openNav()" href="#">CostonMission Magazine</a></li>
-          </ul>
-      </ul>
-      <!--close accordian collapsible-->
+    
+    <ul id="dropdownNav"  class="dropdown-content">
+        <li><a class="grey-text text-darken-3 letter-space" onclick="openNav()">COMPONENTS</a></li>
+      <li class="divider"></li>
+      <li><a class="grey-text text-darken-3 letter-space" onclick="openNav()">TEMPLATES</a></li>
+      <li class="divider"></li>
+        <li><a class="grey-text text-darken-3 letter-space" onclick="openNav()">PROJECTS</a></li>
+      <li class="divider"></li>
+        <li><a class="letter-space grey-text text-darken-3" href="#contactModal" onclick="openNav()">CONTACT</a></li>
     </ul>
-    <!--close slide-out sidenav-->
-  </header>
-  <div class="section row">
-    <div class="col s10 offset-s1 m8 offset-m2 l6 offset-l3">
-      <h4 class="center grey-text text-darken-2">
-        Welcome to</h4>
-      <div class="hpTitle grey-text text-darken-4">SALTWATER
-          <br/>
-          <div class="hpTagline grey-text text-darken-4">
-            digital studios
-          </div>
+    <!--close dropdownNav sidenav-->
+    
+     <div id="contactModal" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <i class="right black-text text-xlarge fa fa-window-close-o clickable" aria-hidden="true" onclick="$('#contactModal').modal('close');"></i>
+        <div class="black-text saltwater site-title">SALTWATER</div>
+        <div class="black-text tagline">digital studios</div>
+        <p class="grey-text text-darken-2">If you're ready for us to get started on your project today go ahead and click the "Get Started" button below. If you aren't quite ready for that yet and want to talk more about what we could do for you, click the "Message" button.</p> 
+         <a href="https://twitter.com/stucoston" target="_blank" style="display:inline-block;" class="waves-effect"><i class="grey-text fa fa-twitter margin-right center"></i></a>
+                <a href="https://www.facebook.com/stu.coston" target="_blank" style="display:inline-block;" class="waves-effect"><i class="grey-text fa fa-facebook margin-right"></i></a>
+                <a href="https://github.com/stucoston" target="_blank" style="display:inline-block;" class="waves-effect"><i class="grey-text fa fa-github margin-right center"></i></a>
+      </div>
+      <div class="modal-footer">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoC0nCZfiP5ZeQV87f3CIC2taW6s1l_WIT8SuE2P2FlD-d2A/viewform" class="modal-action modal-close waves-effect waves-blue btn" target="_blank">GET STARTED</a>
+        <a href="mailto:stu.coston@gmail.com" class="modal-action modal-close waves-effect waves-blue btn-flat">MESSAGE</a>
+      </div>
+    </div><!--close contactModal-->
+    </header>
+  
+  <main>
+    <div class="section">
+      <div class="pageName black-text">COMPONENTS</div>
+    </div><!--close section-->
+    <div id="component1" class="section">
+      <div class="sc-img blue left">
+        <div class="middle sc-content">
+          <div class="sc-title">Toast</div>
+          <div class="pageTitleBorder"></div>
+          <p class="hide-on-med-and-up flow-text">This is the description of this component</p>
+          <a class="btn-hollow text-xlarge waves-effect hoverable" href="#!">DEMO</a>
+        </div><!--close sc-content-->
+      </div><!--close sc-img-->
+      <div class="sc-desc grey lighten-3 right hide-on-small-only">
+        <div class="middle sc-content">
+          <p class="flow-text black-text">This is the description of this component</p>
         </div>
-      <div class="center flow-text grey-text text-darken-2">
-        We design &amp; develop custom, functional, and memorable websites as well as front-end products using HTML, CSS, and JavaScript.
       </div>
-      <div class="padding full-width center">
-        <a class="btn-large saltwaterColor1 text-xlarge" href="https://docs.google.com/forms/d/e/1FAIpQLSdoC0nCZfiP5ZeQV87f3CIC2taW6s1l_WIT8SuE2P2FlD-d2A/viewform" target="_blank">get started</a>
-      </div>
+  </div><!--close section-->
+    <div id="component2" class="section">
+    <div class="sc-img green right">
+        <div class="middle sc-content">
+          <div class="sc-title">Toast</div>
+          <div class="pageTitleBorder"></div>
+          <p class="hide-on-med-and-up flow-text">This is the description of this component</p>
+          <a class="btn-hollow text-xlarge waves-effect hoverable" href="#!">DEMO</a>
+        </div><!--close sc-content-->
+      </div><!--close sc-img-->
+    <div class="sc-desc white left hide-on-small-only">
+        <div class="middle sc-content">
+          <p class="flow-text black-text">This is the description of this component</p>
+        </div>
+      </div><!--close sc-desc-->
+  </div><!--close section-->
+    <div id="component3" class="section">
+      <div class="sc-img blue-grey left">
+        <div class="middle sc-content">
+          <div class="sc-title">Toast</div>
+          <div class="pageTitleBorder"></div>
+          <p class="hide-on-med-and-up flow-text">This is the description of this component</p>
+          <a class="btn-hollow text-xlarge waves-effect hoverable" href="#!">DEMO</a>
+        </div><!--close sc-content-->
+      </div><!--close sc-img-->
+      <div class="sc-desc white right hide-on-small-only">
+        <div class="middle sc-content">
+          <p class="flow-text black-text">This is the description of this component</p>
+        </div>
+      </div><!--close sc-desc-->
+  </div><!--close section-->
+  </main>
+   
+  <footer class="page-footer padding-0">
+    <div class="footer-copyright">
+      <div class="container flow-text grey-text text-lighten-3">© 2017 Stu Coston
+        <a class="grey-text text-lighten-3 right" href="https://twitter.com/stucoston" target="_blank">Made by Stu</a>
+      </div><!--close container-->
     </div>
-  </div>
-  <!--close section-->
-  <div class="section row">
-    <div class="col s12 m4 center">
-      <div class="card saltwaterColor3 padding-32">
-        <i class="fa fa-puzzle-piece text-xlarge black-text"></i>
-        <div class="site-title center black-text" style="display:block">COMPONENTS</div>
-        <a class="btn-hollow black-text waves-effect hoverable" href="#!">
-          VIEW
-        </a>
-      </div>
-    </div><!--close col-->
-    <div class="col s12 m4 center">
-      <div class="card padding-32 saltwaterColor3">
-        <i class="fa fa-list text-xlarge black-text"></i>
-        <div class="site-title center black-text" style="display:block">TEMPLATES</div>
-        <a class="btn-hollow black-text waves-effect hoverable" href="#!">
-          VIEW
-        </a>
-      </div>
-    </div><!--close col-->
-    <div class="col s12 m4 center">
-      <div class="card padding-32 saltwaterColor3">
-        <i class="fa fa-check-square-o text-xlarge black-text"></i>
-        <div class="site-title center black-text" style="display:block">PROJECTS</div>
-        <a class="btn-hollow black-text waves-effect hoverable" href="#!">
-          VIEW
-        </a>
-      </div>
-    </div>
-  </div>
-      
-  <div class="full-width saltwaterColor4">
-    <div class="container thin">
-      © 2017 Stu Coston
-      <a class="grey-text text-lighten-4 right" href="https://twitter.com/stucoston" target="_blank">Made by Stu</a>
-    </div>
-  </div>
-
+  </footer>
+  
   <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-    <script>
+  <script>
 
+    //
+    //
+    // materialize plugins
+    //
+    //
+    
  $('.menu-container').sideNav({
   menuWidth: 300, // Default is 300
   edge: 'right', // Choose the horizontal origin
@@ -198,14 +245,38 @@
   draggable: false // Choose whether you can drag to open on touch screens
 }); 
 
+  $(".menu-container").dropdown({
+    constrainWidth: 'false',
+    gutter: '40'
+  });
       
 $('.modal').modal({
-      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+      dismissible: false, // Modal can be dismissed by clicking outside of the modal
       opacity: .5, // Opacity of modal background
       inDuration: 300, // Transition in duration
       outDuration: 200, // Transition out duration
     }
   );
+    
+    var options = [
+      {selector: '#component2', offset: 150, callback: alert('fired')},
+      {selector: '#component2', offset: 205, callback: function(el) {
+        Materialize.showStaggeredList($(el));
+      } },
+      {selector: '#component3', offset: 400, callback: function(el) {
+        Materialize.showStaggeredList($(el));
+      } },
+      {selector: '#component4', offset: 500, callback: function(el) {
+        Materialize.showStaggeredList($(el));
+      } }
+    ];
+    Materialize.scrollFire(options);
+    
+    //
+    //
+    // end materialize plugins
+    //
+    //
       
     function openNav() {
         var x = document.getElementById('menu-container');
