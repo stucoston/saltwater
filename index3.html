@@ -28,11 +28,12 @@
      border-radius: 2px;
      box-shadow: 1px 1px 6px #222;
      margin:0;
+     padding:0;
    }
    
    .sw-sideNav ul li {
-     padding: 5px 10px 5px 10px;
-     margin:0;
+     padding: 0px 15px 0px 15px;
+     margin:5px 0px 5px 0px;
    }
    
    .sw-sideNav ul li:hover {
@@ -552,7 +553,7 @@
           if (x.className.indexOf('is-menu-open') == -1) {
             x.className += ' is-menu-open circle saltwaterColor4';
             y.className = y.className.replace(' hide', ' show-on-med-and-down');
-            z.style.right = '60px';
+            z.style.right = '80px';
               
         } else {
           x.className = x.className.replace(' is-menu-open circle saltwaterColor4', '');
