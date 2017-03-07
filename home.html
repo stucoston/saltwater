@@ -387,15 +387,15 @@
       }
       function transTheme(n) {
         var sea = document.getElementById("sea");
-        var water2 = document.getElementById("water2");
-        var waves = document.getElementById("waves");
+       // var water2 = document.getElementById("water2");
+       // var waves = document.getElementById("waves");
         var pn = document.getElementsByClassName("pageNums");
         var td = document.getElementsByClassName("themeDiv");
         var c = document.getElementsByClassName("content");
         if(slideIndex == 1){
           sea.className = sea.className.replace('sea saltwaterColor1', 'sea2 saltwaterColor1');
-          waves.style.animationDelay = "0.95s";
-          water2.style.fill = "#fff";
+        //  waves.style.animationDelay = "0.95s";
+        //  water2.style.fill = "#fff";
           setTimeout(function(){ 
             pn[themeIndex-1].style.display = "none";
             td[themeIndex-1].style.transition = "1s";
@@ -404,7 +404,7 @@
           1000);
         }
         else {
-          water2.style.fill = "#222";
+        //  water2.style.fill = "#222";
           pn[themeIndex-1].style.display = "none";
           td[themeIndex-1].style.transition = "1s";
           td[themeIndex-1].style.left = "100%";
