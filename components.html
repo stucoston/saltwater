@@ -361,13 +361,7 @@
           i2d1.className += ' animate-right';
           i2d2.className += ' animate-right';
           i2b.className += ' animate-bottom';
-        } else {
-           i2.className = i2.className.replace(' visible animate-bottom',' hidden');
-           i2t.className = i2t.className.replace(' animate-left','');
-           i2d1.className = i2d1.className.replace(' animate-right','');
-           i2d2.className = i2d2.className.replace(' animate-right','');
-           i2b.className = i2b.className.replace(' animate-bottom','');
-        }
+        } 
       });
       
       // item3 animations
@@ -378,13 +372,7 @@
           i3d1.className += ' animate-right';
           i3d2.className += ' animate-right';
           i3b.className += ' animate-bottom';
-        } else {
-           i3.className = i3.className.replace(' visible animate-bottom',' hidden');
-           i3t.className = i3t.className.replace(' animate-left','');
-           i3d1.className = i3d1.className.replace(' animate-right','');
-           i3d2.className = i3d2.className.replace(' animate-right','');
-           i3b.className = i3b.className.replace(' animate-bottom','');
-        }
+        } 
       });
       
       // item4 animations
@@ -395,13 +383,7 @@
           i4d1.className += ' animate-right';
           i4d2.className += ' animate-right';
           i4b.className += ' animate-bottom';
-        } else {
-           i4.className = i4.className.replace(' visible animate-bottom',' hidden');
-           i4t.className = i4t.className.replace(' animate-left','');
-           i4d1.className = i4d1.className.replace(' animate-right','');
-           i4d2.className = i4d2.className.replace(' animate-right','');
-           i4b.className = i4b.className.replace(' animate-bottom','');
-        }
+        } 
       });
       
     });
@@ -436,17 +418,6 @@
     // materialize plugins
     //
     //
-    
- $('.menu-container').sideNav({
-  menuWidth: 300, // Default is 300
-  edge: 'right', // Choose the horizontal origin
-  closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-  draggable: false // Choose whether you can drag to open on touch screens
-}); 
-  $(".menu-container").dropdown({
-    constrainWidth: 'false',
-    gutter: '40'
-  });
       
 $('.modal').modal({
       dismissible: false, // Modal can be dismissed by clicking outside of the modal
