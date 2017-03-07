@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<title>Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://rawgit.com/stucoston/css/master/stu.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Libre+Franklin" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
+
+<style>
+  .site-title {
+    padding-top:0px;
+  }
+  
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin:0;
+  }
+  main {
+    flex: 1 0 auto;
+  }
+  
+  body, html {
+    overflow:visible;
+  }
+  
+  .pageName {
+    font-family: droid, georgia, times;
+    margin: 32px 0 32px 5%;
+    font-size: 5vw;
+    font-weight: 600;
+    line-height: 25px;
+  }
+  
+  .pageTagline {
+    padding: 2.5vw 0 2vw 0;
+    font-size: 2.8vw;
+    font-weight: 300;
+    letter-spacing: 1.7vw;
+    margin-bottom: 20px;
+  }
+  
+  .pageTitleBorder {
+    position:relative;
+  }
+  
+  .sc-img, .sc-desc {
+    position:relative;
+    display: inline-block;
+    height:70vh;
+    margin:15px 0;
+  }
+  
+  .sc-img {
+    width:60%;
+  }
+  
+  .sc-desc {
+    width:40%;
+  }
+  
+  .sc-img a, .sc-img p {
+    margin-top:30px;
+    margin-left: 4%;
+    color:white;
+  }
+  
+  .sc-title {
+    font-family:droid, georgia, times;
+    margin-top: 0px;
+    margin-left: 4%;
+    font-size: 40px;
+  }
+  
+  .sc-content {
+    position:relative;
+    width: 80%;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .pageName {
+      font-size: 30px;
+    }
+    .pageTagline {
+      padding: 2.5vw 0 2vw 0;
+      font-size: 16px;
+      letter-spacing: 9.5px;
+    }
+    .sc-img {
+      position:relative;
+      width:100%;
+      height: 60vh;
+    }
+  }
+  
+  @media only screen and (min-width: 993px) {
+    .pageName {
+      font-size: 50px;
+    }
+    .pageTagline {
+      padding: 2.5vw 0 2vw 0;
+      font-size: 30px;
+      letter-spacing: 16.5px;
+    }
+  }
+  
+  .menu-container .bars span {
+    background-color: #222;
+  }
+  
+  .menu-container.is-menu-open .bars span {
+    background-color:white;
+  }
+  
+  #sw-sideNav-overlay {
+     z-index:11000;
+     padding:0;
+     margin:0;
+     left:0;
+     top:0;
+   }
+	 
+   .sw-sideNav {
+     position: fixed;
+     right:-250px;
+     top:30px;
+     z-index:11001;
+     transition:0.3s;
+     border-radius: 2px;
+     border:1px solid #424242;
+     margin:0;
+     padding:0;
+   }
+   
+   .sw-sideNav ul li {
+     padding: 0px 16px 0px 16px;
+     margin:8px 0px 8px 0px;
+   }
+	 
+   .sw-sideNav ul li a {
+     color:#424242
+   }
+   
+   .sw-sideNav ul li a:hover {
+     color: #e45f56;
+   }
+  
+  .menu-box {
+    position:fixed;
+    top:0;
+    right:0;
+    height:75px;
+    width:25%;
+    z-index:11001;
+    cursor:pointer;
+  }
+  
+  .hidden {
+    visibility:hidden; !important
+  }
+  
+  .visible {
+    visibility:visible; !important
+  }
+</style>
+
+<body>
+  
+    <div id="hp" class="mySlides hp" style="z-index:15000;">
+      
+      <div class="content">
+        <div class="center" style="margin-top:8vh">
+          <div class="section animate-opacity-long" style="font-size: 40px;font-weight: 600; line-height: 25px; animation-delay: 0s;">
+          SALTWATER
+            <br/>
+            <div style="padding: 2.5vw 0 2vw 0; font-size: 16px; margin-left: 4px; font-weight: 300; letter-spacing: 9.5px;">
+            digital studios
+            </div>
+          </div>
+          
+          <div class="animate-opacity">
+            <div class="letter-space text-xlarge">// PROJECTS //</div>
+            <div class="text-xlarge margin-0">Coming Soon</div>
+            <a class="btn-hollow inline white-text letter-space margin">HOMEPAGE</a>
+            <a class="btn-hollow inline white-text letter-space">COMPONENTS</a>
+          </div>
+        </div>
+          
+        <div class="pageContent flow-text padding-48 center" style="width: 92%">Our template site is currenty under construction. Please come back later. We are expecting it to be up and running by March 30, 2017. In the meantime, please visit our <span><a href="https://rawgit.com/stucoston/saltwater/master/index3.html" class="saltwaterTextColor2">homepage</a></span> or our <span><a href="https://rawgit.com/stucoston/saltwater/master/components.html" class="saltwaterTextColor2">components page.</a></span>
+        </div>
+      </div>
+      <!--close content hp-->
+     
+      <div id="sea" class="sea saltwaterColor1">
+      <svg class="ocean" style="position: absolute; width: 100%; height:41%;bottom:99%; left: 0%; opacity:0.5;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+         <defs>
+           <pattern id="water" width=".25" height="2" patternContentUnits="objectBoundingBox">
+             <path fill="#7accc8" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,0.5z"/>
+           </pattern>
+        </defs> 
+        <rect id="waves" class="water-fill" fill="url(#water)" width="3000"/> 
+      </svg>
+    </div>
+      <!-- close sea -->
+      
+    </div>
+    <!--close hp-->
+  
+  <header>
+    <div class="navbar-fixed">
+      <nav id="myNavbar">
+        <a class="site-title middle hide-on-med-and-up grey-text text-darken-4" style="left:25%;" href="https://rawgit.com/stucoston/saltwater/master/components.html">SALTWATER</a>
+        <a class="site-title left margin-left hide-on-small-only grey-text text-darken-4" href="https://rawgit.com/stucoston/saltwater/master/components.html">SALTWATER</a>
+        <div class="hide-on-med-and-down">
+          <ul class="right">
+            <li><a class="letter-space waves-effect" href="https://rawgit.com/stucoston/saltwater/master/components.html">COMPONENTS</a></li>
+            <li><a class="letter-space waves-effect" href="https://rawgit.com/stucoston/saltwater/master/templates.html">TEMPLATES</a></li>
+            <li><a class="letter-space waves-effect" href="https://rawgit.com/stucoston/saltwater/master/projects.html">PROJECTS</a></li>
+            <li><a class="letter-space waves-effect margin-right" href="#contactModal">CONTACT</a></li>
+          </ul>
+        </div>
+
+        <!--close navbar-fixed-->
+      </nav>
+    </div>
+    <!--close fixed nav wrapper-->
+
+    <div class="menu-container right pinned hide-on-large-only" style="z-index:11001;" id='menu-container' onclick="openNav()">
+      <div class="bars"><span></span><span></span><span></span>
+        <div class="other-bar"></div>
+      </div>
+    </div>
+    <!--close menu-container-->
+    <div class="menu-box hide-on-large-only" onclick="openNav()"></div>
+
+    <div id="sw-sideNav-overlay" class="black overlay full-size pinned hide" onclick="openNav()"></div>
+    <div id="sw-sideNav" class="sw-sideNav grey lighten-3" onclick="openNav()">
+      <ul>
+        <li><a class="letter-space" href="https://rawgit.com/stucoston/saltwater/master/components.html">COMPONENTS</a></li>
+        <li class="divider"></li>
+        <li><a class="letter-space" href="https://rawgit.com/stucoston/saltwater/master/templates.html">TEMPLATES</a></li>
+        <li class="divider"></li>
+        <li><a class="letter-space" href="https://rawgit.com/stucoston/saltwater/master/projects.html">PROJECTS</a></li>
+        <li class="divider"></li>
+        <li><a class="letter-space" href="#contactModal">CONTACT</a></li>
+      </ul>
+    </div>
+    <!--close sw-sideNav-->
+
+    <div id="contactModal" class="modal modal-fixed-footer" style="z-index:12000;">
+      <div class="modal-content">
+        <i class="right black-text text-xlarge fa fa-window-close-o clickable" aria-hidden="true" onclick="$('#contactModal').modal('close');"></i>
+        <div class="black-text saltwater site-title">SALTWATER</div>
+        <div class="black-text tagline">digital studios</div>
+        <p class="grey-text text-darken-2">If you're ready for us to get started on your project today go ahead and click the "Get Started" button below. If you aren't quite ready for that yet and want to talk more about what we could do for you, click the "Message" button.</p>
+        <a href="https://twitter.com/stucoston" target="_blank" style="display:inline-block;" class="waves-effect"><i class="grey-text fa fa-twitter margin-right center"></i></a>
+        <a href="https://www.facebook.com/stu.coston" target="_blank" style="display:inline-block;" class="waves-effect"><i class="grey-text fa fa-facebook margin-right"></i></a>
+        <a href="https://github.com/stucoston" target="_blank" style="display:inline-block;" class="waves-effect"><i class="grey-text fa fa-github margin-right center"></i></a>
+      </div>
+      <div class="modal-footer">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoC0nCZfiP5ZeQV87f3CIC2taW6s1l_WIT8SuE2P2FlD-d2A/viewform" class="modal-action modal-close waves-effect waves-blue btn" target="_blank">GET STARTED</a>
+        <a href="mailto:stu.coston@gmail.com" class="modal-action modal-close waves-effect waves-blue btn-flat">MESSAGE</a>
+      </div>
+    </div>
+    <!--close contactModal-->
+  </header>
+
+  <div class="section">
+    <div class="pageName black-text">COMPONENTS</div>
+  </div>
+  <!--close section-->
+  <div id="item1" class="section">
+    <div class="sc-img blue left">
+      <div class="middle sc-content">
+        <div class="sc-title animate-left">Toast</div>
+        <div class="pageTitleBorder"></div>
+        <p class="hide-on-med-and-up flow-text animate-right">This is the description of this component</p>
+        <a class="btn-hollow text-xlarge waves-effect hoverable animate-bottom" href="#!">DEMO</a>
+      </div>
+      <!--close sc-content-->
+    </div>
+    <!--close sc-img-->
+    <div class="sc-desc grey lighten-3 right hide-on-small-only">
+      <div class="middle sc-content">
+        <p class="flow-text black-text animate-right">This is the description of this component</p>
+      </div>
+    </div>
+  </div>
+  <!--close section-->
+  <div id="item2" class="section hidden">
+    <div class="sc-img green right">
+      <div class="middle sc-content">
+        <div id="i2t" class="sc-title">Toast</div>
+        <div class="pageTitleBorder"></div>
+        <p id="i2d1" class="hide-on-med-and-up flow-text">This is the description of this component</p>
+        <a id="i2b" class="btn-hollow text-xlarge waves-effect hoverable" href="#!">DEMO</a>
+      </div>
+      <!--close sc-content-->
+    </div>
+    <!--close sc-img-->
+    <div class="sc-desc white left hide-on-small-only">
+      <div class="middle sc-content">
+        <p id="i2d2" class="flow-text black-text">This is the description of this component</p>
+      </div>
+    </div>
+    <!--close sc-desc-->
+  </div>
+  <!--close section-->
+  <div id="item3" class="section hidden">
+    <div class="sc-img blue-grey left">
+      <div class="middle sc-content">
+        <div id="i3t" class="sc-title">Toast</div>
+        <div class="pageTitleBorder"></div>
+        <p id="i3d1" class="hide-on-med-and-up flow-text">This is the description of this component</p>
+        <a id="i3b" class="btn-hollow text-xlarge waves-effect hoverable animate-bottom" href="#!">DEMO</a>
+      </div>
+      <!--close sc-content-->
+    </div>
+    <!--close sc-img-->
+    <div class="sc-desc white right hide-on-small-only">
+      <div class="middle sc-content">
+        <p id="i3d2" class="flow-text black-text">This is the description of this component</p>
+      </div>
+    </div>
+    <!--close sc-desc-->
+  </div>
+  <!--close section-->
+  <div id="item4" class="section hidden">
+    <div class="sc-img blue-grey left">
+      <div class="middle sc-content">
+        <div id="i4t" class="sc-title">Toast</div>
+        <div class="pageTitleBorder"></div>
+        <p id="i4d1" class="hide-on-med-and-up flow-text">This is the description of this component</p>
+        <a id="i4b" class="btn-hollow text-xlarge waves-effect hoverable" href="#!">DEMO</a>
+      </div>
+      <!--close sc-content-->
+    </div>
+    <!--close sc-img-->
+    <div class="sc-desc white right hide-on-small-only">
+      <div class="middle sc-content">
+        <p id="i4d2" class="flow-text black-text">This is the description of this component</p>
+      </div>
+    </div>
+    <!--close sc-desc-->
+  </div>
+  <!--close section-->
+
+  <footer class="page-footer padding-0">
+    <div class="footer-copyright">
+      <div class="container flow-text grey-text text-lighten-3">© 2017 Stu Coston
+        <a class="grey-text text-lighten-3 right" href="https://twitter.com/stucoston" target="_blank">Made by Stu</a>
+      </div>
+      <!--close container-->
+    </div>
+  </footer>
+
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  <script>
+    $(document).ready(function(){
+      
+      var scrollTop = $(window).scrollTop(),
+          h = $(window).innerHeight();
+      
+      var i2 = document.getElementById('item2'),
+          i2t = document.getElementById('i2t'),
+          i2d1 = document.getElementById('i2d1'),
+          i2d2 = document.getElementById('i2d2'),
+          i2b = document.getElementById('i2b'),
+          i2Offset = $('#item2').offset().top,
+          i2pos = (i2Offset - scrollTop);
+          
+      
+      var i3 = document.getElementById('item3'),
+          i3t = document.getElementById('i3t'),
+          i3d1 = document.getElementById('i3d1'),
+          i3d2 = document.getElementById('i3d2'),
+          i3b = document.getElementById('i3b'),
+          i3Offset = $('#item3').offset().top,
+          i3pos = (i3Offset - scrollTop);
+      
+      var i4 = document.getElementById('item4'),
+          i4t = document.getElementById('i4t'),
+          i4d1 = document.getElementById('i4d1'),
+          i4d2 = document.getElementById('i4d2'),
+          i4b = document.getElementById('i4b'),
+          i4Offset = $('#item4').offset().top,
+          i4pos = (i4Offset - scrollTop);
+      
+      // item2 animations
+      $(window).scroll(function() {
+        if ($(document).scrollTop() > i2pos-(0.3*h)) {
+          i2.className = i2.className.replace(' hidden',' visible animate-bottom');
+          i2t.className += ' animate-left';
+          i2d1.className += ' animate-right';
+          i2d2.className += ' animate-right';
+          i2b.className += ' animate-bottom';
+        } 
+      });
+      
+      // item3 animations
+      $(window).scroll(function() {
+        if ($(document).scrollTop() > i3pos-(0.3*h)) {
+          i3.className = i3.className.replace(' hidden',' visible animate-bottom');
+          i3t.className += ' animate-left';
+          i3d1.className += ' animate-right';
+          i3d2.className += ' animate-right';
+          i3b.className += ' animate-bottom';
+        } 
+      });
+      
+      // item4 animations
+      $(window).scroll(function() {
+        if ($(document).scrollTop() > i4pos-(0.3*h)) {
+          i4.className = i4.className.replace(' hidden',' visible animate-bottom');
+          i4t.className += ' animate-left';
+          i4d1.className += ' animate-right';
+          i4d2.className += ' animate-right';
+          i4b.className += ' animate-bottom';
+        } 
+      });
+      
+    });
+  </script>
+  <!--close scroll animations-->
+
+  <script>
+    function openNav() {
+            var x = document.getElementById('menu-container');
+            var y = document.getElementById('sw-sideNav-overlay');
+            var z = document.getElementById('sw-sideNav');
+            
+              if (x.className.indexOf('is-menu-open') == -1) {
+                x.className += ' is-menu-open circle saltwaterColor4';
+                y.className = y.className.replace(' hide', ' show-on-med-and-down');
+                z.style.right = '80px';
+                  
+            } else {
+              x.className = x.className.replace(' is-menu-open circle saltwaterColor4', '');
+              y.className = y.className.replace(' show-on-med-and-down', ' hide');
+              z.style.right = '-250px';
+              
+            }
+          }
+  </script>
+  <!--close openNav script-->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  
+  <script>
+    //
+    //
+    // materialize plugins
+    //
+    //
+      
+$('.modal').modal({
+      dismissible: false, // Modal can be dismissed by clicking outside of the modal
+      opacity: .5, // Opacity of modal background
+      inDuration: 300, // Transition in duration
+      outDuration: 200, // Transition out duration
+    }
+  );
+    //
+    //
+    // end materialize plugins
+    //
+    //
+  </script>
+  <!--close materialize plugins-->
+  
+</body>
+
+</html>
