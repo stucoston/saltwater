@@ -53,7 +53,7 @@
   .sc-img, .sc-desc {
     position:relative;
     display: inline-block;
-    height:70vh;
+    height:50vh;
     margin:15px 0;
   }
   
@@ -95,7 +95,7 @@
     .sc-img {
       position:relative;
       width:100%;
-      height: 60vh;
+      height: 50vh;
     }
   }
   
@@ -235,8 +235,8 @@
     <div class="pageName black-text">COMPONENTS</div>
   </div>
   <!--close section-->
-  <div id="item1" class="section">
-    <div class="sc-img blue left">
+  <div id="item1">
+    <div class="sc-img blue left margin-0">
       <div class="middle sc-content">
         <div class="sc-title animate-left">Toast</div>
         <div class="pageTitleBorder"></div>
@@ -246,15 +246,15 @@
       <!--close sc-content-->
     </div>
     <!--close sc-img-->
-    <div class="sc-desc grey lighten-3 right hide-on-small-only">
+    <div class="sc-desc grey lighten-3 right hide-on-small-only margin-0">
       <div class="middle sc-content">
         <p class="flow-text black-text animate-right">This is the description of this component</p>
       </div>
     </div>
   </div>
   <!--close section-->
-  <div id="item2" class="section hidden">
-    <div class="sc-img green right">
+  <div id="item2" class=" hidden">
+    <div class="sc-img green right margin-0">
       <div class="middle sc-content">
         <div id="i2t" class="sc-title">Toast</div>
         <div class="pageTitleBorder"></div>
@@ -264,7 +264,7 @@
       <!--close sc-content-->
     </div>
     <!--close sc-img-->
-    <div class="sc-desc white left hide-on-small-only">
+    <div class="sc-desc white left hide-on-small-only margin-0">
       <div class="middle sc-content">
         <p id="i2d2" class="flow-text black-text">This is the description of this component</p>
       </div>
@@ -272,8 +272,8 @@
     <!--close sc-desc-->
   </div>
   <!--close section-->
-  <div id="item3" class="section hidden">
-    <div class="sc-img blue-grey left">
+  <div id="item3" class=" hidden">
+    <div class="sc-img blue-grey left margin-0">
       <div class="middle sc-content">
         <div id="i3t" class="sc-title">Toast</div>
         <div class="pageTitleBorder"></div>
@@ -283,7 +283,7 @@
       <!--close sc-content-->
     </div>
     <!--close sc-img-->
-    <div class="sc-desc white right hide-on-small-only">
+    <div class="sc-desc white right hide-on-small-only margin-0">
       <div class="middle sc-content">
         <p id="i3d2" class="flow-text black-text">This is the description of this component</p>
       </div>
@@ -291,18 +291,18 @@
     <!--close sc-desc-->
   </div>
   <!--close section-->
-  <div id="item4" class="section hidden">
-    <div class="sc-img blue-grey left">
+  <div id="item4" class=" hidden">
+    <div class="sc-img yellow lighten-2 black-text right margin-0">
       <div class="middle sc-content">
         <div id="i4t" class="sc-title">Toast</div>
-        <div class="pageTitleBorder"></div>
-        <p id="i4d1" class="hide-on-med-and-up flow-text">This is the description of this component</p>
-        <a id="i4b" class="btn-hollow text-xlarge waves-effect hoverable" href="#!">DEMO</a>
+        <div class="pageTitleBorder" style="border-color:black"></div>
+        <p id="i4d1" class="hide-on-med-and-up flow-text black-text">This is the description of this component</p>
+        <a id="i4b" class="btn-hollow text-xlarge waves-effect hoverable black-text" href="#!">DEMO</a>
       </div>
       <!--close sc-content-->
     </div>
     <!--close sc-img-->
-    <div class="sc-desc white right hide-on-small-only">
+    <div class="sc-desc white left hide-on-small-only margin-0">
       <div class="middle sc-content">
         <p id="i4d2" class="flow-text black-text">This is the description of this component</p>
       </div>
@@ -355,7 +355,7 @@
       
       // item2 animations
       $(window).scroll(function() {
-        if ($(document).scrollTop() > i2pos-(0.3*h)) {
+        if ($(document).scrollTop() > i2pos-(0.7*h)) {
           i2.className = i2.className.replace(' hidden',' visible animate-bottom');
           i2t.className += ' animate-left';
           i2d1.className += ' animate-right';
@@ -366,7 +366,7 @@
       
       // item3 animations
       $(window).scroll(function() {
-        if ($(document).scrollTop() > i3pos-(0.3*h)) {
+        if ($(document).scrollTop() > i3pos-(0.7*h)) {
           i3.className = i3.className.replace(' hidden',' visible animate-bottom');
           i3t.className += ' animate-left';
           i3d1.className += ' animate-right';
@@ -377,7 +377,7 @@
       
       // item4 animations
       $(window).scroll(function() {
-        if ($(document).scrollTop() > i4pos-(0.3*h)) {
+        if ($(document).scrollTop() > i4pos-(0.7*h)) {
           i4.className = i4.className.replace(' hidden',' visible animate-bottom');
           i4t.className += ' animate-left';
           i4d1.className += ' animate-right';
