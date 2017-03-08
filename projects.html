@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
-<title>Projects</title>
+<title>Templates</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://rawgit.com/stucoston/css/master/stu.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Libre+Franklin" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
-  
   body, 
   html {
     min-height: 100vh;
@@ -20,38 +19,44 @@
   .droid {
     font-family:droid, georgia, times;
   }
-  
 </style>
 
 <body>
-  
+
   <div id="hp" class="mySlides hp" style="z-index:15000;">
-      <div class="center middle" style="width:80%; max-width:500px;">
-        <div class="animate-opacity-long" style="font-size: 40px;font-weight: 600; line-height: 25px; animation-delay: 0s;">SALTWATER
-          <br/>
-          <div style="padding: 2.5vw 0 2vw 0; font-size: 16px; margin-left: 4px; font-weight: 300; letter-spacing: 9.5px;">digital studios</div>
-        </div><!--close animate-opacity-long-->
-         
-        <div class="animate-opacity">
-          <div class="letter-space text-large padding-16">// PROJECTS //</div>
-          <div class="text-xlarge droid"><em>Coming Soon</em></div>
-          
-	        <div class="row">
-            <form class="col s12">
-              <a class="btn-hollow inline white-text letter-space margin" href="home.html">HOMEPAGE</a>
-              <div class="input-field inline">
-                <input id="email" type="email" class="validate left-align">
-                <label  class="left-align" for="email" data-error="oops, please make sure you type a real email" data-success="We got it! Now keep an eye out for when the site is up and running again">Email</label>
-              </div>
-            </form>
-          </div>
-        </div><!--close section-->
-		
-        <div class="text-small center animate-opacity-long">This site is currenty under water. Please come back later. We are expecting it to be up and running very soon.</div>
-      </div><!--close center middle-->
-     
-    <div id="sea" class="sea saltwaterColor1">
-      <svg class="ocean" style="position: absolute; width: 100%; height:30%;bottom:99%; left: 0%; opacity:0.5;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <div class="center middle" style="width:80%; max-width:500px;">
+      <div class="animate-opacity-long" style="font-size: 40px;font-weight: 600; line-height: 25px; animation-delay: 0s;">SALTWATER
+        <br/>
+        <div style="padding: 2.5vw 0 2vw 0; font-size: 16px; margin-left: 4px; font-weight: 300; letter-spacing: 9.5px;">digital studios</div>
+      </div>
+      <!--close animate-opacity-long-->
+
+      <div class="animate-opacity">
+        <div class="letter-space text-large padding-16">// TEMPLATES //</div>
+        <div class="text-xlarge droid"><em>Coming Soon</em></div>
+
+        <div class="row">
+          <form class="col s12">
+            <a class="btn-hollow inline white-text letter-space margin" href="home.html">HOMEPAGE</a>
+            <div class="input-field inline">
+              <input id="email" type="email" class="validate left-align">
+              <label class="left-align" for="email" data-error="oops, please make sure you type a real email" data-success="We got it! Now keep an eye out for when the site is up and running again">Email</label>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!--close section-->
+
+      <!--<form action="https://docs.google.com/forms/d/e/1FAIpQLScoRhBpQhyn8_LehSduKVhXWmTMsy7qj5N0ZdPxxuZMzSntpg/formResponse"-->
+        <!--<input type="email" class="quantumWizTextinputPaperinputInput exportInput" jsname="YPqjbf" autocomplete="email" tabindex="0" aria-label="Your email" name="emailAddress" value="" required="" dir="auto" data-initial-dir="auto" data-initial-value="">-->
+                          
+
+    <div class="text-small center animate-opacity-long">This site is currenty under water. Please come back later. We are expecting it to be up and running very soon.</div>
+  </div>
+  <!--close center middle-->
+
+  <div id="sea" class="sea saltwaterColor1">
+    <svg class="ocean" style="position: absolute; width: 100%; height:30%;bottom:99%; left: 0%; opacity:0.5;" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern id="water" width=".25" height="2" patternContentUnits="objectBoundingBox">
             <path fill="#7accc8" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,0.5z"/>
@@ -59,14 +64,36 @@
         </defs> 
         <rect id="waves" class="water-fill" fill="url(#water)" width="3000"/> 
       </svg>
-    </div>
-    <!-- close sea --> 
+  </div>
+  <!-- close sea -->
   </div>
   <!--close hp-->
-  
+
   <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
   
+  <script>
+    function postContactToGoogle() {
+        var email = $('#email').val();
+
+            $.ajax({
+                url: "https://docs.google.com/forms/d/e/1FAIpQLScoRhBpQhyn8_LehSduKVhXWmTMsy7qj5N0ZdPxxuZMzSntpg/formResponse",
+                data: { "YPqjbf": email},
+                type: "POST",
+                dataType: "xml",
+                statusCode: {
+                    0: function () {
+                        window.location.replace("ThankYou.html");
+                    },
+                    200: function () {
+                        window.location.replace("ThankYou.html");
+                    }
+                }
+            });
+    }
+</script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
   <script>
     //
     //
@@ -85,7 +112,7 @@
     //
   </script>
   <!--close materialize plugins-->
-  
+
 </body>
 
 </html>
