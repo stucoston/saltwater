@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>COMPONENTS</title>
+<title>Work</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://rawgit.com/stucoston/css/master/stu.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Libre+Franklin" rel="stylesheet">
@@ -627,11 +627,11 @@
         
         // pagination animation
         $(window).scroll(function() {
-          if ($(document).scrollTop() < temppos-120) {
+          if ($(document).scrollTop() < temppos-(0.8*h)) {
             cpage.className = 'activePage';
             tpage.className = 'inactivePage';
             ppage.className = 'inactivePage';
-          } else if ($(document).scrollTop() < projpos-120) {
+          } else if ($(document).scrollTop() < projpos-(0.8*h)) {
             cpage.className = 'inactivePage';
             tpage.className = 'activePage';
             ppage.className = 'inactivePage';
