@@ -27,7 +27,7 @@
     justify-content:center;
   }
   
-  .row .col {
+  .row, .row .col {
     margin:0;
     padding:0;
   }
@@ -37,6 +37,11 @@
     margin:0;
     width:100%;
     max-width: 900px;
+  }
+  
+  nav {
+    background-color: #424242;
+    box-shadow:0px 2px 6px #222;
   }
 	
 	nav ul li a {
@@ -51,12 +56,6 @@
   .header-down {
     margin-top: 0px;
     transition: 0.3s;
-  }
-  
-  .secName {
-    margin-top:700px;!important
-    margin-bottom:16px;
-    padding-top:88px;
   }
   
   .pageName {
@@ -94,7 +93,7 @@
     font-family:droid, georgia, times;
     margin-top: 0px;
     margin-left: 4%;
-    font-size: 40px;
+    font-size: 30px;
   }
   
   .sc-content {
@@ -133,14 +132,6 @@
     .sc-img{
       margin:10px; !important
     }
-  }
-  
-  .menu-container .bars span {
-    background-color: #222;
-  }
-  
-  .menu-container.is-menu-open .bars span {
-    background-color:white;
   }
   
   #sw-sideNav-overlay {
@@ -193,6 +184,15 @@
   .visible {
     visibility:visible; !important
   }
+  
+  .activePage, .inactivePage:hover {
+    border-bottom: 1px solid #424242;
+    color: #424242;
+  }
+  
+  .inactivePage {
+    color: #ccc;
+  }
 </style>
 
 <body>
@@ -200,8 +200,7 @@
   <header>
     <div class="navbar-fixed">
       <nav id="myNavbar" class=" header-down">
-        <a class="site-title middle hide-on-med-and-up grey-text text-darken-4" style="left:25%;" href="https://rawgit.com/stucoston/saltwater/master/home.html">SALTWATER</a>
-        <a class="site-title left margin-left hide-on-small-only grey-text text-darken-4" href="https://rawgit.com/stucoston/saltwater/master/home.html">SALTWATER</a>
+        <a class="site-title left margin-left" href="https://rawgit.com/stucoston/saltwater/master/home.html">SALTWATER</a>
         <div class="hide-on-med-and-down">
           <ul class="right">
             <li><a class="letter-space waves-effect" href="https://rawgit.com/stucoston/saltwater/master/components.html">COMPONENTS</a></li>
@@ -225,7 +224,7 @@
     <div id="menu-box" class="menu-box hide-on-large-only header-down" onclick="openNav()"></div>
 
     <div id="sw-sideNav-overlay" class="black overlay full-size pinned hide" onclick="openNav()"></div>
-    <div id="sw-sideNav" class="sw-sideNav grey lighten-3" onclick="openNav()">
+    <div id="sw-sideNav" class="sw-sideNav white" onclick="openNav()">
       <ul>
         <li><a class="letter-space" href="https://rawgit.com/stucoston/saltwater/master/components.html">COMPONENTS</a></li>
         <li class="divider"></li>
@@ -269,7 +268,7 @@
               <div id="ci1t" class="sc-title animate-left">Toast</div>
               <div class="pageTitleBorder"></div>
               <p id="ci1d" class="flow-text animate-right">This is the description of this component</p>
-              <a id="ci1b" class="btn-hollow text-xlarge waves-effect hoverable animate-bottom" href="#components">DEMO</a>
+              <a id="ci1b" class="btn-hollow text-large waves-effect hoverable animate-bottom" href="#components">DEMO</a>
             </div>
             <!--close sc-content-->
           </div>
@@ -282,7 +281,7 @@
               <div id="ci2t" class="sc-title">Toast</div>
               <div class="pageTitleBorder"></div>
               <p id="ci2d" class="flow-text">This is the description of this component</p>
-              <a id="ci2b" class="btn-hollow text-xlarge waves-effect hoverable" href="#components">DEMO</a>
+              <a id="ci2b" class="btn-hollow text-large waves-effect hoverable" href="#components">DEMO</a>
             </div>
             <!--close sc-content-->
           </div>
@@ -295,7 +294,7 @@
               <div id="ci3t" class="sc-title">Toast</div>
               <div class="pageTitleBorder"></div>
               <p id="ci3d" class="flow-text">This is the description of this component</p>
-              <a id="ci3b" class="btn-hollow text-xlarge waves-effect hoverable animate-bottom" href="#components">DEMO</a>
+              <a id="ci3b" class="btn-hollow text-large waves-effect hoverable animate-bottom" href="#components">DEMO</a>
             </div>
             <!--close sc-content-->
           </div>
@@ -308,7 +307,7 @@
               <div id="ci4t" class="sc-title">Toast</div>
               <div class="pageTitleBorder" style="border-color:black"></div>
               <p id="ci4d" class="flow-text black-text">This is the description of this component</p>
-              <a id="ci4b" class="btn-hollow text-xlarge waves-effect hoverable black-text" href="#!">DEMO</a>
+              <a id="ci4b" class="btn-hollow text-large waves-effect hoverable black-text" href="#!">DEMO</a>
             </div>
             <!--close sc-content-->
           </div>
@@ -317,9 +316,9 @@
         </div>
       </div>
       <!--close components row-->
-      
+
       <div class="row">
-        <a name="templates" class="col s12 margin-bottom" style="margin-top:-30px; padding-top:80px;">
+        <a name="templates" class="col s12 margin-bottom" style="margin-top:0px; padding-top:80px;">
           <div id="temp" class="pageName black-text hidden">TEMPLATES</div>
         </a>
         <!--close pageName-->
@@ -329,7 +328,7 @@
               <div id="ti1t" class="sc-title">Portfolio</div>
               <div class="pageTitleBorder"></div>
               <p id="ti1d" class="flow-text">This is the description of this component</p>
-              <a id="ti1b" class="btn-hollow text-xlarge waves-effect hoverable" href="#components">VIEW</a>
+              <a id="ti1b" class="btn-hollow text-large waves-effect hoverable" href="#components">VIEW</a>
             </div>
             <!--close sc-content-->
           </div>
@@ -342,7 +341,7 @@
               <div id="ti2t" class="sc-title">Portfolio</div>
               <div class="pageTitleBorder"></div>
               <p id="ti2d" class="flow-text">This is the description of this component</p>
-              <a id="ti2b" class="btn-hollow text-xlarge waves-effect hoverable" href="#components">VIEW</a>
+              <a id="ti2b" class="btn-hollow text-large waves-effect hoverable" href="#components">VIEW</a>
             </div>
             <!--close sc-content-->
           </div>
@@ -355,7 +354,7 @@
               <div id="ti3t" class="sc-title">Band</div>
               <div class="pageTitleBorder"></div>
               <p id="ti3d" class="flow-text">This is the description of this component</p>
-              <a id="ti3b" class="btn-hollow text-xlarge waves-effect hoverable animate-bottom" href="#templates">VIEW</a>
+              <a id="ti3b" class="btn-hollow text-large waves-effect hoverable animate-bottom" href="#templates">VIEW</a>
             </div>
             <!--close sc-content-->
           </div>
@@ -368,7 +367,7 @@
               <div id="ti4t" class="sc-title">Band</div>
               <div class="pageTitleBorder" style="border-color:black"></div>
               <p id="ti4d" class="flow-text black-text">This is the description of this component</p>
-              <a id="ti4b" class="btn-hollow text-xlarge waves-effect hoverable black-text" href="#!">VIEW</a>
+              <a id="ti4b" class="btn-hollow text-large waves-effect hoverable black-text" href="#!">VIEW</a>
             </div>
             <!--close sc-content-->
           </div>
@@ -377,9 +376,9 @@
         <!--close titem4-->
       </div>
       <!--close templates row-->
-    
+
       <div class="row">
-        <a name="projects" class="col s12 margin-bottom" style="margin-top:-30px; padding-top:80px;">
+        <a name="projects" class="col s12 margin-bottom" style="margin-top:0px; padding-top:80px;">
           <div id="proj" class="pageName black-text hidden">PROJECTS</div>
         </a>
         <!--close pageName-->
@@ -389,7 +388,7 @@
               <div id="pi1t" class="sc-title">Blog</div>
               <div class="pageTitleBorder"></div>
               <p id="pi1d" class="flow-text">The online repository of the CostonMission ministry resources and journals.</p>
-              <a id="pi1b" class="btn-hollow text-xlarge waves-effect hoverable" href="#projects">DETAILS</a>
+              <a id="pi1b" class="btn-hollow text-large waves-effect hoverable" href="#projects">DETAILS</a>
             </div>
             <!--close sc-content-->
           </div>
@@ -402,7 +401,7 @@
               <div id="pi2t" class="sc-title">Magazine</div>
               <div class="pageTitleBorder"></div>
               <p id="pi2d" class="flow-text">A quarterly online-magazine released by the CostonMission ministry.</p>
-              <a id="pi2b" class="btn-hollow text-xlarge waves-effect hoverable" href="#templates">DETAILS</a>
+              <a id="pi2b" class="btn-hollow text-large waves-effect hoverable" href="#templates">DETAILS</a>
             </div>
             <!--close sc-content-->
           </div>
@@ -411,12 +410,18 @@
         <!--close pitem2-->
       </div>
       <!--close projects row-->
-    
+      
+      <div class="pagination hide-on-small-only" style="top:30%">
+        <a href="#components"><div id="cpage" class="activePage">C</div></a>
+        <a  href="#templates"><div id="tpage" class="inactivePage">T</div></a>
+        <a href="#projects"><div id="ppage" class="inactivePage">P</div></a>
+      </div>
+
     </main>
   </div>
   <!--close #site-->
 
-  <footer class="page-footer padding-0">
+  <footer class="page-footer padding-0 grey darken-4">
     <div class="footer-copyright">
       <div class="container flow-text grey-text text-lighten-3">© 2017 Stu Coston
         <a class="grey-text text-lighten-3 right" href="https://twitter.com/stucoston" target="_blank">Made by Stu</a>
@@ -434,6 +439,10 @@
             h = $(window).innerHeight();
         
         // component variables
+        var comp = document.getElementById('comp'),
+            compOffset = $('#comp').offset().top,
+            comppos = (compOffset - scrollTop);
+        
         var ci2 = document.getElementById('citem2'),
             ci2t = document.getElementById('ci2t'),
             ci2d = document.getElementById('ci2d'),
@@ -506,7 +515,12 @@
             pi2b = document.getElementById('pi2b'),
             pi2Offset = $('#pitem2').offset().top,
             pi2pos = (pi2Offset - scrollTop);
-        
+      
+        // pagination variables
+        var cpage = document.getElementById('cpage'),
+            tpage = document.getElementById('tpage'),
+            ppage = document.getElementById('ppage');
+      
         // citem2 animations
         $(window).scroll(function() {
           if ($(document).scrollTop() > ci2pos-(0.8*h)) {
@@ -611,6 +625,22 @@
           } 
         });
         
+        // pagination animation
+        $(window).scroll(function() {
+          if ($(document).scrollTop() < temppos-120) {
+            cpage.className = 'activePage';
+            tpage.className = 'inactivePage';
+            ppage.className = 'inactivePage';
+          } else if ($(document).scrollTop() < projpos-120) {
+            cpage.className = 'inactivePage';
+            tpage.className = 'activePage';
+            ppage.className = 'inactivePage';
+          } else {
+            cpage.className = 'inactivePage';
+            tpage.className = 'inactivePage';
+            ppage.className = 'activePage';
+          }
+        });
       });
   </script>
   <!--close scroll animations-->
@@ -632,12 +662,12 @@
            z.style.right = '-250px';
                 
        }
-    } 
+    }
   </script>
   <!--close openNav script-->
 
   <script>
-      // Hide Header on on scroll down
+    // Hide Header on on scroll down
       var didScroll,
           lastScrollTop = 0,
           delta = 5,
@@ -683,7 +713,25 @@
       };
   </script>
   <!--close header up and down script-->
-  
+
+  <script>
+    $(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+  </script>
+  <!--smooth scroll script-->
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
   <script>
     //
