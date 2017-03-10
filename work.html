@@ -44,6 +44,21 @@
     box-shadow:0px 2px 6px #222;
   }
 	
+  #bg1, #bg2, #bg3 {
+    z-index:-2;
+  }
+  
+  .bg-over {
+    z-index:-1;
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,0.2) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(15%, rgba(255,255,255,1)), color-stop(100%, rgba(255,255,255,0.2)));
+    background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,0.2) 100%);
+    background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,0.2) 100%);
+    background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,0.2) 100%);
+    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,0.2) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
+  }
   
   .header-up {
     margin-top: -70px;
@@ -78,10 +93,15 @@
   .sc-img {
     position:relative;
     height:50vh;
+    box-shadow:0px 3px 3px -2px #222;
+  }
+  
+  .sc-img:hover {
+    box-shadow:0px 4px 3px -1px #222;
   }
   
   .sc-img a, .sc-img p {
-    margin-top:30px;
+    margin-top:10px;
     margin-left: 4%;
     color:white;
   }
@@ -91,6 +111,7 @@
     margin-top: 0px;
     margin-left: 4%;
     font-size: 30px;
+    text-shadow:1px 1px 2px #222;
   }
   
   .sc-content {
@@ -188,12 +209,25 @@
   }
   
   .inactivePage {
-    color: #ccc;
+    color: #fff;
   }
 </style>
 
 <body>
 
+  <div class="hide-on-small-only">
+    <div class="pinned full-size bg-over"></div>
+    <div id="bg1" class="">
+      <div class="white bgimg-1 animate-opacity-long"></div>
+    </div>
+    <div id="bg2" class="">
+      <div class="white bgimg-2 animate-opacity-long"></div>
+    </div>
+    <div id="bg3" class="">
+      <div class="white bgimg-3 animate-opacity-long"></div>
+    </div>
+  </div>
+    
   <header>
     <div class="navbar-fixed">
       <nav id="myNavbar" class=" header-down">
@@ -251,7 +285,7 @@
     </div>
     <!--close contactModal-->
   </header>
-
+  
   <div id="site">
     <main>
       <div class="row">
@@ -264,7 +298,7 @@
             <div class="middle sc-content">
               <div id="ci1t" class="sc-title animate-left">Toast</div>
               <div class="pageTitleBorder"></div>
-              <p id="ci1d" class="flow-text animate-right">This is the description of this component</p>
+              <p id="ci1d" class="sw-flow-text animate-right">This is the description of this component</p>
               <a id="ci1b" class="btn-hollow text-large waves-effect hoverable animate-bottom" href="#components">DEMO</a>
             </div>
             <!--close sc-content-->
@@ -277,7 +311,7 @@
             <div class="middle sc-content">
               <div id="ci2t" class="sc-title">Toast</div>
               <div class="pageTitleBorder"></div>
-              <p id="ci2d" class="flow-text">This is the description of this component</p>
+              <p id="ci2d" class="sw-flow-text">This is the description of this component</p>
               <a id="ci2b" class="btn-hollow text-large waves-effect hoverable" href="#components">DEMO</a>
             </div>
             <!--close sc-content-->
@@ -290,7 +324,7 @@
             <div class="middle sc-content">
               <div id="ci3t" class="sc-title">Toast</div>
               <div class="pageTitleBorder"></div>
-              <p id="ci3d" class="flow-text">This is the description of this component</p>
+              <p id="ci3d" class="sw-flow-text">This is the description of this component</p>
               <a id="ci3b" class="btn-hollow text-large waves-effect hoverable animate-bottom" href="#components">DEMO</a>
             </div>
             <!--close sc-content-->
@@ -303,7 +337,7 @@
             <div class="middle sc-content">
               <div id="ci4t" class="sc-title">Toast</div>
               <div class="pageTitleBorder" style="border-color:black"></div>
-              <p id="ci4d" class="flow-text black-text">This is the description of this component</p>
+              <p id="ci4d" class="sw-flow-text black-text">This is the description of this component</p>
               <a id="ci4b" class="btn-hollow text-large waves-effect hoverable black-text" href="#!">DEMO</a>
             </div>
             <!--close sc-content-->
@@ -324,7 +358,7 @@
             <div class="middle sc-content">
               <div id="ti1t" class="sc-title">Portfolio</div>
               <div class="pageTitleBorder"></div>
-              <p id="ti1d" class="flow-text">This is the description of this component</p>
+              <p id="ti1d" class="sw-flow-text">This is the description of this component</p>
               <a id="ti1b" class="btn-hollow text-large waves-effect hoverable" href="#components">VIEW</a>
             </div>
             <!--close sc-content-->
@@ -337,7 +371,7 @@
             <div class="middle sc-content">
               <div id="ti2t" class="sc-title">Portfolio</div>
               <div class="pageTitleBorder"></div>
-              <p id="ti2d" class="flow-text">This is the description of this component</p>
+              <p id="ti2d" class="sw-flow-text">This is the description of this component</p>
               <a id="ti2b" class="btn-hollow text-large waves-effect hoverable" href="#components">VIEW</a>
             </div>
             <!--close sc-content-->
@@ -350,7 +384,7 @@
             <div class="middle sc-content">
               <div id="ti3t" class="sc-title">Band</div>
               <div class="pageTitleBorder"></div>
-              <p id="ti3d" class="flow-text">This is the description of this component</p>
+              <p id="ti3d" class="sw-flow-text">This is the description of this component</p>
               <a id="ti3b" class="btn-hollow text-large waves-effect hoverable animate-bottom" href="#templates">VIEW</a>
             </div>
             <!--close sc-content-->
@@ -363,7 +397,7 @@
             <div class="middle sc-content">
               <div id="ti4t" class="sc-title">Band</div>
               <div class="pageTitleBorder" style="border-color:black"></div>
-              <p id="ti4d" class="flow-text black-text">This is the description of this component</p>
+              <p id="ti4d" class="sw-flow-text black-text">This is the description of this component</p>
               <a id="ti4b" class="btn-hollow text-large waves-effect hoverable black-text" href="#!">VIEW</a>
             </div>
             <!--close sc-content-->
@@ -384,7 +418,7 @@
             <div class="middle sc-content">
               <div id="pi1t" class="sc-title">Blog</div>
               <div class="pageTitleBorder"></div>
-              <p id="pi1d" class="flow-text">The online repository of the CostonMission ministry resources and journals.</p>
+              <p id="pi1d" class="sw-flow-text">The online repository of the CostonMission ministry resources and journals.</p>
               <a id="pi1b" class="btn-hollow text-large waves-effect hoverable" href="#projects">DETAILS</a>
             </div>
             <!--close sc-content-->
@@ -397,7 +431,7 @@
             <div class="middle sc-content">
               <div id="pi2t" class="sc-title">Magazine</div>
               <div class="pageTitleBorder"></div>
-              <p id="pi2d" class="flow-text">A quarterly online-magazine released by the CostonMission ministry.</p>
+              <p id="pi2d" class="sw-flow-text">A quarterly online-magazine released by the CostonMission ministry.</p>
               <a id="pi2b" class="btn-hollow text-large waves-effect hoverable" href="#templates">DETAILS</a>
             </div>
             <!--close sc-content-->
@@ -408,7 +442,7 @@
       </div>
       <!--close projects row-->
       
-      <div class="pagination hide-on-small-only" style="top:30%">
+      <div class="sw-pagination hide-on-small-only" style="top:30%">
         <a href="#components"><div id="cpage" class="activePage">C</div></a>
         <a  href="#templates"><div id="tpage" class="inactivePage">T</div></a>
         <a href="#projects"><div id="ppage" class="inactivePage">P</div></a>
@@ -420,7 +454,7 @@
 
   <footer class="page-footer padding-0 grey darken-4">
     <div class="footer-copyright">
-      <div class="container flow-text grey-text text-lighten-3">© 2017 Stu Coston
+      <div class="container sw-flow-text grey-text text-lighten-3">© 2017 Stu Coston
         <a class="grey-text text-lighten-3 right" href="https://twitter.com/stucoston" target="_blank">Made by Stu</a>
       </div>
       <!--close container-->
@@ -517,6 +551,11 @@
         var cpage = document.getElementById('cpage'),
             tpage = document.getElementById('tpage'),
             ppage = document.getElementById('ppage');
+      
+        // bg variable
+        var bg1 = document.getElementById('bg1'),
+            bg2 = document.getElementById('bg2'),
+            bg3 = document.getElementById('bg3');
       
         // citem2 animations
         $(window).scroll(function() {
@@ -628,14 +667,23 @@
             cpage.className = 'activePage';
             tpage.className = 'inactivePage';
             ppage.className = 'inactivePage';
+            bg1.className = 'pinned bgimg-1 show animate-opacity';
+            bg2.className = 'pinned bgimg-2 hide';
+            bg3.className = 'pinned bgimg-3 hide';
           } else if ($(document).scrollTop() < projpos-(0.8*h)) {
             cpage.className = 'inactivePage';
             tpage.className = 'activePage';
             ppage.className = 'inactivePage';
+            bg1.className = 'pinned bgimg-1 hide';
+            bg2.className = 'pinned bgimg-2 show animate-opacity';
+            bg3.className = 'pinned bgimg-3 hide';
           } else {
             cpage.className = 'inactivePage';
             tpage.className = 'inactivePage';
             ppage.className = 'activePage';
+            bg1.className = 'pinned bgimg-1 hide';
+            bg2.className = 'pinned bgimg-2 hide';
+            bg3.className = 'pinned bgimg-3 show animate-opacity';
           }
         });
       });
