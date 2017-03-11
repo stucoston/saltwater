@@ -70,7 +70,6 @@
   }
   
   .pageName {
-    font-family: droid, georgia, times;
     padding: 80px 0 32px 5%;
     letter-spacing:2px;
     font-size: 5vw;
@@ -93,7 +92,7 @@
   .sc-img {
     position:relative;
     height:50vh;
-    box-shadow:0px 3px 3px -2px #222;
+    box-shadow:0px 3px 6px -3px #222;
   }
   
   .sc-img a, .sc-img p {
@@ -103,6 +102,8 @@
   }
   
   .sc-title {
+    font-family: droid, georgia, times;
+    font-style:italic;
     margin-top: 0px;
     margin-left: 4%;
     font-size: 30px;
@@ -124,7 +125,6 @@
       letter-spacing: 9.5px;
     }
     .sc-img {
-      position:relative;
       height: 50vh;
       width: 100%;
     }
@@ -143,7 +143,7 @@
   
   @media only screen and (min-width: 600px) {
     .sc-img{
-      margin:10px; !important
+      margin:16px; !important
     }
   }
   
@@ -199,12 +199,16 @@
   }
   
   .activePage, .inactivePage:hover {
-    border-bottom: 1px solid #424242;
-    color: #424242;
+    border-bottom: 1px solid #7accc8;
+    color: #7accc8;
   }
   
   .inactivePage {
-    color: #fff;
+    color: #171717;
+  }
+  
+  .absolute {
+    position:absolute;
   }
 </style>
 
@@ -229,9 +233,9 @@
         <a class="site-title left margin-left" href="https://rawgit.com/stucoston/saltwater/master/home.html">SALTWATER</a>
         <div class="hide-on-med-and-down">
           <ul class="right">
-            <li><a class="letter-space waves-effect" href="https://rawgit.com/stucoston/saltwater/master/components.html">COMPONENTS</a></li>
-            <li><a class="letter-space waves-effect" href="https://rawgit.com/stucoston/saltwater/master/templates.html">TEMPLATES</a></li>
-            <li><a class="letter-space waves-effect" href="https://rawgit.com/stucoston/saltwater/master/projects.html">PROJECTS</a></li>
+            <li><a class="letter-space waves-effect" href="https://rawgit.com/stucoston/saltwater/master/work.html#components">COMPONENTS</a></li>
+            <li><a class="letter-space waves-effect" href="https://rawgit.com/stucoston/saltwater/master/work.html#templates">TEMPLATES</a></li>
+            <li><a class="letter-space waves-effect" href="https://rawgit.com/stucoston/saltwater/master/work.html#projects">PROJECTS</a></li>
             <li><a class="letter-space waves-effect margin-right" href="#contactModal">CONTACT</a></li>
           </ul>
         </div>
@@ -252,11 +256,11 @@
     <div id="sw-sideNav-overlay" class="black overlay full-size pinned hide" onclick="openNav()"></div>
     <div id="sw-sideNav" class="sw-sideNav white" onclick="openNav()">
       <ul>
-        <li><a class="letter-space" href="https://rawgit.com/stucoston/saltwater/master/components.html">COMPONENTS</a></li>
+        <li><a class="letter-space" href="https://rawgit.com/stucoston/saltwater/master/work.html#components">COMPONENTS</a></li>
         <li class="divider"></li>
-        <li><a class="letter-space" href="https://rawgit.com/stucoston/saltwater/master/templates.html">TEMPLATES</a></li>
+        <li><a class="letter-space" href="https://rawgit.com/stucoston/saltwater/master/work.html#templates">TEMPLATES</a></li>
         <li class="divider"></li>
-        <li><a class="letter-space" href="https://rawgit.com/stucoston/saltwater/master/projects.html">PROJECTS</a></li>
+        <li><a class="letter-space" href="https://rawgit.com/stucoston/saltwater/master/work.html#projects">PROJECTS</a></li>
         <li class="divider"></li>
         <li><a class="letter-space" href="#contactModal">CONTACT</a></li>
       </ul>
@@ -288,10 +292,10 @@
           <div id="comp" class="pageName black-text">COMPONENTS</div>
         </a>
         <!--close pageName-->
-        <div id="citem1" class="col s12 m6 l4">
-	  <div class="bgimg-1 full-size"></div>
-	  <div class="full-size blue overlay"></div>
+        <div id="citem1" class="col s12 m6">
           <div class="sc-img">
+            <div class="full-size bgimg-1 absolute"></div>
+	          <div class="full-size saltwaterColor3 overlay absolute"></div>
             <div class="middle sc-content">
               <div id="ci1t" class="sc-title animate-left">Toast</div>
               <div class="pageTitleBorder"></div>
@@ -303,8 +307,10 @@
           <!--close sc-img-->
         </div>
         <!--close citem1-->
-        <div id="citem2" class="col s12 m6 l4 hidden">
-          <div class="sc-img green">
+        <div id="citem2" class="col s12 m6 hidden">
+          <div class="sc-img">
+            <div class="full-size bgimg-2 absolute"></div>
+            <div class="full-size saltwaterColor2 overlay absolute"></div>
             <div class="middle sc-content">
               <div id="ci2t" class="sc-title">Toast</div>
               <div class="pageTitleBorder"></div>
@@ -317,7 +323,9 @@
         </div>
         <!--close citem2-->
         <div id="citem3" class="col s12 m6 l4 hidden">
-          <div class="sc-img blue-grey">
+          <div class="sc-img black-text">
+            <div class="full-size bgimg-3 absolute"></div>
+	          <div class="full-size saltwaterColor1 overlay absolute"></div>
             <div class="middle sc-content">
               <div id="ci3t" class="sc-title">Toast</div>
               <div class="pageTitleBorder"></div>
@@ -330,7 +338,9 @@
         </div>
         <!--close citem3-->
         <div id="citem4" class="col s12 m6 l4 hidden">
-          <div class="sc-img yellow lighten-2 black-text">
+          <div class="sc-img black-text">
+            <div class="full-size bgimg-1 absolute"></div>
+	          <div class="full-size saltwaterColor4 overlay absolute"></div>
             <div class="middle sc-content">
               <div id="ci4t" class="sc-title">Toast</div>
               <div class="pageTitleBorder" style="border-color:black"></div>
@@ -350,20 +360,20 @@
           <div id="temp" class="pageName black-text hidden">TEMPLATES</div>
         </a>
         <!--close pageName-->
-        <div id="titem1" class="col s12 m6 l4 hidden">
+        <div id="titem1" class="col s12 m6 hidden">
           <div class="sc-img blue">
             <div class="middle sc-content">
-              <div id="ti1t" class="sc-title">Portfolio</div>
+              <div id="ti1t" class="sc-title">Coming Soon</div>
               <div class="pageTitleBorder"></div>
-              <p id="ti1d" class="sw-flow-text">This is the description of this component</p>
-              <a id="ti1b" class="btn-hollow text-large waves-effect hoverable" href="#components">VIEW</a>
+              <p id="ti1d" class="sw-flow-text">Minimalistic, temporary, single-page site used during launch or mx.</p>
+              <a id="ti1b" class="btn-hollow text-large waves-effect hoverable" href="work/comingsoon.html">VIEW</a>
             </div>
             <!--close sc-content-->
           </div>
           <!--close sc-img-->
         </div>
         <!--close titem1-->
-        <div id="titem2" class="col s12 m6 l4 hidden">
+        <div id="titem2" class="col s12 m6 hidden">
           <div class="sc-img green">
             <div class="middle sc-content">
               <div id="ti2t" class="sc-title">Portfolio</div>
@@ -415,7 +425,7 @@
             <div class="middle sc-content">
               <div id="pi1t" class="sc-title">Blog</div>
               <div class="pageTitleBorder"></div>
-              <p id="pi1d" class="sw-flow-text">The online repository of the CostonMission ministry resources and journals.</p>
+              <p id="pi1d" class="sw-flow-text">CostonMission ministry resources and journals.</p>
               <a id="pi1b" class="btn-hollow text-large waves-effect hoverable" href="#projects">DETAILS</a>
             </div>
             <!--close sc-content-->
@@ -428,7 +438,7 @@
             <div class="middle sc-content">
               <div id="pi2t" class="sc-title">Magazine</div>
               <div class="pageTitleBorder"></div>
-              <p id="pi2d" class="sw-flow-text">A quarterly online-magazine released by the CostonMission ministry.</p>
+              <p id="pi2d" class="sw-flow-text">A quarterly online-magazine for CostonMission.com</p>
               <a id="pi2b" class="btn-hollow text-large waves-effect hoverable" href="#templates">DETAILS</a>
             </div>
             <!--close sc-content-->
@@ -439,7 +449,7 @@
       </div>
       <!--close projects row-->
       
-      <div class="sw-pagination hide-on-small-only" style="top:30%">
+      <div class="sw-pagination hide-on-small-only" >
         <a href="#components"><div id="cpage" class="activePage">C</div></a>
         <a  href="#templates"><div id="tpage" class="inactivePage">T</div></a>
         <a href="#projects"><div id="ppage" class="inactivePage">P</div></a>
