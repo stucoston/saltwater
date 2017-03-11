@@ -210,6 +210,14 @@
   .absolute {
     position:absolute;
   }
+  
+  .btn-hollow {
+    margin-top:16px;
+    color:light-blue;
+  }
+  .btn-hollow:hover {
+    color:#fff;!important
+  }
 </style>
 
 <body>
@@ -360,30 +368,34 @@
           <div id="temp" class="pageName black-text hidden">TEMPLATES</div>
         </a>
         <!--close pageName-->
-        <div id="titem1" class="col s12 m6 hidden">
-          <div class="sc-img blue">
-            <div class="middle sc-content">
-              <div id="ti1t" class="sc-title">Coming Soon</div>
-              <div class="pageTitleBorder"></div>
-              <p id="ti1d" class="sw-flow-text">Minimalistic, temporary, single-page site used during launch or mx.</p>
-              <a id="ti1b" class="btn-hollow text-large waves-effect hoverable" href="work/comingsoon.html">VIEW</a>
+        <div id="titem1" class="col s12 m6 l4 hidden">
+          <div class="card margin">
+            <div class="card-image">
+              <img src="https://github.com/stucoston/saltwater/blob/master/IMG_6212.JPG?raw=true">
+              <span class="card-title black-text">Coming Soon</span>
+              <span class="pageTitleBorder"></span>
             </div>
-            <!--close sc-content-->
+            <!--close card-image-->
+            <div class="card-content black-text">
+              <p>Minimalistic, temporary, single-page site used during launch or maintenance.</p>
+              <a id="ti1b" class="btn-hollow text-large waves-effect hoverable" href="work/comingsoon.html" target="_blank">VIEW</a>
+            </div>
+            <!--close card-content-->
           </div>
-          <!--close sc-img-->
+          <!--close card-->
         </div>
         <!--close titem1-->
-        <div id="titem2" class="col s12 m6 hidden">
-          <div class="sc-img green">
-            <div class="middle sc-content">
-              <div id="ti2t" class="sc-title">Portfolio</div>
-              <div class="pageTitleBorder"></div>
-              <p id="ti2d" class="sw-flow-text">This is the description of this component</p>
-              <a id="ti2b" class="btn-hollow text-large waves-effect hoverable" href="#components">VIEW</a>
+        <div id="titem2" class="col s12 m6 l4 hidden">
+          <div class="card margin">
+            <div class="card-image">
+              <img src="https://github.com/stucoston/saltwater/blob/master/IMG_6212.JPG?raw=true">
+              <span class="card-title black-text">Portfolio</span>
             </div>
-            <!--close sc-content-->
+            <div class="card-content black-text">
+              <p>I am a very simple card. I am good at containing small bits of information.</p>
+              <a id="ti2b" class="btn-hollow text-large waves-effect hoverable" href="work/comingsoon.html" target="_blank">VIEW</a>
+            </div>
           </div>
-          <!--close sc-img-->
         </div>
         <!--close titem2-->
         <div id="titem3" class="col s12 m6 l4 hidden">
@@ -605,9 +617,9 @@
         $(window).scroll(function() {
           if ($(document).scrollTop() > ti1pos-(0.8*h)) {
             ti1.className = ti1.className.replace(' hidden',' visible animate-bottom');
-            ti1t.className += ' animate-left';
-            ti1d.className += ' animate-right';
-            ti1b.className += ' animate-bottom';
+           // ti1t.className += ' animate-left';
+           // ti1d.className += ' animate-right';
+           // ti1b.className += ' animate-bottom';
           } 
         });
       
@@ -615,9 +627,9 @@
         $(window).scroll(function() {
           if ($(document).scrollTop() > ti2pos-(0.8*h)) {
             ti2.className = ti2.className.replace(' hidden',' visible animate-bottom');
-            ti2t.className += ' animate-left';
-            ti2d.className += ' animate-right';
-            ti2b.className += ' animate-bottom';
+           // ti2t.className += ' animate-left';
+           // ti2d.className += ' animate-right';
+           // ti2b.className += ' animate-bottom';
           } 
         });
         
