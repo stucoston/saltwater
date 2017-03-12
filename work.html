@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<html>
 <title>Work</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://rawgit.com/stucoston/css/master/stu.css">
@@ -87,6 +88,10 @@
   
   .pageTitleBorder {
     position:relative;
+    border-color:black;
+    line-height:0px;
+    margin-bottom:16px;
+    margin-left:-15px;
   }
   
   .sc-img {
@@ -101,13 +106,20 @@
     color:white;
   }
   
-  .sc-title {
+  .droid {
+    font-family: droid, georgia, times;
+    font-style:italic;
+    font-weight:600; !important
+  }
+  
+  .sc-title, .card-title {
     font-family: droid, georgia, times;
     font-style:italic;
     margin-top: 0px;
     margin-left: 4%;
     font-size: 30px;
     font-weight:600;
+    background-color: rgba(255,255,255)
   }
   
   .sc-content {
@@ -119,14 +131,36 @@
     .pageName {
       font-size: 30px;
     }
+    
     .pageTagline {
       padding: 2.5vw 0 2vw 0;
       font-size: 16px;
       letter-spacing: 9.5px;
     }
+    
     .sc-img {
       height: 50vh;
       width: 100%;
+    }
+    
+    .card {
+      margin:0;
+    }
+    
+   .card .card-content {
+      color:#fff;
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:95%;
+      max-width:100%;
+      font-size: 14px;
+      z-index:2;
+      transform: translate(-50%, -50%);
+    }
+    
+    .overlay {
+      z-index:1;
     }
   }
   
@@ -144,6 +178,10 @@
   @media only screen and (min-width: 600px) {
     .sc-img{
       margin:16px; !important
+    }
+    
+    .card {
+      margin:16px;
     }
   }
   
@@ -213,7 +251,7 @@
   
   .btn-hollow {
     margin-top:16px;
-    color:light-blue;
+    color:#000;
   }
   .btn-hollow:hover {
     color:#fff;!important
@@ -369,15 +407,17 @@
         </a>
         <!--close pageName-->
         <div id="titem1" class="col s12 m6 l4 hidden">
-          <div class="card margin">
+          <div class="card">
+            <div class="full-size absolute white overlay hide-on-med-and-up"></div>
             <div class="card-image">
               <img src="https://github.com/stucoston/saltwater/blob/master/IMG_6212.JPG?raw=true">
-              <span class="card-title black-text">Coming Soon</span>
-              <span class="pageTitleBorder"></span>
+              <span class="card-title black-text hide-on-small-only">Coming Soon</span>
             </div>
             <!--close card-image-->
             <div class="card-content black-text">
-              <p>Minimalistic, temporary, single-page site used during launch or maintenance.</p>
+              <h4 id="ti1t" class="droid hide-on-med-and-up">Coming Soon</h4>
+              <div class="pageTitleBorder hide-on-med-and-up"><br/></div>
+              <p id="ti1d">Minimalistic, temporary, single-page site used during launch or maintenance.</p>
               <a id="ti1b" class="btn-hollow text-large waves-effect hoverable" href="work/comingsoon.html" target="_blank">VIEW</a>
             </div>
             <!--close card-content-->
@@ -386,13 +426,16 @@
         </div>
         <!--close titem1-->
         <div id="titem2" class="col s12 m6 l4 hidden">
-          <div class="card margin">
+          <div class="card">
+            <div class="full-size absolute green lighten-2 overlay hide-on-med-and-up"></div>
             <div class="card-image">
               <img src="https://github.com/stucoston/saltwater/blob/master/IMG_6212.JPG?raw=true">
-              <span class="card-title black-text">Portfolio</span>
+              <span class="droid card-title black-text hide-on-small-only">Portfolio</span>
             </div>
             <div class="card-content black-text">
-              <p>I am a very simple card. I am good at containing small bits of information.</p>
+              <h4 id="ti2t" class="droid hide-on-med-and-up">Portfolio</h4>
+              <div class="pageTitleBorder hide-on-med-and-up"><br/></div>
+              <p id="ti2d">I am a very simple card. I am good at containing small bits of information.</p>
               <a id="ti2b" class="btn-hollow text-large waves-effect hoverable" href="work/comingsoon.html" target="_blank">VIEW</a>
             </div>
           </div>
@@ -617,9 +660,9 @@
         $(window).scroll(function() {
           if ($(document).scrollTop() > ti1pos-(0.8*h)) {
             ti1.className = ti1.className.replace(' hidden',' visible animate-bottom');
-           // ti1t.className += ' animate-left';
-           // ti1d.className += ' animate-right';
-           // ti1b.className += ' animate-bottom';
+            ti1t.className += ' animate-left';
+            ti1d.className += ' animate-right';
+            ti1b.className += ' animate-bottom';
           } 
         });
       
@@ -627,9 +670,9 @@
         $(window).scroll(function() {
           if ($(document).scrollTop() > ti2pos-(0.8*h)) {
             ti2.className = ti2.className.replace(' hidden',' visible animate-bottom');
-           // ti2t.className += ' animate-left';
-           // ti2d.className += ' animate-right';
-           // ti2b.className += ' animate-bottom';
+            ti2t.className += ' animate-left';
+            ti2d.className += ' animate-right';
+            ti2b.className += ' animate-bottom';
           } 
         });
         
