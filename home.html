@@ -641,29 +641,21 @@
       	
       //enable touch events to change slides
       window.addEventListener('load', function(){
-          var el = document.getElementById('body')
-          var x = document.getElementById('ViewComponents')
-          
-          var c = document.getElementById('ViewComponents'),
+          var el = document.getElementById('body'),
+              x = document.getElementById('ViewComponents'),
               t = document.getElementById('ViewTemplates'),
-              p = document.getElementById('ViewProjects'),
-              b = document.getElementById('body');
-      
-          if (c.className.indexOf('view-down') == -1 || t.className.indexOf('view-down') == -1 || p.className.indexOf('view-down') == -1) {
-            b.style('overflow:scroll');
-          }
-          else if (x.className.indexOf('view-down') == -1) {
+              p = document.getElementById('ViewProjects');
+	      
+	  if (x.className.indexOf('view-down') == -1) {
             el.style('overflow:scroll');
-          }
-          
-          var hidetimer = null
-          swipedetect(el, function(swipedir){
-              if (swipedir != 'none'){
-                  clearTimeout(hidetimer)
-                  plusDivs(swipedir)
-              }
-          })
-      }, false)
+          } else {
+              var hidetimer = null
+              swipedetect(el, function(swipedir){
+                  if (swipedir != 'none'){
+                    clearTimeout(hidetimer)
+                    plusDivs(swipedir)
+	          }
+              })
                               
           function swipedetect(el, callback){
         
@@ -714,6 +706,8 @@
       	$(window).on('touchend', function(e){
       		$(e.target).trigger('click');
       	});
+	        
+      }, false)//end indexOf view-down else
       }//end window onload
   </script>
   <!--close change slides script-->
