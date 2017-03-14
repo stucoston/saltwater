@@ -523,6 +523,7 @@
       showPageNums(numsIndex);
       showContent(contentIndex);
       showPagination(paginationIndex);
+    
       function plusDivs(n) {
         if(slideIndex == 1){
           transTheme(themeIndex);
@@ -541,6 +542,7 @@
           setTimeout(function(){ showContent(contentIndex += n); }, 1200);
         }
       }
+    
       function currentDiv(n){
         transTheme(themeIndex);
         setTimeout(function(){ showDivs(slideIndex = n); }, 230);
@@ -549,6 +551,7 @@
         setTimeout(function(){ showPageNums(numsIndex = n); }, 1000);
         setTimeout(function(){ showContent(contentIndex = n); }, 1200);
       }
+    
       function transTheme(n) {
         var sea = document.getElementById("sea");
        // var water2 = document.getElementById("water2");
@@ -575,6 +578,7 @@
           c[themeIndex-1].style.display = "none";
         }
       }
+    
       function showDivs(n) {
         var sea = document.getElementById("sea");
         var id;
@@ -587,6 +591,7 @@
         x[slideIndex-1].style.display = "block";
         sea.className = sea.className.replace('sea2 saltwaterColor1', 'sea saltwaterColor1');
       }
+    
       function showTheme(n) {
         var it;
         var td = document.getElementsByClassName("themeDiv");
@@ -600,6 +605,7 @@
         td[themeIndex-1].style.left = "-100%";
         setTimeout(function(){ td[themeIndex-1].style.left = "-50%"; }, 50);
       }
+    
       function showPageNums(n) {
         var inum;
         var pn = document.getElementsByClassName("pageNums");
@@ -610,6 +616,7 @@
         }
         pn[numsIndex-1].style.display = "block";
       }
+    
       function showContent(n) {
         var ic;
         var c = document.getElementsByClassName("content");
@@ -620,6 +627,7 @@
         }
         c[contentIndex-1].style.display = "block";
       }
+    
       function showPagination(n) {
         var ip;
         var p = document.getElementsByClassName("sw-pagination");
@@ -636,7 +644,15 @@
           var el = document.getElementById('body')
           var x = document.getElementById('ViewComponents')
           
-          if (x.className.indexOf('view-down') == -1) {
+          var c = document.getElementById('ViewComponents'),
+              t = document.getElementById('ViewTemplates'),
+              p = document.getElementById('ViewProjects'),
+              b = document.getElementById('body');
+      
+          if (c.className.indexOf('view-down') == -1 || t.className.indexOf('view-down') == -1 || p.className.indexOf('view-down') == -1) {
+            b.style('overflow:scroll');
+          }
+          else if (x.className.indexOf('view-down') == -1) {
             el.style('overflow:scroll');
           }
           
