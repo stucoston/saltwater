@@ -639,7 +639,7 @@
         p[paginationIndex-1].style.display = "block";
       }
       	
-      function useSwipeDetect() {
+      window.addEventListener('load', function useSwipeDetect() {
         var c = document.getElementById('ViewComponents'),
             b = document.getElementById('body');
         
@@ -716,7 +716,7 @@
       }
       });//end window onload
         }// end else
-      }// end useSwipeDetect
+      });// end useSwipeDetect 
   </script>
   <!--close change slides script-->
 
