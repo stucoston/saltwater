@@ -639,6 +639,134 @@
         p[paginationIndex-1].style.display = "block";
       }
       	
+      // change slides script
+      var paginationIndex = 1,
+          contentIndex = 1,
+          numsIndex = 1,
+          themeIndex = 1,
+          slideIndex = 1,
+          vc = document.getElementById('ViewComponents');
+      showDivs(slideIndex);
+      showTheme(themeIndex);
+      showPageNums(numsIndex);
+      showContent(contentIndex);
+      showPagination(paginationIndex);
+    
+      function plusDivs(n) {
+        if(slideIndex == 1){
+          transTheme(themeIndex);
+          setTimeout(function(){ showDivs(slideIndex += n); }, 1230);
+          setTimeout(function(){ showPagination(paginationIndex += n); }, 1230);
+          setTimeout(function(){ showTheme(themeIndex += n); }, 2000);
+          setTimeout(function(){ showPageNums(numsIndex += n); }, 2000);
+          setTimeout(function(){ showContent(contentIndex += n); }, 2200);
+        } 
+        else {
+          transTheme(themeIndex);
+          setTimeout(function(){ showDivs(slideIndex += n); }, 230);
+          setTimeout(function(){ showPagination(paginationIndex += n); }, 230);
+          setTimeout(function(){ showTheme(themeIndex += n); }, 1000);
+          setTimeout(function(){ showPageNums(numsIndex += n); }, 1000);
+          setTimeout(function(){ showContent(contentIndex += n); }, 1200);
+        }
+      }
+    
+      function currentDiv(n){
+        transTheme(themeIndex);
+        setTimeout(function(){ showDivs(slideIndex = n); }, 230);
+        setTimeout(function(){ showPagination(paginationIndex = n);}, 230);
+        setTimeout(function(){ showTheme(themeIndex = n); }, 1000);
+        setTimeout(function(){ showPageNums(numsIndex = n); }, 1000);
+        setTimeout(function(){ showContent(contentIndex = n); }, 1200);
+      }
+    
+      function transTheme(n) {
+        var sea = document.getElementById("sea");
+       // var water2 = document.getElementById("water2");
+       // var waves = document.getElementById("waves");
+        var pn = document.getElementsByClassName("pageNums");
+        var td = document.getElementsByClassName("themeDiv");
+        var c = document.getElementsByClassName("content");
+        if(slideIndex == 1){
+          sea.className = sea.className.replace('sea saltwaterColor1', 'sea2 saltwaterColor1');
+        //  waves.style.animationDelay = "0.95s";
+        //  water2.style.fill = "#fff";
+          setTimeout(function(){ 
+            pn[themeIndex-1].style.display = "none";
+            td[themeIndex-1].style.transition = "1s";
+            td[themeIndex-1].style.left = "100%";
+            c[themeIndex-1].style.display = "none";}, 
+          1000);
+        }
+        else {
+        //  water2.style.fill = "#222";
+          pn[themeIndex-1].style.display = "none";
+          td[themeIndex-1].style.transition = "1s";
+          td[themeIndex-1].style.left = "100%";
+          c[themeIndex-1].style.display = "none";
+        }
+      }
+    
+      function showDivs(n) {
+        var sea = document.getElementById("sea");
+        var id;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = x.length}
+        for (id = 0; id < x.length; id++) {
+           x[id].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+        sea.className = sea.className.replace('sea2 saltwaterColor1', 'sea saltwaterColor1');
+      }
+    
+      function showTheme(n) {
+        var it;
+        var td = document.getElementsByClassName("themeDiv");
+        if (n > td.length) {themeIndex = 1}    
+        if (n < 1) {themeIndex = td.length}
+        for (it = 0; it < td.length; it++) {
+           td[it].style.display = "none";
+        }
+        td[themeIndex-1].style.transition = "0.5s";
+        td[themeIndex-1].style.display = "block";
+        td[themeIndex-1].style.left = "-100%";
+        setTimeout(function(){ td[themeIndex-1].style.left = "-50%"; }, 50);
+      }
+    
+      function showPageNums(n) {
+        var inum;
+        var pn = document.getElementsByClassName("pageNums");
+        if (n > pn.length) {numsIndex = 1}    
+        if (n < 1) {numsIndex = pn.length}
+        for (inum = 0; inum < pn.length; inum++) {
+           pn[inum].style.display = "none";
+        }
+        pn[numsIndex-1].style.display = "block";
+      }
+    
+      function showContent(n) {
+        var ic;
+        var c = document.getElementsByClassName("content");
+        if (n > c.length) {contentIndex = 1}    
+        if (n < 1) {contentIndex = c.length}
+        for (ic = 0; ic < c.length; ic++) {
+           c[ic].style.display = "none";
+        }
+        c[contentIndex-1].style.display = "block";
+      }
+    
+      function showPagination(n) {
+        var ip;
+        var p = document.getElementsByClassName("sw-pagination");
+        if (n > p.length) {paginationIndex = 1}    
+        if (n < 1) {paginationIndex = p.length}
+        for (ip = 0; ip < p.length; ip++) {
+           p[ip].style.display = "none";
+        }
+        p[paginationIndex-1].style.display = "block";
+      }
+      	
       //enable touch events to change slides
       window.addEventListener('load', function(){
           var el = document.getElementById('body'),
@@ -649,13 +777,14 @@
 	  if (x.className.indexOf('view-down') == -1) {
             el.style('overflow:scroll');
           } else {
-              var hidetimer = null
+              var hidetimer = null;
               swipedetect(el, function(swipedir){
                   if (swipedir != 'none'){
-                    clearTimeout(hidetimer)
-                    plusDivs(swipedir)
+                    clearTimeout(hidetimer);
+                    plusDivs(swipedir);
 	          }
               })
+          
                               
           function swipedetect(el, callback){
         
@@ -670,28 +799,28 @@
               allowedTime = 700, // maximum time allowed to travel that distance
               elapsedTime,
               startTime,
-              handleswipe = callback || function(swipedir){}
+              handleswipe = callback || function(swipedir){};
         
             touchsurface.addEventListener('touchstart', function(e){
-              var touchobj = e.changedTouches[0]
-              swipedir = 'none'
-              dist = 0
-              startX = touchobj.pageX
-              startY = touchobj.pageY
-              startTime = new Date().getTime() // record time when finger first makes contact with surface
-              e.preventDefault()
-          }, false)
+              var touchobj = e.changedTouches[0],
+                  swipedir = 'none',
+                  dist = 0,
+                  startX = touchobj.pageX,
+                  startY = touchobj.pageY,
+                  startTime = new Date().getTime(); // record time when finger first makes contact with surface
+              e.preventDefault();
+          }, false);
         
-          touchsurface.addEventListener('touchmove', function(e){
+            touchsurface.addEventListener('touchmove', function(e){
               e.preventDefault() // prevent scrolling when inside DIV
-          }, false)
+          }, false);
         
-          touchsurface.addEventListener('touchend', function(e){
+            touchsurface.addEventListener('touchend', function(e){
               var touchobj = e.changedTouches[0]
-              distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
-              distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
-              elapsedTime = new Date().getTime() - startTime // get time elapsed
-              if (elapsedTime <= allowedTime){ // first condition for awipe met
+                  distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
+                  distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
+                  elapsedTime = new Date().getTime() - startTime // get time elapsed
+              if (elapsedTime <= allowedTime){ // first condition for swipe met
                   if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
                       swipedir = (distX < 0)? 1 : -1 // if dist traveled is negative, it indicates left swipe
                   }
@@ -701,14 +830,16 @@
               }
               handleswipe(swipedir)
               e.preventDefault()
-          }, false)
+          }, false);
       	//continue to trigger click event from the target of any touch event at the document level
       	$(window).on('touchend', function(e){
       		$(e.target).trigger('click');
       	});
 	        
-      }, false)//end indexOf view-down else
-      }//end window onload
+       //end indexOf view-down else
+      }
+          }
+      });//end window onload
   </script>
   <!--close change slides script-->
 
