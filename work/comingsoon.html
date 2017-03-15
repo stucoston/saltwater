@@ -37,36 +37,32 @@
 
         <div class="row">
           <form id="gform" method="POST" class="pure-form pure-form-stacked" action="https://script.google.com/macros/s/AKfycbyvShGjFyLjcjhyLKEunKZ-p4_G9D9jqAsG3vt5PFdMZp-23hdG/exec">
-    <!-- change the form action to your script url -->
-
-    <fieldset class="pure-group">
-      <label for="name">Name: </label>
-      <input id="name" name="name" placeholder="What your Mom calls you" />
-    </fieldset>
-
-    <fieldset class="pure-group">
-      <label for="message">Message: </label>
-      <textarea id="message" name="message" rows="10"
-      placeholder="Tell us what's on your mind..."></textarea>
-    </fieldset>
-
-    <fieldset class="pure-group">
-      <label for="email"><em>Your</em> Email Address:</label>
-      <input id="email" name="email" type="email" value=""
-      required placeholder="your.name@email.com"/>
-      <span id="email-invalid" style="visibility:hidden">
-        Must be a valid email address</span>
-    </fieldset>
-
-    <fieldset class="pure-group">
-      <label for="color">Favourite Color: </label>
-      <input id="color" name="color" placeholder="green" />
-    </fieldset>
-
-    <button class="button-success pure-button button-xlarge">
-      <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
-
-  </form>
+          <!-- change the form action to your script url -->
+            
+            <fieldset class="input-field left-align">
+              <label for="name">Name: </label>
+              <input id="name" name="name" />
+            </fieldset>
+            
+            <!--<fieldset class="pure-group">
+              <label for="message">Message: </label>
+              <textarea id="message" name="message" rows="10" placeholder="Tell us what's on your mind..."></textarea>
+            </fieldset>-->
+            
+            <fieldset class="input-field left-align">
+              <label for="email">Email: </label>
+              <input id="email" name="email" type="email" value="" required />
+              <span id="email-invalid" style="visibility:hidden">Must be a valid email address</span>
+            </fieldset>
+            
+            <!--<fieldset class="pure-group">
+              <label for="color">Favourite Color: </label>
+              <input id="color" name="color" placeholder="green" />
+            </fieldset>-->
+            
+            <button class="btn-hollow">Submit</button>
+          
+          </form>
         </div>
       </div>
       <!--close section-->
@@ -94,68 +90,6 @@
   <!--close hp-->
 
   <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script>
-    // Variable to hold request
-var request;
-
-// Bind to the submit event of our form
-$("#foo").submit(function(event){
-
-    // Abort any pending request
-    if (request) {
-        request.abort();
-    }
-    // setup some local variables
-    var $form = $(this);
-
-    // Let's select and cache all the fields
-    var $inputs = $form.find("input, select, button, textarea");
-
-    // Serialize the data in the form
-    var serializedData = $form.serialize();
-
-    // Let's disable the inputs for the duration of the Ajax request.
-    // Note: we disable elements AFTER the form data has been serialized.
-    // Disabled form elements will not be serialized.
-    $inputs.prop("disabled", true);
-
-    // Fire off the request to /form.php
-    request = $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbxGW9_wKbt96edDW3-64Oj3ruh1S2tDzAQkg625bHLludWmFIw/exec",
-        type: "post",
-        data: serializedData
-    });
-
-    // Callback handler that will be called on success
-    request.done(function (response, textStatus, jqXHR){
-        // Log a message to the console
-        console.log("Hooray, it worked!");
-        console.log(response);
-        console.log(textStatus);
-        console.log(jqXHR);
-    });
-
-    // Callback handler that will be called on failure
-    request.fail(function (jqXHR, textStatus, errorThrown){
-        // Log the error to the console
-        console.error(
-            "The following error occurred: "+
-            textStatus, errorThrown
-        );
-    });
-
-    // Callback handler that will be called regardless
-    // if the request failed or succeeded
-    request.always(function () {
-        // Reenable the inputs
-        $inputs.prop("disabled", false);
-    });
-
-    // Prevent default posting of form
-    event.preventDefault();
-});
-  </script>
-  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 
   <script>
@@ -177,6 +111,8 @@ $("#foo").submit(function(event){
   </script>
   <!--close materialize plugins-->
 
+  <script data-cfasync="false" type="text/javascript" src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
+  
 </body>
 
 </html>
