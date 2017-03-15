@@ -36,32 +36,33 @@
         <div class="text-xlarge droid"><em>Coming Soon</em></div>
 
         <div class="row">
-          <form id="gform" method="POST" class="pure-form pure-form-stacked" action="https://script.google.com/macros/s/AKfycbyvShGjFyLjcjhyLKEunKZ-p4_G9D9jqAsG3vt5PFdMZp-23hdG/exec">
+	  <a class="col s12 m6 btn-hollow" href="https://rawgit.com/stucoston/saltwater/master/home.html">HOMEPAGE</a>
+          <form id="gform" method="POST" class="col s12 m6" action="https://script.google.com/macros/s/AKfycbyvShGjFyLjcjhyLKEunKZ-p4_G9D9jqAsG3vt5PFdMZp-23hdG/exec">
           <!-- change the form action to your script url -->
+            <div class="row">
+              <fieldset class="col s6 input-field left-align">
+                <label for="name">Name: </label>
+                <input id="name" name="name" />
+              </fieldset>
             
-            <fieldset class="input-field left-align">
-              <label for="name">Name: </label>
-              <input id="name" name="name" />
-            </fieldset>
+              <!--<fieldset class="pure-group">
+                <label for="message">Message: </label>
+                <textarea id="message" name="message" rows="10" placeholder="Tell us what's on your mind..."></textarea>
+              </fieldset>-->
             
-            <!--<fieldset class="pure-group">
-              <label for="message">Message: </label>
-              <textarea id="message" name="message" rows="10" placeholder="Tell us what's on your mind..."></textarea>
-            </fieldset>-->
+              <fieldset class="col s6 input-field left-align">
+                <label for="email">Email: </label>
+                <input id="email" name="email" type="email" value="" required />
+                <span id="email-invalid" style="visibility:hidden">Must be a valid email address</span>
+              </fieldset>
             
-            <fieldset class="input-field left-align">
-              <label for="email">Email: </label>
-              <input id="email" name="email" type="email" value="" required />
-              <span id="email-invalid" style="visibility:hidden">Must be a valid email address</span>
-            </fieldset>
+              <!--<fieldset class="pure-group">
+                <label for="color">Favourite Color: </label>
+                <input id="color" name="color" placeholder="green" />
+              </fieldset>-->
             
-            <!--<fieldset class="pure-group">
-              <label for="color">Favourite Color: </label>
-              <input id="color" name="color" placeholder="green" />
-            </fieldset>-->
-            
-            <button class="btn-hollow">Submit</button>
-          
+              <button class="btn-hollow">Submit</button>
+	    </div>
           </form>
         </div>
       </div>
