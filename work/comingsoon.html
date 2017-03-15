@@ -36,8 +36,8 @@
         <div class="text-xlarge droid"><em>Coming Soon</em></div>
 
         <div class="row">
-	  <a class="col s12 m6 btn-hollow white-text" href="https://rawgit.com/stucoston/saltwater/master/home.html">HOMEPAGE</a>
-          <form id="gform" method="POST" class="col s12 m6" action="https://script.google.com/macros/s/AKfycbyvShGjFyLjcjhyLKEunKZ-p4_G9D9jqAsG3vt5PFdMZp-23hdG/exec">
+	  <a class="col s12 btn-hollow white-text" href="https://rawgit.com/stucoston/saltwater/master/home.html">HOMEPAGE</a>
+          <form id="gform" method="POST" class="col s12" action="https://script.google.com/macros/s/AKfycbyvShGjFyLjcjhyLKEunKZ-p4_G9D9jqAsG3vt5PFdMZp-23hdG/exec">
           <!-- change the form action to your script url -->
             <div class="row">
               <div class="col s6 input-field left-align">
@@ -64,6 +64,12 @@
               <button class="col s12 btn-hollow black-text">Submit</button>
 	    </div>
           </form>
+		
+		<!-- Customise the Thankyou Message People See when they submit the form: -->
+                <div style="display:none;" id="thankyou_message">
+                  <h2>Thanks! We will get back to you soon!</h2>
+		</div>
+		
         </div>
       </div>
       <!--close section-->
