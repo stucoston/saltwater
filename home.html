@@ -644,17 +644,14 @@
           var el = document.getElementById('body')
           var x = document.getElementById('ViewComponents')
           var hidetimer = null
-          
-          if (vc.className.indexOf('view-down') == -1) {
-            return; //cancel the swipe direction function
-          } else {
+	  
           swipedetect(el, function(swipedir){
               if (swipedir != 'none'){
                   clearTimeout(hidetimer)
                   plusDivs(swipedir)
               }
           })
-          }
+          
       }, false)
                               
            function swipedetect(el, callback){
