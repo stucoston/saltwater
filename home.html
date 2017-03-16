@@ -786,46 +786,6 @@
         ra.className = ra.className.replace(' hide',' show');
         ST1.className = ST1.className.replace(' hide-on-med-and-up',' hide');
         ST2.className = ST2.className.replace(' hide-on-small-only',' inline');
-        
-        // media query event handler
-        if (matchMedia) {
-          var mq = window.matchMedia("(max-width: 510px)");
-          mq.addListener(WidthChange);
-          WidthChange(mq);
-        }
-
-        // media query change
-        function WidthChange(mq) {
-          if (mq.matches) {
-            // window width is less than 500px
-            var i;
-            for (i = 0; i < ci.length; i++) {
-              ci[i].style.display = "block";
-            }
-          } else {
-            // window width is less than 500px
-            cShowItem(cItemIndex);
-            
-            function currentxItem(n){
-              cShowItem(cItemIndex = n);
-            }
-    
-            function cShowItem(n) {
-              var i;
-              var ci = document.getElementsByClassName("cItem");
-              if (n > ci.length) {cItemIndex = 1}    
-              if (n < 1) {cItemIndex = ci.length}
-              for (i = 0; i < ci.length; i++) {
-                ci[i].className.replace = (' animate-opacity',' animate-opacity-reverse');
-                setTimeout(function(){ci[i].className.replace = (' animate-opacity-reverse',' hide'); }, 2000);
-              }
-                ci[cItemIndex-1].style.display = "block";
-            }
-          }
-
-        }
-        
-          
       }
     }
     
@@ -835,6 +795,7 @@
           ST1 = document.getElementById('ST1'),
           ST2 = document.getElementById('ST2'),
           y = document.getElementById('pageNavigation');
+	    
       if (x.className.indexOf('detail-right-off') == -1) {
         x.className += ' detail-right-off';
         y.className = 'show';
@@ -888,10 +849,10 @@
               if (n > ci.length) {cItemIndex = 1}    
               if (n < 1) {cItemIndex = ci.length}
               for (i = 0; i < ci.length; i++) {
-                ci[i].className.replace = (' animate-opacity',' animate-opacity-reverse');
-                setTimeout(function(){ci[i].className.replace = (' animate-opacity-reverse',' hide'); }, 2000);
+                ci[i].className = ci[i].className.replace(' animate-opacity',' animate-opacity-reverse');
+                setTimeout(function(){ci[i].className = ci[i].className.replace(' animate-opacity-reverse',' hide'); }, 2000);
               }
-                ci[cItemIndex-1].className.replace = (' hide',' animate-opacity');
+                ci[cItemIndex-1].className = ci[cItemIndex-1].className.replace = (' hide',' animate-opacity');
             }
   </script>
 
