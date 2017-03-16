@@ -643,12 +643,11 @@
       window.addEventListener('load', function(){
           var el = document.getElementById('body')
           var x = document.getElementById('ViewComponents')
+          var hidetimer = null
           
-          if (x.className.indexOf('view-down') == -1) {
+          if (vc.className.indexOf('view-down') == -1) {
             return; //cancel the swipe direction function
           } else {
-          
-          var hidetimer = null
           swipedetect(el, function(swipedir){
               if (swipedir != 'none'){
                   clearTimeout(hidetimer)
