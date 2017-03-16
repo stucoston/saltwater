@@ -849,8 +849,11 @@
               if (n > ci.length) {cItemIndex = 1}    
               if (n < 1) {cItemIndex = ci.length}
               for (i = 0; i < ci.length; i++) {
-                ci[i].style.opacity = 0;
+                setTimeout(function(){ci[i].style.display = "hide";}, 500);
+                ci[i].style.transition = "0.5s";
+		            ci[i].style.opacity = 0;
               }
+                ci[cItemIndex-1].style.display = "block";
                 ci[cItemIndex-1].style.opacity = 1;
             }
   </script>
