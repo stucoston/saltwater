@@ -644,18 +644,18 @@
           var el = document.getElementById('body')
           var x = document.getElementById('ViewComponents')
           var hidetimer = null
-         
-          swipedetect(el, function(swipedir){
-            var vc = getElementById('ViewComponents')
             
-            if (vc.className.indexOf('view-down') == -1) {
-              return; //cancel the swipe direction function
-            } else if (swipedir != 'none'){
+          if (x.className.indexOf('view-down') == -1) {
+            var el = null; //cancel the swipe direction function
+          } else {
+          
+          swipedetect(el, function(swipedir){
+            if (swipedir != 'none'){
                   clearTimeout(hidetimer)
                   plusDivs(swipedir)
               }
           })
-          
+          }
       }, false)
                               
           function swipedetect(el, callback){
