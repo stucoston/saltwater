@@ -644,10 +644,6 @@
           var el = document.getElementById('body')
           var x = document.getElementById('ViewComponents')
           var hidetimer = null
-            
-          if (x.className.indexOf('view-down') == -1) {
-            var el = null; //cancel the swipe direction function
-          } else {
           
           swipedetect(el, function(swipedir){
             if (swipedir != 'none'){
@@ -655,7 +651,7 @@
                   plusDivs(swipedir)
               }
           })
-          }
+          
       }, false)
                               
           function swipedetect(el, callback){
