@@ -55,7 +55,7 @@
     cursor:pointer;
   }
   
-  .view {
+  .detail-right {
     position:fixed;
     overflow-y:scroll;
     left:50%;
@@ -66,7 +66,7 @@
     transition: 0.5s ease-in-out;
   }
   
-  .view-left {
+  .detail-left {
     position:fixed;
     left:0%;
     top:0%;
@@ -75,11 +75,11 @@
     transition: 0.5s ease-in-out;
   }
   
-  .view-left-gone{
-    left:-100%;
+  .detail-left-off{
+    left:-50%;
   }
   
-  .view-down {
+  .detail-right-off {
     left:100%;
   }
   
@@ -123,14 +123,13 @@
     }
   
   @media only screen and (max-width: 510px) {
-    .view {
+    .detail-right {
       display:none;
     }
 	  
-    .view-left {
+    .detail-left {
       width:100%;
       overflow-y:scroll;
-      -webkit-touch-overflow:scroll;
     }
     
     .cItem {
@@ -429,7 +428,7 @@
   
   <div id="details">
 
-    <div id="ViewComponents" class="grey lighten-2 view view-down">
+    <div id="ViewComponents" class="grey lighten-2 detail-right detail-right-off">
       <div style="width: 10%; height:100%; position:fixed; background-color:white;z-index:-1; margin-top:-220px;">
       </div>
       <ul class="black-text flow-text">
@@ -444,7 +443,7 @@
     </div>
     <!--close ViewComponents-->
     
-    <div id="ViewCItems" class="black black-text flow-text view-left view-left-gone">
+    <div id="ViewCItems" class="black black-text flow-text detail-left detail-left-gone">
       <div id="cDetailItem1" class="cItem saltwaterColor4 full-size animate-opacity padding padding-128">
         <div class="itemSpacer padding-24"></div>
         <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">01</div>
@@ -470,7 +469,7 @@
     <!--close ViewCItems-->
     
 
-    <div id="ViewTemplates" class="grey lighten-1 view view-down">
+    <div id="ViewTemplates" class="grey lighten-1 detail-right detail-right-off">
       <div style="width: 10%; height:100%; position:fixed; background-color:white;z-index:-1; margin-top:-220px;">
       </div>
       <ul class="black-text flow-text">
@@ -485,7 +484,7 @@
     </div>
     <!--close ViewTemplates-->
 
-    <div id="ViewProjects" class="grey lighten-1 view view-down">
+    <div id="ViewProjects" class="grey lighten-1 detail-right detail-right-off">
       <div style="width: 10%; height:100%; position:fixed; background-color:white;z-index:-1; margin-top:-220px;">
       </div>
       <ul class="black-text flow-text">
@@ -747,11 +746,11 @@
           t = document.getElementById('ViewTemplates'),
           c = document.getElementById('ViewComponents');
       
-      if (p.className.indexOf('view-down') == -1) {
+      if (p.className.indexOf('detail-right-off') == -1) {
           openProj();
-        } else if (t.className.indexOf('view-down') == -1) {
+        } else if (t.className.indexOf('detail-right-off') == -1) {
           openTemp();
-        } else if (c.className.indexOf('view-down') == -1) {
+        } else if (c.className.indexOf('detail-right-off') == -1) {
           openComp();
         }
       }
@@ -766,16 +765,16 @@
           ST2 = document.getElementById('ST2'),
           y = document.getElementById('pageNavigation');
       
-      if (x.className.indexOf('view-down') == -1) {
-        x.className += ' view-down';
-        vl.className += ' view-left-gone';
+      if (x.className.indexOf('detail-right-off') == -1) {
+        x.className += ' detail-right-off';
+        vl.className += ' detail-left-off';
         y.className = 'show';
         ra.className = ra.className.replace(' show',' hide');
         ST1.className = ST1.className.replace(' hide',' hide-on-med-and-up');
         ST2.className = ST2.className.replace(' inline',' hide-on-small-only');
       } else {
-        x.className = x.className.replace(' view-down', '');
-        vl.className = vl.className.replace(' view-left-gone', '');
+        x.className = x.className.replace(' detail-right-off', '');
+        vl.className = vl.className.replace(' detail-left-off', '');
         y.className = 'hide';
         ra.className = ra.className.replace(' hide',' show');
         ST1.className = ST1.className.replace(' hide-on-med-and-up',' hide');
@@ -810,7 +809,8 @@
               if (n > ci.length) {cItemIndex = 1}    
               if (n < 1) {cItemIndex = ci.length}
               for (i = 0; i < ci.length; i++) {
-                ci[i].style.display = "none";
+                ci[i].className.replace = (' animate-opacity',' animate-opacity-reverse');
+                setTimeout(function(){ci[i].className.replace = (' animate-opacity-reverse',' hide'); }, 2000);
               }
                 ci[cItemIndex-1].style.display = "block";
             }
@@ -828,14 +828,14 @@
           ST1 = document.getElementById('ST1'),
           ST2 = document.getElementById('ST2'),
           y = document.getElementById('pageNavigation');
-      if (x.className.indexOf('view-down') == -1) {
-        x.className += ' view-down';
+      if (x.className.indexOf('detail-right-off') == -1) {
+        x.className += ' detail-right-off';
         y.className = 'show';
         ra.className = ra.className.replace(' show',' hide');
         ST1.className = ST1.className.replace(' hide',' hide-on-med-and-up');
         ST2.className = ST2.className.replace(' inline',' hide-on-small-only');
       } else {
-        x.className = x.className.replace(' view-down', '');
+        x.className = x.className.replace(' detail-right-off', '');
         y.className = 'hide';
         ra.className = ra.className.replace(' hide',' show');
         ST1.className = ST1.className.replace(' hide-on-med-and-up',' hide');
@@ -849,14 +849,14 @@
           ST1 = document.getElementById('ST1'),
           ST2 = document.getElementById('ST2'),
           y = document.getElementById('pageNavigation');
-      if (x.className.indexOf('view-down') == -1) {
-        x.className += ' view-down';
+      if (x.className.indexOf('detail-right-off') == -1) {
+        x.className += ' detail-right-off';
         y.className = 'show';
         ra.className = ra.className.replace(' show',' hide');
         ST1.className = ST1.className.replace(' hide',' hide-on-med-and-up');
         ST2.className = ST2.className.replace(' inline',' hide-on-small-only');
       } else {
-        x.className = x.className.replace(' view-down', '');
+        x.className = x.className.replace(' detail-right-off', '');
         y.className = 'hide';
         ra.className = ra.className.replace(' hide',' show');
         ST1.className = ST1.className.replace(' hide-on-med-and-up',' hide');
@@ -890,10 +890,6 @@
   <script>
     // scroll mousewheel to change slides
     $('#site').on( 'DOMMouseScroll mousewheel', function ( event ) {
-      var c = document.getElementById('ViewComponents'),
-          t = document.getElementById('ViewTemplates'),
-          p = document.getElementById('ViewProjects'),
-          b = document.getElementById('body');
       
        if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
         
