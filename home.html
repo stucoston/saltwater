@@ -657,8 +657,14 @@
           }
       }, false)
                               
-          function swipedetect(el, callback){
+           function swipedetect(el, callback){
         
+          var vc = getElementById('ViewComponents')
+            
+          if (vc.className.indexOf('view-down') == -1) {
+            return; //cancel the swipe direction function
+          } else {
+            
           var touchsurface = el,
               swipedir,
               startX,
@@ -706,7 +712,8 @@
       	$(window).on('touchend', function(e){
       		$(e.target).trigger('click');
       	});
-      }//end window onload
+      }
+          }//end swipe detect
   </script>
   <!--close change slides script-->
 
