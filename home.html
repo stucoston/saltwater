@@ -131,15 +131,15 @@
       width:100%;
       overflow-y:scroll;
     }
+	   
+    .detail-left {
+      left:-100%;
+    }
     
     .cItem {
       display:block;
       margin-top: -112px; !important
       height: 300px;
-    }
-    
-    .itemSpacer {
-      display:block;!important
     }
   }
 </style>
@@ -684,14 +684,14 @@
               startY = touchobj.pageY
               startTime = new Date().getTime() // record time when finger first makes contact with surface
              
-		          if (vc.className.indexOf('view-down') != -1) {
+		          if (vc.className.indexOf('detail-right-off') != -1) {
                 e.preventDefault() // prevent scrolling when inside DIV
               }
           }, false)
         
           touchsurface.addEventListener('touchmove', function(e){
             var vc = document.getElementById('ViewComponents')
-		        if (vc.className.indexOf('view-down') != -1) {
+		        if (vc.className.indexOf('detail-right-off') != -1) {
               e.preventDefault() // prevent scrolling when inside DIV
             }
           }, false)
@@ -710,7 +710,7 @@
                       swipedir = (distY < 0)? 1 : -1 // if dist traveled is negative, it indicates up swipe
                   }
               }
-	      if (vc.className.indexOf('view-down') != -1) {
+	      if (vc.className.indexOf('detail-right-off') != -1) {
                 handleswipe(swipedir)
                 e.preventDefault()
 	      }
