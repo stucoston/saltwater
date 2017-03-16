@@ -131,7 +131,6 @@
       width:100%;
       overflow-y:scroll;
       -webkit-touch-overflow:scroll;
-      touch-overflow:scroll;
     }
     
     .cItem {
@@ -672,21 +671,28 @@
         
             touchsurface.addEventListener('touchstart', function(e){
               var touchobj = e.changedTouches[0]
+              var vc = document.getElementById('ViewComponents')
               swipedir = 'none'
               dist = 0
               startX = touchobj.pageX
               startY = touchobj.pageY
               startTime = new Date().getTime() // record time when finger first makes contact with surface
-              e.preventDefault()
+             
+		          if (vc.className.indexOf('view-down') != -1) {
+                e.preventDefault() // prevent scrolling when inside DIV
+              }
           }, false)
         
           touchsurface.addEventListener('touchmove', function(e){
+            var vc = document.getElementById('ViewComponents')
+		        if (vc.className.indexOf('view-down') != -1) {
               e.preventDefault() // prevent scrolling when inside DIV
+            }
           }, false)
         
           touchsurface.addEventListener('touchend', function(e){
               var touchobj = e.changedTouches[0]
-	      var vc = document.getElementById('ViewComponents')
+	            var vc = document.getElementById('ViewComponents')
               distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
               distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
               elapsedTime = new Date().getTime() - startTime // get time elapsed
