@@ -444,7 +444,7 @@
     <!--close ViewComponents-->
     
     <div id="ViewCItems" class="black black-text flow-text detail-left detail-left-off">
-      <div id="cDetailItem1" class="cItem saltwaterColor4 full-size hide padding">
+      <div id="cDetailItem1" class="cItem saltwaterColor4 full-size padding">
         <div class="valign-wrapper">
           <div class="valign">
             <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">01</div>
@@ -458,7 +458,7 @@
         </div><!-- close valign-wrapper -->
       </div>
       <!--cDetailItem1 -->
-      <div id="cDetailItem2" class="cItem saltwaterColor3 full-size animate-opacity padding">
+      <div id="cDetailItem2" class="cItem saltwaterColor3 full-size padding">
         <div class="valign-wrapper">
           <div class="valign">
             <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">02</div>
@@ -849,10 +849,9 @@
               if (n > ci.length) {cItemIndex = 1}    
               if (n < 1) {cItemIndex = ci.length}
               for (i = 0; i < ci.length; i++) {
-                ci[i].className = ci[i].className.replace(' animate-opacity',' animate-opacity-reverse');
-                setTimeout(function(){ci[i].className = ci[i].className.replace(' animate-opacity-reverse',' hide'); }, 2000);
+                ci[i].style.opacity = 0;
               }
-                ci[cItemIndex-1].className = ci[cItemIndex-1].className.replace = (' hide',' animate-opacity');
+                ci[cItemIndex-1].style.opacity = 1;
             }
   </script>
 
