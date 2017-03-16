@@ -57,8 +57,7 @@
   
   .view {
     position:fixed;
-    overflow:scroll;
-    -webkit-overflow-scrolling: touch;
+    overflow-y:scroll;
     left:50%;
     top:0%;
     width: 50%;
@@ -127,13 +126,10 @@
     .view {
       display:none;
     }
-    
-    body {
-	    overflow:scroll;
-	  }
 	  
     .view-left {
       width:100%;
+      overflow-y:scroll;
     }
     
     .cItem {
