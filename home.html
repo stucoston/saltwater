@@ -432,7 +432,7 @@
       <div style="width: 10%; height:100%; position:fixed; background-color:white;z-index:-1; margin-top:-220px;">
       </div>
       <ul class="black-text flow-text">
-        <li class="colNum" onmouseover="currentcItem(1)" onclick="currentcItem(1)"><pre>01&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 1</pre></li>
+        <li class="colNum" onmouseover="currentcItem(1)"><pre>01&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 1</pre></li>
         <li class="colNum" onmouseover="currentcItem(2)" onclick="currentcItem(2)"><pre>02&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 2</pre></li>
         <li class="colNum"><pre>03&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 3</pre></li>
         <li class="colNum"><pre>04&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 4</pre></li>
@@ -444,15 +444,18 @@
     <!--close ViewComponents-->
     
     <div id="ViewCItems" class="black black-text flow-text detail-left detail-left-gone">
-      <div id="cDetailItem1" class="cItem saltwaterColor4 full-size animate-opacity padding padding-128">
-        <div class="itemSpacer padding-24"></div>
-        <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">01</div>
-        <div class="detailTitle text-xlarge padding-24">Component</div>
-        <div class="detailTitleBorder"></div>
-        <div class="detailContent sw-flow-text">
-          <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
-          <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
-        </div>
+      <div id="cDetailItem1" class="cItem saltwaterColor4 full-size animate-opacity padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">01</div>
+            <div class="detailTitle text-xlarge padding-24">Component</div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
       </div>
       <!--cDetailItem1 -->
       <div id="cDetailItem2" class="cItem saltwaterColor3 full-size animate-opacity padding padding-128">
@@ -799,7 +802,7 @@
             // window width is less than 500px
             cShowItem(cItemIndex);
             
-            function currentcItem(n){
+            function currentxItem(n){
               cShowItem(cItemIndex = n);
             }
     
@@ -876,15 +879,16 @@
       }
     
       function cShowItem(n) {
-        var i;
-        var ci = document.getElementsByClassName("cItem");
-        if (n > ci.length) {cItemIndex = 1}    
-        if (n < 1) {cItemIndex = ci.length}
-        for (i = 0; i <ci.length; i++) {
-           ci[i].style.display = "none";
-        }
-        ci[cItemIndex-1].style.display = "block";
-      }
+              var i;
+              var ci = document.getElementsByClassName("cItem");
+              if (n > ci.length) {cItemIndex = 1}    
+              if (n < 1) {cItemIndex = ci.length}
+              for (i = 0; i < ci.length; i++) {
+                ci[i].className.replace = (' animate-opacity',' animate-opacity-reverse');
+                setTimeout(function(){ci[i].className.replace = (' animate-opacity-reverse',' hide'); }, 2000);
+              }
+                ci[cItemIndex-1].className.replace = (' hide',' animate-opacity');
+            }
   </script>
 
   <script>
