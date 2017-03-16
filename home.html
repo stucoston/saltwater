@@ -642,7 +642,6 @@
       //enable touch events to change slides
       window.addEventListener('load', function(){
           var el = document.getElementById('body')
-          var x = document.getElementById('ViewComponents')
           var hidetimer = null
           
           swipedetect(el, function(swipedir){
@@ -685,6 +684,7 @@
         
           touchsurface.addEventListener('touchend', function(e){
               var touchobj = e.changedTouches[0]
+	      var vc = document.getElementById('ViewComponents')
               distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
               distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
               elapsedTime = new Date().getTime() - startTime // get time elapsed
@@ -696,8 +696,10 @@
                       swipedir = (distY < 0)? 1 : -1 // if dist traveled is negative, it indicates up swipe
                   }
               }
-              handleswipe(swipedir)
-              e.preventDefault()
+	      if (vc.className.indexOf('view-down') != -1) {
+                handleswipe(swipedir)
+                e.preventDefault()
+	      }
           }, false)
       	//continue to trigger click event from the target of any touch event at the document level
       	$(window).on('touchend', function(e){
@@ -709,14 +711,6 @@
   <!--close change slides script-->
 
   <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-  <script>
-    // onClick correction for touch devices
-    $("a").on("touchend", function(event) {
-      window.location.href = $(this).attr("href");
-    });
-  </script>
-  <!--close onClick touch device correction-->
 
   <script>
     // side navigation operation
