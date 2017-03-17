@@ -862,7 +862,7 @@
               startY = touchobj.pageY
               startTime = new Date().getTime() // record time when finger first makes contact with surface
              
-		          if (vc.className.indexOf('detail-right-off') == -1 || vt.className.indexOf('detail-right-off') == -1 || vp.className.indexOf('detail-right-off') == -1) {
+		          if ((vc.className.indexOf('detail-right-off') != -1) || (vt.className.indexOf('detail-right-off') != -1) || (vp.className.indexOf('detail-right-off') != -1)) {
                 e.preventDefault() // prevent scrolling when inside DIV
               }
           }, false)
@@ -871,14 +871,14 @@
             var vc = document.getElementById('ViewComponents')
             var vt = document.getElementById('ViewTemplates')
             var vp = document.getElementById('ViewProjects')
-		        if (vc.className.indexOf('detail-right-off') == -1 || vt.className.indexOf('detail-right-off') == -1 || vp.className.indexOf('detail-right-off') == -1) {
+		        if ((vc.className.indexOf('detail-right-off') != -1) || (vt.className.indexOf('detail-right-off') != -1) || (vp.className.indexOf('detail-right-off') != -1)) {
               e.preventDefault() // prevent scrolling when inside DIV
             }
           }, false)
         
           touchsurface.addEventListener('touchend', function(e){
               var touchobj = e.changedTouches[0]
-	            var vc = document.getElementById('ViewComponents')
+	      var vc = document.getElementById('ViewComponents')
               var vt = document.getElementById('ViewTemplates')
               var vp = document.getElementById('ViewProjects')
               distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
@@ -892,7 +892,7 @@
                       swipedir = (distY < 0)? 1 : -1 // if dist traveled is negative, it indicates up swipe
                   }
               }
-	      if (vc.className.indexOf('detail-right-off') == -1 || vt.className.indexOf('detail-right-off') == -1 || vp.className.indexOf('detail-right-off') == -1) {
+	      if ((vc.className.indexOf('detail-right-off') != -1) || (vt.className.indexOf('detail-right-off') != -1) || (vp.className.indexOf('detail-right-off') != -1)) {
                 handleswipe(swipedir)
                 e.preventDefault()
 	      }
