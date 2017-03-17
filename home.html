@@ -862,9 +862,8 @@
               startY = touchobj.pageY
               startTime = new Date().getTime() // record time when finger first makes contact with surface
              
-	      if ((vc.className.indexOf('detail-right-off') == -1) && (vt.className.indexOf('detail-right-off') == -1) && (vp.className.indexOf('detail-right-off') == -1)) {
-	       // blank becuase I don't know how else to say the above conditions
-	      } else { e.preventDefault() // prevent scrolling when inside DIV
+	      if ((vc.className.indexOf('detail-right-off') > -1) && (vt.className.indexOf('detail-right-off') > -1) && (vp.className.indexOf('detail-right-off') > -1)) {
+	        e.preventDefault() // prevent scrolling when inside DIV
               }
           }, false)
         
@@ -872,9 +871,8 @@
             var vc = document.getElementById('ViewComponents')
             var vt = document.getElementById('ViewTemplates')
             var vp = document.getElementById('ViewProjects')
-            if ((vc.className.indexOf('detail-right-off') == -1) && (vt.className.indexOf('detail-right-off') == -1) && (vp.className.indexOf('detail-right-off') == -1)) {
-	       // blank becuase I don't know how else to say the above conditions
-	      } else { e.preventDefault() // prevent scrolling when inside DIV
+            if ((vc.className.indexOf('detail-right-off') > -1) && (vt.className.indexOf('detail-right-off') > -1) && (vp.className.indexOf('detail-right-off') > -1)) {
+	      e.preventDefault() // prevent scrolling when inside DIV
             }
           }, false)
         
@@ -894,10 +892,9 @@
                       swipedir = (distY < 0)? 1 : -1 // if dist traveled is negative, it indicates up swipe
                   }
               }
-	      if ((vc.className.indexOf('detail-right-off') == -1) && (vt.className.indexOf('detail-right-off') == -1) && (vp.className.indexOf('detail-right-off') == -1)) {
-	       // blank becuase I don't know how else to say the above conditions
-	      } else { handleswipe(swipedir)
-                       e.preventDefault()
+	      if ((vc.className.indexOf('detail-right-off') > -1) && (vt.className.indexOf('detail-right-off') > -1) && (vp.className.indexOf('detail-right-off') > -1)) {
+	        handleswipe(swipedir)
+                e.preventDefault()
 	      }
           }, false)
       	//continue to trigger click event from the target of any touch event at the document level
