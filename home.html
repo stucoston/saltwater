@@ -83,6 +83,13 @@
     left:100%;
   }
   
+  .cItem, .tItem, .pItem {
+    position: absolute;
+    top:0;
+    left:0;
+    height:100%;
+  }
+  
   .colNum {
     padding-left: 8%;
     line-height:50px;
@@ -118,10 +125,6 @@
     100% {x:50%}
   }
   
-  .itemSpacer {
-      display:none;!important
-    }
-  
   @media only screen and (max-width: 510px) {
     .detail-right {
       display:none;
@@ -132,23 +135,22 @@
       overflow-y:scroll;
     }
 	   
-    .detail-left {
+    .detail-left-off {
       left:-100%;
     }
     
-    .cItem {
+    .cItem, .tItem, .pItem {
       display:block;
-      margin-top: -112px; !important
-      height: 300px;
+      height: 50%;
     }
   }
 </style>
 
 <body id="body" onload="myLoader()">
 
-  <!-- loading screen -->
   <div id="waterLoader"></div>
-  <!-- site container -->
+  <!-- close waterLoader div -->
+  
   <div id="site" class="w3-animate-bottom" style="display:none;">
     <!-- Navbar (sit on top) -->
     <header>
@@ -211,8 +213,7 @@
       </div>
       <!--close contactModal-->
     </header>
-
-    <!-- slides -->
+    
     <div id="Slides">
       <div id="hp" class="mySlides hp">
       </div>
@@ -226,16 +227,16 @@
         <div class="bgimg-3"></div>
       </div>
     </div>
-
-    <!-- themeDiv slides -->
+    <!-- close slides div -->
+    
     <div id="themeSlides">
       <div class="themeDiv" style="background-color: transparent; animation-delay: 0s;"></div>
       <div class="themeDiv saltwaterColor3"></div>
       <div class="themeDiv saltwaterColor2"></div>
       <div class="themeDiv saltwaterColor4"></div>
     </div>
+    <!-- close themeSlides div -->
 
-    <!-- pageNum slides -->
     <div id="numSlides">
       <div class="pageNums"></div>
       <div class="pageNums">
@@ -281,9 +282,8 @@
       </svg>
       </div>
     </div>
-    <!-- close pageNum slides -->
-
-    <!-- pageTitle and pageContent slides -->
+    <!-- close numSlides div -->
+    
     <div id="contentSlides">
       <div class="content">
         <div class="pageTitle hide-on-small-only hide-on-large-only" style="font-size: 7vw;font-weight: 600; line-height: 25px; animation-delay: 0s;">
@@ -396,9 +396,8 @@
       </div>
       <!--close project content-->
     </div>
-    <!-- close pageContent slides -->
+    <!-- close contentSlides div -->
 
-    <!-- page navigation -->
     <div id="pageNavigation">
       <a class="hide-on-small-only pageup waves-effect waves-circle" onclick="plusDivs(-1)"><img src="https://1.bp.blogspot.com/-gamBV_F5r3E/WJ8jk7DJpdI/AAAAAAAALhE/CqUJVA-rnXgX9iWZgwRL45DfXvMRztG4ACLcB/s320/thin-arrow-pointing-upward_318-38587.png" style="height: 30px; z-index:9000"></a>
       <a class="hide-on-small-only pagedown waves-effect waves-circle" onclick="plusDivs(1)"><img src="https://2.bp.blogspot.com/-5AwL50UuLiU/WJ8jlIdR1fI/AAAAAAAALhI/DiQBSkMYo0gEzjkq26SiT8UBRYMxGbQJACLcB/s320/thin-arrow-pointing-upward_318-38587%2Bcopy.png" style="height: 30px; z-index:10"></a>
@@ -421,7 +420,7 @@
         </div>
       </div>
     </div>
-    
+    <!-- close pageNavigation slides div -->
     
   </div>
   <!-- close site div -->
@@ -429,26 +428,25 @@
   <div id="details">
 
     <div id="ViewComponents" class="grey lighten-2 detail-right detail-right-off">
-      <div style="width: 10%; height:100%; position:fixed; background-color:white;z-index:-1; margin-top:-220px;">
-      </div>
+      <div style="width: 10%; height:100%; position:fixed; background-color:white;z-index:-1; margin-top:-220px;"></div>
       <ul class="black-text flow-text">
         <li class="colNum" onmouseover="currentcItem(1)"><pre>01&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 1</pre></li>
-        <li class="colNum" onmouseover="currentcItem(2)" onclick="currentcItem(2)"><pre>02&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 2</pre></li>
-        <li class="colNum"><pre>03&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 3</pre></li>
-        <li class="colNum"><pre>04&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 4</pre></li>
-        <li class="colNum"><pre>05&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 5</pre></li>
-        <li class="colNum"><pre>06&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 6</pre></li>
+        <li class="colNum" onmouseover="currentcItem(2)"><pre>02&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 2</pre></li>
+        <li class="colNum" onmouseover="currentcItem(3)"><pre>03&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 3</pre></li>
+        <li class="colNum" onmouseover="currentcItem(4)"><pre>04&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 4</pre></li>
+        <li class="colNum" onmouseover="currentcItem(5)"><pre>05&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 5</pre></li>
+        <li class="colNum" onmouseover="currentcItem(6)"><pre>06&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 6</pre></li>
       </ul>
       <!--close row-->
     </div>
     <!--close ViewComponents-->
     
     <div id="ViewCItems" class="black black-text flow-text detail-left detail-left-off">
-      <div id="cDetailItem1" class="cItem saltwaterColor4 full-size padding">
+      <div id="cDetailItem1" class="cItem saltwaterColor4 padding">
         <div class="valign-wrapper">
           <div class="valign">
             <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">01</div>
-	    <div class="detailTitle text-xxlarge padding-24"><b>Component</b></div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Component</b></div>
             <div class="detailTitleBorder"></div>
             <div class="detailContent sw-flow-text">
               <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
@@ -458,11 +456,11 @@
         </div><!-- close valign-wrapper -->
       </div>
       <!--cDetailItem1 -->
-      <div id="cDetailItem2" class="cItem saltwaterColor3 full-size padding">
+      <div id="cDetailItem2" class="cItem saltwaterColor3 padding">
         <div class="valign-wrapper">
           <div class="valign">
             <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">02</div>
-	    <div class="detailTitle text-xxlarge padding-24"><b>Component</b></div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Component</b></div>
             <div class="detailTitleBorder"></div>
             <div class="detailContent sw-flow-text">
               <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
@@ -472,35 +470,210 @@
         </div><!-- close valign-wrapper -->
       </div>
       <!--cDetailItem2 -->
+      <div id="cDetailItem3" class="cItem blue-grey padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">03</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Component</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--cDetailItem3 -->
+      <div id="cDetailItem4" class="cItem light-blue padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">04</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Component</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--cDetailItem4 -->
+      <div id="cDetailItem5" class="cItem purple padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">05</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Component</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--cDetailItem5 -->
+      <div id="cDetailItem6" class="cItem orange padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">06</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Component</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--cDetailItem6 -->
     </div>
     <!--close ViewCItems-->
     
-
     <div id="ViewTemplates" class="grey lighten-1 detail-right detail-right-off">
       <div style="width: 10%; height:100%; position:fixed; background-color:white;z-index:-1; margin-top:-220px;">
       </div>
       <ul class="black-text flow-text">
-        <li class="colNum"><pre>01&#9;&#9;Template 1</pre></li>
-        <li class="colNum"><pre>02&#9;&#9;Template 2</pre></li>
-        <li class="colNum"><pre>03&#9;&#9;Template 3</pre></li>
-        <li class="colNum"><pre>04&#9;&#9;Template 4</pre></li>
-        <li class="colNum"><pre>05&#9;&#9;Template 5</pre></li>
-        <li class="colNum"><pre>06&#9;&#9;Template 6</pre></li>
+        <li class="colNum" onmouseover="currenttItem(1)"><pre>01&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Template 1</pre></li>
+        <li class="colNum" onmouseover="currenttItem(2)"><pre>02&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Template 2</pre></li>
+        <li class="colNum" onmouseover="currenttItem(3)"><pre>03&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Template 3</pre></li>
+        <li class="colNum" onmouseover="currenttItem(4)"><pre>04&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Template 4</pre></li>
+        <li class="colNum" onmouseover="currenttItem(5)"><pre>05&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Template 5</pre></li>
+        <li class="colNum" onmouseover="currenttItem(6)"><pre>06&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Template 6</pre></li>
       </ul>
       <!--close row-->
     </div>
     <!--close ViewTemplates-->
+    
+    <div id="ViewTItems" class="black black-text flow-text detail-left detail-left-off">
+      <div id="tDetailItem1" class="tItem saltwaterColor4 padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">01</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Template</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--tDetailItem1 -->
+      <div id="tDetailItem2" class="tItem saltwaterColor3 padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">02</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Template</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--tDetailItem2 -->
+      <div id="tDetailItem3" class="tItem blue-grey padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">03</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Template</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--tDetailItem3 -->
+      <div id="tDetailItem4" class="tItem light-blue padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">04</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Template</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--tDetailItem4 -->
+      <div id="tDetailItem5" class="tItem purple padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">05</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Template</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--tDetailItem5 -->
+      <div id="tDetailItem6" class="tItem orange padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">06</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Template</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--tDetailItem6 -->
+    </div>
+    <!--close ViewTItems-->
 
     <div id="ViewProjects" class="grey lighten-1 detail-right detail-right-off">
       <div style="width: 10%; height:100%; position:fixed; background-color:white;z-index:-1; margin-top:-220px;">
       </div>
       <ul class="black-text flow-text">
-        <li class="colNum"><pre>01&#9;&#9;Coston Mission</pre></li>
-        <li class="colNum"><pre>02&#9;&#9;CM Online Mag</pre></li>
+        <li class="colNum" onmouseover="currentpItem(1)"><pre>01&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Coston Mission</pre></li>
+        <li class="colNum" onmouseover="currentpItem(2)"><pre>02&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>CM Online Mag</pre></li>
       </ul>
       <!--close row-->
     </div>
     <!--close ViewProjects-->
+    
+    <div id="ViewPItems" class="black black-text flow-text detail-left detail-left-off">
+      <div id="pDetailItem1" class="pItem saltwaterColor4 padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">01</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Project</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--pDetailItem1 -->
+      <div id="pDetailItem2" class="pItem saltwaterColor3 padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">02</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Project</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--pDetailItem2 -->
+    </div>
+    <!--close ViewPItems-->
 
   </div>
   <!-- close details div -->
@@ -519,12 +692,14 @@
 
   <script>
     // change slides script
+    // ==================================================
       var paginationIndex = 1,
           contentIndex = 1,
           numsIndex = 1,
           themeIndex = 1,
           slideIndex = 1,
           vc = document.getElementById('ViewComponents');
+    
       showDivs(slideIndex);
       showTheme(themeIndex);
       showPageNums(numsIndex);
@@ -647,6 +822,7 @@
       }
       	
       //enable touch events to change slides
+      // ==================================================
       window.addEventListener('load', function(){
           var el = document.getElementById('body')
           var hidetimer = null
@@ -720,14 +896,15 @@
       		$(e.target).trigger('click');
       	});
       
-          }//end swipe detect
+          }
   </script>
   <!--close change slides script-->
 
   <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
   <script>
-    // side navigation operation
+    // side navigation open and close operation
+    // ====================================================
     function openNav() {
       var x = document.getElementById('menu-container');
       var y = document.getElementById('sw-sideNav-overlay');
@@ -744,10 +921,9 @@
         z.style.right = '-250px';
       }
     }
-  </script>
-  <!--close openNav()-->
-
-  <script>
+    
+    // go back to original slideset
+    // ====================================================
     function goBack(){
       var p = document.getElementById('ViewProjects'),
           t = document.getElementById('ViewTemplates'),
@@ -762,9 +938,10 @@
         }
       }
     
+    // open details
+    // ====================================================
     function openComp() {
-      var cItemIndex = 1,
-          x = document.getElementById('ViewComponents'),
+      var x = document.getElementById('ViewComponents'),
           ci = document.getElementsByClassName("cItem"),
           vl = document.getElementById('ViewCItems'),
           ra = document.getElementById('returnArrow'),
@@ -786,59 +963,73 @@
         ra.className = ra.className.replace(' hide',' show');
         ST1.className = ST1.className.replace(' hide-on-med-and-up',' hide');
         ST2.className = ST2.className.replace(' hide-on-small-only',' inline');
+        currentcItem(1);  
       }
     }
     
     function openTemp() {
       var x = document.getElementById('ViewTemplates'),
+          ci = document.getElementsByClassName("tItem"),
+          vl = document.getElementById('ViewTItems'),
           ra = document.getElementById('returnArrow'),
           ST1 = document.getElementById('ST1'),
           ST2 = document.getElementById('ST2'),
           y = document.getElementById('pageNavigation');
-	    
+      
       if (x.className.indexOf('detail-right-off') == -1) {
         x.className += ' detail-right-off';
+        vl.className += ' detail-left-off';
         y.className = 'show';
         ra.className = ra.className.replace(' show',' hide');
         ST1.className = ST1.className.replace(' hide',' hide-on-med-and-up');
         ST2.className = ST2.className.replace(' inline',' hide-on-small-only');
       } else {
         x.className = x.className.replace(' detail-right-off', '');
+        vl.className = vl.className.replace(' detail-left-off', '');
         y.className = 'hide';
         ra.className = ra.className.replace(' hide',' show');
         ST1.className = ST1.className.replace(' hide-on-med-and-up',' hide');
         ST2.className = ST2.className.replace(' hide-on-small-only',' inline');
+        currenttItem(1);  
       }
     }
     
     function openProj() {
       var x = document.getElementById('ViewProjects'),
+          ci = document.getElementsByClassName("pItem"),
+          vl = document.getElementById('ViewPItems'),
           ra = document.getElementById('returnArrow'),
           ST1 = document.getElementById('ST1'),
           ST2 = document.getElementById('ST2'),
           y = document.getElementById('pageNavigation');
+      
       if (x.className.indexOf('detail-right-off') == -1) {
         x.className += ' detail-right-off';
+        vl.className += ' detail-left-off';
         y.className = 'show';
         ra.className = ra.className.replace(' show',' hide');
         ST1.className = ST1.className.replace(' hide',' hide-on-med-and-up');
         ST2.className = ST2.className.replace(' inline',' hide-on-small-only');
       } else {
         x.className = x.className.replace(' detail-right-off', '');
+        vl.className = vl.className.replace(' detail-left-off', '');
         y.className = 'hide';
         ra.className = ra.className.replace(' hide',' show');
         ST1.className = ST1.className.replace(' hide-on-med-and-up',' hide');
         ST2.className = ST2.className.replace(' hide-on-small-only',' inline');
+        currentpItem(1);  
       }
     }
     
-  </script>
-  
-  <script>
+    
+    // change detailSlides
+    // ====================================================
     var cItemIndex = 1,
         tItemIndex = 1,
         pItemIndex = 1;
       
+      // component detail slides
+      // ==================================================
       function currentcItem(n){
         cShowItem(cItemIndex = n);
       }
@@ -849,17 +1040,86 @@
               if (n > ci.length) {cItemIndex = 1}    
               if (n < 1) {cItemIndex = ci.length}
               for (i = 0; i < ci.length; i++) {
-                setTimeout(function(){ci[i].style.display = "none";}, 500);
-                ci[i].style.transition = "0.5s";
-		            ci[i].style.opacity = 0;
+                var mq = window.matchMedia( "(min-width: 510px)" );
+                  if (mq.matches) {
+                    // window width is at least 510px
+                    setTimeout(function(){ci[i].style.display = "none";}, 500);
+                    ci[i].style.transition = "0.5s";
+		                ci[i].style.opacity = 0;
+                    ci[i].style.position = "absolute";
+                  } else {
+                    ci[i].style.display = "block";
+                    ci[i].style.opacity = 1;
+                    ci[i].style.position = "relative";
+                  }
+                
               }
                 ci[cItemIndex-1].style.display = "block";
                 ci[cItemIndex-1].style.opacity = 1;
             }
-  </script>
-
-  <script>
+    
+      // template detail slides
+      // ==================================================
+      function currenttItem(n){
+        tShowItem(tItemIndex = n);
+      }
+    
+      function tShowItem(n) {
+              var i;
+              var ti = document.getElementsByClassName("tItem");
+              if (n > ti.length) {tItemIndex = 1}    
+              if (n < 1) {tItemIndex = ti.length}
+              for (i = 0; i < ti.length; i++) {
+                var mq = window.matchMedia( "(min-width: 510px)" );
+                  if (mq.matches) {
+                    // window width is at least 510px
+                    setTimeout(function(){ti[i].style.display = "none";}, 500);
+                    ti[i].style.transition = "0.5s";
+		                ti[i].style.opacity = 0;
+                    ti[i].style.position = "absolute";
+                  } else {
+                    ti[i].style.display = "block";
+                    ti[i].style.opacity = 1;
+                    ti[i].style.position = "relative";
+                  }
+                
+              }
+                ti[tItemIndex-1].style.display = "block";
+                ti[tItemIndex-1].style.opacity = 1;
+            }
+      
+      // project detail slides
+      // ==================================================
+      function currentpItem(n){
+        pShowItem(pItemIndex = n);
+      }
+    
+      function pShowItem(n) {
+              var i;
+              var pi = document.getElementsByClassName("pItem");
+              if (n > pi.length) {pItemIndex = 1}    
+              if (n < 1) {pItemIndex = pi.length}
+              for (i = 0; i < pi.length; i++) {
+                var mq = window.matchMedia( "(min-width: 510px)" );
+                  if (mq.matches) {
+                    // window width is at least 510px
+                    setTimeout(function(){pi[i].style.display = "none";}, 500);
+                    pi[i].style.transition = "0.5s";
+		                pi[i].style.opacity = 0;
+                    pi[i].style.position = "absolute";
+                  } else {
+                    pi[i].style.display = "block";
+                    pi[i].style.opacity = 1;
+                    pi[i].style.position = "relative";
+                  }
+                
+              }
+                pi[pItemIndex-1].style.display = "block";
+                pi[pItemIndex-1].style.opacity = 1;
+            }
+    
     // scroll mousewheel to change slides
+    // ====================================================
     $('#site').on( 'DOMMouseScroll mousewheel', function ( event ) {
       
        if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
@@ -877,21 +1137,19 @@
       return false;
     });
   </script>
-  <!--close change slides on mousewheel-->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 
   <script>
-    // modal operation
+    // modal materialize plug-in 
+    // ==================================================
     $('.modal').modal({
       dismissible: true, // Modal can be dismissed by clicking outside of the modal
       opacity: .5, // Opacity of modal background
       inDuration: 300, // Transition in duration
       outDuration: 200, // Transition out duration
-    }
-                     );
+    });
   </script>
-  <!--close materialize plugins-->
 
 </body>
 
