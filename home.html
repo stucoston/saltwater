@@ -161,10 +161,10 @@
           <a id="ST1" class="site-title middle hide-on-med-and-up" style="left:25%;" href="https://rawgit.com/stucoston/saltwater/master/home.html">SALTWATER</a>
           <a id="ST2" class="site-title margin-left hide-on-small-only" href="https://rawgit.com/stucoston/saltwater/master/home.html">SALTWATER</a>
           <div class="hide-on-med-and-down">
-            <ul class="right">
-              <li><a class="letter-space waves-effect" href="https://rawgit.com/stucoston/saltwater/master/work.html#components">COMPONENTS</a></li>
-              <li><a class="letter-space waves-effect" href="https://rawgit.com/stucoston/saltwater/master/work.html#templates">TEMPLATES</a></li>
-              <li><a class="letter-space waves-effect" href="https://rawgit.com/stucoston/saltwater/master/work.html#projects">PROJECTS</a></li>
+            <ul class="right" style="margin-top:-64px;">
+              <li><a class="letter-space waves-effect" href="#!" onclick="openComp()">COMPONENTS</a></li>
+              <li><a class="letter-space waves-effect" href="#!" onclick="openTemp()">TEMPLATES</a></li>
+              <li><a class="letter-space waves-effect" href="#!" onclick="openProj()">PROJECTS</a></li>
               <li><a class="letter-space waves-effect margin-right" href="#contactModal">CONTACT</a></li>
             </ul>
           </div>
@@ -185,11 +185,11 @@
       <div id="sw-sideNav-overlay" class="black overlay full-size pinned hide" onclick="openNav()"></div>
       <div id="sw-sideNav" class="sw-sideNav grey lighten-3" onclick="openNav()">
         <ul>
-          <li><a class="letter-space" href="https://rawgit.com/stucoston/saltwater/master/work.html#components">COMPONENTS</a></li>
+          <li><a class="letter-space" href="#!" onclick="openComp()">COMPONENTS</a></li>
           <li class="divider"></li>
-          <li><a class="letter-space" href="https://rawgit.com/stucoston/saltwater/master/work.html#templates">TEMPLATES</a></li>
+          <li><a class="letter-space" href="#!" onclick="openTemp()">TEMPLATES</a></li>
           <li class="divider"></li>
-          <li><a class="letter-space" href="https://rawgit.com/stucoston/saltwater/master/work.html#projects">PROJECTS</a></li>
+          <li><a class="letter-space" href="#!" onclick="openProj()">PROJECTS</a></li>
           <li class="divider"></li>
           <li><a class="letter-space" href="#contactModal">CONTACT</a></li>
         </ul>
@@ -854,20 +854,24 @@
             touchsurface.addEventListener('touchstart', function(e){
               var touchobj = e.changedTouches[0]
               var vc = document.getElementById('ViewComponents')
+              var vt = document.getElementById('ViewTemplates')
+              var vp = document.getElementById('ViewProjects')
               swipedir = 'none'
               dist = 0
               startX = touchobj.pageX
               startY = touchobj.pageY
               startTime = new Date().getTime() // record time when finger first makes contact with surface
              
-		          if (vc.className.indexOf('detail-right-off') != -1) {
+		          if (vc.className.indexOf('detail-right-off') != -1 || vt.className.indexOf('detail-right-off') != -1 || vp.className.indexOf('detail-right-off') != -1) {
                 e.preventDefault() // prevent scrolling when inside DIV
               }
           }, false)
         
           touchsurface.addEventListener('touchmove', function(e){
             var vc = document.getElementById('ViewComponents')
-		        if (vc.className.indexOf('detail-right-off') != -1) {
+            var vt = document.getElementById('ViewTemplates')
+            var vp = document.getElementById('ViewProjects')
+		        if (vc.className.indexOf('detail-right-off') != -1 || vt.className.indexOf('detail-right-off') != -1 || vp.className.indexOf('detail-right-off') != -1) {
               e.preventDefault() // prevent scrolling when inside DIV
             }
           }, false)
@@ -875,6 +879,8 @@
           touchsurface.addEventListener('touchend', function(e){
               var touchobj = e.changedTouches[0]
 	            var vc = document.getElementById('ViewComponents')
+              var vt = document.getElementById('ViewTemplates')
+              var vp = document.getElementById('ViewProjects')
               distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
               distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
               elapsedTime = new Date().getTime() - startTime // get time elapsed
@@ -886,7 +892,7 @@
                       swipedir = (distY < 0)? 1 : -1 // if dist traveled is negative, it indicates up swipe
                   }
               }
-	      if (vc.className.indexOf('detail-right-off') != -1) {
+	      if (vc.className.indexOf('detail-right-off') != -1 || vt.className.indexOf('detail-right-off') != -1 || vp.className.indexOf('detail-right-off') != -1) {
                 handleswipe(swipedir)
                 e.preventDefault()
 	      }
