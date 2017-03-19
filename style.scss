@@ -3189,6 +3189,12 @@ button.btn-floating {
   -ms-transform:rotate(90deg);
 }
 
+.rotate180 {
+  transform: rotate(180deg);
+  -webkit-transform:rotate(180deg);
+  -ms-transform:rotate(180deg);
+}
+
 .screen-height,
 .screen-size {
   height: 100vh
