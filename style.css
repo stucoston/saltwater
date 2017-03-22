@@ -2212,11 +2212,12 @@ ul.staggered-list li {
   }
   .hp-action {
     position: fixed;
-    top: 80%;
+    top: 10%;
     left: 50%;
     -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
     -ms-transform: translate(-50%,-50%); /* IE 9 */
     transform: translate(-50%,-50%);
+    animation-delay: 0.5s;
   }
 }
 @media only screen and (max-width: 992px) {
@@ -2231,10 +2232,11 @@ ul.staggered-list li {
   .hp-action {
     position: fixed;
     top: 50%;
-    left: 65%;
+    left: 75%;
     -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
     -ms-transform: translate(-50%,-50%); /* IE 9 */
     transform: translate(-50%,-50%);
+    animation-delay: 0.5s;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 992px) {
@@ -4811,7 +4813,7 @@ li a {
   -webkit-animation-delay: 0.9s;
           animation-delay: 0.9s;
 }
-.pageContent span {
+.pageContent div span {
   -webkit-animation:transincontent-span 0.7s ease forwards;
           animation: transincontent-span 0.7s ease forwards;
   -webkit-animation-delay: 0.9s;
