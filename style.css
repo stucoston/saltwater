@@ -2212,7 +2212,7 @@ ul.staggered-list li {
   }
   .hp-action {
     position: fixed;
-    top: 10%;
+    top: 25%;
     left: 50%;
     -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
     -ms-transform: translate(-50%,-50%); /* IE 9 */
@@ -4814,8 +4814,8 @@ li a {
           animation-delay: 0.9s;
 }
 .pageContent div span {
-  -webkit-animation:transincontent-span 0.7s ease forwards;
-          animation: transincontent-span 0.7s ease forwards;
+  -webkit-animation:transincontent-span 1s ease forwards;
+          animation: transincontent-span 1s ease forwards;
   -webkit-animation-delay: 0.9s;
           animation-delay: 0.9s;
 }
@@ -5096,7 +5096,7 @@ nav {
 }
 @-webkit-keyframes transincontent-span {
   0% {
-    padding-top: 15px;
+    padding-top: 50px;
   }
   100% {
     padding-top: 0;
@@ -5179,7 +5179,7 @@ nav {
 }
 @keyframes transincontent-span {
   0% {
-    padding-top: 15px;
+    padding-top: 50px;
   }
   100% {
     padding-top: 0;
