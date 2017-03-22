@@ -6898,7 +6898,6 @@ nav {
       	});
       
           }
-  
   </script>
   <!--close change slides script-->
 
@@ -6933,23 +6932,28 @@ nav {
       
       if (p.className.indexOf('detail-right-off') == -1) {
           openProj();
-        } else if (t.className.indexOf('detail-right-off') == -1) {
-          openTemp();
-        } else if (c.className.indexOf('detail-right-off') == -1) {
-          openComp();
-        }
       }
-    
+      if (t.className.indexOf('detail-right-off') == -1) {
+          openTemp();
+      }
+      if (c.className.indexOf('detail-right-off') == -1) {
+          openComp();
+      }
+    }
     // open details
     // ====================================================
     function openComp() {
       var x = document.getElementById('ViewComponents'),
+          p = document.getElementById('ViewProjects'),
+          t = document.getElementById('ViewTemplates'),
           ci = document.getElementsByClassName("cItem"),
           b0 = $(".menu-container .bars span")[0],
           b1 = $(".menu-container .bars span")[1],
           b2 = $(".menu-container .bars span")[2],
           ob = $(".menu-container .bars .other-bar")[0],
           vl = document.getElementById('ViewCItems'),
+          tl = document.getElementById('ViewTItems'),
+          pl = document.getElementById('ViewPItems'),
           ra = document.getElementById('returnArrow'),
           ST1 = document.getElementById('ST1'),
           ST2 = document.getElementById('ST2'),
@@ -6962,12 +6966,23 @@ nav {
         ra.className = ra.className.replace(' inline',' hide');
         ST1.className = ST1.className.replace(' hide',' hide-on-med-and-up');
         ST2.className = ST2.className.replace(' inline',' hide-on-small-only');
-	ST2.style.color = 'white';
+        ST2.style.color = 'white';
         b0.style.backgroundColor = "white";
         b1.style.backgroundColor = "white";
         b2.style.backgroundColor = "white";
         ob.style.backgroundColor = "white";
       } else {
+        
+        if (p.className.indexOf('detail-right-off') == -1) {
+          p.className += ' detail-right-off';
+          pl.className += ' detail-left-off';
+        
+        }
+        if (t.className.indexOf('detail-right-off') == -1) {
+          t.className += ' detail-right-off';
+          tl.className += ' detail-left-off';
+        }
+        
         x.className = x.className.replace(' detail-right-off', '');
         vl.className = vl.className.replace(' detail-left-off', '');
         y.className = 'hide';
@@ -6985,12 +7000,16 @@ nav {
     
     function openTemp() {
       var x = document.getElementById('ViewTemplates'),
+          p = document.getElementById('ViewProjects'),
+          c = document.getElementById('ViewComponents'),
           ci = document.getElementsByClassName("tItem"),
           b0 = $(".menu-container .bars span")[0],
           b1 = $(".menu-container .bars span")[1],
           b2 = $(".menu-container .bars span")[2],
           ob = $(".menu-container .bars .other-bar")[0],
           vl = document.getElementById('ViewTItems'),
+          cl = document.getElementById('ViewCItems'),
+          pl = document.getElementById('ViewPItems'),
           ra = document.getElementById('returnArrow'),
           ST1 = document.getElementById('ST1'),
           ST2 = document.getElementById('ST2'),
@@ -7003,12 +7022,23 @@ nav {
         ra.className = ra.className.replace(' inline',' hide');
         ST1.className = ST1.className.replace(' hide',' hide-on-med-and-up');
         ST2.className = ST2.className.replace(' inline',' hide-on-small-only');
-	ST2.style.color = 'white';
+        ST2.style.color = 'white';
         b0.style.backgroundColor = "white";
         b1.style.backgroundColor = "white";
         b2.style.backgroundColor = "white";
         ob.style.backgroundColor = "white";
       } else {
+        
+        if (p.className.indexOf('detail-right-off') == -1) {
+          p.className += ' detail-right-off';
+          pl.className += ' detail-left-off';
+        
+        }
+        if (c.className.indexOf('detail-right-off') == -1) {
+          c.className += ' detail-right-off';
+          cl.className += ' detail-left-off';
+        }
+        
         x.className = x.className.replace(' detail-right-off', '');
         vl.className = vl.className.replace(' detail-left-off', '');
         y.className = 'hide';
@@ -7026,12 +7056,16 @@ nav {
     
     function openProj() {
       var x = document.getElementById('ViewProjects'),
+          c = document.getElementById('ViewComponents'),
+          t = document.getElementById('ViewTemplates'),
           ci = document.getElementsByClassName("pItem"),
           b0 = $(".menu-container .bars span")[0],
           b1 = $(".menu-container .bars span")[1],
           b2 = $(".menu-container .bars span")[2],
           ob = $(".menu-container .bars .other-bar")[0],
           vl = document.getElementById('ViewPItems'),
+          cl = document.getElementById('ViewCItems'),
+          tl = document.getElementById('ViewTItems'),
           ra = document.getElementById('returnArrow'),
           ST1 = document.getElementById('ST1'),
           ST2 = document.getElementById('ST2'),
@@ -7044,12 +7078,23 @@ nav {
         ra.className = ra.className.replace(' inline',' hide');
         ST1.className = ST1.className.replace(' hide',' hide-on-med-and-up');
         ST2.className = ST2.className.replace(' inline',' hide-on-small-only');
-	ST2.style.color = 'white';
+        ST2.style.color = 'white';
         b0.style.backgroundColor = "white";
         b1.style.backgroundColor = "white";
         b2.style.backgroundColor = "white";
         ob.style.backgroundColor = "white";
       } else {
+        
+        if (t.className.indexOf('detail-right-off') == -1) {
+          t.className += ' detail-right-off';
+          tl.className += ' detail-left-off';
+        
+        }
+        if (c.className.indexOf('detail-right-off') == -1) {
+          c.className += ' detail-right-off';
+          cl.className += ' detail-left-off';
+        }
+        
         x.className = x.className.replace(' detail-right-off', '');
         vl.className = vl.className.replace(' detail-left-off', '');
         y.className = 'hide';
