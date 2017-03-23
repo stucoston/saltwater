@@ -4813,7 +4813,7 @@ li a {
   -webkit-animation-delay: 0.9s;
           animation-delay: 0.9s;
 }
-.pageContent div span {
+.pageContent div p {
   -webkit-animation:transincontent-span 1s ease forwards;
           animation: transincontent-span 1s ease forwards;
   -webkit-animation-delay: 0.9s;
