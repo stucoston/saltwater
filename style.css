@@ -4814,8 +4814,8 @@ li a {
           animation-delay: 0.9s;
 }
 .pageContent div p {
-  -webkit-animation:transincontent-span 1s ease forwards;
-          animation: transincontent-span 1s ease forwards;
+  -webkit-animation:transincontent-span 5s ease forwards;
+          animation: transincontent-span 5s ease forwards;
   -webkit-animation-delay: 0.9s;
           animation-delay: 0.9s;
 }
@@ -5096,8 +5096,8 @@ nav {
 }
 @-webkit-keyframes transincontent-span {
   0% {
-    -webkit-margin-before: 1rem;
-    -webkit-margin-after: 1rem;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
   }
   100% {
     -webkit-margin-before: 0;
@@ -5181,8 +5181,8 @@ nav {
 }
 @keyframes transincontent-span {
   0% {
-    -webkit-margin-before: 1rem;
-    -webkit-margin-after: 1rem;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
   }
   100% {
     -webkit-margin-before: 0;
