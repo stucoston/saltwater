@@ -4793,10 +4793,8 @@ li a {
   bottom: 47%;
   color: white;
   left: -100%;
-  -webkit-animation: transinpt 0.5s ease forwards;
-          animation: transinpt 0.5s ease forwards;
-  -webkit-animation-delay: 0.8s;
-          animation-delay: 0.8s;
+  -webkit-animation: transinpt 0.5s ease forwards 0.8s;
+          animation: transinpt 0.5s ease forwards 0.8s;
 }
 .pageTitleBorder {
   position: fixed;
@@ -4804,10 +4802,8 @@ li a {
   border-bottom: 1px solid white;
   bottom: 45%;
   left: -100%;
-  -webkit-animation: transintb 0.7s ease forwards;
-          animation: transintb 0.7s ease forwards;
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
+  -webkit-animation: transintb 0.7s ease forwards 0.4s;
+          animation: transintb 0.7s ease forwards 0.4s;
   -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
 }
@@ -4816,26 +4812,22 @@ li a {
   width: 40%;
   top: 100%;
   left: 20px;
-  -webkit-animation: transincontent 0.7s ease forwards;
-          animation: transincontent 0.7s ease forwards;
-  -webkit-animation-delay: 0.9s;
-          animation-delay: 0.9s;
+  -webkit-animation: transincontent 0.7s ease forwards 0.9s;
+          animation: transincontent 0.7s ease forwards 0.9s;
 }
 .pageContent div p {
-  -webkit-animation:transincontent-span 5s ease forwards;
-          animation: transincontent-span 5s ease forwards;
-  -webkit-animation-delay: 0.9s;
-          animation-delay: 0.9s;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-animation:transincontent-span ease forwards 0.9s;
+          animation: transincontent-span ease forwards 0.9s;
 }
 .oceanContent {
   position: fixed;
   width: 60%;
   top: 100%;
   left: 20px;
-  -webkit-animation: transinocean 0.7s ease forwards;
-          animation: transinocean 0.7s ease forwards;
-  -webkit-animation-delay: 0.9s;
-          animation-delay: 0.9s;
+  -webkit-animation: transinocean 0.7s ease forwards 0.9s;
+          animation: transinocean 0.7s ease forwards 0.9s;
 }
 .hoverableBlue:hover {
   background-color: #4aaaa5;
@@ -5104,12 +5096,10 @@ nav {
 }
 @-webkit-keyframes transincontent-span {
   0% {
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
+    margin-top: 1em;
   }
   100% {
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0;
+    margin-top: 0;
   }
 }
 @-webkit-keyframes transinocean {
@@ -5189,12 +5179,10 @@ nav {
 }
 @keyframes transincontent-span {
   0% {
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
+    margin-top: 1em;
   }
   100% {
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0;
+    margin-top: 0;
   }
 }
 @keyframes transinocean {
