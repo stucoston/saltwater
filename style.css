@@ -5096,10 +5096,12 @@ nav {
 }
 @-webkit-keyframes transincontent-span {
   0% {
-    padding-top: 50px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
   100% {
-    padding-top: -10px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 @-webkit-keyframes transinocean {
@@ -5179,10 +5181,12 @@ nav {
 }
 @keyframes transincontent-span {
   0% {
-    padding-top: 50px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
   100% {
-    padding-top: -10px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 @keyframes transinocean {
