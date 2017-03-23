@@ -5099,7 +5099,7 @@ nav {
     padding-top: 50px;
   }
   100% {
-    padding-top: 0;
+    padding-top: -10px;
   }
 }
 @-webkit-keyframes transinocean {
@@ -5182,7 +5182,7 @@ nav {
     padding-top: 50px;
   }
   100% {
-    padding-top: 0;
+    padding-top: -10px;
   }
 }
 @keyframes transinocean {
