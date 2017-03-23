@@ -1,26 +1,34 @@
 .saltwaterColor1 {
-  background-color: #7accc8 !important;
+  /*background-color: #7accc8 !important;*/
+  background-color: #030C22;
 }
 .saltwaterColor1-text {
-  color: #7accc8 !important;
+  /*color: #7accc8 !important;*/
+  color: #030C22;
 }
 .saltwaterColor2 {
-  background-color: #4aaaa5 !important;
+  /*background-color: #4aaaa5 !important;*/
+  background-color: #20293F;
 }
 .saltwaterColor2-text {
-  color: #4aaaa5 !important;
+ /* color: #4aaaa5 !important;*/
+  color: #20293F;
 }
 .saltwaterColor3 {
-  background-color: #a3d39c !important;
+ /* background-color: #a3d39c !important;*/
+  background-color: #404749;
 }
 .saltwaterColor3-text {
-  color: #a3d39c !important;
+ /* color: #a3d39c !important;*/
+  color: #404749;
 }
 .saltwaterColor4 {
-  background-color: #e45f56 !important;
+  /*background-color: #e45f56 !important;*/
+  background-color: #A9B0B3;
 }
 .saltwaterColor4-text {
-  color: #e45f56 !important;
+  /*color: #e45f56 !important;*/
+  color: #A9B0B3;
 }
 .materialize-red {
   background-color: #e51c23 !important;
