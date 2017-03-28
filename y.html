@@ -65,10 +65,20 @@ p {
   transform: translate(-50%, -50%);
 }
 
+  .nav-items {
+    width: 90%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  
 .nav-item {
-  position: fixed;
+  position: absolute;
   width: 100%;
-  height: 10%;
+  height: 30px;
   left: 0;
 }
 
@@ -77,12 +87,13 @@ p {
 }
 
 .nav-item.p-contact {
-  top: 90%;
+  top: auto;
+  bottom: 0;
 }
 
 .nav-item.h-components {
   top: 0;
-  width: 10%;
+  width: 30px;
   height: 100%;
   left: auto;
   right: 0;
@@ -90,18 +101,20 @@ p {
 
 .nav-item.p-components {
   top: 0;
-  width: 10%;
+  width: 30px;
   height: 100%;
-  left: auto;
-  right: 90%;
+  left: 0;
+  right: auto;
 }
 
 .nav-item.h-projects {
-  top: 90%;
+  top: auto;
+  bottom: 0;
 }
 
 .nav-item.p-projects {
   top: 0;
+  bottom: auto
 }
 
 .nav-item.h-templates {
@@ -164,7 +177,7 @@ p {
 }
 
 .h-contact .flex-container {
-  width: 75px;
+  width: 80px;
   top: 50%;
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
@@ -181,7 +194,7 @@ p {
 }
 
 .h-projects .flex-container {
-  width: 80px;
+  width: 85px;
   top: 50%;
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
@@ -317,10 +330,10 @@ p {
   </div>
   
   <div class="h-right-words">
-    <p>Welcome to the portfolio of Stu Coston.<br/>Freelance digital designer &amp; web nerd.</p>
+    <p>Welcome to the portfolio of freelance digital designer, Stu Coston.</p>
   </div>
            
-  <div id="nav-items">
+  <div class="nav-items">
     <div class="nav-item h-contact">
       <div class="flex-wrapper">
         <div class="page-title flex-container">
