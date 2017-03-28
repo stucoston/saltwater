@@ -13,6 +13,10 @@ body {
   overflow: initial;
   font-family: Montserrat, sans-serif;
 }
+  
+p {
+  font-weight: 200;
+}
 
 .middle {
   position: absolute;
@@ -24,7 +28,7 @@ body {
 }
 
 .page-title {
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .h-left-words,
@@ -142,7 +146,6 @@ body {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   color: darkblue;
-  font-weight: 400;
 }
 
 .h-components .flex-container:hover,
@@ -151,7 +154,6 @@ body {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   color: darkblue;
-  font-weight: 400;
 }
 
 .h-contact .flex-container {
@@ -219,41 +221,57 @@ body {
 }
 
 #logo div:nth-child(3) {
+  height: 10%;
   top: 50%;
 }
 
-#logo div:nth-child(4) {
+/*#logo div:nth-child(4) {
   top: 75%;
-}
-
+}*/
+  
 #logo div:nth-child(1),
 #logo div:nth-child(3) {
   left: 55%;
   -webkit-transform: rotate(40deg);
-          transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  transform: rotate(40deg);
 }
 
-#logo div:nth-child(2),
-#logo div:nth-child(4) {
+#logo div:nth-child(2)/*,
+#logo div:nth-child(4)*/ {
   left: 55%;
   -webkit-transform: rotate(-40deg);
-          transform: rotate(-40deg);
+  -ms-transform: rotate(-40deg);
+  transform: rotate(-40deg);
 }
 
 #logo div:nth-child(5) {
-  top: 25%;
+  height: 10%;
+  top: 65%;
   background-color: darkblue;
-  left: 45%;
+  left: 50%;
   -webkit-transform: rotate(-40deg);
-          transform: rotate(-40deg);
+  -ms-transform: rotate(-40deg);
+  transform: rotate(-40deg);
 }
 
 #logo div:nth-child(6) {
-  top: 50%;
+  top: 75%;
   background-color: darkblue;
-  left: 45%;
+  left: 50%;
   -webkit-transform: rotate(40deg);
-          transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  transform: rotate(40deg);
+}
+  
+@media only screen and (min-width: 600px) {
+  .h-left-words {
+    left: 25%;
+  }
+  
+  .h-right-words {
+    left: 75%;
+  }
 }
 </style>
 
