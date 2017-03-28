@@ -66,9 +66,9 @@ p {
 }
 
   .nav-items {
-    position: fixed;
-    width: 90%;
-    height: 90%;
+    position: relative;
+    width: 100%;
+    height: 100%;
     top: 50%;
     left: 50%;
     margin: 24px;
@@ -97,7 +97,7 @@ p {
 
 .nav-item.h-components {
   top: 0;
-  width: 30px;
+  width: 24px;
   height: 100%;
   left: auto;
   right: 0;
@@ -105,7 +105,7 @@ p {
 
 .nav-item.p-components {
   top: 0;
-  width: 30px;
+  width: 24px;
   height: 100%;
   left: 0;
   right: auto;
@@ -113,7 +113,7 @@ p {
 
 .nav-item.h-projects {
   top: auto;
-  bottom: 0;
+  bottom: -12px;
 }
 
 .nav-item.p-projects {
@@ -308,7 +308,8 @@ p {
 }
 </style>
 
-<body> 
+<body>
+  <div class="body-border">
   <div class="nav-items">
     <div class="nav-item h-contact">
       <div class="flex-wrapper">
@@ -368,6 +369,7 @@ p {
         </div>
       </div>
     </div>
+  </div>
   </div>
   
   <div id="logo" class="middle">
