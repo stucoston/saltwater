@@ -304,32 +304,32 @@ p {
 }
   
   .growing-thing span:nth-child(odd) {
-    animation: letter-spin 0.4s ease-out forwards;
+    animation: letter-spin 0.4s ease-out 5 forwards;
   }
   
   .growing-thing span:nth-child(even) {
-    animation: letter-spin 0.8s ease-out forwards;
+    animation: letter-spin 0.8s ease-out 5 forwards;
   }
   
   .growing-thing span:nth-child(3n+0) {
-    animation: letter-spin 1s ease-out forwards;
+    animation: letter-spin 1s ease-out 5 forwards;
   }
   
   @keyframes letter-spin {
     0% {
-      -webkit-transform: rotateZ(0deg);
-      -ms-transform: rotateZ(0deg);
-      transform: rotateZ(0deg);
+      -webkit-transform: rotateX(0deg);
+      -ms-transform: rotateX(0deg);
+      transform: rotateX(0deg);
     }
     50% {
-      -webkit-transform: rotateZ(180deg);
-      -ms-transform: rotateZ(180deg);
-      transform: rotateZ(180deg);
+      -webkit-transform: rotateX(180deg);
+      -ms-transform: rotateX(180deg);
+      transform: rotateX(180deg)
     }
     100% {
-      -webkit-transform: rotateZ(0deg);
-      -ms-transform: rotateZ(0deg);
-      transform: rotateZ(0deg);
+      -webkit-transform: rotateX(360deg);
+      -ms-transform: rotateX(360deg);
+      transform: rotateX(360deg)
     }
   }
   
