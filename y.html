@@ -1,0 +1,380 @@
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+</head>
+
+<style>
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: initial;
+  font-family: Montserrat, sans-serif;
+}
+
+.middle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.page-title {
+  font-weight: 200;
+}
+
+.h-left-words,
+.h-right-words {
+  position: absolute;
+  text-align: center;
+}
+
+.h-left-words span,
+.h-right-words span {
+  display: inline-block;
+  width: auto;
+}
+
+.highlight {
+  background-color: #222;
+  color: white;
+  padding: 1px 4px 1px 4px;
+}
+
+.h-left-words {
+  top: 25%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.h-right-words {
+  top: 75%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.nav-item {
+  position: fixed;
+  width: 100%;
+  height: 10%;
+  left: 0;
+  cursor: pointer;
+}
+
+.nav-item.h-contact {
+  top: 0%;
+}
+
+.nav-item.p-contact {
+  top: 90%;
+}
+
+.nav-item.h-components {
+  top: 0;
+  width: 10%;
+  height: 100%;
+  left: auto;
+  right: 0;
+}
+
+.nav-item.p-components {
+  top: 0;
+  width: 10%;
+  height: 100%;
+  left: auto;
+  right: 90%;
+}
+
+.nav-item.h-projects {
+  top: 90%;
+}
+
+.nav-item.p-projects {
+  top: 0%;
+}
+
+.nav-item.h-templates {
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 100%;
+}
+
+.nav-item.p-templates {
+  top: 0;
+  left: 90%;
+  width: 10%;
+  height: 100%;
+}
+
+.flex-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: auto;
+  position: absolute;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.h-projects .flex-container:hover,
+.h-contact .flex-container:hover {
+  width: 85%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: darkblue;
+  font-weight: 400;
+}
+
+.h-components .flex-container:hover,
+.h-templates .flex-container:hover {
+  width: 85vh;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: darkblue;
+  font-weight: 400;
+}
+
+.h-contact .flex-container {
+  width: 70px;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+.h-components .flex-container {
+  width: 140px;
+  top: -5vw;
+  left: 50vh;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.h-projects .flex-container {
+  width: 75px;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+.h-templates .flex-container {
+  width: 110px;
+  top: 5vw;
+  left: -50vh;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.rotate90counterclock {
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.rotate90clock {
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+#logo {
+  width: 30vh;
+  height: 30vh;
+}
+
+#logo div {
+  position: absolute;
+  background-color: grey;
+  width: 2px;
+  height: 33%;
+}
+
+#logo div:nth-child(1) {
+  top: 0;
+}
+
+#logo div:nth-child(2) {
+  top: 25%;
+}
+
+#logo div:nth-child(3) {
+  top: 50%;
+}
+
+#logo div:nth-child(4) {
+  top: 75%;
+}
+
+#logo div:nth-child(1),
+#logo div:nth-child(3) {
+  left: 55%;
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+
+#logo div:nth-child(2),
+#logo div:nth-child(4) {
+  left: 55%;
+  -webkit-transform: rotate(-40deg);
+          transform: rotate(-40deg);
+}
+
+#logo div:nth-child(5) {
+  top: 25%;
+  background-color: darkblue;
+  left: 45%;
+  -webkit-transform: rotate(-40deg);
+          transform: rotate(-40deg);
+}
+
+#logo div:nth-child(6) {
+  top: 50%;
+  background-color: darkblue;
+  left: 45%;
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+</style>
+
+<body> 
+  <div id="logo" class="middle">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  
+  
+  <div class="h-left-words">
+    <p>
+    <span class="growing-thing highlight">Sharks</span>
+    <span class="growing-thing highlight">Whales</span>
+    <span class="growing-thing highlight">Turtles</span>
+    <span class="growing-thing highlight">Trees</span>
+    <span class="growing-thing highlight">Kangaroos</span>
+    <span class="growing-thing highlight">Ears</span>
+    <span class="growing-thing highlight">Noses</span>
+    <span class="growing-thing highlight">Lobsters</span>
+    <span> never stop growing, why should your business</span>
+    <p>
+  </div>
+  
+  <div class="h-right-words">
+    <p>We are Saltwater. Freelance digital studio run by web nerds.</p>
+  </div>
+           
+  <div id="nav-items">
+    <div class="nav-item h-contact">
+      <div class="flex-wrapper">
+        <div class="page-title flex-container">
+          <div class="flex-letter">C</div>
+          <div class="flex-letter">o</div>
+          <div class="flex-letter">n</div>
+          <div class="flex-letter">t</div>
+          <div class="flex-letter">a</div>
+          <div class="flex-letter">c</div>
+          <div class="flex-letter">t</div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item h-components">
+      <div class="flex-wrapper rotate90clock">
+        <div class="page-title flex-container">
+          <div class="flex-letter">C</div>
+          <div class="flex-letter">o</div>
+          <div class="flex-letter">m</div>
+          <div class="flex-letter">p</div>
+          <div class="flex-letter">o</div>
+          <div class="flex-letter">n</div>
+          <div class="flex-letter">e</div>
+          <div class="flex-letter">n</div>
+          <div class="flex-letter">t</div>
+          <div class="flex-letter">s</div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item h-projects">
+      <div class="flex-wrapper">
+        <div class="page-title flex-container">
+          <div>P</div>
+          <div>r</div>
+          <div>o</div>
+          <div>j</div>
+          <div>e</div>
+          <div>c</div>
+          <div>t</div>
+          <div>s</div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item h-templates">
+      <div class="flex-wrapper rotate90counterclock">
+        <div class="page-title flex-container">
+          <div class="flex-letter">T</div>
+          <div class="flex-letter">e</div>
+          <div class="flex-letter">m</div>
+          <div class="flex-letter">p</div>
+          <div class="flex-letter">l</div>
+          <div class="flex-letter">a</div>
+          <div class="flex-letter">t</div>
+          <div class="flex-letter">e</div>
+          <div class="flex-letter">s</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("growing-thing");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1} 
+    x[slideIndex-1].style.display = "inline-block"; 
+    setTimeout(carousel, 4000); // Change image every 4 seconds
+}
+  </sript>
+</body>
+
+</html>
