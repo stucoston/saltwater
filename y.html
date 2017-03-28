@@ -137,6 +137,7 @@ p {
   width: auto;
   position: absolute;
   -webkit-transition: 0.3s;
+  -ms-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -144,6 +145,7 @@ p {
 .h-contact .flex-container:hover {
   width: 85%;
   -webkit-transition: 0.3s;
+  -ms-transition: 0.3s;
   transition: 0.3s;
   color: darkblue;
 }
@@ -152,6 +154,7 @@ p {
 .h-templates .flex-container:hover {
   width: 85vh;
   -webkit-transition: 0.3s;
+  -ms-transition: 0.3s;
   transition: 0.3s;
   color: darkblue;
 }
@@ -160,6 +163,7 @@ p {
   width: 70px;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
@@ -167,15 +171,17 @@ p {
   width: 140px;
   top: -5vw;
   left: 50vh;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
 }
 
 .h-projects .flex-container {
   width: 75px;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
 }
 
 .h-templates .flex-container {
@@ -183,20 +189,25 @@ p {
   top: 5vw;
   left: -50vh;
   -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
 .rotate90counterclock {
   -webkit-transform-origin: top left;
-          transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
   -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
 
 .rotate90clock {
   -webkit-transform-origin: top left;
-          transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
   -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
@@ -225,9 +236,10 @@ p {
   top: 50%;
 }
 
-/*#logo div:nth-child(4) {
+#logo div:nth-child(4) {
   top: 75%;
-}*/
+  display: none;
+}
   
 #logo div:nth-child(1),
 #logo div:nth-child(3) {
@@ -288,49 +300,49 @@ p {
   
   <div class="h-left-words">
     <p>
-    <span class="growing-thing highlight">Sharks</span>
-    <span class="growing-thing highlight">Whales</span>
-    <span class="growing-thing highlight">Turtles</span>
-    <span class="growing-thing highlight">Trees</span>
-    <span class="growing-thing highlight">Kangaroos</span>
-    <span class="growing-thing highlight">Ears</span>
-    <span class="growing-thing highlight">Noses</span>
-    <span class="growing-thing highlight">Lobsters</span>
-    <span> never stop growing, why should your business</span>
+      <span class="growing-thing highlight"><span>S</span><span>h</span><span>a</span><span>r</span><span>k</span><span>s</span></span>
+      <span class="growing-thing highlight"><span>W</span><span>h</span><span>a</span><span>l</span><span>e</span><span>s</span></span>
+      <span class="growing-thing highlight"><span>T</span><span>u</span><span>r</span><span>t</span><span>l</span><span>e</span><span>s</span></span>
+      <span class="growing-thing highlight"><span>T</span><span>r</span><span>e</span><span>e</span><span>s</span></span>
+      <span class="growing-thing highlight"><span>K</span><span>a</span><span>n</span><span>g</span><span>a</span><span>r</span><span>o</span><span>o</span><span>s</span></span>
+      <span class="growing-thing highlight"><span>E</span><span>a</span><span>r</span><span>s</span></span>
+      <span class="growing-thing highlight"><span>N</span><span>o</span><span>s</span><span>e</span><span>s</span></span>
+      <span class="growing-thing highlight"><span>L</span><span>o</span><span>b</span><span>s</span><span>t</span><span>e</span><span>r</span><span>s</span></span>
+      <span> never stop growing, why should your business</span>
     <p>
   </div>
   
   <div class="h-right-words">
-    <p>We are Saltwater. Freelance digital studio run by web nerds.</p>
+    <p>Welcom to the portfolio of Stu Coston.<br/>Freelance digital designer &amp; web nerd.</p>
   </div>
            
   <div id="nav-items">
     <div class="nav-item h-contact">
       <div class="flex-wrapper">
         <div class="page-title flex-container">
-          <div class="flex-letter">C</div>
-          <div class="flex-letter">o</div>
-          <div class="flex-letter">n</div>
-          <div class="flex-letter">t</div>
-          <div class="flex-letter">a</div>
-          <div class="flex-letter">c</div>
-          <div class="flex-letter">t</div>
+          <div>C</div>
+          <div>o</div>
+          <div>n</div>
+          <div>t</div>
+          <div>a</div>
+          <div>c</div>
+          <div>t</div>
         </div>
       </div>
     </div>
     <div class="nav-item h-components">
       <div class="flex-wrapper rotate90clock">
         <div class="page-title flex-container">
-          <div class="flex-letter">C</div>
-          <div class="flex-letter">o</div>
-          <div class="flex-letter">m</div>
-          <div class="flex-letter">p</div>
-          <div class="flex-letter">o</div>
-          <div class="flex-letter">n</div>
-          <div class="flex-letter">e</div>
-          <div class="flex-letter">n</div>
-          <div class="flex-letter">t</div>
-          <div class="flex-letter">s</div>
+          <div>C</div>
+          <div>o</div>
+          <div>m</div>
+          <div>p</div>
+          <div>o</div>
+          <div>n</div>
+          <div>e</div>
+          <div>n</div>
+          <div>t</div>
+          <div>s</div>
         </div>
       </div>
     </div>
@@ -351,15 +363,15 @@ p {
     <div class="nav-item h-templates">
       <div class="flex-wrapper rotate90counterclock">
         <div class="page-title flex-container">
-          <div class="flex-letter">T</div>
-          <div class="flex-letter">e</div>
-          <div class="flex-letter">m</div>
-          <div class="flex-letter">p</div>
-          <div class="flex-letter">l</div>
-          <div class="flex-letter">a</div>
-          <div class="flex-letter">t</div>
-          <div class="flex-letter">e</div>
-          <div class="flex-letter">s</div>
+          <div>T</div>
+          <div>e</div>
+          <div>m</div>
+          <div>p</div>
+          <div>l</div>
+          <div>a</div>
+          <div>t</div>
+          <div>e</div>
+          <div>s</div>
         </div>
       </div>
     </div>
