@@ -86,7 +86,6 @@ p {
   width: 100%;
   height: 24px;
   left: 0;
-  border: 1px dashed rgba(0,250,0,0.3);
 }
 /* nav-item home*/
 .nav-item.h-contact {
@@ -139,7 +138,6 @@ p {
   justify-content: center;
   width: 100%;
   height: 24px;
-  border: 1px solid green;
 }
 .h-components .flex-wrapper,
 .h-templates .flex-wrapper {
@@ -150,7 +148,6 @@ p {
   align-items: center;
   width: 24px;
   height: 100%;
-  border: 1px solid green;
 }
 .flex-container {
   display:-webkit-flex;
@@ -165,7 +162,6 @@ p {
   transition: 0.3s;
   cursor: pointer;
   text-transform: uppercase;
-  border: 1px solid blue;
 }
 .h-contact .flex-container:hover,
 .h-projects .flex-container:hover {
@@ -207,63 +203,9 @@ p {
   width: 30vh;
   height: 30vh;
 }
-#logo div {
-  position: absolute;
-  background-color: grey;
-  width: 2px;
-  height: 33%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-}
-#logo div:nth-child(3) {
-  left: 50%;
-  -webkit-transform: rotate(40deg);
-  -ms-transform: rotate(40deg);
-  transform: rotate(40deg);
-}
-#logo div:nth-child(2),
-#logo div:nth-child(5) {
-  left: 50%;
-  -webkit-transform: rotate(-40deg);
-  -ms-transform: rotate(-40deg);
-  transform: rotate(-40deg);
-}
-#logo div:nth-child(1) {
-  top: 26%;
-  width: 10%;
-  height: 2px;
-  left: auto;
-  right: 50%;
-}
-#logo div:nth-child(2) {
-  top: 22%;
-}
-#logo div:nth-child(3) {
-  height: 10%;
-  top: 50%;
-  left: auto;
-  right: 42%;
-}
-#logo div:nth-child(4) {
-  background-color: darkblue;
-  height: 10%;
-  top: 50%;
-  left: 42%;
-  -webkit-transform: rotate(40deg);
-  -ms-transform: rotate(40deg);
-  transform: rotate(40deg);
-}
-#logo div:nth-child(5) { 
-  top: 54%;
-  background-color: darkblue;
-}
-#logo div:nth-child(6) {
-  background-color: darkblue;
-  height: 10%;
-  top: 82%;
-  left:auto;
-  right: 38%;
+#logo svg {
+  height: 100%;
+  width: 100%;
 }
   .growing-thing span:nth-child(odd) {
     animation: letter-spin 0.2s ease-out 4;
@@ -381,12 +323,10 @@ p {
   </div>
 
   <div id="logo" class="middle">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+    <svg viewBox="0, 0, 200, 200">
+      <path fill="transparent" stroke-width="2px" stroke="grey" d="M90 30 L60 30 L130 85 L115 115"/>
+      <path fill="transparent" stroke-width="2px" stroke="darkblue" d="M75 85 L60 115 L130 170 L130 140"/>
+    </svg>
   </div>
 
 
