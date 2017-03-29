@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <meta content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1' name='viewport'/>
+  <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 </head>
 
@@ -13,16 +13,7 @@ body {
   padding: 0;
   overflow: initial;
   font-family: Montserrat, sans-serif;
-}
-
-/*body {
-  background-image: url('http://lorempixel.com/1080/720/nature/2');
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-}*/
-  
+}  
 p {
   font-weight: 200;
 }
@@ -35,7 +26,7 @@ p {
   transform: translate(-50%,-50%);
 }
 .hide {
-  display: none !important;
+  display: none;
 }
 .page-title {
   font-weight: 400;
@@ -86,87 +77,98 @@ p {
     width: 100%;
     height: 100%;
     opacity: 1;
-    /*background-color: rgba(200,200,200,0.6);*/
-    border: 1px solid black;
+    border: 1px solid rgba(50,50,50,0.2);
   }
   
 .nav-item {
   position: absolute;
+  top: 0;
   width: 100%;
   height: 24px;
   left: 0;
+  border: 1px dashed rgba(0,250,0,0.3);
 }
+/* nav-item home*/
 .nav-item.h-contact {
   top: -12px;
 }
-.nav-item.p-contact {
-  top: auto;
-  bottom: -12px;
-}
 .nav-item.h-components {
-  top: 0;
   width: 24px;
   height: 100%;
   left: auto;
   right: -12px;
 }
+.nav-item.h-projects {
+  top: auto;
+  bottom: -12px;
+}
+.nav-item.h-templates {
+  left: -12px;
+  right: auto;
+  width: 24px;
+  height: 100%;
+}
+
+/*nav-item page*/
+.nav-item.p-contact {
+  top: auto;
+  bottom: -12px;
+}
 .nav-item.p-components {
-  top: 0;
   width: 24px;
   height: 100%;
   left: 12px;
   right: auto;
 }
-.nav-item.h-projects {
-  top: auto;
-  bottom: -12px;
-}
 .nav-item.p-projects {
   top: 0;
   bottom: auto
 }
-.nav-item.h-templates {
-  top: 0;
-  left: 0;
-  right: auto;
-  width: 24px;
-  height: 100%;
-}
 .nav-item.p-templates {
-  top: 0;
   left: auto;
   right: 12px;
   width: 24px;
   height: 100%;
 }
-.flex-wrapper {
+
+/*flex elements*/
+.h-contact .flex-wrapper,
+.h-projects .flex-wrapper {
   display:-webkit-flex;
   display: flex;
-  flex-flow: row nowrap;
-  align-content: center;
   justify-content: center;
   width: 100%;
+  height: 24px;
+  border: 1px solid green;
+}
+.h-components .flex-wrapper,
+.h-templates .flex-wrapper {
+  display:-webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 100%;
+  border: 1px solid green;
 }
 .flex-container {
   display:-webkit-flex;
   display: flex;
-  flex-flow: row nowrap;
-  align-content: center;
-  align-items: flex-end;
   justify-content: space-between;
   width: auto;
-  position: absolute;
+  height: 24px;
+  line-height: 24px;
+  vertical-align: middle;
   -webkit-transition: 0.3s;
   -ms-transition: 0.3s;
   transition: 0.3s;
   cursor: pointer;
-}
-  
-.flex-container div {
   text-transform: uppercase;
+  border: 1px solid blue;
 }
-.h-projects .flex-container:hover,
-.h-contact .flex-container:hover {
+.h-contact .flex-container:hover,
+.h-projects .flex-container:hover {
   width: 85vw;
   -webkit-transition: 0.3s;
   -ms-transition: 0.3s;
@@ -183,44 +185,24 @@ p {
 }
 .h-contact .flex-container {
   width: 90px;
-  top: 0;
-  line-height: 24px;
 }
 .h-components .flex-container {
   width: 150px;
-  top: -10px;
-  left: 50vh;
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-}
-.h-projects .flex-container {
-  width: 95px;
-  top: 0;
-  line-height: 24px;
-}
-.h-templates .flex-container {
-  width: 120px;
-  top: 0;
-  left: -50vh;
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-}
-.rotate90counterclock {
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-}
-.rotate90clock {
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+.h-projects .flex-container {
+  width: 95px;
+}
+.h-templates .flex-container {
+  width: 120px;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+/*logo*/
 #logo {
   width: 30vh;
   height: 30vh;
@@ -230,56 +212,59 @@ p {
   background-color: grey;
   width: 2px;
   height: 33%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
 }
-#logo div:nth-child(1),
 #logo div:nth-child(3) {
   left: 50%;
   -webkit-transform: rotate(40deg);
   -ms-transform: rotate(40deg);
   transform: rotate(40deg);
 }
-#logo div:nth-child(2)/*,
-#logo div:nth-child(4)*/ {
+#logo div:nth-child(2),
+#logo div:nth-child(5) {
   left: 50%;
   -webkit-transform: rotate(-40deg);
   -ms-transform: rotate(-40deg);
   transform: rotate(-40deg);
 }
 #logo div:nth-child(1) {
-  top: 0;
+  top: 26%;
+  width: 10%;
+  height: 2px;
+  left: auto;
+  right: 50%;
 }
 #logo div:nth-child(2) {
-  top: 25%;
+  top: 22%;
 }
 #logo div:nth-child(3) {
   height: 10%;
-  top: 52%;
-  left: 57%;
+  top: 50%;
+  left: auto;
+  right: 42%;
 }
 #logo div:nth-child(4) {
   background-color: darkblue;
   height: 10%;
-  top: 77%;
-  left:61%;
-}
-#logo div:nth-child(5) {
-  background-color: darkblue;
-  height: 10%;
-  top: 52%;
+  top: 50%;
   left: 42%;
   -webkit-transform: rotate(40deg);
   -ms-transform: rotate(40deg);
   transform: rotate(40deg);
 }
-#logo div:nth-child(6) {
-  top: 57%;
+#logo div:nth-child(5) { 
+  top: 54%;
   background-color: darkblue;
-  left: 50%;
-  -webkit-transform: rotate(-40deg);
-  -ms-transform: rotate(-40deg);
-  transform: rotate(-40deg);
 }
-
+#logo div:nth-child(6) {
+  background-color: darkblue;
+  height: 10%;
+  top: 82%;
+  left:auto;
+  right: 38%;
+}
   .growing-thing span:nth-child(odd) {
     animation: letter-spin 0.2s ease-out 4;
   }
@@ -334,9 +319,9 @@ p {
 <body>
     <div class="nav-item-wrapper">
     <div class="nav-item-overlay">
-      <div class="nav-item h-contact">
+      <div id="nav-contact" class="nav-item h-contact">
         <div class="flex-wrapper">
-          <div id="nav-contact" class="page-title flex-container" onclick="pageContact()">
+          <div class="page-title flex-container" onclick="pageContact()">
             <div>C</div>
             <div>o</div>
             <div>n</div>
@@ -347,9 +332,9 @@ p {
           </div>
         </div>
       </div>
-      <div class="nav-item h-components">
-        <div class="flex-wrapper rotate90clock">
-          <div id="nav-component" class="page-title flex-container" onclick="pageComponents()">
+      <div id="nav-component" class="nav-item h-components">
+        <div class="flex-wrapper">
+          <div class="page-title flex-container" onclick="pageComponents()">
             <div>C</div>
             <div>o</div>
             <div>m</div>
@@ -363,9 +348,9 @@ p {
           </div>
         </div>
       </div>
-      <div class="nav-item h-projects">
+      <div id="nav-projects" class="nav-item h-projects">
         <div class="flex-wrapper">
-          <div id="nav-projects" class="page-title flex-container" onclick="pageProjects()">
+          <div class="page-title flex-container" onclick="pageProjects()">
             <div>P</div>
             <div>r</div>
             <div>o</div>
@@ -377,9 +362,9 @@ p {
           </div>
         </div>
       </div>
-      <div class="nav-item h-templates">
-        <div class="flex-wrapper rotate90counterclock">
-          <div id="nav-templates" class="page-title flex-container" onclick="pageTemplates()">
+      <div id="nav-templates" class="nav-item h-templates">
+        <div class="flex-wrapper">
+          <div class="page-title flex-container" onclick="pageTemplates()">
             <div>T</div>
             <div>e</div>
             <div>m</div>
@@ -427,7 +412,6 @@ p {
   <script>
 var slideIndex = 0;
 carousel();
-
 function carousel() {
     var i;
     var x = document.getElementsByClassName("growing-thing");
@@ -439,14 +423,15 @@ function carousel() {
     x[slideIndex-1].style.display = "inline-block"; 
     setTimeout(carousel, 4000); // Change image every 4 seconds
 }
-
+</script>
+<script>
 function pageContact() {
   var con = document.getElementById("nav-contact");
   var com = document.getElementById("nav-components");
   var p = document.getElementById("nav-projects");
   var t = document.getElementById("nav-templates");
   
-  if (com.className.indexOf('hide') == -1) {
+  if (com.className.indexOf('hide') =! -1) {
     com.classList.remove(" hide");
     p.classList.remove(" hide");
     t.classList.remove(" hide");
