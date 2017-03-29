@@ -17,7 +17,6 @@ body {
 p {
   font-weight: 200;
 }
-
 .middle {
   position: absolute;
   left: 50%;
@@ -26,45 +25,40 @@ p {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-
 .page-title {
   font-weight: 400;
 }
-
 .h-left-words,
 .h-right-words {
   position: absolute;
   text-align: center;
 }
-
 .h-left-words span,
 .h-right-words span {
   display: inline-block;
   width: auto;
 }
-
 .highlight {
   background-color: #222;
   color: white;
   padding: 1px 4px 1px 4px;
 }
-
 .h-left-words {
   top: 25%;
   left: 50%;
+  max-width: 225px;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-
 .h-right-words {
   top: 75%;
   left: 50%;
+  max-width: 225px;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-
   .nav-item-wrapper {
     position: fixed;
     top: 0;
@@ -89,16 +83,13 @@ p {
   height: 24px;
   left: 0;
 }
-
 .nav-item.h-contact {
   top: -12px;
 }
-
 .nav-item.p-contact {
   top: auto;
   bottom: -12px;
 }
-
 .nav-item.h-components {
   top: 0;
   width: 24px;
@@ -106,7 +97,6 @@ p {
   left: auto;
   right: -12px;
 }
-
 .nav-item.p-components {
   top: 0;
   width: 24px;
@@ -114,17 +104,14 @@ p {
   left: 12px;
   right: auto;
 }
-
 .nav-item.h-projects {
   top: auto;
   bottom: -12px;
 }
-
 .nav-item.p-projects {
   top: 0;
   bottom: auto
 }
-
 .nav-item.h-templates {
   top: 0;
   left: 0;
@@ -132,7 +119,6 @@ p {
   width: 24px;
   height: 100%;
 }
-
 .nav-item.p-templates {
   top: 0;
   left: auto;
@@ -140,7 +126,6 @@ p {
   width: 24px;
   height: 100%;
 }
-
 .flex-wrapper {
   display: flex;
   flex-flow: row wrap;
@@ -149,7 +134,6 @@ p {
   justify-content: center;
   width: 100%;
 }
-
 .flex-container {
   display: flex;
   flex-flow: row wrap;
@@ -167,7 +151,6 @@ p {
 .flex-container div {
   text-transform: uppercase;
 }
-
 .h-projects .flex-container:hover,
 .h-contact .flex-container:hover {
   width: 85%;
@@ -176,7 +159,6 @@ p {
   transition: 0.3s;
   color: darkblue;
 }
-
 .h-components .flex-container:hover,
 .h-templates .flex-container:hover {
   width: 85vh;
@@ -185,37 +167,32 @@ p {
   transition: 0.3s;
   color: darkblue;
 }
-
 .h-contact .flex-container {
   width: 80px;
   top: 50%;
-  -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
+  -webkit-transform: translate(0,-50%);
+  transform: translate(0,-50%);
 }
-
 .h-components .flex-container {
   width: 140px;
   top: -10px;
   left: 47vh;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
 }
-
 .h-projects .flex-container {
   width: 85px;
   top: 50%;
-  -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
+  -webkit-transform: translate(0,-50%);
+  transform: translate(0,-50%);
 }
-
 .h-templates .flex-container {
   width: 110px;
   top: 0;
   left: -47vh;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
 }
-
 .rotate90counterclock {
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
@@ -224,7 +201,6 @@ p {
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
-
 .rotate90clock {
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
@@ -233,37 +209,16 @@ p {
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-
 #logo {
   width: 30vh;
   height: 30vh;
 }
-
 #logo div {
   position: absolute;
   background-color: grey;
   width: 2px;
   height: 33%;
 }
-
-#logo div:nth-child(1) {
-  top: 0;
-}
-
-#logo div:nth-child(2) {
-  top: 25%;
-}
-
-#logo div:nth-child(3) {
-  height: 10%;
-  top: 50%;
-}
-
-#logo div:nth-child(4) {
-  top: 75%;
-  display: none;
-}
-  
 #logo div:nth-child(1),
 #logo div:nth-child(3) {
   left: 50%;
@@ -271,7 +226,6 @@ p {
   -ms-transform: rotate(40deg);
   transform: rotate(40deg);
 }
-
 #logo div:nth-child(2)/*,
 #logo div:nth-child(4)*/ {
   left: 50%;
@@ -279,19 +233,34 @@ p {
   -ms-transform: rotate(-40deg);
   transform: rotate(-40deg);
 }
-
-#logo div:nth-child(5) {
+#logo div:nth-child(1) {
+  top: 0;
+}
+#logo div:nth-child(2) {
+  top: 25%;
+}
+#logo div:nth-child(3) {
   height: 10%;
-  top: 65%;
+  top: 52%;
+  left: 57%;
+}
+#logo div:nth-child(4) {
   background-color: darkblue;
-  left: 50%;
+  height: 10%;
+  top: 77%;
+  left:61%;
+}
+#logo div:nth-child(5) {
+  background-color: darkblue;
+  height: 10%;
+  top: 52%;
+  left: 42%;
   -webkit-transform: rotate(40deg);
   -ms-transform: rotate(40deg);
   transform: rotate(40deg);
 }
-
 #logo div:nth-child(6) {
-  top: 75%;
+  top: 57%;
   background-color: darkblue;
   left: 50%;
   -webkit-transform: rotate(-40deg);
