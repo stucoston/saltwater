@@ -13,6 +13,14 @@ body {
   overflow: initial;
   font-family: Montserrat, sans-serif;
 }
+
+/*body {
+  background-image: url('http://lorempixel.com/1080/720/nature/2');
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}*/
   
 p {
   font-weight: 200;
@@ -21,9 +29,12 @@ p {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.hide {
+  display: none !important;
 }
 .page-title {
   font-weight: 400;
@@ -47,17 +58,17 @@ p {
   top: 25%;
   left: 50%;
   max-width: 225px;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
 }
 .h-right-words {
   top: 75%;
   left: 50%;
   max-width: 225px;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
 }
   .nav-item-wrapper {
     position: fixed;
@@ -74,7 +85,8 @@ p {
     width: 100%;
     height: 100%;
     opacity: 1;
-    background-color: rgba(200,200,200,0.6);
+    /*background-color: rgba(200,200,200,0.6);*/
+    border: 1px solid black;
   }
   
 .nav-item {
@@ -267,17 +279,17 @@ p {
   -ms-transform: rotate(-40deg);
   transform: rotate(-40deg);
 }
-  
+
   .growing-thing span:nth-child(odd) {
-    animation: letter-spin 0.4s ease-out 6;
+    animation: letter-spin 0.2s ease-out 4;
   }
   
   .growing-thing span:nth-child(even) {
-    animation: letter-spin 0.6s ease-out 9;
+    animation: letter-spin 0.3s ease-out 6;
   }
   
   .growing-thing span:nth-child(3n+0) {
-    animation: letter-spin 1s ease-out 15 forwards;
+    animation: letter-spin 0.25s ease-out 5;
   }
   
   @keyframes letter-spin {
@@ -287,9 +299,19 @@ p {
       transform: rotateX(0deg);
     }
     50% {
+      -webkit-transform: rotateX(90deg);
+      -ms-transform: rotateX(90deg);
+      transform: rotateX(90deg)
+    }
+    50% {
       -webkit-transform: rotateX(180deg);
       -ms-transform: rotateX(180deg);
       transform: rotateX(180deg)
+    }
+    75% {
+      -webkit-transform: rotateX(270deg);
+      -ms-transform: rotateX(270deg);
+      transform: rotateX(270deg)
     }
     100% {
       -webkit-transform: rotateX(360deg);
@@ -310,69 +332,69 @@ p {
 </style>
 
 <body>
-  <div class="nav-item-wrapper">
-  <div class="nav-item-overlay">
-    <div class="nav-item h-contact">
-      <div class="flex-wrapper">
-        <div class="page-title flex-container">
-          <div>C</div>
-          <div>o</div>
-          <div>n</div>
-          <div>t</div>
-          <div>a</div>
-          <div>c</div>
-          <div>t</div>
+    <div class="nav-item-wrapper">
+    <div class="nav-item-overlay">
+      <div class="nav-item h-contact">
+        <div class="flex-wrapper">
+          <div id="nav-contact" class="page-title flex-container" onclick="pageContact()">
+            <div>C</div>
+            <div>o</div>
+            <div>n</div>
+            <div>t</div>
+            <div>a</div>
+            <div>c</div>
+            <div>t</div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="nav-item h-components">
-      <div class="flex-wrapper rotate90clock">
-        <div class="page-title flex-container">
-          <div>C</div>
-          <div>o</div>
-          <div>m</div>
-          <div>p</div>
-          <div>o</div>
-          <div>n</div>
-          <div>e</div>
-          <div>n</div>
-          <div>t</div>
-          <div>s</div>
+      <div class="nav-item h-components">
+        <div class="flex-wrapper rotate90clock">
+          <div id="nav-component" class="page-title flex-container" onclick="pageComponents()">
+            <div>C</div>
+            <div>o</div>
+            <div>m</div>
+            <div>p</div>
+            <div>o</div>
+            <div>n</div>
+            <div>e</div>
+            <div>n</div>
+            <div>t</div>
+            <div>s</div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="nav-item h-projects">
-      <div class="flex-wrapper">
-        <div class="page-title flex-container">
-          <div>P</div>
-          <div>r</div>
-          <div>o</div>
-          <div>j</div>
-          <div>e</div>
-          <div>c</div>
-          <div>t</div>
-          <div>s</div>
+      <div class="nav-item h-projects">
+        <div class="flex-wrapper">
+          <div id="nav-projects" class="page-title flex-container" onclick="pageProjects()">
+            <div>P</div>
+            <div>r</div>
+            <div>o</div>
+            <div>j</div>
+            <div>e</div>
+            <div>c</div>
+            <div>t</div>
+            <div>s</div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="nav-item h-templates">
-      <div class="flex-wrapper rotate90counterclock">
-        <div class="page-title flex-container">
-          <div>T</div>
-          <div>e</div>
-          <div>m</div>
-          <div>p</div>
-          <div>l</div>
-          <div>a</div>
-          <div>t</div>
-          <div>e</div>
-          <div>s</div>
+      <div class="nav-item h-templates">
+        <div class="flex-wrapper rotate90counterclock">
+          <div id="nav-templates" class="page-title flex-container" onclick="pageTemplates()">
+            <div>T</div>
+            <div>e</div>
+            <div>m</div>
+            <div>p</div>
+            <div>l</div>
+            <div>a</div>
+            <div>t</div>
+            <div>e</div>
+            <div>s</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  </div>
-  
+
   <div id="logo" class="middle">
     <div></div>
     <div></div>
@@ -381,8 +403,8 @@ p {
     <div></div>
     <div></div>
   </div>
-  
-  
+
+
   <div class="h-left-words">
     <p>
       <span class="growing-thing highlight"><span>S</span><span>h</span><span>a</span><span>r</span><span>k</span><span>s</span></span>
@@ -395,9 +417,9 @@ p {
       <span class="growing-thing highlight"><span>L</span><span>o</span><span>b</span><span>s</span><span>t</span><span>e</span><span>r</span><span>s</span></span>
       <br/>
       <span> never stop growing, <br>why should your business</span>
-    <p>
+      <p>
   </div>
-  
+
   <div class="h-right-words">
     <p>Welcome to the portfolio of freelance digital designer, Stu Coston.</p>
   </div>
@@ -416,6 +438,23 @@ function carousel() {
     if (slideIndex > x.length) {slideIndex = 1} 
     x[slideIndex-1].style.display = "inline-block"; 
     setTimeout(carousel, 4000); // Change image every 4 seconds
+}
+
+function pageContact() {
+  var con = document.getElementById("nav-contact");
+  var com = document.getElementById("nav-components");
+  var p = document.getElementById("nav-projects");
+  var t = document.getElementById("nav-templates");
+  
+  if (com.className.indexOf('hide') == -1) {
+    com.classList.remove(" hide");
+    p.classList.remove(" hide");
+    t.classList.remove(" hide");
+  } else {
+    com.className += " hide";
+    p.className += " hide";
+    t.className += " hide";
+  }
 }
   </script>
 </body>
