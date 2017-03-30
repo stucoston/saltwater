@@ -107,7 +107,6 @@ p {
   width: 24px;
   height: 100%;
 }
-
 /*nav-item page*/
 .nav-item.p-contact {
   top: auto;
@@ -129,7 +128,6 @@ p {
   width: 24px;
   height: 100%;
 }
-
 /*flex elements*/
 .h-contact .flex-wrapper,
 .h-projects .flex-wrapper {
@@ -197,7 +195,6 @@ p {
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
-
 /*logo*/
 #logo {
   width: 30vh;
@@ -259,8 +256,9 @@ p {
 </style>
 
 <body>
-    <div class="nav-item-wrapper">
+  <div class="nav-item-wrapper">
     <div class="nav-item-overlay">
+    
       <div id="nav-contact" class="nav-item h-contact">
         <div class="flex-wrapper">
           <div class="page-title flex-container" onclick="pageContact()">
@@ -274,22 +272,28 @@ p {
           </div>
         </div>
       </div>
-      <div id="nav-component" class="nav-item h-components">
+      
+      <div id="nav-components" class="nav-item h-components">
         <div class="flex-wrapper">
           <div class="page-title flex-container" onclick="pageComponents()">
-            <div>C</div>
-            <div>o</div>
-            <div>m</div>
-            <div>p</div>
-            <div>o</div>
-            <div>n</div>
-            <div>e</div>
-            <div>n</div>
+            <div>j</div>
+            <div>u</div>
+            <div>s</div>
             <div>t</div>
+            <div>&nbsp;</div>
+            <div>f</div>
+            <div>o</div>
+            <div>r</div>
+            <div>&nbsp;</div>
+            <div>k</div>
+            <div>i</div>
+            <div>c</div>
+            <div>k</div>
             <div>s</div>
           </div>
         </div>
       </div>
+      
       <div id="nav-projects" class="nav-item h-projects">
         <div class="flex-wrapper">
           <div class="page-title flex-container" onclick="pageProjects()">
@@ -304,6 +308,7 @@ p {
           </div>
         </div>
       </div>
+      
       <div id="nav-templates" class="nav-item h-templates">
         <div class="flex-wrapper">
           <div class="page-title flex-container" onclick="pageTemplates()">
@@ -319,37 +324,45 @@ p {
           </div>
         </div>
       </div>
+      
     </div>
+    <!-- close nav-item-overlay -->
   </div>
+  <!-- close nav-item-wrapper -->
 
-  <div id="logo" class="middle">
-    <svg viewBox="0, 0, 200, 200">
-      <path fill="transparent" stroke-width="2px" stroke="grey" d="M90 30 L60 30 L130 85 L115 115"/>
-      <path fill="transparent" stroke-width="2px" stroke="darkblue" d="M75 85 L60 115 L130 170 L130 140"/>
-    </svg>
-  </div>
+  <div id="home">
+    <div id="logo" class="middle">
+      <svg viewBox="0, 0, 200, 200">
+        <path fill="transparent" stroke-width="2px" stroke="grey" d="M90 30 L60 30 L130 85 L115 115"/>
+        <path fill="transparent" stroke-width="2px" stroke="darkblue" d="M75 85 L60 115 L130 170 L130 140"/>
+      </svg>
+    </div>
 
-
-  <div class="h-left-words">
-    <p>
-      <span class="growing-thing highlight"><span>S</span><span>h</span><span>a</span><span>r</span><span>k</span><span>s</span></span>
-      <span class="growing-thing highlight"><span>W</span><span>h</span><span>a</span><span>l</span><span>e</span><span>s</span></span>
-      <span class="growing-thing highlight"><span>T</span><span>u</span><span>r</span><span>t</span><span>l</span><span>e</span><span>s</span></span>
-      <span class="growing-thing highlight"><span>T</span><span>r</span><span>e</span><span>e</span><span>s</span></span>
-      <span class="growing-thing highlight"><span>K</span><span>a</span><span>n</span><span>g</span><span>a</span><span>r</span><span>o</span><span>o</span><span>s</span></span>
-      <span class="growing-thing highlight"><span>E</span><span>a</span><span>r</span><span>s</span></span>
-      <span class="growing-thing highlight"><span>N</span><span>o</span><span>s</span><span>e</span><span>s</span></span>
-      <span class="growing-thing highlight"><span>L</span><span>o</span><span>b</span><span>s</span><span>t</span><span>e</span><span>r</span><span>s</span></span>
-      <br/>
-      <span> never stop growing, <br>why should your business</span>
+    <div class="h-left-words">
       <p>
-  </div>
+        <span class="growing-thing highlight"><span>S</span><span>h</span><span>a</span><span>r</span><span>k</span><span>s</span></span>
+        <span class="growing-thing highlight"><span>W</span><span>h</span><span>a</span><span>l</span><span>e</span><span>s</span></span>
+        <span class="growing-thing highlight"><span>T</span><span>u</span><span>r</span><span>t</span><span>l</span><span>e</span><span>s</span></span>
+        <span class="growing-thing highlight"><span>T</span><span>r</span><span>e</span><span>e</span><span>s</span></span>
+        <span class="growing-thing highlight"><span>K</span><span>a</span><span>n</span><span>g</span><span>a</span><span>r</span><span>o</span><span>o</span><span>s</span></span>
+        <span class="growing-thing highlight"><span>E</span><span>a</span><span>r</span><span>s</span></span>
+        <span class="growing-thing highlight"><span>N</span><span>o</span><span>s</span><span>e</span><span>s</span></span>
+        <span class="growing-thing highlight"><span>L</span><span>o</span><span>b</span><span>s</span><span>t</span><span>e</span><span>r</span><span>s</span></span>
+        <br/>
+        <span> never stop growing, <br>why should your business</span>
+      </p>
+    </div>
 
-  <div class="h-right-words">
-    <p>Welcome to the portfolio of freelance digital designer, Stu Coston.</p>
+    <div class="h-right-words">
+      <p>Welcome to the portfolio of freelance digital designer, Stu Coston.</p>
+    </div>
+  
   </div>
+  <!-- close home div -->
   
   <script>
+// growing-things slide show
+// =======================================================
 var slideIndex = 0;
 carousel();
 function carousel() {
@@ -363,25 +376,64 @@ function carousel() {
     x[slideIndex-1].style.display = "inline-block"; 
     setTimeout(carousel, 4000); // Change image every 4 seconds
 }
-</script>
-<script>
+
+// navigation functions
+// ========================================================
 function pageContact() {
-  var con = document.getElementById("nav-contact");
-  var com = document.getElementById("nav-components");
-  var p = document.getElementById("nav-projects");
-  var t = document.getElementById("nav-templates");
-  
-  if (com.className.indexOf('hide') =! -1) {
-    com.classList.remove(" hide");
-    p.classList.remove(" hide");
-    t.classList.remove(" hide");
-  } else {
-    com.className += " hide";
-    p.className += " hide";
-    t.className += " hide";
+  stu.toggleShow('#nav-components');
+  stu.toggleShow('#nav-templates');
+  stu.toggleShow('#nav-projects');
+  stu.toggleShow('#home');
+};
+
+function pageComponents() {
+  stu.toggleShow('#nav-contact');
+  stu.toggleShow('#nav-templates');
+  stu.toggleShow('#nav-projects');
+  stu.toggleShow('#home');
+};
+
+function pageTemplates() {
+  stu.toggleShow('#nav-components');
+  stu.toggleShow('#nav-contact');
+  stu.toggleShow('#nav-projects');
+  stu.toggleShow('#home');
+};
+
+function pageProjects() {
+  stu.toggleShow('#nav-components');
+  stu.toggleShow('#nav-templates');
+  stu.toggleShow('#nav-contact');
+  stu.toggleShow('#home');
+};
+
+// stu toggle functions
+// ========================================================
+var stu = {};
+
+stu.styleElement = function (element, prop, val) {
+  element.style.setProperty(prop, val);
+};
+
+stu.toggleShow = function (sel) {
+  var i, x = stu.getElements(sel), l = x.length;
+  for (i = 0; i < l; i++) {    
+    if (x[i].style.display == "none") {
+      stu.styleElement(x[i], "display", "block");
+    } else {
+      stu.styleElement(x[i], "display", "none");
+    }
   }
-}
-  </script>
+};
+
+stu.getElements = function (id) {
+  if (typeof id == "object") {
+    return [id];
+  } else {
+    return document.querySelectorAll(id);
+  }
+};
+</script>
 </body>
 
 </html>
