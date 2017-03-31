@@ -62,6 +62,8 @@ p {
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
 }
+/* nav-item */
+/* ===============================*/
   .nav-item-wrapper {
     position: fixed;
     top: 0;
@@ -87,7 +89,8 @@ p {
   height: 24px;
   left: 0;
 }
-/* nav-item home*/
+
+/* nav-item home */
 .nav-item.h-contact {
   top: -12px;
 }
@@ -107,6 +110,7 @@ p {
   width: 24px;
   height: 100%;
 }
+
 /*nav-item page*/
 .nav-item.p-contact {
   top: auto;
@@ -128,6 +132,7 @@ p {
   width: 24px;
   height: 100%;
 }
+
 /*flex elements*/
 .h-contact .flex-wrapper,
 .h-projects .flex-wrapper {
@@ -195,15 +200,14 @@ p {
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
+
 /*logo*/
-#logo {
-  width: 30vh;
-  height: 30vh;
-}
 #logo svg {
   height: 100%;
   width: 100%;
 }
+
+/*growing-thing slideshow animations*/
   .growing-thing span:nth-child(odd) {
     animation: letter-spin 0.2s ease-out 4;
   }
@@ -244,6 +248,7 @@ p {
     }
   }
   
+  /*media queries*/
 @media only screen and (min-width: 600px) {
   .h-left-words {
     left: 33%;
@@ -331,10 +336,18 @@ p {
   <!-- close nav-item-wrapper -->
 
   <div id="home">
-    <div id="logo" class="middle">
-      <svg viewBox="0, 0, 200, 200">
-        <path fill="transparent" stroke-width="2px" stroke="grey" d="M90 30 L60 30 L130 85 L115 115"/>
-        <path fill="transparent" stroke-width="2px" stroke="darkblue" d="M75 85 L60 115 L130 170 L130 140"/>
+    <div id="logo" class="middle" style="width: 35vh; height: 35vh;">
+      <svg viewBox="0,0,100,100">
+        <!--<path fill="transparent" stroke-width="2px" stroke="grey" d="M90 30 L60 30 L130 85 L115 115"/>
+        <path fill="transparent" stroke-width="2px" stroke="darkblue" d="M75 85 L60 115 L130 170 L130 140"/>--><!-- viewBox="0,0,200,200" -->
+        <!--<path fill="transparent" stroke-width="4" stroke="darkgreen" d="M80 12 C30 -20, -20 30, 12 79 L89 22 C118 65, 70 120, 21 89"/>--><!-- viewBox="0,0,100,100"-->
+        <!--<path fill="transparent" stroke-width="2" stroke="darkgreen" d="M10 0 L0 0 L24 33 L15 45"/>
+        <path fill="transparent" stroke-width="2" stroke="darkgreen" d="M9 55 L0 66 L24 100 L24 90"/>--><!--viewBox="0,0,24,100"-->
+        <path fill="transparent" stroke-width="2" stroke="lime" d="M80 34 L80 20 L70 10 M20 20 L80 80 M30 90 L20 80 L20 66"/><!--viewBox="0,0,100,100"-->
+        
+        <!--<polygon points="80,20 80,40 50,20" fill="blue"/>
+        <polygon points="20,20 20,40 80,80 80,60" fill="blue"/>
+        <polygon points="20,80 20,60 50,80" fill="blue"/>--><!--viewBox="0,0,100,100"-->
       </svg>
     </div>
 
@@ -376,7 +389,6 @@ function carousel() {
     x[slideIndex-1].style.display = "inline-block"; 
     setTimeout(carousel, 4000); // Change image every 4 seconds
 }
-
 // navigation functions
 // ========================================================
 function pageContact() {
@@ -385,36 +397,30 @@ function pageContact() {
   stu.toggleShow('#nav-projects');
   stu.toggleShow('#home');
 };
-
 function pageComponents() {
   stu.toggleShow('#nav-contact');
   stu.toggleShow('#nav-templates');
   stu.toggleShow('#nav-projects');
   stu.toggleShow('#home');
 };
-
 function pageTemplates() {
   stu.toggleShow('#nav-components');
   stu.toggleShow('#nav-contact');
   stu.toggleShow('#nav-projects');
   stu.toggleShow('#home');
 };
-
 function pageProjects() {
   stu.toggleShow('#nav-components');
   stu.toggleShow('#nav-templates');
   stu.toggleShow('#nav-contact');
   stu.toggleShow('#home');
 };
-
 // stu toggle functions
 // ========================================================
 var stu = {};
-
 stu.styleElement = function (element, prop, val) {
   element.style.setProperty(prop, val);
 };
-
 stu.toggleShow = function (sel) {
   var i, x = stu.getElements(sel), l = x.length;
   for (i = 0; i < l; i++) {    
@@ -425,7 +431,6 @@ stu.toggleShow = function (sel) {
     }
   }
 };
-
 stu.getElements = function (id) {
   if (typeof id == "object") {
     return [id];
