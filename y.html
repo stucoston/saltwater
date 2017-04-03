@@ -28,6 +28,9 @@ p {
 .hide {
   display: none;
 }
+.show {
+  display: block;
+}
 .page-title {
   font-weight: 400;
 }
@@ -49,7 +52,7 @@ p {
 .h-left-words {
   top: 25%;
   left: 50%;
-  max-width: 225px;
+  width: 220px;
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
@@ -57,7 +60,7 @@ p {
 .h-right-words {
   top: 75%;
   left: 50%;
-  max-width: 225px;
+  width: 220px;
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
@@ -70,8 +73,17 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 24px;
+    padding: 0;
     box-sizing: border-box;
+  }
+  
+  .animate-padding {
+    animation: nav-in 0.8s linear forwards;
+  }
+  
+  @keyframes nav-in {
+    0%   {padding: 0; opacity: 0;}
+    100% {padding: 24px; opacity: 1;}
   }
     
   .nav-item-overlay {
@@ -79,7 +91,7 @@ p {
     width: 100%;
     height: 100%;
     opacity: 1;
-    border: 1px solid rgba(50,50,50,0.2);
+    /*border: 1px solid rgba(50,50,50,0.2);*/
   }
   
 .nav-item {
@@ -93,7 +105,7 @@ p {
 .nav-item.h-contact {
   top: -12px;
 }
-.nav-item.h-components {
+.nav-item.h-opensource {
   width: 24px;
   height: 100%;
   left: auto;
@@ -114,33 +126,33 @@ p {
   top: auto;
   bottom: -12px;
 }
-.nav-item.p-components {
+.nav-item.p-opensource {
   width: 24px;
   height: 100%;
-  left: 12px;
+  left: -12px;
   right: auto;
 }
 .nav-item.p-projects {
-  top: 0;
+  top: -12px;
   bottom: auto
 }
 .nav-item.p-templates {
   left: auto;
-  right: 12px;
+  right: -12px;
   width: 24px;
   height: 100%;
 }
 /*flex elements*/
-.h-contact .flex-wrapper,
-.h-projects .flex-wrapper {
+#nav-contact .flex-wrapper,
+#nav-projects .flex-wrapper {
   display:-webkit-flex;
   display: flex;
   justify-content: center;
   width: 100%;
   height: 24px;
 }
-.h-components .flex-wrapper,
-.h-templates .flex-wrapper {
+#nav-opensource .flex-wrapper,
+#nav-templates .flex-wrapper {
   display:-webkit-flex;
   display: flex;
   flex-direction: column;
@@ -163,35 +175,35 @@ p {
   cursor: pointer;
   text-transform: uppercase;
 }
-.h-contact .flex-container:hover,
-.h-projects .flex-container:hover {
+#nav-contact .flex-container:hover,
+#nav-projects .flex-container:hover {
   width: 85vw;
   -webkit-transition: 0.3s;
   -ms-transition: 0.3s;
   transition: 0.3s;
-  color: darkblue;
+  color: #0077cc;
 }
-.h-components .flex-container:hover,
-.h-templates .flex-container:hover {
+#nav-opensource .flex-container:hover,
+#nav-templates .flex-container:hover {
   width: 85vh;
   -webkit-transition: 0.3s;
   -ms-transition: 0.3s;
   transition: 0.3s;
-  color: darkblue;
+  color: #0077cc;
 }
-.h-contact .flex-container {
+#nav-contact .flex-container {
   width: 90px;
 }
-.h-components .flex-container {
+#nav-opensource .flex-container {
   width: 150px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-.h-projects .flex-container {
+#nav-projects .flex-container {
   width: 95px;
 }
-.h-templates .flex-container {
+#nav-templates .flex-container {
   width: 120px;
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
@@ -208,11 +220,23 @@ p {
   }
   
   .growing-thing span:nth-child(even) {
-    animation: letter-spin 0.3s ease-out 6;
+    animation: letter-spin 0.27s ease-out 6;
   }
   
   .growing-thing span:nth-child(3n+0) {
     animation: letter-spin 0.25s ease-out 5;
+  }
+  
+  .growing-thing span:nth-child(4n+0) {
+    animation: letter-spin 0.18s ease-out 5;
+  }
+  
+  .growing-thing span:nth-child(7n+0) {
+    animation: letter-spin 0.28s ease-out 5;
+  }
+  
+  .growing-thing span:nth-child(10n+0) {
+    animation: letter-spin 0.22s ease-out 5;
   }
   
   @keyframes letter-spin {
@@ -256,7 +280,7 @@ p {
 </style>
 
 <body>
-  <div class="nav-item-wrapper">
+  <div class="nav-item-wrapper animate-padding">
     <div class="nav-item-overlay">
     
       <div id="nav-contact" class="nav-item h-contact">
@@ -273,9 +297,9 @@ p {
         </div>
       </div>
       
-      <div id="nav-components" class="nav-item h-components">
+      <div id="nav-opensource" class="nav-item h-opensource">
         <div class="flex-wrapper">
-          <div class="page-title flex-container" onclick="pageComponents()">
+          <div class="page-title flex-container" onclick="pageOpensource()">
             <div>o</div>
             <div>p</div>
             <div>e</div>
@@ -330,21 +354,12 @@ p {
   <div id="home">
     <div id="logo" class="middle" style="width: 35vh; height: 35vh;">
       <svg viewBox="0,0,100,100">
-        <!--<path fill="transparent" stroke-width="2px" stroke="grey" d="M90 30 L60 30 L130 85 L115 115"/>
-        <path fill="transparent" stroke-width="2px" stroke="darkblue" d="M75 85 L60 115 L130 170 L130 140"/>--><!-- viewBox="0,0,200,200" -->
-        <!--<path fill="transparent" stroke-width="4" stroke="darkgreen" d="M80 12 C30 -20, -20 30, 12 79 L89 22 C118 65, 70 120, 21 89"/>--><!-- viewBox="0,0,100,100"-->
-        <!--<path fill="transparent" stroke-width="2" stroke="darkgreen" d="M10 0 L0 0 L24 33 L15 45"/>
-        <path fill="transparent" stroke-width="2" stroke="darkgreen" d="M9 55 L0 66 L24 100 L24 90"/>--><!--viewBox="0,0,24,100"-->
-        <path fill="transparent" stroke-width="3" stroke="#0077cc" d="M50 10 L35 10 L75 50 L35 90 L35 75"/><!--viewBox="0,0,100,100"-->
-        
-        <!--<polygon points="80,20 80,40 50,20" fill="blue"/>
-        <polygon points="20,20 20,40 80,80 80,60" fill="blue"/>
-        <polygon points="20,80 20,60 50,80" fill="blue"/>--><!--viewBox="0,0,100,100"-->
+        <path fill="transparent" stroke-width="3" stroke="#0077cc" d="M50 10 L35 10 L75 50 L35 90 L35 75"/>
       </svg>
     </div>
 
     <div class="h-left-words">
-      <p>
+      <!--<p>
         <span class="growing-thing highlight"><span>S</span><span>h</span><span>a</span><span>r</span><span>k</span><span>s</span></span>
         <span class="growing-thing highlight"><span>W</span><span>h</span><span>a</span><span>l</span><span>e</span><span>s</span></span>
         <span class="growing-thing highlight"><span>T</span><span>u</span><span>r</span><span>t</span><span>l</span><span>e</span><span>s</span></span>
@@ -355,7 +370,13 @@ p {
         <span class="growing-thing highlight"><span>L</span><span>o</span><span>b</span><span>s</span><span>t</span><span>e</span><span>r</span><span>s</span></span>
         <br/>
         <span> never stop growing, <br>why should your business</span>
-      </p>
+      </p>-->
+      <p>
+        <span>My designs will make you greater than your</span>
+        <br/>
+        <span class="growing-thing highlight"><span>c</span><span>o</span><span>m</span><span>p</span><span>e</span><span>t</span><span>i</span><span>t</span><span>i</span><span>o</span><span>n</span></span>
+        <span class="growing-thing highlight"><span>f</span><span>e</span><span>a</span><span>r</span><span>s</span></span>
+        <span class="growing-thing highlight"><span>f</span><span>a</span><span>i</span><span>l</span><span>u</span><span>r</span><span>e</span><span>s</span></span>
     </div>
 
     <div class="h-right-words">
@@ -364,6 +385,8 @@ p {
   
   </div>
   <!-- close home div -->
+  
+  <div id="coming-soon" class="middle hide">Coming Soon</div>
   
   <script>
 // growing-things slide show
@@ -381,32 +404,70 @@ function carousel() {
     x[slideIndex-1].style.display = "inline-block"; 
     setTimeout(carousel, 4000); // Change image every 4 seconds
 }
+
 // navigation functions
 // ========================================================
 function pageContact() {
-  stu.toggleShow('#nav-components');
+  stu.toggleShow('#nav-opensource');
   stu.toggleShow('#nav-templates');
   stu.toggleShow('#nav-projects');
   stu.toggleShow('#home');
-};
-function pageComponents() {
+  comingSoon();
+  
+  if(document.getElementById('nav-contact').className.indexOf('h-') >= 0) {
+    document.getElementById('nav-contact').className = document.getElementById('nav-contact').className.replace(' h-contact',' p-contact');
+  } else {
+    document.getElementById('nav-contact').className = document.getElementById('nav-contact').className.replace(' p-contact',' h-contact');
+  }; 
+  
+}
+function pageOpensource() {
   stu.toggleShow('#nav-contact');
   stu.toggleShow('#nav-templates');
   stu.toggleShow('#nav-projects');
   stu.toggleShow('#home');
-};
+  comingSoon();
+  
+  if(document.getElementById('nav-opensource').className.indexOf('h-') >= 0) {
+    document.getElementById('nav-opensource').className = document.getElementById('nav-opensource').className.replace(' h-opensource',' p-opensource');
+  } else {
+    document.getElementById('nav-opensource').className = document.getElementById('nav-opensource').className.replace(' p-opensource',' h-opensource');
+  }; 
+}
 function pageTemplates() {
-  stu.toggleShow('#nav-components');
+  stu.toggleShow('#nav-opensource');
   stu.toggleShow('#nav-contact');
   stu.toggleShow('#nav-projects');
   stu.toggleShow('#home');
-};
+  comingSoon();
+  
+  if(document.getElementById('nav-templates').className.indexOf('h-') >= 0) {
+    document.getElementById('nav-templates').className = document.getElementById('nav-templates').className.replace(' h-templates',' p-templates');
+  } else {
+    document.getElementById('nav-templates').className = document.getElementById('nav-templates').className.replace(' p-templates',' h-templates');
+  }; 
+}
 function pageProjects() {
-  stu.toggleShow('#nav-components');
+  stu.toggleShow('#nav-opensource');
   stu.toggleShow('#nav-templates');
   stu.toggleShow('#nav-contact');
   stu.toggleShow('#home');
-};
+  comingSoon();
+  
+  if(document.getElementById('nav-projects').className.indexOf('h-') >= 0) {
+    document.getElementById('nav-projects').className = document.getElementById('nav-projects').className.replace(' h-projects',' p-projects');
+  } else {
+    document.getElementById('nav-projects').className = document.getElementById('nav-projects').className.replace(' p-projects',' h-projects');
+  }; 
+}
+
+function comingSoon() {
+  if(document.getElementById('coming-soon').className.indexOf('hide') >= 0) {
+    document.getElementById('coming-soon').className = document.getElementById('coming-soon').className.replace(' hide','');
+  } else {
+    document.getElementById('coming-soon').className += ' hide';
+  };
+}
 // stu toggle functions
 // ========================================================
 var stu = {};
