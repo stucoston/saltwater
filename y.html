@@ -38,20 +38,11 @@ p {
 .h-bottom-words {
   position: absolute;
   text-align: center;
-  width:180px;
+  width:190px;
   left: 50%;
   -webkit-transform: translate(-50%,0);
   -ms-transform: translate(-50%,0);
   transform: translate(-50%,0);
-}
-.h-right-words span {
-  display: inline-block;
-  width: auto;
-}
-.highlight {
-  background-color: #222;
-  color: white;
-  padding: 1px 4px 1px 4px;
 }
 .h-top-words {
   bottom: 70vh;
@@ -59,7 +50,11 @@ p {
 .h-bottom-words {
   top: 70vh;
 }
-
+.highlight {
+  background-color: #222;
+  color: white;
+  padding: 1px 4px 1px 4px;
+}
 /* nav-item */
 /* ===============================*/
   .nav-item-wrapper {
@@ -96,7 +91,6 @@ p {
   height: 24px;
   left: 0;
 }
-
 /* nav-item home */
 /* =============================== */
 .nav-item.h-contact {
@@ -118,7 +112,6 @@ p {
   width: 24px;
   height: 100%;
 }
-
 /*nav-item page*/
 /* =============================== */
 .nav-item.p-contact {
@@ -209,7 +202,6 @@ p {
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
-
 /*logo*/
 /* =============================== */
 #logo svg {
@@ -218,7 +210,6 @@ p {
   height: 100%;
   width: 100%;
 }
-
 /*growing-thing slideshow animations*/
 /* =============================== */
 /*  .growing-thing span:nth-child(odd) {
@@ -245,26 +236,18 @@ p {
     animation: letter-spin 0.22s ease-out 5;
   }*/
   
-  .growing-thing {
+  .me {
   font-size: 14px;
   text-align: center;
-  text-transform: uppercase;
 }
-
-.growing-thing span {
+.me span {
   display: inline-block;
   position: relative;
   transition: 0.8s;
-  transform: rotateZ(0deg);
-}
-
-.growing-thing:hover {
-  cursor: pointer;
-}
-  
-  .growing-thing span.active {
-    transform: skewX( -15deg ) translateX( 14px );
-    transform: rotateX(180deg);
+  animation: letter-spin 0.12s ease-out 0s infinite;
+} 
+  .me span.active {
+    animation: none;
   }
   
   @keyframes letter-spin {
@@ -396,13 +379,14 @@ p {
       <p>Welcome to the portfolio of</p>
     </div>
     
-    <div class="h-bottom-words growing-thing">
-        <!--<span class="growing-thing highlight">digital designer</span>
-        <span class="growing-thing highlight">website developer</span>
-        <span class="growing-thing highlight">digital creator</span>
-        <span class="growing-thing highlight">online entreprenuer</span>
-        <br/>-->
+    <div class="h-bottom-words">
+      <p>
+        <span class="me highlight slide-text">digital&nbsp;designer</span>
+        <span class="me highlight slide-text">website&nbsp;developer</span>
+        <span class="me highlight slide-text">online&nbsp;entreprenuer</span>
+        <br/>
         Stu Coston.
+      </p>
     </div>
   
   </div>
@@ -411,21 +395,6 @@ p {
   <div id="coming-soon" class="middle hide">Coming Soon</div>
   
   <script>
-// growing-things slide show
-// =======================================================
-//var slideIndex = 0;
-//carousel();
-//function carousel() {
-//    var i;
-//    var x = document.getElementsByClassName("growing-thing");
-//    for (i = 0; i < x.length; i++) {
-//      x[i].style.display = "none"; 
-//    }
-//    slideIndex++;
-//    if (slideIndex > x.length) {slideIndex = 1} 
-//    x[slideIndex-1].style.display = "inline-block"; 
-//    setTimeout(carousel, 4000); // Change image every 4 seconds
-//}
 
 // navigation functions
 // ========================================================
@@ -516,16 +485,13 @@ stu.getElements = function (id) {
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script>
-
 ( function( $ ) {
-
     /**
      * span-letters.js
      * 
      * Example usage: jQuery('.selector').spanLetters();
      */
     $.fn.spanLetters = function() {
-
         // Loop through each element on which this function has been called
         this.each( function() {   
             
@@ -534,40 +500,32 @@ stu.getElements = function (id) {
           
             // Make an array with each letter of the string as a value
             words = $( this ).text().split( '' );
-
             // Loop through the letters and wrap each one in a span
             for ( i = 0; i in words; i++ ) {
                 words[i] = '<span class="sl' + ( i + 1 ) + ' span-letter">' + words[i] + '</span>'
             };
-
             // Join our array of span-wrapped letters back into a string
             text = words.join( '' );
-
             // Replace the original string with the new string
             $( this ).html( text );
         })
     }
 }( jQuery ));
-
 // Call spanLetters on our target
-$( ".growing-thing" ).spanLetters();
-
-targets = $( ".growing-thing span" ); // Select our spans
-duration = 300; // Set duration of the effect here
-speed = 60; // Set animation speed through the letters here
-infiniteLoop = false // Set whether animation should keep triggering
+$( ".me" ).spanLetters();
+targets = $( ".me span" ); // Select our spans
+duration = 2000; // Set duration of the effect here
+speed = 40; // Set animation speed through the letters here
 
 // Add the animation class to the letter, then remove it later
 function animateLetter( value ) {
-
   if ( turnedOn ) {
   
-    $( value ).addClass( "active" );
-
     setTimeout( function() {
-
+      $( value ).addClass( "active" );
+    }, 0 );
+    setTimeout( function() {
       stopAnimateLetter( value );  
-
     }, duration );
     
   }
@@ -576,9 +534,7 @@ function animateLetter( value ) {
 
 // Remove the animation class from the letter
 function stopAnimateLetter( value ) {
-
   $( value ).removeClass( "active" );
-  
 };
 
 // Trigger function
@@ -586,84 +542,42 @@ function startEverything() {
   
   // Loop through our collection of spans
   targets.each( function( index, value ) {
-
     // Sequentially delay the firing of the animation through the letters
     timer = setTimeout( function() {
-
       animateLetter( value );
-
     }, speed*index );
+  }); 
+      
+}
 
-  });    
-  
-  // No looping if trigger was a click
-  if ( clicked ) {
-    
-    clicked = false; 
-    
-  } else {
-    
-    // Logic for infinite loop
-    if ( infiniteLoop ) { // If looping is on
-      if ( turnedOn ) { // If animation is still happening
-        setTimeout( function() {
-
-          startEverything();  
-
-        }, i*speed );
-      }  
+// growing-things slide show
+// =======================================================
+var slideIndex = 0;
+carousel();
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("slide-text");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
     }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1} 
+    x[slideIndex-1].style.display = "inline-block";
     
-  }
-  
-}
-
-// Kill everything function
-function stopEverything() {
-  
-  clearTimeout( timer );
-  
-  turnedOn = false;
-  
-  // Delay the kill just a bit
-  setTimeout( function() {
-
-    targets.each( function( index, value ) {
-
-      stopAnimateLetter( value );
-
-    });
-
-  }, 200 );
-  
-}
-
-// Hover trigger logic
-$( ".growing-thing" )
-    .mouseenter( function() {
+    setTimeout(animateMe, 1500);
+    setTimeout(carousel, 6000); // Change image every 6 seconds
+};
+   function animateMe() {
   
         turnedOn = true;
-        clicked = false;
   
         startEverything();
         
-    })
-    .mouseleave( function() {
+    };
+//    .mouseleave( function() {
   
-        stopEverything();
-
-    });
-
-// Click trigger logic
-$( ".nav-item" ).on( "click", function() {
-   
-    clicked = true;
-    turnedOn = true;
-    
-    startEverything();
-  
-});
-
+//        stopEverything();
+//    };
 </script>
 </body>
 
