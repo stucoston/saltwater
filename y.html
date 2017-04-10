@@ -34,12 +34,16 @@ p {
 .page-title {
   font-weight: 400;
 }
-.h-left-words,
-.h-right-words {
+.h-top-words,
+.h-bottom-words {
   position: absolute;
   text-align: center;
+  width:180px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
 }
-.h-left-words span,
 .h-right-words span {
   display: inline-block;
   width: auto;
@@ -49,22 +53,13 @@ p {
   color: white;
   padding: 1px 4px 1px 4px;
 }
-.h-left-words {
-  top: 25%;
-  left: 50%;
-  width: 220px;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+.h-top-words {
+  bottom: 70vh;
 }
-.h-right-words {
-  top: 75%;
-  left: 50%;
-  width: 220px;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+.h-bottom-words {
+  top: 70vh;
 }
+
 /* nav-item */
 /* ===============================*/
   .nav-item-wrapper {
@@ -101,7 +96,9 @@ p {
   height: 24px;
   left: 0;
 }
+
 /* nav-item home */
+/* =============================== */
 .nav-item.h-contact {
   top: -12px;
 }
@@ -121,7 +118,9 @@ p {
   width: 24px;
   height: 100%;
 }
+
 /*nav-item page*/
+/* =============================== */
 .nav-item.p-contact {
   top: auto;
   bottom: -12px;
@@ -143,6 +142,7 @@ p {
   height: 100%;
 }
 /*flex elements*/
+/* =============================== */
 #nav-contact .flex-wrapper,
 #nav-projects .flex-wrapper {
   display:-webkit-flex;
@@ -192,30 +192,36 @@ p {
   color: #0077cc;
 }
 #nav-contact .flex-container {
-  width: 90px;
+  width: 110px;
 }
 #nav-opensource .flex-container {
-  width: 150px;
+  width: 170px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 #nav-projects .flex-container {
-  width: 95px;
+  width: 115px;
 }
 #nav-templates .flex-container {
-  width: 120px;
+  width: 140px;
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
+
 /*logo*/
+/* =============================== */
 #logo svg {
+  float: right;
+  display: inline-block;
   height: 100%;
   width: 100%;
 }
+
 /*growing-thing slideshow animations*/
-  .growing-thing span:nth-child(odd) {
+/* =============================== */
+/*  .growing-thing span:nth-child(odd) {
     animation: letter-spin 0.2s ease-out 4;
   }
   
@@ -237,6 +243,28 @@ p {
   
   .growing-thing span:nth-child(10n+0) {
     animation: letter-spin 0.22s ease-out 5;
+  }*/
+  
+  .growing-thing {
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.growing-thing span {
+  display: inline-block;
+  position: relative;
+  transition: 0.8s;
+  transform: rotateZ(0deg);
+}
+
+.growing-thing:hover {
+  cursor: pointer;
+}
+  
+  .growing-thing span.active {
+    transform: skewX( -15deg ) translateX( 14px );
+    transform: rotateX(180deg);
   }
   
   @keyframes letter-spin {
@@ -267,15 +295,9 @@ p {
     }
   }
   
-  /*media queries*/
-@media only screen and (min-width: 600px) {
-  .h-left-words {
-    left: 33%;
-  }
-  
-  .h-right-words {
-    left: 66%;
-  }
+/* Media Queries */  
+/* =============================== */
+@media only screen and (max-width: 500px) {
 }
 </style>
 
@@ -354,33 +376,33 @@ p {
   <div id="home">
     <div id="logo" class="middle" style="width: 35vh; height: 35vh;">
       <svg viewBox="0,0,100,100">
-        <path fill="transparent" stroke-width="3" stroke="#0077cc" d="M50 10 L35 10 L75 50 L35 90 L35 75"/>
+        <!--<mask x="0" y="0" id="half">
+          <path fill="white" d="M0 60 L0 280 L180 160"/>
+          <path fill="white" d="M400 60 L400 280 L180 160"/>
+        </mask>
+        <defs>
+          <pattern id="pathPattern" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+            <path d="M0 0 L10 10 L0 20" stroke="#000" fill="none"/>
+          </pattern>
+        </defs>
+        <text x="0" y="55%" alignment-baseline="middle" text-anchor="start" font-size="55vh" font-weight="400" fill="url(#pathPattern)">BE</text>
+        <text x="0" y="55%" alignment-baseline="middle" text-anchor="start" font-size="55vh" font-weight="400" mask="url(#half)" fill="#0077cc">BE</text>-->
+        
+        <path fill="transparent" stroke-width="4" stroke="#0077cc" d="M50 10 L30 10 L70 50 L30 90 L30 70"/>
       </svg>
     </div>
 
-    <div class="h-left-words">
-      <!--<p>
-        <span class="growing-thing highlight"><span>S</span><span>h</span><span>a</span><span>r</span><span>k</span><span>s</span></span>
-        <span class="growing-thing highlight"><span>W</span><span>h</span><span>a</span><span>l</span><span>e</span><span>s</span></span>
-        <span class="growing-thing highlight"><span>T</span><span>u</span><span>r</span><span>t</span><span>l</span><span>e</span><span>s</span></span>
-        <span class="growing-thing highlight"><span>T</span><span>r</span><span>e</span><span>e</span><span>s</span></span>
-        <span class="growing-thing highlight"><span>K</span><span>a</span><span>n</span><span>g</span><span>a</span><span>r</span><span>o</span><span>o</span><span>s</span></span>
-        <span class="growing-thing highlight"><span>E</span><span>a</span><span>r</span><span>s</span></span>
-        <span class="growing-thing highlight"><span>N</span><span>o</span><span>s</span><span>e</span><span>s</span></span>
-        <span class="growing-thing highlight"><span>L</span><span>o</span><span>b</span><span>s</span><span>t</span><span>e</span><span>r</span><span>s</span></span>
-        <br/>
-        <span> never stop growing, <br>why should your business</span>
-      </p>-->
-      <p>
-        <span>My designs will make you greater than your</span>
-        <br/>
-        <span class="growing-thing highlight"><span>c</span><span>o</span><span>m</span><span>p</span><span>e</span><span>t</span><span>i</span><span>t</span><span>i</span><span>o</span><span>n</span></span>
-        <span class="growing-thing highlight"><span>f</span><span>e</span><span>a</span><span>r</span><span>s</span></span>
-        <span class="growing-thing highlight"><span>f</span><span>a</span><span>i</span><span>l</span><span>u</span><span>r</span><span>e</span><span>s</span></span>
+    <div class="h-top-words">
+      <p>Welcome to the portfolio of</p>
     </div>
-
-    <div class="h-right-words">
-      <p>Welcome to the portfolio of freelance digital designer, Stu Coston.</p>
+    
+    <div class="h-bottom-words growing-thing">
+        <!--<span class="growing-thing highlight">digital designer</span>
+        <span class="growing-thing highlight">website developer</span>
+        <span class="growing-thing highlight">digital creator</span>
+        <span class="growing-thing highlight">online entreprenuer</span>
+        <br/>-->
+        Stu Coston.
     </div>
   
   </div>
@@ -391,19 +413,19 @@ p {
   <script>
 // growing-things slide show
 // =======================================================
-var slideIndex = 0;
-carousel();
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("growing-thing");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none"; 
-    }
-    slideIndex++;
-    if (slideIndex > x.length) {slideIndex = 1} 
-    x[slideIndex-1].style.display = "inline-block"; 
-    setTimeout(carousel, 4000); // Change image every 4 seconds
-}
+//var slideIndex = 0;
+//carousel();
+//function carousel() {
+//    var i;
+//    var x = document.getElementsByClassName("growing-thing");
+//    for (i = 0; i < x.length; i++) {
+//      x[i].style.display = "none"; 
+//    }
+//    slideIndex++;
+//    if (slideIndex > x.length) {slideIndex = 1} 
+//    x[slideIndex-1].style.display = "inline-block"; 
+//    setTimeout(carousel, 4000); // Change image every 4 seconds
+//}
 
 // navigation functions
 // ========================================================
@@ -460,7 +482,6 @@ function pageProjects() {
     document.getElementById('nav-projects').className = document.getElementById('nav-projects').className.replace(' p-projects',' h-projects');
   }; 
 }
-
 function comingSoon() {
   if(document.getElementById('coming-soon').className.indexOf('hide') >= 0) {
     document.getElementById('coming-soon').className = document.getElementById('coming-soon').className.replace(' hide','');
@@ -491,6 +512,158 @@ stu.getElements = function (id) {
     return document.querySelectorAll(id);
   }
 };
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script>
+
+( function( $ ) {
+
+    /**
+     * span-letters.js
+     * 
+     * Example usage: jQuery('.selector').spanLetters();
+     */
+    $.fn.spanLetters = function() {
+
+        // Loop through each element on which this function has been called
+        this.each( function() {   
+            
+            // Scope the variables
+            var words, i, text;
+          
+            // Make an array with each letter of the string as a value
+            words = $( this ).text().split( '' );
+
+            // Loop through the letters and wrap each one in a span
+            for ( i = 0; i in words; i++ ) {
+                words[i] = '<span class="sl' + ( i + 1 ) + ' span-letter">' + words[i] + '</span>'
+            };
+
+            // Join our array of span-wrapped letters back into a string
+            text = words.join( '' );
+
+            // Replace the original string with the new string
+            $( this ).html( text );
+        })
+    }
+}( jQuery ));
+
+// Call spanLetters on our target
+$( ".growing-thing" ).spanLetters();
+
+targets = $( ".growing-thing span" ); // Select our spans
+duration = 300; // Set duration of the effect here
+speed = 60; // Set animation speed through the letters here
+infiniteLoop = false // Set whether animation should keep triggering
+
+// Add the animation class to the letter, then remove it later
+function animateLetter( value ) {
+
+  if ( turnedOn ) {
+  
+    $( value ).addClass( "active" );
+
+    setTimeout( function() {
+
+      stopAnimateLetter( value );  
+
+    }, duration );
+    
+  }
+  
+};
+
+// Remove the animation class from the letter
+function stopAnimateLetter( value ) {
+
+  $( value ).removeClass( "active" );
+  
+};
+
+// Trigger function
+function startEverything() {
+  
+  // Loop through our collection of spans
+  targets.each( function( index, value ) {
+
+    // Sequentially delay the firing of the animation through the letters
+    timer = setTimeout( function() {
+
+      animateLetter( value );
+
+    }, speed*index );
+
+  });    
+  
+  // No looping if trigger was a click
+  if ( clicked ) {
+    
+    clicked = false; 
+    
+  } else {
+    
+    // Logic for infinite loop
+    if ( infiniteLoop ) { // If looping is on
+      if ( turnedOn ) { // If animation is still happening
+        setTimeout( function() {
+
+          startEverything();  
+
+        }, i*speed );
+      }  
+    }
+    
+  }
+  
+}
+
+// Kill everything function
+function stopEverything() {
+  
+  clearTimeout( timer );
+  
+  turnedOn = false;
+  
+  // Delay the kill just a bit
+  setTimeout( function() {
+
+    targets.each( function( index, value ) {
+
+      stopAnimateLetter( value );
+
+    });
+
+  }, 200 );
+  
+}
+
+// Hover trigger logic
+$( ".growing-thing" )
+    .mouseenter( function() {
+  
+        turnedOn = true;
+        clicked = false;
+  
+        startEverything();
+        
+    })
+    .mouseleave( function() {
+  
+        stopEverything();
+
+    });
+
+// Click trigger logic
+$( ".nav-item" ).on( "click", function() {
+   
+    clicked = true;
+    turnedOn = true;
+    
+    startEverything();
+  
+});
+
 </script>
 </body>
 
