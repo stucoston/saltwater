@@ -45,6 +45,7 @@ p {
   height: 100%;
   width: 100%;
   z-index: -1;
+  animation: opacityShow 1s ease-in forwards;
 }
 .h-top-words,
 .h-bottom-words {
@@ -80,7 +81,7 @@ p {
   }
   
   .animate-padding {
-    animation: nav-in 0.8s linear forwards;
+    animation: nav-in 0.8s linear forwards, opacityShow 1s ease-in forwards;
   }
   
   @keyframes nav-in {
@@ -102,7 +103,9 @@ p {
   width: 100%;
   height: 24px;
   left: 0;
-  transition: 0.5s;
+  -webkit-transition: 1s;
+  -ms-transition: 1s;
+  transition: 1s;
 }
 /* nav-item home */
 /* =============================== */
@@ -175,25 +178,19 @@ p {
   height: 24px;
   line-height: 24px;
   vertical-align: middle;
-  -webkit-transition: 0.3s;
-  -ms-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.8s;
+  -ms-transition: 0.8s;
+  transition: 0.8s;
   cursor: pointer;
   text-transform: uppercase;
 }
 #nav-contact .flex-container:hover,
 #nav-projects .flex-container:hover {
   width: 85vw;
-  -webkit-transition: 0.3s;
-  -ms-transition: 0.3s;
-  transition: 0.3s;
 }
 #nav-opensource .flex-container:hover,
 #nav-templates .flex-container:hover {
   width: 85vh;
-  -webkit-transition: 0.3s;
-  -ms-transition: 0.3s;
-  transition: 0.3s;
 }
 #nav-contact .flex-container {
   width: 110px;
@@ -219,50 +216,30 @@ p {
   height: 100%;
   width: 100%;
 }
-/*growing-thing slideshow animations*/
+/*me slideshow animations*/
 /* =============================== */
-.me {
+.slide-text {
   font-size: 14px;
   text-align: center;
 }
-.me span {
+.slide-text span {
   display: inline-block;
   position: relative;
-  transition: 0.8s;
-  animation: letter-spin 0.12s ease-out 0s infinite;
+  transition: 1.5s;
+  opacity: 0;
 } 
-.me span.active {
-  animation: none;
+.slide-text span.active {
+  margin-top: initial;
+  opacity: 1;
 }
   
-  @keyframes letter-spin {
-    0% {
-      -webkit-transform: rotateX(0deg);
-      -ms-transform: rotateX(0deg);
-      transform: rotateX(0deg);
-    }
-    50% {
-      -webkit-transform: rotateX(90deg);
-      -ms-transform: rotateX(90deg);
-      transform: rotateX(90deg)
-    }
-    50% {
-      -webkit-transform: rotateX(180deg);
-      -ms-transform: rotateX(180deg);
-      transform: rotateX(180deg)
-    }
-    75% {
-      -webkit-transform: rotateX(270deg);
-      -ms-transform: rotateX(270deg);
-      transform: rotateX(270deg)
-    }
-    100% {
-      -webkit-transform: rotateX(360deg);
-      -ms-transform: rotateX(360deg);
-      transform: rotateX(360deg)
-    }
-  }
-  
+/* site-wide KeyFrames */  
+/* =============================== */
+@keyframes opacityShow {
+  0%	{opacity: 0;}
+  100%	{opacity: 1;}
+}
+
 /* Media Queries */  
 /* =============================== */
 @media only screen and (max-width: 500px) {
@@ -275,64 +252,25 @@ p {
     
       <div id="nav-contact" class="nav-item h-contact">
         <div class="flex-wrapper">
-          <div id="nav-contact-cont" class="page-title flex-container" onclick="pageContact()">
-            <div>C</div>
-            <div>o</div>
-            <div>n</div>
-            <div>t</div>
-            <div>a</div>
-            <div>c</div>
-            <div>t</div>
-          </div>
+          <div id="nav-contact-cont" class="page-title flex-container" onclick="pageContact()">contact</div>
         </div>
       </div>
       
       <div id="nav-opensource" class="nav-item h-opensource">
         <div class="flex-wrapper">
-          <div class="page-title flex-container" onclick="pageOpensource()">
-            <div>o</div>
-            <div>p</div>
-            <div>e</div>
-            <div>n</div>
-            <div>&nbsp;</div>
-            <div>s</div>
-            <div>o</div>
-            <div>u</div>
-            <div>r</div>
-            <div>c</div>
-            <div>e</div>
-          </div>
+          <div id="nav-opensource-cont" class="page-title flex-container" onclick="pageOpensource()">open source</div>
         </div>
       </div>
       
       <div id="nav-projects" class="nav-item h-projects">
         <div class="flex-wrapper">
-          <div class="page-title flex-container" onclick="pageProjects()">
-            <div>P</div>
-            <div>r</div>
-            <div>o</div>
-            <div>j</div>
-            <div>e</div>
-            <div>c</div>
-            <div>t</div>
-            <div>s</div>
-          </div>
+          <div id="nav-projects-cont" class="page-title flex-container" onclick="pageProjects()">projects</div>
         </div>
       </div>
       
       <div id="nav-templates" class="nav-item h-templates">
         <div class="flex-wrapper">
-          <div class="page-title flex-container" onclick="pageTemplates()">
-            <div>T</div>
-            <div>e</div>
-            <div>m</div>
-            <div>p</div>
-            <div>l</div>
-            <div>a</div>
-            <div>t</div>
-            <div>e</div>
-            <div>s</div>
-          </div>
+          <div id="nav-templates-cont" class="page-title flex-container" onclick="pageTemplates()">templates</div>
         </div>
       </div>
       
@@ -354,9 +292,9 @@ p {
     
     <div class="h-bottom-words">
       <p>
-        <span class="me highlight slide-text">digital&nbsp;designer</span>
-        <span class="me highlight slide-text">website&nbsp;developer</span>
-        <span class="me highlight slide-text">online&nbsp;entreprenuer</span>
+        <span class="me1 slide-text">digital&nbsp;designer</span>
+        <span class="me2 slide-text">website&nbsp;developer</span>
+        <span class="me3 slide-text">online&nbsp;entreprenuer</span>
         <br/>
         Stu Coston.
       </p>
@@ -371,71 +309,131 @@ p {
 // navigation functions
 // ========================================================
 
+var win = window,
+    doc = document,
+    el = doc.documentElement,
+    bod = doc.getElementsByTagName('body')[0],
+    ww = win.innerWidth,
+    wh = win.innerHeight,
+    maxWidth = win.innerWidth || el.clientWidth || bod.clientWidth,
+    maxHeight = win.innerHeight || el.clientHeight || bod.clientHeight;
+    
+var c = document.getElementById('nav-contact'),
+    cCont = document.getElementById('nav-contact-cont'),
+    o = document.getElementById('nav-opensource'),
+    oCont = document.getElementById('nav-opensource-cont'),
+    p = document.getElementById('nav-projects'),
+    pCont = document.getElementById('nav-projects-cont'),
+    t = document.getElementById('nav-templates'),
+    tCont = document.getElementById('nav-templates-cont'),
+    home = document.getElementById('home');
 
 function pageContact() {
-  stu.toggleShow('#nav-opensource');
-  stu.toggleShow('#nav-templates');
-  stu.toggleShow('#nav-projects');
-  stu.toggleShow('#home');
+
+  stu.toggleShow(o);
+  stu.toggleShow(t);
+  stu.toggleShow(p);
+  stu.toggleShow(home);
   comingSoon();
   
-  if(document.getElementById('nav-contact').className.indexOf('h-') >= 0) {
-    document.getElementById('nav-contact').className = document.getElementById('nav-contact').className.replace(' h-contact',' p-');
-    document.getElementById('nav-contact-cont').style.width = "85vw";
-    setTimeout(document.getElementById('nav-contact-cont').style.width = "110px", 1000);
-    document.getElementById('nav-contact').style.top = "95%";
+  if(c.className.indexOf('h-') >= 0) {
+    c.className = c.className.replace(' h-contact','');
+    cCont.onmouseenter = function(){cCont.style.width = "85vw"};
+    cCont.onmouseleave = function(){cCont.style.width = "110px"};
+    c.style.top = wh-64 + "px";
+    
   } else {
-    document.getElementById('nav-contact').className = document.getElementById('nav-contact').className.replace(' p-',' h-contact');
-    document.getElementById('nav-contact-cont').style.width = "110px";
-    document.getElementById('nav-contact').style.top = "-12px";
+    c.className += ' h-contact';
+    cCont.onmouseenter = function(){cCont.style.width = "85vw"};
+    cCont.onmouseleave = function(){cCont.style.width = "110px"};
+    c.style.top = "-12px";
+    
   }; 
   
 }
+
 function pageOpensource() {
-  stu.toggleShow('#nav-contact');
-  stu.toggleShow('#nav-templates');
-  stu.toggleShow('#nav-projects');
-  stu.toggleShow('#home');
+
+  stu.toggleShow(c);
+  stu.toggleShow(t);
+  stu.toggleShow(p);
+  stu.toggleShow(home);
   comingSoon();
   
-  if(document.getElementById('nav-opensource').className.indexOf('h-') >= 0) {
-    document.getElementById('nav-opensource').className = document.getElementById('nav-opensource').className.replace(' h-opensource',' p-opensource');
+  if(o.className.indexOf('h-') >= 0) {
+    o.className = o.className.replace(' h-opensource','');
+    oCont.onmouseenter = function(){oCont.style.width = "85vh"};
+    oCont.onmouseleave = function(){oCont.style.width = "170px"};
+    o.style.right = ww-64 + "px";
+    
   } else {
-    document.getElementById('nav-opensource').className = document.getElementById('nav-opensource').className.replace(' p-opensource',' h-opensource');
-  }; 
-}
-function pageTemplates() {
-  stu.toggleShow('#nav-opensource');
-  stu.toggleShow('#nav-contact');
-  stu.toggleShow('#nav-projects');
-  stu.toggleShow('#home');
-  comingSoon();
+    o.className += ' h-opensource';
+    oCont.onmouseenter = function(){oCont.style.width = "85vh"};
+    oCont.onmouseleave = function(){oCont.style.width = "170px"};
+    o.style.right = "-12px";
+    
+  };
   
-  if(document.getElementById('nav-templates').className.indexOf('h-') >= 0) {
-    document.getElementById('nav-templates').className = document.getElementById('nav-templates').className.replace(' h-templates',' p-templates');
-  } else {
-    document.getElementById('nav-templates').className = document.getElementById('nav-templates').className.replace(' p-templates',' h-templates');
-  }; 
 }
+
 function pageProjects() {
-  stu.toggleShow('#nav-opensource');
-  stu.toggleShow('#nav-templates');
-  stu.toggleShow('#nav-contact');
-  stu.toggleShow('#home');
+
+  stu.toggleShow(o);
+  stu.toggleShow(t);
+  stu.toggleShow(c);
+  stu.toggleShow(home);
   comingSoon();
   
-  if(document.getElementById('nav-projects').className.indexOf('h-') >= 0) {
-    document.getElementById('nav-projects').className = document.getElementById('nav-projects').className.replace(' h-projects',' p-projects');
+  if(p.className.indexOf('h-') >= 0) {
+    p.className = p.className.replace(' h-projects','');
+    pCont.onmouseenter = function(){pCont.style.width = "85vw"};
+    pCont.onmouseleave = function(){pCont.style.width = "115px"};
+    p.style.top = 0 + "px";
+    
   } else {
-    document.getElementById('nav-projects').className = document.getElementById('nav-projects').className.replace(' p-projects',' h-projects');
+    p.className += ' h-projects';
+    pCont.onmouseenter = function(){pCont.style.width = "85vw"};
+    pCont.onmouseleave = function(){pCont.style.width = "115px"};
+    p.style.top = wh-64 + "px";
+    
   }; 
+  
 }
+
+function pageTemplates() {
+
+  stu.toggleShow(o);
+  stu.toggleShow(c);
+  stu.toggleShow(p);
+  stu.toggleShow(home);
+  comingSoon();
+  
+  if(t.className.indexOf('h-') >= 0) {
+    t.className = t.className.replace(' h-templates','');
+    tCont.onmouseenter = function(){tCont.style.width = "85vh"};
+    tCont.onmouseleave = function(){tCont.style.width = "140px"};
+    t.style.left = ww-64 + "px";
+    
+  } else {
+    t.className += ' h-templates';
+    tCont.onmouseenter = function(){tCont.style.width = "85vh"};
+    tCont.onmouseleave = function(){tCont.style.width = "140px"};
+    t.style.left = "-12px";
+    
+  };
+  
+}
+
 function comingSoon() {
+
   if(document.getElementById('coming-soon').className.indexOf('hide') >= 0) {
     document.getElementById('coming-soon').className = document.getElementById('coming-soon').className.replace(' hide','');
+    
   } else {
     document.getElementById('coming-soon').className += ' hide';
+    
   };
+  
 }
 // stu toggle functions
 // ========================================================
@@ -465,11 +463,12 @@ stu.getElements = function (id) {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script>
 ( function( $ ) {
-    /**
+    /*
      * span-letters.js
      * 
      * Example usage: jQuery('.selector').spanLetters();
      */
+     
     $.fn.spanLetters = function() {
         // Loop through each element on which this function has been called
         this.each( function() {   
@@ -490,11 +489,21 @@ stu.getElements = function (id) {
         })
     }
 }( jQuery ));
+// Span nav-item Letters
+$( ".flex-container" ).spanLetters();
+
 // Call spanLetters on our target
-$( ".me" ).spanLetters();
-targets = $( ".me span" ); // Select our spans
-duration = 4000; // Set duration of the effect here
-speed = 30; // Set animation speed through the letters here
+$( ".me1" ).spanLetters();
+targetMe1 = $( ".me1 span" ); // Select our spans
+
+$( ".me2" ).spanLetters();
+targetMe2 = $( ".me2 span" ); // Select our spans
+
+$( ".me3" ).spanLetters();
+targetMe3 = $( ".me3 span" ); // Select our spans
+
+duration = 5000; // Set duration of the effect here
+speed = 40; // Set animation speed through the letters here
 // Add the animation class to the letter, then remove it later
 function animateLetter( value ) {
   if ( turnedOn ) {
@@ -517,17 +526,29 @@ function stopAnimateLetter( value ) {
 function startEverything() {
   
   // Loop through our collection of spans
-  targets.each( function( index, value ) {
+  targetMe1.each( function( index, value ) {
     // Sequentially delay the firing of the animation through the letters
     timer = setTimeout( function() {
       animateLetter( value );
     }, speed*index );
   }); 
+  
+  // Loop through our collection of spans
+  targetMe2.each( function( index, value ) {
+    // Sequentially delay the firing of the animation through the letters
+    timer = setTimeout( function() {
+      animateLetter( value );
+    }, speed*index );
+  });
+  
+  // Loop through our collection of spans
+  targetMe3.each( function( index, value ) {
+    // Sequentially delay the firing of the animation through the letters
+    timer = setTimeout( function() {
+      animateLetter( value );
+    }, speed*index );
+  });
       
-}
-
-function stopEverything() {
-  $( ".me span" ).addClass( "active" );
 }
 // growing-things slide show
 // =======================================================
@@ -539,12 +560,12 @@ function carousel() {
     for (i = 0; i < x.length; i++) {
       x[i].style.display = "none";
       //x[i].className += " active";
-      setTimeout(animateMe, 50);
+      setTimeout(animateMe, 500);
     }
     slideIndex++;
     if (slideIndex > x.length) {slideIndex = 1} 
     x[slideIndex-1].style.display = "inline-block";
-    setTimeout(carousel, 6000); // Change image every 6 seconds
+    setTimeout(carousel, 7000); // Change image every 6 seconds
 };
    
 function animateMe() { 
