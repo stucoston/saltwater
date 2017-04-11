@@ -31,13 +31,11 @@ p {
 .show {
   display: block;
 }
-
 /* page elements */
 /* ===============================*/
 .page-title {
   font-weight: 400;
 }
-
 /* home-page elements */
 /* ===============================*/
 #home {
@@ -104,6 +102,7 @@ p {
   width: 100%;
   height: 24px;
   left: 0;
+  transition: 0.5s;
 }
 /* nav-item home */
 /* =============================== */
@@ -188,7 +187,6 @@ p {
   -webkit-transition: 0.3s;
   -ms-transition: 0.3s;
   transition: 0.3s;
-  color: #0077cc;
 }
 #nav-opensource .flex-container:hover,
 #nav-templates .flex-container:hover {
@@ -196,7 +194,6 @@ p {
   -webkit-transition: 0.3s;
   -ms-transition: 0.3s;
   transition: 0.3s;
-  color: #0077cc;
 }
 #nav-contact .flex-container {
   width: 110px;
@@ -219,38 +216,12 @@ p {
 /*logo*/
 /* =============================== */
 #logo svg {
-  float: right;
-  display: inline-block;
   height: 100%;
   width: 100%;
 }
 /*growing-thing slideshow animations*/
 /* =============================== */
-/*  .growing-thing span:nth-child(odd) {
-    animation: letter-spin 0.2s ease-out 4;
-  }
-  
-  .growing-thing span:nth-child(even) {
-    animation: letter-spin 0.27s ease-out 6;
-  }
-  
-  .growing-thing span:nth-child(3n+0) {
-    animation: letter-spin 0.25s ease-out 5;
-  }
-  
-  .growing-thing span:nth-child(4n+0) {
-    animation: letter-spin 0.18s ease-out 5;
-  }
-  
-  .growing-thing span:nth-child(7n+0) {
-    animation: letter-spin 0.28s ease-out 5;
-  }
-  
-  .growing-thing span:nth-child(10n+0) {
-    animation: letter-spin 0.22s ease-out 5;
-  }*/
-  
-  .me {
+.me {
   font-size: 14px;
   text-align: center;
 }
@@ -260,9 +231,9 @@ p {
   transition: 0.8s;
   animation: letter-spin 0.12s ease-out 0s infinite;
 } 
-  .me span.active {
-    animation: none;
-  }
+.me span.active {
+  animation: none;
+}
   
   @keyframes letter-spin {
     0% {
@@ -304,7 +275,7 @@ p {
     
       <div id="nav-contact" class="nav-item h-contact">
         <div class="flex-wrapper">
-          <div class="page-title flex-container" onclick="pageContact()">
+          <div id="nav-contact-cont" class="page-title flex-container" onclick="pageContact()">
             <div>C</div>
             <div>o</div>
             <div>n</div>
@@ -373,18 +344,6 @@ p {
   <div id="home">
     <div id="logo" class="middle" style="width: 35vh; height: 35vh;">
       <svg viewBox="0,0,100,100">
-        <!--<mask x="0" y="0" id="half">
-          <path fill="white" d="M0 60 L0 280 L180 160"/>
-          <path fill="white" d="M400 60 L400 280 L180 160"/>
-        </mask>
-        <defs>
-          <pattern id="pathPattern" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
-            <path d="M0 0 L10 10 L0 20" stroke="#000" fill="none"/>
-          </pattern>
-        </defs>
-        <text x="0" y="55%" alignment-baseline="middle" text-anchor="start" font-size="55vh" font-weight="400" fill="url(#pathPattern)">BE</text>
-        <text x="0" y="55%" alignment-baseline="middle" text-anchor="start" font-size="55vh" font-weight="400" mask="url(#half)" fill="#0077cc">BE</text>-->
-        
         <path fill="transparent" stroke-width="4" stroke="#0077cc" d="M50 10 L30 10 L70 50 L30 90 L30 70"/>
       </svg>
     </div>
@@ -409,9 +368,10 @@ p {
   <div id="coming-soon" class="middle hide">Coming Soon</div>
   
   <script>
-
 // navigation functions
 // ========================================================
+
+
 function pageContact() {
   stu.toggleShow('#nav-opensource');
   stu.toggleShow('#nav-templates');
@@ -420,9 +380,14 @@ function pageContact() {
   comingSoon();
   
   if(document.getElementById('nav-contact').className.indexOf('h-') >= 0) {
-    document.getElementById('nav-contact').className = document.getElementById('nav-contact').className.replace(' h-contact',' p-contact');
+    document.getElementById('nav-contact').className = document.getElementById('nav-contact').className.replace(' h-contact',' p-');
+    document.getElementById('nav-contact-cont').style.width = "85vw";
+    setTimeout(document.getElementById('nav-contact-cont').style.width = "110px", 1000);
+    document.getElementById('nav-contact').style.top = "95%";
   } else {
-    document.getElementById('nav-contact').className = document.getElementById('nav-contact').className.replace(' p-contact',' h-contact');
+    document.getElementById('nav-contact').className = document.getElementById('nav-contact').className.replace(' p-',' h-contact');
+    document.getElementById('nav-contact-cont').style.width = "110px";
+    document.getElementById('nav-contact').style.top = "-12px";
   }; 
   
 }
@@ -528,29 +493,26 @@ stu.getElements = function (id) {
 // Call spanLetters on our target
 $( ".me" ).spanLetters();
 targets = $( ".me span" ); // Select our spans
-duration = 2000; // Set duration of the effect here
-speed = 40; // Set animation speed through the letters here
-
+duration = 4000; // Set duration of the effect here
+speed = 30; // Set animation speed through the letters here
 // Add the animation class to the letter, then remove it later
 function animateLetter( value ) {
   if ( turnedOn ) {
-  
+    
     setTimeout( function() {
       $( value ).addClass( "active" );
     }, 0 );
     setTimeout( function() {
       stopAnimateLetter( value );  
     }, duration );
-    
+      
   }
   
 };
-
 // Remove the animation class from the letter
 function stopAnimateLetter( value ) {
   $( value ).removeClass( "active" );
 };
-
 // Trigger function
 function startEverything() {
   
@@ -564,6 +526,9 @@ function startEverything() {
       
 }
 
+function stopEverything() {
+  $( ".me span" ).addClass( "active" );
+}
 // growing-things slide show
 // =======================================================
 var slideIndex = 0;
@@ -573,25 +538,21 @@ function carousel() {
     var x = document.getElementsByClassName("slide-text");
     for (i = 0; i < x.length; i++) {
       x[i].style.display = "none";
+      //x[i].className += " active";
+      setTimeout(animateMe, 50);
     }
     slideIndex++;
     if (slideIndex > x.length) {slideIndex = 1} 
     x[slideIndex-1].style.display = "inline-block";
-    
-    setTimeout(animateMe, 1500);
     setTimeout(carousel, 6000); // Change image every 6 seconds
 };
-   function animateMe() {
-  
-        turnedOn = true;
-  
-        startEverything();
+   
+function animateMe() { 
         
-    };
-//    .mouseleave( function() {
-  
-//        stopEverything();
-//    };
+  turnedOn = true;
+  startEverything();
+        
+};
 </script>
 </body>
 
