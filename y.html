@@ -31,11 +31,7 @@ p {
 .show {
   display: block;
 }
-/* page elements */
-/* ===============================*/
-.page-title {
-  font-weight: 400;
-}
+
 /* home-page elements */
 /* ===============================*/
 #home {
@@ -69,14 +65,13 @@ p {
   color: white;
   padding: 1px 4px 1px 4px;
 }
-
-/* pages */
+/* page elements */
 /* ===============================*/
   .page-wrapper {
     position: fixed;
     width: 100%;
     height: 100%;
-    padding: 0;
+    padding: 24px;
     box-sizing: border-box;
   }
   
@@ -98,6 +93,16 @@ p {
   #templates .page-wrapper {
     top: 0;
     right: 100%;
+  }
+  
+  .page-title {
+    font-weight: 400;
+  }
+  
+  .page-content {
+    position: relative;
+    height: 100%;
+    width: 100%;
   }
   
   .animate-padding {
@@ -231,7 +236,6 @@ p {
     width: 100%;
     height: 100%;
     opacity: 1;
-    /*border: 1px solid rgba(50,50,50,0.2);*/
   }
   
 .nav-item {
@@ -359,19 +363,16 @@ p {
   20%	{opacity: 0;}
   100%	{opacity: 1;}
 }
-
 @keyframes opacityShow {
   0%	{opacity: 0;}
   20%	{opacity: 0;}
   100%	{opacity: 1;}
 }
-
 @-webkit-keyframes opacityHide{
   0%	{opacity: 1;}
   80%	{opacity: 0;}
   100%	{opacity: 0;}
 }
-
 @keyframes opacityHide {
   0%	{opacity: 1;}
   80%	{opacity: 0;}
@@ -413,9 +414,11 @@ p {
   <div id="coming-soon" class="middle hide">Coming Soon</div>
   
   <div id="contact" class="hide">
-    <div id="con-page-wrap" class="page-wrapper">
-      <div class="middle">
-        test contat page
+    <div id="con-page-wrap" class="page-wrapper animate-padding" style="border: 1px solid blue">
+      <div class="page-content" style="border: 1px solid blue">
+        <div class="middle">
+          test contat page
+        </div>
       </div>
     </div>
   </div>
@@ -435,7 +438,7 @@ p {
     </div>
   </div>
   
-  <div class="page-wrapper animate-padding">
+  <div id="nav" class="page-wrapper animate-padding">
     <div class="nav-item-overlay">
     
       <div id="nav-contact" class="nav-item h-contact nav-contact">
@@ -622,9 +625,7 @@ function pageTemplates() {
   };
   
 }
-
 function comingSoon() {
-
   if(document.getElementById('coming-soon').className.indexOf('hide') >= 0) {
     setTimeout(function() {document.getElementById('coming-soon').className = document.getElementById('coming-soon').className.replace(' hide','')}, 1000);
     
@@ -636,7 +637,6 @@ function comingSoon() {
 }
 
 function contactPage() {
-
   if(document.getElementById('contact').className.indexOf('hide') >= 0) {
     document.getElementById('contact').className = document.getElementById('contact').className.replace('hide','');
     document.getElementById('con-page-wrap').className += ' animate-fromtop';
@@ -774,7 +774,6 @@ function carousel() {
     var x = document.getElementsByClassName("slide-text");
     for (i = 0; i < x.length; i++) {
       x[i].style.display = "none";
-      //x[i].className += " active";
       setTimeout(animateMe, 500);
     }
     slideIndex++;
@@ -793,4 +792,3 @@ function animateMe() {
 </body>
 
 </html>
-
