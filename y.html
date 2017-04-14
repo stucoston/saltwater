@@ -31,7 +31,6 @@ p {
 .show {
   display: block;
 }
-
 /* home-page elements */
 /* ===============================*/
 #home {
@@ -71,28 +70,23 @@ p {
     position: fixed;
     width: 100%;
     height: 100%;
-    padding: 24px;
     box-sizing: border-box;
   }
   
-  #home .page-wrapper {
-    top: 0;
-    left: 0;
+  #contact .page-wrapper {
+    padding: 24px 24px 48px;
   }
   
   #opensource .page-wrapper {
-    top: 0;
-    left: 100%;
+    padding: 24px 24px 24px 48px;
   }
   
   #projects .page-wrapper {
-    top: 100%;
-    left: 0;
+    padding: 48px 24px 24px;
   }
   
   #templates .page-wrapper {
-    top: 0;
-    right: 100%;
+    padding: 24px 48px 24px 24px;
   }
   
   .page-title {
@@ -355,7 +349,18 @@ p {
   margin-top: initial;
   opacity: 1;
 }
-  
+ 
+/* site-wide CSS */
+/* =============================== */
+.button {
+  height: 30px;
+  width: 100px;
+}
+
+.button:hover {
+  background-color: #0077cc;
+}
+
 /* site-wide KeyFrames */  
 /* =============================== */
 @-webkit-keyframes opacityShow {
@@ -414,27 +419,45 @@ p {
   <div id="coming-soon" class="middle hide">Coming Soon</div>
   
   <div id="contact" class="hide">
-    <div id="con-page-wrap" class="page-wrapper animate-padding" style="border: 1px solid blue">
+    <div id="con-page-wrap" class="page-wrapper" style="border: 1px solid blue">
       <div class="page-content" style="border: 1px solid blue">
-        <div class="middle">
-          test contat page
+        <div class="middle button">
+          <svg viewBox="0,0,100,30">
+            <path fill="transparent" stroke-width="4" stroke="#0077cc" d="M0 0 L100 0 L100 30 L0 30 Z"/>
+            <text x="50" y="17" text-anchor="middle" alignment-baseline="middle" fill="black">CONTACT</text>
+          </svg>
         </div>
       </div>
     </div>
   </div>
   
   <div id="opensource" class="hide">
-    <div class="page-wrapper animate-fromright">
+    <div id="os-page-wrap" class="page-wrapper" style="border: 1px solid blue">
+      <div class="page-content" style="border: 1px solid blue">
+        <div class="middle">
+          <p>Test Opensource page</p>
+        </div>
+      </div>
     </div>
   </div>
   
   <div id="projects" class="hide">
-    <div class="page-wrapper animate-frombottom">
+    <div id="proj-page-wrap" class="page-wrapper" style="border: 1px solid blue">
+      <div class="page-content" style="border: 1px solid blue">
+        <div class="middle">
+          <p>Test Projects page</p>
+        </div>
+      </div>
     </div>
   </div>
   
   <div id="templates" class="hide">
-    <div class="page-wrapper animate-fromleft">
+   <div id="temp-page-wrap" class="page-wrapper" style="border: 1px solid blue">
+      <div class="page-content" style="border: 1px solid blue">
+        <div class="middle">
+          <p>Test Templates page</p>
+        </div>
+      </div>
     </div>
   </div>
   
@@ -501,6 +524,7 @@ function pageContact() {
   if(c.className.indexOf('nav-contact') >= 0) {
     c.className = c.className.replace(' nav-contact','');
     cCont.style.width = "85vw";
+    cCont.onmouseleave = function(){cCont.style.width = "85vw"};
     home.style.top = wh + "px";
     stu.toggleShow(o);
     stu.toggleShow(t);
@@ -514,13 +538,14 @@ function pageContact() {
         contactPage();
       }, 1000);
     
-      c.style.top = wh-64 + "px";
+      c.style.top = wh-62 + "px";
       
     }, 500);
     
   } else {
     c.className += ' nav-contact';
     cCont.style.width = "85vw";
+    cCont.onmouseleave = function(){cCont.style.width = "85vw"};
     contactPage();
     
     setTimeout(function(){
@@ -542,95 +567,148 @@ function pageContact() {
   
 }
 function pageOpensource() {
-  stu.toggleShow(c);
-  stu.toggleShow(t);
-  stu.toggleShow(p);
-//  stu.toggleShow(home);
-  comingSoon();
-  
+
   if(o.className.indexOf('nav-opensource') >= 0) {
     o.className = o.className.replace(' nav-opensource','');
-    oCont.onmouseenter = function(){oCont.style.width = "85vh"};
-    oCont.onmouseleave = function(){oCont.style.width = "170px"};
-    oCont.style.width = "85vw"
-    setTimeout(function(){Cont.style.width = "170px"}, 1000);
-    o.style.right = ww-64 + "px";
+    oCont.style.width = "85vw";
+    oCont.onmouseleave = function(){oCont.style.width = "85vw"};
     home.style.left = -ww + "px";
+    stu.toggleShow(c);
+    stu.toggleShow(t);
+    stu.toggleShow(p);
+    
+    setTimeout(function(){
+      setTimeout(function(){
+        oCont.onmouseenter = function(){oCont.style.width = "85vw"};
+        oCont.onmouseleave = function(){oCont.style.width = "170px"};
+        oCont.style.width = "170px";
+        opensourcePage();
+      }, 1000);
+    
+      o.style.right = ww-62 + "px";
+      
+    }, 500);
     
   } else {
     o.className += ' nav-opensource';
-    oCont.onmouseenter = function(){oCont.style.width = "85vh"};
-    oCont.onmouseleave = function(){oCont.style.width = "170px"};
-    oCont.style.width = "85vw"
-    setTimeout(function(){oCont.style.width = "170px"}, 1000);
-    o.style.right = "-12px";
-    home.style.left = "0px";
+    oCont.style.width = "85vw";
+    oCont.onmouseleave = function(){oCont.style.width = "85vw"};
+    opensourcePage();
     
-  };
-  
-}
-function pageProjects() {
-  stu.toggleShow(o);
-  stu.toggleShow(t);
-  stu.toggleShow(c);
-//  stu.toggleShow(home);
-  comingSoon();
-  
-  if(p.className.indexOf('nav-projects') >= 0) {
-    p.className = p.className.replace(' nav-projects','');
-    pCont.onmouseenter = function(){pCont.style.width = "85vw"};
-    pCont.onmouseleave = function(){pCont.style.width = "115px"};
-    pCont.style.width = "85vw"
-    setTimeout(function(){pCont.style.width = "115px"}, 1000);
-    p.style.top = "-12px";
-    home.style.top = -wh + "px";
+    setTimeout(function(){
+      setTimeout(function(){
+        oCont.onmouseenter = function(){oCont.style.width = "85vw"};
+        oCont.onmouseleave = function(){oCont.style.width = "170px"};
+        oCont.style.width = "170px";
+        stu.toggleShow(c);
+        stu.toggleShow(t);
+        stu.toggleShow(p);
+      }, 1000);
     
-  } else {
-    p.className += ' nav-projects';
-    pCont.onmouseenter = function(){pCont.style.width = "85vw"};
-    pCont.onmouseleave = function(){pCont.style.width = "115px"};
-    pCont.style.width = "85vw"
-    setTimeout(function(){pCont.style.width = "115px"}, 1000);
-    p.style.top = wh-64 + "px";
-    home.style.top = "0px";
+      o.style.right = "-12px";
+      setTimeout(function(){home.style.left = "0px";}, 500);
+      
+    }, 500);
     
   }; 
   
 }
-function pageTemplates() {
-  stu.toggleShow(o);
-  stu.toggleShow(c);
-  stu.toggleShow(p);
-//  stu.toggleShow(home);
-  comingSoon();
+
+function pageProjects() {
+
+  if(p.className.indexOf('nav-projects') >= 0) {
+    p.className = p.className.replace(' nav-projects','');
+    pCont.style.width = "85vw";
+    pCont.onmouseleave = function(){pCont.style.width = "85vw"};
+    home.style.top = -wh + "px";
+    stu.toggleShow(c);
+    stu.toggleShow(t);
+    stu.toggleShow(o);
+    
+    setTimeout(function(){
+      setTimeout(function(){
+        setTimeout(function(){
+          pCont.onmouseenter = function(){pCont.style.width = "85vw"};
+          pCont.onmouseleave = function(){pCont.style.width = "115px"};
+        }, 500);
+        pCont.style.width = "115px";
+        projectPage();
+      }, 1000);
+    
+      p.style.bottom = wh-62 + "px";
+      
+    }, 500);
+    
+  } else {
+    p.className += ' nav-projects';
+    pCont.style.width = "85vw";
+    pCont.onmouseleave = function(){pCont.style.width = "85vw"};
+    projectPage();
+    
+    setTimeout(function(){
+      setTimeout(function(){
+        setTimeout(function(){
+          pCont.onmouseenter = function(){pCont.style.width = "85vw"};
+          pCont.onmouseleave = function(){pCont.style.width = "115px"};
+        }, 500);
+        pCont.style.width = "115px";
+        stu.toggleShow(c);
+        stu.toggleShow(t);
+        stu.toggleShow(o);
+      }, 1000);
+    
+      p.style.bottom = "-12px";
+      setTimeout(function(){home.style.top = "0px";}, 500);
+      
+    }, 500);
+    
+  }; 
   
+}
+
+function pageTemplates() {
+
   if(t.className.indexOf('nav-templates') >= 0) {
     t.className = t.className.replace(' nav-templates','');
-    tCont.onmouseenter = function(){tCont.style.width = "85vh"};
-    tCont.onmouseleave = function(){tCont.style.width = "140px"};
-    tCont.style.width = "85vw"
-    setTimeout(function(){tCont.style.width = "140px"}, 1000);
-    t.style.left = ww-64 + "px";
+    tCont.style.width = "85vw";
+    tCont.onmouseleave = function(){tCont.style.width = "85vw"};
     home.style.left = ww + "px";
+    stu.toggleShow(c);
+    stu.toggleShow(o);
+    stu.toggleShow(p);
+    
+    setTimeout(function(){
+      setTimeout(function(){
+        tCont.onmouseenter = function(){tCont.style.width = "85vw"};
+        tCont.onmouseleave = function(){tCont.style.width = "140px"};
+        tCont.style.width = "140px";
+        templatesPage();
+      }, 1000);
+    
+      t.style.left = ww-62 + "px";
+      
+    }, 500);
     
   } else {
     t.className += ' nav-templates';
-    tCont.onmouseenter = function(){tCont.style.width = "85vh"};
-    tCont.onmouseleave = function(){tCont.style.width = "140px"};
-    tCont.style.width = "85vw"
-    setTimeout(function(){tCont.style.width = "140px"}, 1000);
-    t.style.left = "-12px";
-    home.style.left = "0px";
+    tCont.style.width = "85vw";
+    tCont.onmouseleave = function(){tCont.style.width = "85vw"};
+    templatesPage();
     
-  };
-  
-}
-function comingSoon() {
-  if(document.getElementById('coming-soon').className.indexOf('hide') >= 0) {
-    setTimeout(function() {document.getElementById('coming-soon').className = document.getElementById('coming-soon').className.replace(' hide','')}, 1000);
+    setTimeout(function(){
+      setTimeout(function(){
+        tCont.onmouseenter = function(){tCont.style.width = "85vw"};
+        tCont.onmouseleave = function(){tCont.style.width = "140px"};
+        tCont.style.width = "140px";
+        stu.toggleShow(c);
+        stu.toggleShow(o);
+        stu.toggleShow(p);
+      }, 1000);
     
-  } else {
-    document.getElementById('coming-soon').className += ' hide';
+      t.style.left = "-12px";
+      setTimeout(function(){home.style.left = "0px";}, 500);
+      
+    }, 500);
     
   };
   
@@ -648,6 +726,63 @@ function contactPage() {
     setTimeout( function(){
       document.getElementById('contact').className += 'hide';
       document.getElementById('con-page-wrap').className = document.getElementById('con-page-wrap').className.replace(' animate-totop','');
+      
+    }, 2000);
+    
+  };
+  
+}
+
+function opensourcePage() {
+  if(document.getElementById('opensource').className.indexOf('hide') >= 0) {
+    document.getElementById('opensource').className = document.getElementById('opensource').className.replace('hide','');
+    document.getElementById('os-page-wrap').className += ' animate-fromright';
+    
+  } else {
+    
+    document.getElementById('os-page-wrap').className = document.getElementById('os-page-wrap').className.replace(' animate-fromright',' animate-toright');
+    
+    setTimeout( function(){
+      document.getElementById('opensource').className += 'hide';
+      document.getElementById('os-page-wrap').className = document.getElementById('os-page-wrap').className.replace(' animate-toright','');
+      
+    }, 2000);
+    
+  };
+  
+}
+
+function projectPage() {
+  if(document.getElementById('projects').className.indexOf('hide') >= 0) {
+    document.getElementById('projects').className = document.getElementById('projects').className.replace('hide','');
+    document.getElementById('proj-page-wrap').className += ' animate-frombottom';
+    
+  } else {
+    
+    document.getElementById('proj-page-wrap').className = document.getElementById('proj-page-wrap').className.replace(' animate-frombottom',' animate-tobottom');
+    
+    setTimeout( function(){
+      document.getElementById('projects').className += 'hide';
+      document.getElementById('proj-page-wrap').className = document.getElementById('proj-page-wrap').className.replace(' animate-tobottom','');
+      
+    }, 2000);
+    
+  };
+  
+}
+
+function templatesPage() {
+  if(document.getElementById('templates').className.indexOf('hide') >= 0) {
+    document.getElementById('templates').className = document.getElementById('templates').className.replace('hide','');
+    document.getElementById('temp-page-wrap').className += ' animate-fromleft';
+    
+  } else {
+    
+    document.getElementById('temp-page-wrap').className = document.getElementById('temp-page-wrap').className.replace(' animate-fromleft',' animate-toleft');
+    
+    setTimeout( function(){
+      document.getElementById('templates').className += 'hide';
+      document.getElementById('temp-page-wrap').className = document.getElementById('temp-page-wrap').className.replace(' animate-toleft','');
       
     }, 2000);
     
