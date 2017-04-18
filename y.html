@@ -20,33 +20,37 @@ p {
   font-size: 14px;
 }
 i {
-  color: #0077cc;
-  text-decoration: none;
+  color: black;
   padding: 5px;
+  font-size: 16px;
   transition: 0.3s;
 }
 i:hover {
   color: black;
-  text-decoration: none;
+}
+h1 a hr {
+  margin-top: -16px;
+}
+h2 a hr {
+  margin-top: -14px;
 }
 a {
-  color: #0077cc;
+  color: black;
   text-decoration: none;
   padding: 5px 0;
   transition: 0.3s;
 }
 a hr {
   border: none;
-  background-color: black;
-  height: 2px;
+  background-color: #0077cc;
+  height: 1px;
   width: 0;
   visibility: hidden;
   transition: 0.3s;
   float: left;
-  margin-top: -12px;
 }
 a:hover {
-  color: black;
+  color: #0077cc;
   transition: 0.3s;
 }
 a:hover hr {
@@ -317,7 +321,6 @@ a:hover hr {
   -ms-transition: 1s;
   transition: 1s;
 }
-
 .nav-item.h-contact {
   top: -12px;
 }
@@ -337,7 +340,6 @@ a:hover hr {
   width: 24px;
   height: 100%;
 }
-
 #nav-logo {
   height: 30px;
   width: 12px;
@@ -345,7 +347,6 @@ a:hover hr {
   left: -100px;
   transition: .8s;
 }
-
 #arrow { 
   height: 30px;
   width: 30px;
@@ -450,6 +451,21 @@ a:hover hr {
 .button:hover {
   background-color: #0077cc;
 }
+.contact-left {
+  float: left;
+  width: 15%;
+  height: 100%;
+  border: 1px solid green;
+}
+.contact-right {
+  float: right;
+  width: 83%;
+  height: 100%;
+  border: 1px solid green;
+}
+.thin {
+  font-weight: 300;
+}
 /* site-wide KeyFrames */  
 /* =============================== */
 @-webkit-keyframes opacityShow {
@@ -492,8 +508,8 @@ a:hover hr {
     <div class="nav-item-overlay">
     
       <div id="nav-logo">
-        <svg viewBox="0,0,40,100">
-          <path fill="transparent" stroke-width="4" stroke="black" d="M24 4 L4 4 L40 50 L4 96 L4 76"/>
+        <svg viewBox="0,0,45,100">
+          <path fill="transparent" stroke-width="4" stroke="black" d="M24 4 L4 4 L45 50 L4 96 L4 76"/>
         </svg>
       </div>
       
@@ -561,34 +577,23 @@ a:hover hr {
   <div id="contact" class="hide">
     <div id="con-page-wrap" class="page-wrapper">
       <div class="page-content">
-        <div class="hide-on-med-and-up">
-          <div class="middle">
-            <h1>Why yes! I am available for work.</h1>
-            <h2><a href="mailto:office@designerstu.com?Subject=Website%20Inquiry" target="_blank">office@designerstu.com<hr></a></h2>
-            <div class="show"></div>
-              <i class="fa fa-facebook"></i>
-              <i class="fa fa-twitter"></i>
-              <i class="fa fa-github"></i>
-            </div>
-            <!--<div class="button">
-              <svg viewBox="0,0,100,30">
-                <path fill="transparent" stroke-width="4" stroke="#0077cc" d="M0 0 L100 0 L100 30 L0 30 Z"/>
-                <text x="50" y="17" text-anchor="middle" alignment-baseline="middle" fill="black">CONTACT</text>
-              </svg>
-            </div>-->
+        <div class="middle" style="min-width: 350px;border:1px solid blue;">
+          <div class="contact-right">
+            <h1>Why yes! I would love to work for you.</h1>
+            <h2 class="thin"><a href="mailto:office@designerstu.com?Subject=Website%20Inquiry" target="_blank">office@designerStu.com<hr></a></h2>
+          </div>
+          <div class="contact-left">
+            <a href="https://www.facebook.com/stu_coston"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.twitter.com/stucoston"><i class="fa fa-twitter"/></a>
+            <a href="https://www.github.com/stucoston"><i class="fa fa-github"/></a>
           </div>
         </div>
-        <div class="hide-on-small-only">
-          <div class="middle">
-            <p>this is the large contact page</p>
-          </div>
-          <div class="middle button">
-            <svg viewBox="0,0,100,30">
-              <path fill="transparent" stroke-width="4" stroke="#0077cc" d="M0 0 L100 0 L100 30 L0 30 Z"/>
-              <text x="50" y="17" text-anchor="middle" alignment-baseline="middle" fill="black">CONTACT</text>
-            </svg>
-          </div>
-        </div>
+        <!--<div class="button">
+          <svg viewBox="0,0,100,30">
+            <path fill="transparent" stroke-width="4" stroke="#0077cc" d="M0 0 L100 0 L100 30 L0 30 Z"/>
+            <text x="50" y="17" text-anchor="middle" alignment-baseline="middle" fill="black">CONTACT</text>
+          </svg>
+        </div>-->
       </div>
     </div>
     <div class="return-contact" onclick="pageContact()"></div>
@@ -923,7 +928,6 @@ function pageTemplates() {
   };
   
 }
-
 function contactPage() {
   if(document.getElementById('contact').className.indexOf('hide') >= 0) {
     document.getElementById('contact').className = document.getElementById('contact').className.replace('hide','');
@@ -942,7 +946,6 @@ function contactPage() {
   };
   
 }
-
 function opensourcePage() {
   if(document.getElementById('opensource').className.indexOf('hide') >= 0) {
     document.getElementById('opensource').className = document.getElementById('opensource').className.replace('hide','');
@@ -961,7 +964,6 @@ function opensourcePage() {
   };
   
 }
-
 function projectPage() {
   if(document.getElementById('projects').className.indexOf('hide') >= 0) {
     document.getElementById('projects').className = document.getElementById('projects').className.replace('hide','');
@@ -980,7 +982,6 @@ function projectPage() {
   };
   
 }
-
 function templatesPage() {
   if(document.getElementById('templates').className.indexOf('hide') >= 0) {
     document.getElementById('templates').className = document.getElementById('templates').className.replace('hide','');
@@ -1027,11 +1028,9 @@ stu.getElements = function (id) {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
 <script>
-
 jQuery(function($){
   var windowWidth = $(window).width();
   var windowHeight = $(window).height();
-
   $(window).resize(function() {
     if(windowWidth != $(window).width() || windowHeight != $(window).height()) {
       location.reload();
@@ -1039,7 +1038,6 @@ jQuery(function($){
     }
   });
 });
-
 </script>
 
 <script>
