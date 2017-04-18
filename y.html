@@ -3,7 +3,8 @@
 
 <head>
   <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 </head>
 
 <style>
@@ -18,15 +19,39 @@ p {
   font-weight: 200;
   font-size: 14px;
 }
+i {
+  color: #0077cc;
+  text-decoration: none;
+  padding: 5px;
+  transition: 0.3s;
+}
+i:hover {
+  color: black;
+  text-decoration: none;
+}
 a {
   color: #0077cc;
   text-decoration: none;
   padding: 5px 0;
-  border-bottom: 2px dashed;
+  transition: 0.3s;
+}
+a hr {
+  border: none;
+  background-color: black;
+  height: 2px;
+  width: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  float: left;
+  margin-top: -12px;
 }
 a:hover {
-  cursor: pointer;
   color: black;
+  transition: 0.3s;
+}
+a:hover hr {
+  width:100%;
+  visibility: visible;
 }
 .middle {
   position: absolute;
@@ -108,6 +133,45 @@ a:hover {
     position: relative;
     height: 100%;
     width: 100%;
+  }
+  
+  .return-contact {
+    position: fixed;
+    height: 48px;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .return-opensource {
+    position: fixed;
+    height: 100vh;
+    width: 48px;
+    top: 0;
+    left: 0;
+  }
+  
+  .return-projects {
+    position: fixed;
+    height: 48px;
+    width: 100vw;
+    top: 0;
+    left: 0;
+  }
+  
+  .return-templates {
+    position: fixed;
+    height: 100vh;
+    width: 48px;
+    top: 0;
+    right: 0;
+  }
+  
+  .return-contact:hover,
+  .return-opensource:hover,
+  .return-projects:hover,
+  .return-templates:hover {
+    cursor: pointer;
   }
   
   .animate-padding {
@@ -424,92 +488,6 @@ a:hover {
 
 <body>
 
-  <div id="home">
-  
-    <div id="logo" class="middle" style="width: 35vh; height: 35vh;">
-      <svg viewBox="0,0,100,100">
-        <path fill="transparent" stroke-width="4" stroke="#0077cc" d="M50 10 L30 10 L70 50 L30 90 L30 70"/>
-      </svg>
-    </div>
-
-    <div class="h-top-words">
-      <p>
-        <span class="me1 slide-text">Digital&nbsp;Designer</span>
-        <span class="me2 slide-text">Website&nbsp;Developer</span>
-        <span class="me3 slide-text">Online&nbsp;Entreprenuer</span>
-        <span class="me4 slide-text">Disciple&nbsp;Maker</span>
-        <br/>
-        <s><span style="font-weight: 500; text-transform: uppercase;">Stu Coston</span></s>
-      </p>
-    </div>
-    
-    <div class="h-bottom-words">
-      <p>be greater online</p>
-    </div>
-  
-  </div>
-  <!-- close home div -->
-  
-  <div id="contact" class="hide">
-    <div id="con-page-wrap" class="page-wrapper">
-      <div class="page-content">
-        <div class="hide-on-med-and-up">
-          <div class="middle">
-            <h1>Why yes! I am available for work.</h1>
-            <a href="mailto:office@designerstu.com?Subject=Website%20Inquiry" target="_blank">office@designerstu.com</a>
-           <!--<div class="button">
-              <svg viewBox="0,0,100,30">
-                <path fill="transparent" stroke-width="4" stroke="#0077cc" d="M0 0 L100 0 L100 30 L0 30 Z"/>
-                <text x="50" y="17" text-anchor="middle" alignment-baseline="middle" fill="black">CONTACT</text>
-              </svg>
-            </div>-->
-          </div>
-        </div>
-        <div class="hide-on-small-only">
-          <div class="middle">
-            <p>this is the large contact page</p>
-          </div>
-          <div class="middle button">
-            <svg viewBox="0,0,100,30">
-              <path fill="transparent" stroke-width="4" stroke="#0077cc" d="M0 0 L100 0 L100 30 L0 30 Z"/>
-              <text x="50" y="17" text-anchor="middle" alignment-baseline="middle" fill="black">CONTACT</text>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div id="opensource" class="hide">
-    <div id="os-page-wrap" class="page-wrapper">
-      <div class="page-content" style="border: 1px solid blue">
-        <div class="middle">
-          <p>Test Opensource page</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div id="projects" class="hide">
-    <div id="proj-page-wrap" class="page-wrapper">
-      <div class="page-content" style="border: 1px solid blue">
-        <div class="middle">
-          <p>Test Projects page</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div id="templates" class="hide">
-   <div id="temp-page-wrap" class="page-wrapper">
-      <div class="page-content" style="border: 1px solid blue">
-        <div class="middle">
-          <p>Test Templates page</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
   <div id="nav" class="page-wrapper animate-padding">
     <div class="nav-item-overlay">
     
@@ -553,6 +531,101 @@ a:hover {
     <!-- close nav-item-overlay -->
   </div>
   <!-- close page-wrapper -->
+
+  <div id="home">
+  
+    <div id="logo" class="middle" style="width: 35vh; height: 35vh;">
+      <svg viewBox="0,0,100,100">
+        <path fill="transparent" stroke-width="4" stroke="#0077cc" d="M50 10 L30 10 L70 50 L30 90 L30 70"/>
+      </svg>
+    </div>
+
+    <div class="h-top-words">
+      <p>
+        <span class="me1 slide-text">Digital&nbsp;Designer</span>
+        <span class="me2 slide-text">Website&nbsp;Developer</span>
+        <span class="me3 slide-text">Online&nbsp;Entreprenuer</span>
+        <span class="me4 slide-text">Disciple&nbsp;Maker</span>
+        <br/>
+        <s><span style="font-weight: 500; text-transform: uppercase;">Stu Coston</span></s>
+      </p>
+    </div>
+    
+    <div class="h-bottom-words">
+      <p>be greater online</p>
+    </div>
+  
+  </div>
+  <!-- close home div -->
+  
+  <div id="contact" class="hide">
+    <div id="con-page-wrap" class="page-wrapper">
+      <div class="page-content">
+        <div class="hide-on-med-and-up">
+          <div class="middle">
+            <h1>Why yes! I am available for work.</h1>
+            <h2><a href="mailto:office@designerstu.com?Subject=Website%20Inquiry" target="_blank">office@designerstu.com<hr></a></h2>
+            <div class="show"></div>
+              <i class="fa fa-facebook"></i>
+              <i class="fa fa-twitter"></i>
+              <i class="fa fa-github"></i>
+            </div>
+            <!--<div class="button">
+              <svg viewBox="0,0,100,30">
+                <path fill="transparent" stroke-width="4" stroke="#0077cc" d="M0 0 L100 0 L100 30 L0 30 Z"/>
+                <text x="50" y="17" text-anchor="middle" alignment-baseline="middle" fill="black">CONTACT</text>
+              </svg>
+            </div>-->
+          </div>
+        </div>
+        <div class="hide-on-small-only">
+          <div class="middle">
+            <p>this is the large contact page</p>
+          </div>
+          <div class="middle button">
+            <svg viewBox="0,0,100,30">
+              <path fill="transparent" stroke-width="4" stroke="#0077cc" d="M0 0 L100 0 L100 30 L0 30 Z"/>
+              <text x="50" y="17" text-anchor="middle" alignment-baseline="middle" fill="black">CONTACT</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="return-contact" onclick="pageContact()"></div>
+  </div>
+  
+  <div id="opensource" class="hide">
+    <div id="os-page-wrap" class="page-wrapper">
+      <div class="page-content" style="border: 1px solid blue">
+        <div class="middle">
+          <p>Test Opensource page</p>
+        </div>
+      </div>
+    </div>
+    <div class="return-opensource" onclick="pageOpensource()"></div>
+  </div>
+  
+  <div id="projects" class="hide">
+    <div id="proj-page-wrap" class="page-wrapper">
+      <div class="page-content" style="border: 1px solid blue">
+        <div class="middle">
+          <p>Test Projects page</p>
+        </div>
+      </div>
+    </div>
+    <div class="return-projects" onclick="pageProjects()"></div>
+  </div>
+  
+  <div id="templates" class="hide">
+   <div id="temp-page-wrap" class="page-wrapper">
+      <div class="page-content" style="border: 1px solid blue">
+        <div class="middle">
+          <p>Test Templates page</p>
+        </div>
+      </div>
+    </div>
+    <div class="return-templates" onclick="pageTemplates()"></div>
+  </div>
   
   <script>
 // navigation functions
