@@ -18,6 +18,16 @@ p {
   font-weight: 200;
   font-size: 14px;
 }
+a {
+  color: #0077cc;
+  text-decoration: none;
+  padding: 5px 0;
+  border-bottom: 2px dashed;
+}
+a:hover {
+  cursor: pointer;
+  color: black;
+}
 .middle {
   position: absolute;
   left: 50%;
@@ -266,7 +276,7 @@ p {
 
 #nav-logo {
   height: 30px;
-  width: 30px;
+  width: 12px;
   position: absolute;
   left: -100px;
   transition: .8s;
@@ -371,6 +381,7 @@ p {
 .button {
   height: 30px;
   width: 100px;
+  margin: 70px auto;
 }
 .button:hover {
   background-color: #0077cc;
@@ -399,7 +410,15 @@ p {
 }
 /* Media Queries */  
 /* =============================== */
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
+  .hide-on-small-only {
+    display: none;
+  }
+}
+@media only screen and (min-width: 601px) {
+  .hide-on-med-and-up {
+    display: none;
+  }
 }
 </style>
 
@@ -431,23 +450,38 @@ p {
   </div>
   <!-- close home div -->
   
-  <div id="coming-soon" class="middle hide">Coming Soon</div>
-  
   <div id="contact" class="hide">
-    <div id="con-page-wrap" class="page-wrapper" style="border: 1px solid blue">
-      <div class="page-content" style="border: 1px solid blue">
-        <div class="middle button">
-          <svg viewBox="0,0,100,30">
-            <path fill="transparent" stroke-width="4" stroke="#0077cc" d="M0 0 L100 0 L100 30 L0 30 Z"/>
-            <text x="50" y="17" text-anchor="middle" alignment-baseline="middle" fill="black">CONTACT</text>
-          </svg>
+    <div id="con-page-wrap" class="page-wrapper">
+      <div class="page-content">
+        <div class="hide-on-med-and-up">
+          <div class="middle">
+            <h1>Why yes! I am available for work.</h1>
+            <a href="mailto:office@designerstu.com?Subject=Website%20Inquiry" target="_blank">office@designerstu.com</a>
+           <!--<div class="button">
+              <svg viewBox="0,0,100,30">
+                <path fill="transparent" stroke-width="4" stroke="#0077cc" d="M0 0 L100 0 L100 30 L0 30 Z"/>
+                <text x="50" y="17" text-anchor="middle" alignment-baseline="middle" fill="black">CONTACT</text>
+              </svg>
+            </div>-->
+          </div>
+        </div>
+        <div class="hide-on-small-only">
+          <div class="middle">
+            <p>this is the large contact page</p>
+          </div>
+          <div class="middle button">
+            <svg viewBox="0,0,100,30">
+              <path fill="transparent" stroke-width="4" stroke="#0077cc" d="M0 0 L100 0 L100 30 L0 30 Z"/>
+              <text x="50" y="17" text-anchor="middle" alignment-baseline="middle" fill="black">CONTACT</text>
+            </svg>
+          </div>
         </div>
       </div>
     </div>
   </div>
   
   <div id="opensource" class="hide">
-    <div id="os-page-wrap" class="page-wrapper" style="border: 1px solid blue">
+    <div id="os-page-wrap" class="page-wrapper">
       <div class="page-content" style="border: 1px solid blue">
         <div class="middle">
           <p>Test Opensource page</p>
@@ -457,7 +491,7 @@ p {
   </div>
   
   <div id="projects" class="hide">
-    <div id="proj-page-wrap" class="page-wrapper" style="border: 1px solid blue">
+    <div id="proj-page-wrap" class="page-wrapper">
       <div class="page-content" style="border: 1px solid blue">
         <div class="middle">
           <p>Test Projects page</p>
@@ -467,7 +501,7 @@ p {
   </div>
   
   <div id="templates" class="hide">
-   <div id="temp-page-wrap" class="page-wrapper" style="border: 1px solid blue">
+   <div id="temp-page-wrap" class="page-wrapper">
       <div class="page-content" style="border: 1px solid blue">
         <div class="middle">
           <p>Test Templates page</p>
@@ -477,11 +511,11 @@ p {
   </div>
   
   <div id="nav" class="page-wrapper animate-padding">
-    <div class="nav-item-overlay" style="border: 1px solid green;">
+    <div class="nav-item-overlay">
     
       <div id="nav-logo">
-        <svg viewBox="0,0,100,100">
-          <path fill="transparent" stroke-width="4" stroke="black" d="M50 10 L30 10 L70 50 L30 90 L30 70"/>
+        <svg viewBox="0,0,40,100">
+          <path fill="transparent" stroke-width="4" stroke="black" d="M24 4 L4 4 L40 50 L4 96 L4 76"/>
         </svg>
       </div>
       
@@ -575,7 +609,7 @@ function pageContact() {
         arrow.style.top = wh-60 + "px";
         arrow.style.left = "auto";
         arrow.style.right = "-100px";
-        arrow.style.transform = "rotate(0deg)";
+        arrow.style.transform = "rotate(180deg)";
         setTimeout(function(){
           navLogo.style.transition = "0.8s";
           arrow.style.transition = "0.8s";
@@ -637,12 +671,12 @@ function pageOpensource() {
         navLogo.style.bottom = "auto";
         navLogo.style.left = "auto";
         navLogo.style.top = "-100px";
-        navLogo.style.right = ww-60 + "px";
-        arrow.style.transform = "rotate(90deg)";
+        navLogo.style.right = ww-54 + "px";
+        arrow.style.transform = "rotate(-90deg)";
         arrow.style.top = "auto";
         arrow.style.bottom = "-100px";
         arrow.style.left = "auto";
-        arrow.style.right = ww-60 + "px";
+        arrow.style.right = ww-64 + "px";
         setTimeout(function(){
           navLogo.style.transition = "0.8s";
           arrow.style.transition = "0.8s";
@@ -709,7 +743,7 @@ function pageProjects() {
         arrow.style.top = "-14px";
         arrow.style.right = "auto";
         arrow.style.left = "-100px";
-        arrow.style.transform = "rotate(180deg)";
+        arrow.style.transform = "rotate(0deg)";
         setTimeout(function(){
           navLogo.style.transition = "0.8s";
           arrow.style.transition = "0.8s";
@@ -771,12 +805,12 @@ function pageTemplates() {
         navLogo.style.top = "auto";
         navLogo.style.right = "auto";
         navLogo.style.bottom = "-100px";
-        navLogo.style.left = ww-60 + "px";
-        arrow.style.transform = "rotate(-90deg)";
+        navLogo.style.left = ww-54 + "px";
+        arrow.style.transform = "rotate(90deg)";
         arrow.style.bottom = "auto";
         arrow.style.top = "-100px";
         arrow.style.right = "auto";
-        arrow.style.left = ww-60 + "px";
+        arrow.style.left = ww-64 + "px";
         setTimeout(function(){
           navLogo.style.transition = "0.8s";
           arrow.style.transition = "0.8s";
