@@ -44,10 +44,10 @@ a {
 }
 a hr {
   border: none;
-  background-color: #0077cc;
+  background-color: black;
   height: 1px;
-  width: 0;
-  visibility: hidden;
+  width: 100%;
+  visibility: visible;
   transition: 0.3s;
   float: left;
 }
@@ -56,8 +56,9 @@ a:hover {
   transition: 0.3s;
 }
 a:hover hr {
-  width:100%;
-  visibility: visible;
+  background-color: #0077cc;
+  width:0;
+  visibility: hidden;
 }
 .middle {
   position: absolute;
