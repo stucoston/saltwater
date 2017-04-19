@@ -43,10 +43,10 @@ a {
 }
 a hr {
   border: none;
-  background-color: #0077cc;
+  background-color: black;
   height: 1px;
-  width: 100%;
-  visibility: visible;
+  width: 0;
+  visibility: hidden;
   transition: 0.3s;
   float: left;
 }
@@ -55,9 +55,8 @@ a:hover {
   transition: 0.3s;
 }
 a:hover hr {
-  background-color: #0077cc;
-  width:0;
-  visibility: hidden;
+  width:100%;
+  visibility: visible;
 }
 .middle {
   position: absolute;
@@ -304,6 +303,56 @@ a:hover hr {
     0%   {right: 0;}
     100% {right: 100%;}
   }
+  
+  .flash {
+    animation: flash 3s 2 forwards;
+  }
+  
+  @-webkit-keyframes flash {
+    0%   {opacity: 0;}
+    5%   {opacity: 1;}
+    7%   {opacity: 0;}
+    8%   {opacity: 1;}
+    10%   {opacity: 0;}
+    20%   {opacity: 1;}
+    22%   {opacity: 0;}
+    25%   {opacity: 1;}
+    30%   {opacity: 0;}
+    32%   {opacity: 1;}
+    38%   {opacity: 0;} 
+    70%   {opacity: 1;}
+    75%   {opacity: 0;}
+    82%   {opacity: 1;}
+    85%   {opacity: 0;}
+    87%   {opacity: 1;}
+    90%   {opacity: 0;}
+    92%   {opacity: 1;}
+    97%   {opacity: 0;}
+    100%   {opacity: 0;}
+  }
+  
+  @keyframes flash {
+    0%   {opacity: 0;}
+    5%   {opacity: 1;}
+    7%   {opacity: 0;}
+    8%   {opacity: 1;}
+    10%   {opacity: 0;}
+    20%   {opacity: 1;}
+    22%   {opacity: 0;}
+    25%   {opacity: 1;}
+    30%   {opacity: 0;}
+    32%   {opacity: 1;}
+    38%   {opacity: 0;} 
+    70%   {opacity: 1;}
+    75%   {opacity: 0;}
+    82%   {opacity: 1;}
+    85%   {opacity: 0;}
+    87%   {opacity: 1;}
+    90%   {opacity: 0;}
+    92%   {opacity: 1;}
+    97%   {opacity: 0;}
+    100%   {opacity: 0;}
+  }
 /* nav-item */
 /* ===============================*/
   .nav-item-overlay {
@@ -344,7 +393,7 @@ a:hover hr {
 }
 #nav-logo {
   height: 30px;
-  width: 12px;
+  width: 30px;
   position: absolute;
   left: -100px;
   transition: .8s;
@@ -510,8 +559,8 @@ a:hover hr {
     <div class="nav-item-overlay">
     
       <div id="nav-logo">
-        <svg viewBox="0,0,48,100">
-          <path fill="transparent" stroke-width="4" stroke="black" d="M24 4 L4 4 L45 50 L4 96 L4 76"/>
+        <svg viewBox="0,0,100,100">
+          <path fill="transparent" stroke-width="4" stroke="black" d="M70 10 L50 10 L90 50 L50 90 L35 75"/>
         </svg>
       </div>
       
@@ -553,8 +602,9 @@ a:hover hr {
   <div id="home">
   
     <div id="logo" class="middle" style="width: 35vh; height: 35vh;">
-      <svg viewBox="0,0,100,100">
-        <path fill="transparent" stroke-width="4" stroke="#0077cc" d="M50 10 L30 10 L70 50 L30 90 L30 70"/>
+      <svg viewBox="0,0,150,100">
+        <path class="flash" fill="transparent" stroke-width="4" stroke="#eee" d="M70 10 L100 10 L140 50 L100 90 L50 90 M140 50 L90 50 M50 10 L10 50 L50 90"/>
+        <path fill="transparent" stroke-width="4" stroke="#0077cc" d="M70 10 L50 10 L90 50 L50 90 L35 75"/>
       </svg>
     </div>
 
@@ -570,7 +620,7 @@ a:hover hr {
     </div>
     
     <div class="h-bottom-words">
-      <p>be greater online</p>
+      <p>be greater than the box</p>
     </div>
   
   </div>
@@ -582,7 +632,7 @@ a:hover hr {
         <div class="middle" style="min-width: 344px;">
           <div class="contact-right">
             <h1>Why yes! I would love to do work for you.</h1>
-            <h2 class="thin"><a href="mailto:office@designerstu.com?Subject=Work%20Inquiry" target="_blank">office@designerStu.com<hr></a></h2>
+            <h2 class="thin"><a href="mailto:office@designerstu.com?Subject=Work%20Inquiry" target="_blank">office@designerstu.com<hr></a></h2>
           </div>
           <div class="contact-left">
             <a href="https://www.facebook.com/stu.coston"><i class="fa fa-facebook show fa-lg"></i></a>
@@ -751,7 +801,7 @@ function pageOpensource() {
         navLogo.style.bottom = "auto";
         navLogo.style.left = "auto";
         navLogo.style.top = "-100px";
-        navLogo.style.right = ww-54 + "px";
+        navLogo.style.right = ww-60 + "px";
         arrow.style.transform = "rotate(-90deg)";
         arrow.style.top = "auto";
         arrow.style.bottom = "-100px";
@@ -885,7 +935,7 @@ function pageTemplates() {
         navLogo.style.top = "auto";
         navLogo.style.right = "auto";
         navLogo.style.bottom = "-100px";
-        navLogo.style.left = ww-54 + "px";
+        navLogo.style.left = ww-68 + "px";
         arrow.style.transform = "rotate(90deg)";
         arrow.style.bottom = "auto";
         arrow.style.top = "-100px";
