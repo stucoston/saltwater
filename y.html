@@ -58,6 +58,7 @@ a:hover hr {
   width:100%;
   visibility: visible;
 }
+
 .middle {
   position: absolute;
   left: 50%;
@@ -66,11 +67,36 @@ a:hover hr {
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
 }
+
+.bottommiddle {
+  position: absolute;
+  left: 50%;
+  top: 92%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.fixed {
+  position: fixed;
+  opacity: 1;
+  z-index: 10;
+}
+  
 .hide {
   display: none;
 }
+
 .show {
   display: block;
+}
+
+.text-white {
+  color: white;
+}
+
+.center {
+  text-align: center;
 }
 /* home-page elements */
 /* ===============================*/
@@ -138,6 +164,42 @@ a:hover hr {
     position: relative;
     height: 100%;
     width: 100%;
+  }
+  
+  .page-bg {
+    background: no-repeat center fixed;
+    background-size: cover;
+    z-index: 0;
+  }
+  
+  .page-bg,
+  img {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+  
+  .see-through {
+    opacity: 0.7;
+  } 
+  
+  .proj-bg-1{
+    background-image: url("http://lorempixel.com/1080/720/people/1");
+  }
+  
+  .proj-bg-2{
+    background-image: url("http://lorempixel.com/1080/720/people/2");
+  }
+  
+  .proj-bg-3{
+    background-image: url("http://lorempixel.com/1080/720/people/3");
+  }
+  
+  .next-slide {
+    height: 40px;
+    width: 17px;
   }
   
   .return-contact {
@@ -353,6 +415,23 @@ a:hover hr {
     97%   {opacity: 0;}
     100%   {opacity: 0;}
   }
+  
+  .animate-bounce {
+    animation: bounce 2s ease-in-out infinite;
+  }
+  
+  @-webkit-keyframes bounce {
+    0%   {margin-top: 0;}
+    50%   {margin-top: -5%;}
+    100% {margin-top: 0;}
+  }
+  
+  @keyframes bounce {
+    0%   {margin-top: 0;}
+    50%   {margin-top: -5%;}
+    100% {margin-top: 0;}
+  }
+  
 /* nav-item */
 /* ===============================*/
   .nav-item-overlay {
@@ -603,7 +682,7 @@ a:hover hr {
   
     <div id="logo" class="middle" style="width: 35vh; height: 35vh;">
       <svg viewBox="0,0,150,100">
-        <path class="flash" fill="transparent" stroke-width="4" stroke="#eee" d="M70 10 L100 10 L140 50 L100 90 L50 90 M140 50 L90 50 M50 10 L10 50 L50 90"/>
+        <path class="flash" fill="transparent" stroke-width="4" stroke="#0077cc" d="M70 10 L100 10 L140 50 L100 90 L50 90 M140 50 L90 50 M50 10 L10 50 L50 90"/>
         <path fill="transparent" stroke-width="4" stroke="#0077cc" d="M70 10 L50 10 L90 50 L50 90 L35 75"/>
       </svg>
     </div>
@@ -664,11 +743,31 @@ a:hover hr {
   
   <div id="projects" class="hide">
     <div id="proj-page-wrap" class="page-wrapper">
-      <div class="page-content" style="border: 1px solid blue">
-        <div class="middle">
-          <p>Test Projects page</p>
+    
+      <div class="bottommiddle next-slide animate-bounce fixed" onclick="plusProjSlides(1)">
+        <svg viewBox="0,0,100,300">
+          <path fill="transparent" stroke-width="8" stroke="#0077cc" d="M0 240 L50 290 L100 240 M50 290 L50 0"/>
+        </svg>
+      </div>
+        
+      <div class="project-slide page-content proj-bg-1 page-bg">
+        <div class="middle fixed text-white center">
+          <h2>Coston Mission Blog</h2>
         </div>
       </div>
+      
+      <div class="project-slide page-content page-bg proj-bg-2">
+        <div class="middle fixed text-white center">
+          <h2>Coston Mission Magazine</h2>
+        </div>
+      </div>
+      
+      <div class="project-slide page-content page-bg proj-bg-3">
+        <div class="middle fixed text-white center">
+          <h2>Sadie Hope Blog</h2>
+        </div>
+      </div>
+      
     </div>
     <div class="return-projects" onclick="pageProjects()"></div>
   </div>
@@ -1210,6 +1309,33 @@ function animateMe() {
   startEverything();
         
 };
+</script>
+<script>
+
+// projects slide show
+// =======================================================
+var psIndex = 1;
+showProjSlides(psIndex);
+
+function plusProjSlides(n) {
+  showProjSlides(psIndex += n);
+}
+
+function currentProjSlide(n) {
+  showProjSlides(psIndex = n);
+}
+
+function showProjSlides(n) {
+  var ps;
+  var projSlides = document.getElementsByClassName("project-slide");
+  if (n > projSlides.length) {psIndex = 1} 
+  if (n < 1) {psIndex =projSlides.length}
+  for (ps = 0; ps < projSlides.length; ps++) {
+      projSlides[ps].style.display = "none"; 
+  }
+  projSlides[psIndex-1].style.display = "block";
+}
+
 </script>
 </body>
 
